@@ -46,7 +46,7 @@ Microsofts object storage soluion for the cloud is Azure Blob. Blob is the equiv
 
 
 ## **Spin up a Virtual Machine and run a workflow** <a name="VM"></a>
-Virtual machines (VMs) on Azure are like virtual computers that you access via SSH and which start as (nearly) completely blank slates. More information on Vms can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview). To view the different types of VMs and their cost check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) 
+Virtual machines (VMs) on Azure can be accessed via SSH. More information on Vms can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview). To view the different types of VMs and their cost check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) 
 
 <!--->
 
@@ -62,30 +62,29 @@ If you need to scale your VM up or down (see Cost Optimization below), you can a
 <!--->
 
 ## **Disk Images** <a name="IM"></a>
-Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. However, sometimes you want to recycle data or installed programs for your next VM instead of having to recreate the wheel. One solution to this issue is using disk (or machine) images, where you copy your existing virtual disk to an [Amazon Machine Image](https://docs.Azure.amazon.com/AzureEC2/latest/UserGuide/AMIs.html) which can serve as a backup, or can be used to launch a new instance with the programs and data from a previous instance.
+Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved.
 
-## **Launch a SageMaker Notebook** <a name="SAG"></a>
-Sagemaker is the Azure ML/AI development platform, as well as the hosted/managed Jupyter notebook platform. Notebooks are ideal for certain problems, particularly when doing a tutorial because you can mix code with instructions. They are also great for exploring your data or workflow one portion at a time, since the code gets broken up into little chunks that you can run one by one, which lends itself very well to most ML/AI problems. However, you can also open a terminal within Jupyter Lab, so you can switch between a traditional terminal and notebook interface. The notebook we are going to test here is inside this repo, but we are going to launch a SageMaker instance and then copy the notebook into Azure programatically.
+## **Launch a Machine Learning Workspace** <a name="SAG"></a>
+[Azure Machine Learning studio](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is one of the preferred tools whne using Azure Machine learning. ML studion allows for you to run your own code in managed jupyter notebooks. Foll the [Quickstart](https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-run-notebooks) page to begin running Jupyter Notebooks in studio.
 
-Follow our [Sagemake Notebook guide](/docs/Jupyter_notebook.md) to learn how to spin up an instance and walk through an example notebook focused on genome-wide association studies.
 
 ## **Creating a Conda Environment** <a name="CO"></a>
 Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#:~:text=A%20conda%20environment%20is%20a,NumPy%201.6%20for%20legacy%20testing). 
 
+<!--->
 Mamba is a reimplementation of conda written in C++ and runs much faster than legacy conda. Follow our [guide](/docs/create_conda_env.md) to create a conda environment using Mamba in an EC2 or Sagemaker instance.
+<!--->
+## **Managing Containers with Azure Container Registry** <a name="DOCK"></a>
+You can host containers within Azure Container Registry. We outline how to build a container, push to Azure Container Registry, and pull to a compute environment in our [docs](/docs/ecr.md).
 
-## **Managing Containers with Elastic Container Registry and Code with CodeCommit** <a name="DOCK"></a>
-You can host containers within Amazon Elastic Container Registry. We outline how to build a container, push to Elastic Container Registry, and pull to a compute environment in our [docs](/docs/ecr.md).
-
-Further, you can manage your git repositories within your Azure account using Azure CodeCommit. [Here](/docs/create_code_repo.md) we outline how to create a repository, authenticate to it, then push and pull files using standard git commands.
 
 ## **Clusters** <a name="CLU"></a>
-One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://Azure.amazon.com/kubernetes/). Note that if you spin up resources in Batch, you will need to deactivate the compute environment (in Batch) and delete the autoscaling groups (in EC2) to avoid further charges.
+One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/).
 
 ## **Billing and Benchmarking** <a name="BB"></a>
 Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
 
-In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://Azure.amazon.com/ec2/pricing/on-demand/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect. For example, if you know that your analysis on your on-premesis cluster takes 4 hours to run for a single sample with 12 CPUs, and that each sample needs about 30 GB of storage to run a workflow, then you can extrapolate out how much everything may cost using the calculator (e.g. EC2 + S3).
+In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect..
 
 ## **Cost Optimization** <a name="COST"></a>
 Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for details on how to monitor costs, set up budget alerts, and cost-benchmark specific analyses using resource tagging. In addition, here are a few tips to help you stay on budget.
