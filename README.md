@@ -39,10 +39,10 @@ Most tasks in Azure can be done without the command line, but the command line t
 To install and configure Azure CLI, redirect to [Get started with Azure CLI](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli), which provides detailed instructions on installation as well as documentation on common Azure ClI commands. Microsoft Azure also has a cloud native service called [Microsoft Genomics](https://www.microsoft.com/en-us/genomics/) which offers cloud implementation of the Burrows-Wheeler Aligner (BWA) and the Genome Analysis Toolkit (GATK) for secondary analysis. The service is ISO-certified and compliant with HIPAA regulations, and offers price predictability for your genome sequencing needs. Find documentatation on how to use Microsoft Genomics [here](https://learn.microsoft.com/en-us/azure/genomics/overview-what-is-genomics)
 
 ## **Azure Marketplace** <a name="MARK"></a>
-The [Azure Marketplace](https://azure.microsoft.com/en-us/partners/marketplace) is a platform similar to Microsoft.com where you can search for and launch pre-configured solutions. 
+The [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/) is an online store in Azure that contains thousands of IT software applications and services by industry leading companies to fit your business needs.
 
 ## **Ingest and Store Data using Azure Storage Accounts** <a name="STO"></a>
-Azure has a variety of services for object, block and file storage. [Here](https://azure.microsoft.com/en-us/products/category/storage/) is a table listing the storage services Azure provides. !<---Add more Azure related content that relates to the business process within bio-informatics>
+Microsofts object storage soluion for the cloud is Azure Blob. Blob is the equivalent to Amazon's S3 block storage service, and is optimized for storing massive amounts of unstructured data. Azure also offers many different storage services listed [here](https://azure.microsoft.com/en-us/products/category/storage/). To get started you must create a [Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal)
 
 
 ## **Spin up a Virtual Machine and run a workflow** <a name="VM"></a>
