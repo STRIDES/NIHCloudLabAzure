@@ -1,6 +1,6 @@
 # Guide to AWS Billing and Cost Management
 
-Understanding how to manager your costs can be difficult in the cloud. For one thing, you have to keep track of how much you have spent with the obvious services, like EC2, Sagemaker and S3. On the other hand, how can you figure out how much you are being charged for your network (VPC)? 
+Understanding how to manager your costs can be difficult in the cloud. For one thing, you have to keep track of how much you have spent with the obvious services, like Virtual Machines, Azure Machine Learning and Storage Accounts(Blob). On the other hand, how can you figure out how much you are being charged for your network (Vnet)? 
 Further, some Cloud Lab users are interested in understanding how to forcast cloud costs for a larger project. For example, if you want to understand the cost of calling somatic variants on 100 samples, but in Cloud Lab you plan to benchmark using five samples. How would you go about doing that? 
 This guide aims to answer these questions. 
 
