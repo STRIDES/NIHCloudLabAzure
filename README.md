@@ -39,27 +39,15 @@ Most tasks in Azure can be done without the command line, but the command line t
 To install and configure Azure CLI, redirect to [Get started with Azure CLI](https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli), which provides detailed instructions on installation as well as documentation on common Azure ClI commands. Microsoft Azure also has a cloud native service called [Microsoft Genomics](https://www.microsoft.com/en-us/genomics/) which offers cloud implementation of the Burrows-Wheeler Aligner (BWA) and the Genome Analysis Toolkit (GATK) for secondary analysis. The service is ISO-certified and compliant with HIPAA regulations, and offers price predictability for your genome sequencing needs. Find documentatation on how to use Microsoft Genomics [here](https://learn.microsoft.com/en-us/azure/genomics/overview-what-is-genomics)
 
 ## **Azure Marketplace** <a name="MARK"></a>
-The [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/) is an online store in Azure that contains thousands of IT software applications and services by industry leading companies to fit your business needs.
+The [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/) is an online store in Azure that contains thousands of IT software applications and services by industry leading companies to fit your business needs. [Azure CycleCloud](https://learn.microsoft.com/en-us/azure/cyclecloud/?view=cyclecloud-8) is a service designed to provide organizations secure and flexible cloud HPV and Big Compute environments
 
 ## **Ingest and Store Data using Azure Storage Accounts** <a name="STO"></a>
-Microsofts object storage soluion for the cloud is Azure Blob. Blob is the equivalent to Amazon's S3 block storage service, and is optimized for storing massive amounts of unstructured data. Azure also offers many different storage services listed [here](https://azure.microsoft.com/en-us/products/category/storage/). To get started you must create a [Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal)
+Microsofts object storage solution for the cloud is Azure Blob. Blob is the equivalent to Amazon's S3 block storage service, and is optimized for storing massive amounts of unstructured data. Azure also offers many different storage services listed [here](https://azure.microsoft.com/en-us/products/category/storage/). To get started you must create a [Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal)
 
 
-## **Spin up a Virtual Machine and run a workflow** <a name="VM"></a>
-Virtual machines (VMs) on Azure can be accessed via SSH. More information on Vms can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview). To view the different types of VMs and their cost check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) 
+## **Virtual Machines** <a name="VM"></a>
+Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal. More information on Vms can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview) as well as [guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to use SSH keys with windows in Azure. To view the different types of VMs availabe in Azure check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) 
 
-<!--->
-
-Many great resources exist on how to spin up, connect to, and work on a VM on Azure. The first place to direct you is the tutorial created by [NIH Common Data Fund](https://training.nih-cfde.org/en/latest/Cloud-Platforms/Introduction_to_Amazon_Web_Services/introtoAzure3/). This tutorial expects that you will launch an instance and work with it interactively.
-[Here](https://Azure.amazon.com/getting-started/hands-on/launch-a-virtual-machine/) is an example developed by Azure that gives a good step by step on how to launch and access an instance using Amazon Lightsail. Lightsail is a simplified version of the full Azure console, and may provide an interface you may like better for using EC2. Note that resources you spin up in Lightsail will not be available in EC2. A lot of the [tutorials](/tutorials/) in this repo will have instructions on spinning up EC2 instances as well. If you have issues with SSH, consider connecting via the [Session Manager](https://docs.Azure.amazon.com/systems-manager/latest/userguide/session-manager.html). We also wrote a [guide with screen shots](/docs/connect_ec2.md) if that helps you. 
-
-If you need help on launching a Windows VM, check out this [tutorial](https://Azure.amazon.com/getting-started/hands-on/launch-windows-vm/).
-
-From a security perspective, we recommend that you use Center for Internet Security (CIS) Hardened VMs. These have security controls that meet the CIS benchmark for enhanced cloud security. To use these VMs, go to the Azure Marketplace > Discover Products. Then search for `CIS Hardened` and chose the OS that meets your needs. Click, `Continue to Subscribe` in the top right, and then `Continue to Configuration` and set your configuration parameters. Finally, click `Continue to Launch`. Here you decide how to launch the Marketplace solution; we recommend `Launch from EC2`, although you are welcome to experiment with the other options. Now click `Launch` and walk through the usual EC2 launch parameters. Click `Launch` and then you can view the status of your VM in the EC2 Instances page.
-
-If you need to scale your VM up or down (see Cost Optimization below), you can always change the machine type by clicking on the instance ID, then go to `Actions > Instance Settings > Change instance type`. The VM has to be stopped to change the instance type. 
-
-<!--->
 
 ## **Disk Images** <a name="IM"></a>
 Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved.
