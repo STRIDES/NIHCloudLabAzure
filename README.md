@@ -59,15 +59,13 @@ Part of the power of virtual machines is that they offer a blank slate for you t
 ## **Creating a Conda Environment** <a name="CO"></a>
 Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#:~:text=A%20conda%20environment%20is%20a,NumPy%201.6%20for%20legacy%20testing). 
 
-<!--->
-Mamba is a reimplementation of conda written in C++ and runs much faster than legacy conda. Follow our [guide](/docs/create_conda_env.md) to create a conda environment using Mamba in an EC2 or Sagemaker instance.
-<!--->
+
 ## **Managing Containers with Azure Container Registry** <a name="DOCK"></a>
 You can host containers within Azure Container Registry. We outline how to build a container, push to Azure Container Registry, and pull to a compute environment in our [docs](/docs/ecr.md).
 
 
 ## **Clusters** <a name="CLU"></a>
-One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/).
+One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/). Azure Cycle cloud has [tutorials](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) on cluster creation 
 
 ## **Billing and Benchmarking** <a name="BB"></a>
 Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
