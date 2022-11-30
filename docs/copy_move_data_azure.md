@@ -6,6 +6,8 @@ instructions on how to download AzCopy if neccessary can be found [here](https:/
 
 **AzCopy Commands** 
 
+Below is a list of common AZCopy commands
+
 | Command                | Description                                                                              |
 |------------------------|------------------------------------------------------------------------------------------|
 |  azcopy bench| Runs a performance benchmark by uploading or downloading test data to or from a specified location |
@@ -24,3 +26,10 @@ instructions on how to download AzCopy if neccessary can be found [here](https:/
 |  azcopy make       |  Creates a container or file share
 |  azcopy remove     |  Delete blobs or files from an Azure storage account
 |  azcopy sync       |  Replicates the source location to the destination location
+
+
+**Copy Data from Amazon S3 bucket**
+
+
+
+**Copy Data from Google Cloud Storage buckets**
