@@ -18,7 +18,7 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 + [Ingest and Store Data](#STO)
 + [Virtual Machines](#VM)
 + [Disk Images](#IM)
-+ [SageMaker Notebooks](#SAG)
++ [Azure Machine learning](#SAG)
 + [Creating a Conda Environment](#CO)
 + [Managing Containers and Code Repositories](#DOCK)
 + [Clusters](#CLU)
