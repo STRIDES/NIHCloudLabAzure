@@ -48,50 +48,19 @@ You can add a tag to pretty much any resource but let's look at a few examples. 
    
     <img src="/docs/images/view-resources-by-tag.png" width="600" height="431">
 
+## 2. Explore Billing Reports
+You can find a lot of billing tools by searching for billing in the bar at the top of your console. 
 
+**Next text to put in**
 
+## 3. Create Budget Alerts
+One way to help stay on budget is to create budget alerts. You can do this using the *Budgets* tool within *Cost Management*.
+
+**Next text to put in**
 
 
 *******
 AWS Specific Examples:
-
-
-
-### Add tags to a storage bucket
-
-1. Select the bucket and then click **Properties**. 
-
-<img src="/docs/images/bucket_properties.png" width="550" height="150">
-
-2. Scroll down to *Tags* and click **Edit**.
-
-<img src="/docs/images/edit_tags_bucket.png" width="550" height="100">
-
-3. Add a few tags that help identify the filtering you want to do later, feel free to look at the [AWS guide](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) for examples.
-
-<img src="/docs/images/add_tags_bucket.png" width="550" height="350">
-
-### Add tags to an EC2 instance
-
-This assumes your instance already exists. You can also tag a new instance during creation using the same method.
-
-1. Select the instance and click the **Tags** tab, then **Manage Tags**.
-
-<img src="/docs/images/EC2_edit_tags.png" width="550" height="350">
-
-2. Add your tags, then click **Save**.
-
-<img src="/docs/images/EC2_add_tags.png" width="550" height="350">
-
-### Add tags to a Sagemaker instance
-
-1. Select the Sagemaker instance and scroll down to *Tags*.
-
-2. Click **Edit**, then add tags as described above.
-
-<img src="/docs/images/sagemaker_edit_tags2.png" width="550" height="400">
-
-<img src="/docs/images/sagemaker_add_tags.png" width="550" height="250">
 
 ## 2. Explore Billing Reports
 
