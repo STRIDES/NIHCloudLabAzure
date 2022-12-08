@@ -20,6 +20,7 @@ You can add a tag to pretty much any resource but let's look at a few examples. 
 ### Add a Tag
 1. To add a tag, select Click here to add tags.
 2. Provide a name and value.
+   
     <img src="/docs/images/add-tag.png" width="700" height="341">
 3. Continue adding tags as needed. When done, select Save.
     <img src="/docs/images/save-tags.png" width="700" height="404">
@@ -34,15 +35,17 @@ You can add a tag to pretty much any resource but let's look at a few examples. 
 1. From any list of resources, select the checkbox for the resources you want to assign the tag. Then, select Assign tags.
     <img src="/docs/images/select-multiple-resources.png" width="700" height="465">
 2. Add names and values. When done, select Save.
-    <img src="/docs/images/select-assigns.png" width="700" height="669">
+    <img src="/docs/images/select-assign.png" width="700" height="669">
 
 
 ### Viewing all Resources with a Tag
 1. On the Azure portal menu, search for tags. Select it from the available options.
     <img src="/docs/images/find-tags-general.png" width="600" height="216">
 2. Select the tag for viewing resources.
+   
     <img src="/docs/images/select-tag.png" width="200" height="291">
 3. All resources with that tag are displayed.
+   
     <img src="/docs/images/view-resources-by-tag.png" width="600" height="431">
 
 
