@@ -61,8 +61,6 @@ One way to help stay on budget is to create budget alerts. You can do this using
 
 
 *******
-## To Be Deleted
-AWS Specific Examples:
 
 ##  Managing Subscription Costs
 
