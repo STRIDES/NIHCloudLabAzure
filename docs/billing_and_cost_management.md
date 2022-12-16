@@ -64,3 +64,24 @@ One way to help stay on budget is to create budget alerts. You can do this using
 ## To Be Deleted
 AWS Specific Examples:
 
+##  Managing Subscription Costs
+
+The left panel on the subscription home screen lists your options for manageing costs within your subscription. Overview gives you a snapshot of your current and predicted future spending rates.  
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207394433-0ab9e7c8-49cb-47a7-a4da-8e1313469f49.png">
+
+Under **Cost Management** there are three tools to help you manage costs, Cost analysis, Cost alerts, and Budgets. Additionally there is one tool called Advisor recommendations to help you configure your Subscription, and resources, in the most cost effective manners. 
+
+Clicking on **Cost Analysis** displays a screen similar to Overview but with a breakdown on the costs. In the screen shot below the costs are broken down by Service, Location, and Resource Group. 
+ 
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207634759-27b95689-2ed5-40f6-9d54-d586454385b7.png">
+
+Click on **Cost Alert** on the left panel. Here you are able to configure alerts for budgets and create cost anomaly alerts to automatically get notified if an anomaly is detected. Such as a resource running up costs to quickly. Click on **Learn more** to get detailed descriptions and instructions.
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207636401-415dfe0f-b591-4f0d-9c65-7e1bcd9db163.png">
+
+Click on **Budgets** on the left panel. This is where you will set the spending limits for your organization and send notifications out when certain limits of the budget are reached. You can click on the **Visit the budget documentation** for a short tutorial on creating and managing budgets.
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207643270-82bf0525-9ef3-461e-8ec6-d79a71f5e1ea.png">
+
+There is one final tool under Cost Management. As stated before this tool can help you manage your budget and keep your costs inline.
