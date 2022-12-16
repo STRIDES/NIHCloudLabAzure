@@ -3,65 +3,42 @@
 
 # Guide to implementing auto-shutdown features in virtual machines in Azure
 
-## Autoshutdown Azure Virtual Machine instance
+## Automatic shutdown Azure Virtual Machine instance
 
-https://learn.microsoft.com/en-us/azure/devtest-labs/devtest-lab-auto-shutdown
+There are 2 main ways to manage shutdowns for your Azure Virtual Machines.
 
-https://learn.microsoft.com/en-us/azure/lab-services/how-to-configure-auto-shutdown-lab-plans
+<ul>
+<li>Auto-Shutdown</li>
+        - This is built into each virtual machine and gives you the ability to set a shutdown time, timezone, and notification options.
+<li>Start/Stop VMs - Azure Automation</li>
+        - This is a solution based on Azure Automation and gives you more flex
+</ul>
+
+### Auto-Shutdown:
+1. First login to Azure Portal
+2. Go to Virtual Machines (or if that option isn't available, use the search bar to find and open Virtual Machines)
+3. Next select a Virtual Machine
+4. Scroll to the Operations section and click Auto-Shutdown
+5. Fill in the required details
+   - **Enabled:**  Enables/disabled the auto-shutdown
+   - **Scheduled shutdown:**  Text box to type the shutdown time (relative to the time zone in next selection)
+   - **Time zone:**  Time zone that the Scheduled shutdown time will use
+   - **Send notification before auto-shutdown?**  Option to enable/disable notifications prior to shutdown
+   - **Webhook URL (optional):**  A notification will be posted to the specified webhook endpoint when the auto-shutdown is about to happen. The endpoint must support incoming TLS 1.2 connections
+   - **Email address (optional):**  Provide a set of semicolon-delimited email addresses to receive alert notification emails.
+6. Click the "Save" button at the top
+
+<img src="/docs/images/VirtualMachine-Properties-Autoshutdown.png" width="1685" height="1324">
+<img src="/docs/images/Auto-shutdown-options.png" width="1275" height="439">
+
+
+### Start/Stop VMs - Azure Automation:
+Content to be added
+
+https://learn.microsoft.com/en-us/azure/azure-functions/start-stop-vms/overview
 
 
 
-*******
-## To Be Deleted
-AWS Specific Information
 
-There already exists a [great guide](https://successengineer.medium.com/how-to-automatically-turn-off-your-ec2-instance-in-2021-b73374e51090) on how to configure autoshutdown on EC2.
-Just note that when you set the Alarm Thresholds, you may want to set the threshold percent to be higher than 2% to increase the sensitivity and make it easier for your machine to shut down. 
 
-## Autoshudown Sagemaker instance
 
-Configuring auto shutdown on Sagemaker instances is also relatively simple. 
-
-### Configuring a new instance
-
-1. On the Sagemaker page, click **Create notebook instance**.
-
-<img src="/docs/images/create_notebook_instance.jpeg" width="550" height="125">
-
-2. Under *Additional Configuration* click the box under *Lifecycle configuration - optional*, then select **Create a new lifecycle configuration**.
-
-<img src="/docs/images/click_configuration.png" width="550" height="450">
-
-3. Name your configuration something like `idle-shutdown-sagemaker` and then paste in the following code under *Start notebook*. This code snippet will shutdown your VM after 3600 seconds (1 hr) of inactivity. If you want that time to be shorter, change it to something like 1800 (30 min).
-
-```
-#!/bin/bash
-
-set -e
-
-# PARAMETERS
-IDLE_TIME=3600
-
-echo "Fetching the autostop script"
-wget https://raw.githubusercontent.com/aws-samples/amazon-sagemaker-notebook-instance-lifecycle-config-samples/master/scripts/auto-stop-idle/autostop.py
-
-echo "Starting the SageMaker autostop script in cron"
-
-(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/bin/python $PWD/autostop.py --time $IDLE_TIME --ignore-connections") | crontab -
-```
-
-<img src="/docs/images/add_script.png" width="550" height="750">
-
-4. Click **Create configuration**, then click **Create notebook instance**
-
-### Configuring an existing instance
-
-The instructions for adding auto-shutdown to an existing instance are almost identical. 
-
-1. Select the instance you want to modify, and click **Edit** in the top right. Your instance does need to be stopped.
-
-<img src="/docs/images/edit_instance_aws.png" width="550" height="175">
-
-2. Now under *Additional configuration* select *Lifecycle configuration - optional* and follow the instructions above for 2–4.
-
-3. Restart your instance and confirm that it will shut down after the specified amount of time. 
