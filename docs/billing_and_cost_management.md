@@ -85,3 +85,15 @@ Click on **Budgets** on the left panel. This is where you will set the spending 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207643270-82bf0525-9ef3-461e-8ec6-d79a71f5e1ea.png">
 
 There is one final tool under Cost Management. As stated before this tool can help you manage your budget and keep your costs inline.
+
+Click on **Advisor Recommendations** This will take you to a screen where you can see what steps you can take to help minimize costs to help meet any budget constraints. Click on **See list of cost recommendations** to get indepth information on ways to configure your resources in a cost effective manner.   
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207887409-cb6ec273-1495-430e-8129-3b16253112c3.png">
+
+## Billing
+
+Further down on the left panel is another subtitle called "Billing". Under this subtitle Click on **Billing Profile Invoices** to view both current and past invoices. You can click on the link **Learn more about billing profiles** to get more information on billing account. 
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207899718-73c544de-901c-4c1a-b5e2-7c5f5dffb576.png">
+
+
