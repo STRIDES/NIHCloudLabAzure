@@ -61,77 +61,37 @@ One way to help stay on budget is to create budget alerts. You can do this using
 
 
 *******
-## To Be Deleted
-AWS Specific Examples:
 
-## 2. Explore Billing Reports
+##  Managing Subscription Costs
 
-You can find a lot of billing tools by searching for billing in the bar at the top of your console. 
+The left panel on the subscription home screen lists your options for manageing costs within your subscription. Overview gives you a snapshot of your current and predicted future spending rates.  
 
-<img src="/docs/images/search_billing.png" width="550" height="350">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207394433-0ab9e7c8-49cb-47a7-a4da-8e1313469f49.png">
 
-However, the best billing tool for Cloud Lab use is the cost explorer. 
+Under **Cost Management** there are three tools to help you manage costs, Cost analysis, Cost alerts, and Budgets. Additionally there is one tool called Advisor recommendations to help you configure your Subscription, and resources, in the most cost effective manners. 
 
-1. Go to the (A) *Console Home Page*, then to (B) *AWS Cost Management*.
+Clicking on **Cost Analysis** displays a screen similar to Overview but with a breakdown on the costs. In the screen shot below the costs are broken down by Service, Location, and Resource Group. 
+ 
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207634759-27b95689-2ed5-40f6-9d54-d586454385b7.png">
 
-<img src="/docs/images/aws_cost_management.png" width="550" height="350">
+Click on **Cost Alert** on the left panel. Here you are able to configure alerts for budgets and create cost anomaly alerts to automatically get notified if an anomaly is detected. Such as a resource running up costs to quickly. Click on **Learn more** to get detailed descriptions and instructions.
 
-2. Click on **Cost Explorer** on the left panel
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207636401-415dfe0f-b591-4f0d-9c65-7e1bcd9db163.png">
 
-<img src="/docs/images/cost_explorer.png" width="550" height="350">
+Click on **Budgets** on the left panel. This is where you will set the spending limits for your organization and send notifications out when certain limits of the budget are reached. You can click on the **Visit the budget documentation** for a short tutorial on creating and managing budgets.
 
-3. Click on (A) the data range, then (B) change the end date to today's date. By default it will show you billing to the end of last month so you won't see your current month charges.
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207643270-82bf0525-9ef3-461e-8ec6-d79a71f5e1ea.png">
 
-<img src="/docs/images/change_end_date.png" width="550" height="350">
+There is one final tool under Cost Management. As stated before this tool can help you manage your budget and keep your costs inline.
 
-4. Filter for different parameters on the right. Here we can filter by *Service* to select only costs related to EC2.
+Click on **Advisor Recommendations** This will take you to a screen where you can see what steps you can take to help minimize costs to help meet any budget constraints. Click on **See list of cost recommendations** to get indepth information on ways to configure your resources in a cost effective manner.   
 
-<img src="/docs/images/Ec2_filter_service.png" width="550" height="250">
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207887409-cb6ec273-1495-430e-8129-3b16253112c3.png">
 
-Now we see only costs related to EC2.
+## Billing
 
-<img src="/docs/images/ec2-filtered.png" width="550" height="250">
+Further down on the left panel is another subtitle called "Billing". Under this subtitle Click on **Billing Profile Invoices** to view both current and past invoices. You can click on the link **Learn more about billing profiles** to get more information on billing account. 
 
-5. Filter for the tags we added in Part 1 to benchmark a specific analysis. In this case, we are going to select **BLAST**.
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207899718-73c544de-901c-4c1a-b5e2-7c5f5dffb576.png">
 
-<img src="/docs/images/filter_tag.png" width="550" height="325">
 
-Now we can see the costs related to the analyses with the BLAST tag. If you don't see the tags you added before, make sure you have waited ~12 hours. AWS aggregates costs about three times per day, so those costs may have just not shown up yet. 
-
-<img src="/docs/images/blast_costs.png" width="550" height="300">
-
-6. Explore the other options available. You can change the plot type, change the filtering, and use several other tools within *Cost Management*. 
-
-## 3. Create Budget Alerts
-
-One way to help stay on budget is to create budget alerts. You can do this using the *Budgets* tool within *Cost Management*.
-
-<img src="/docs/images/nav_budget.png" width="550" height="250">
-
-1. Click **Create a budget**. 
-
-<img src="/docs/images/create_budget.png" width="550" height="250">
-
-2. Select your budget type. We recommend *Cost budget*. Click `Next`. 
-
-<img src="/docs/images/budget_type.png" width="550" height="250">
-
-3. On the next page, enter a Budget Name. Under budget amount, select **Annually** for *Period*. Under *Budget renewal type* select **Expiring budget**. For *Budgeting method* select **Fixed** and then type **500** for the Budget Amount.
-
-<img src="/docs/images/configure_budget_aws.png" width="550" height="625">
-
-4. You can leave the rest as default and then click **Next**
-
-<img src="/docs/images/budget_scope.png" width="550" height="350">
-
-5. Click **Add an alert threshold**
-
-<img src="/docs/images/add_alert_threshold.png" width="550" height="450">
-
-6. Configure your budget alerts as desired. Here we set one alert for when the budget reaches 50%, but you could set several alerts to let you know when you have reached 25%, 50%, 75% and then 95% for example. 
-
-<img src="/docs/images/budget_alerts.png" width="550" height="350">
-
-7. Click **Next**. On the following page, click **Create Budget**
-
-<img src="/docs/images/submit_budget.png" width="550" height="400">

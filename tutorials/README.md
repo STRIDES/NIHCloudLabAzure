@@ -3,7 +3,7 @@
 ---------------------------------
 ## Overview of Page Contents
 
-+ [Biomedical Workflows on AWS](#Bio)
++ [Microsoft Genomics](#Bio)
 + [Download SRA Data](#SRA)
 + [GWAS](#GWAS)
 + [Medical Imaging](#IM)
@@ -14,14 +14,9 @@
 + [AI/ML Pipeline](#AI)
 + [Open Data](#OPEN)
 
-## **Biomedical Workflows on AWS** <a name="Bio"></a>
+## **Microsoft Genomics** <a name="Bio"></a>
 
-There are a lot of ways to run workflows on AWS. Here we list a few possibilities each of which may work for different research aims. As you walk through the various tutorials below, think about how you could possibly run that workflow more efficiently using a one of the other methods listed here. If you are unfamiliar with any of the terms or concepts here, please review the [AWS 101](https://github.com/STRIDES/NIHCloudLabAWS) page. 
 
-- The most simple is probably to spin up an EC2 instance, and run your command interactively, or using `screen` or, as a [startup script](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) attached as metadata. See the [GWAS tutorial](https://training.nih-cfde.org/en/latest/Bioinformatic-Analyses/GWAS-in-the-cloud) below for more info on how to run a pipeline using EC2. 
-- You could also run your pipeline via a SageMaker notebook, either by splitting out each command as a different block, or by running a workflow manager (Nextflow etc.). See [here](https://aws.amazon.com/blogs/machine-learning/scheduling-jupyter-notebooks-on-sagemaker-ephemeral-instances/) about scheduling a notebook to let it run longer. You can find some example notebooks in the [tutorials below](/tutorials/notebooks/).
-- If you are running bioinformatic workflows, you can leverage the serverless functionality of AWS using the [AWS Genomics CLI](https://aws.amazon.com/genomics-cli/), which is a wrapper for genomics workflow managers and AWS Batch (serverless computing cluster). See our [docs](/docs/agc.md) on how to set up the AGC CLI for Cloud Lab. You can also use this older [genomics solution](https://docs.opendata.aws/genomics-workflows/index.html) if you have trouble with the newer CLI. See our [docs](/docs/Genomics_Workflows.md) for tips and tricks specific to the Cloud Lab environment.
-- Finally, one benefit of the cloud is access to GPUs for workflow acceleration. While a lot of focus on GPU implementation will focus on AI/ML workflows, NVIDIA has software called Parabricks that will accelerate genomic workflows for pretty low costs. See the full list of command line options [here](https://docs.nvidia.com/clara/parabricks/3.7.0/index.html)) to see if your specific workflow is accelerated. Specific details on how to use the Parabricks within Cloud Lab see our [guide](/docs/parabricks.md).
  
  **Please note, GPU machines cost more than most CPU machines, so be sure to shut these machines down after use, or apply an EC2 [lifecycle configuration](/docs/auto-shutdown-instance.md). You may also encounter service quotas to protect you from the accidental use of expensive machine types. If that happens, and you still want to use a certain instance type, follow these [instructions](/docs/service_quotas.md).**
 
@@ -49,9 +44,6 @@ RNAseq is a technique for quantifying gene levels of gene expression across the 
 Single Cell RNAseq (scRNAseq) analyses allow for gene expression profiling at the single cell level.
 - This [AWS blog](https://aws.amazon.com/blogs/publicsector/driving-innovation-single-cell-analysis-aws/) lays out a potential method that integrates a lot of the AWS native tools for running an scRNAseq pipeline. It is less of a tutorial, and more of a demo of what is possible.
 -  This [NVIDIA blog](https://developer.nvidia.com/blog/accelerating-single-cell-genomic-analysis-using-rapids/) details how to run an accelerated scRNAseq pipeline using RAPIDS. You can find a link to the GitHub that has lots of example notebooks [here](https://github.com/clara-parabricks/rapids-single-cell-examples). For each example use case they show some nice benchmarking data with time and cost for each machine type. You will see that most runs cost less than $1.00 with GPU machines. If you want a CPU version that users Scanpy you can use this [notebook](https://github.com/clara-parabricks/rapids-single-cell-examples/blob/master/notebooks/hlca_lung_cpu_analysis.ipynb). Pay careful attention to the environment setup as there are a lot of dependencies for these notebooks. Create a conda environment in the terminal, then run the notebook. Consider using [mamba](https://github.com/mamba-org/mamba) to speed up environment creation. We created a [guide](/docs/create_conda_env.md) for conda environment set up as well.
-
-## **ElasticBLAST** <a name="bl"></a>
-The NCBI team has written a version of BLAST for the cloud called ElasticBLAST, and you can read all about it [here](https://blast.ncbi.nlm.nih.gov/doc/elastic-blast/index.html). Essentially, ElasticBLAST helps you submit BLAST jobs to AWS Batch and write the results back to S3. Feel free to experiment with the example tutorial in Cloud Shell, or try our [notebook version](/tutorials/notebooks/ElasticBLAST/run_elastic_blast.ipynb).
 
 ## **Long Read Sequence Analysis** <a name="Long"></a>
 Long read DNA sequence analysis involves analyzing sequencing reads typically longer than 10 thousand base pairs (bp) in length, compared with short read sequencing where reads are about 150 bp in length.
