@@ -74,7 +74,7 @@ In terms of cost, the best way to estimate costs is to use the Azure pricing cal
 
 ## **Cost Optimization** <a name="COST"></a>
 Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for details on how to monitor costs, set up budget alerts, and cost-benchmark specific analyses using resource tagging. In addition, here are a few tips to help you stay on budget.
-+ Configure auto-shutdown on your Virtual Machines in Azure following [this guide](https://learn.microsoft.com/en-us/azure/devtest-labs/devtest-lab-auto-shutdown). This will prevent you from accidentally leaving instances running.
++ Configure auto-shutdown on your Virtual Machines in Azure following [this guide](/docs/auto-shutdown-instance.md). This will prevent you from accidentally leaving instances running.  Further information can be found [here](https://learn.microsoft.com/en-us/azure/devtest-labs/devtest-lab-auto-shutdown)
 + Make sure you shut down resources after using them to reduce costs.
 + Ensure that you are using all the compute resources you have provisioned. If you spin up a VM with 16 CPUs, you can see if they are all being utilized using. If you are only really using 8 CPUs for example, then just change your machine size to fit the analysis. You can also view our CPU optimization guide [here]
 
