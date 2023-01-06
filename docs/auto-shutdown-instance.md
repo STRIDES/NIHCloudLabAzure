@@ -7,14 +7,14 @@
 
 There are 2 main ways to manage shutdowns for your Azure Virtual Machines.
 
-<ul>
-<li>Auto-Shutdown</li>
+1. [Auto-Shutdown](#AS)
         - This is built into each virtual machine and gives you the ability to set a shutdown time, timezone, and notification options.
-<li>Start/Stop VMs - Azure Automation</li>
+  
+2. [Start/Stop VMs - Azure Automation](#SSVM)
         - This is a solution based on Azure Automation and gives you more flex
-</ul>
 
-### Auto-Shutdown:
+
+### Auto-Shutdown:<a name="AS"></a>
 1. First login to Azure Portal
 2. Go to Virtual Machines (or if that option isn't available, use the search bar to find and open Virtual Machines)
 3. Next select a Virtual Machine
@@ -32,7 +32,7 @@ There are 2 main ways to manage shutdowns for your Azure Virtual Machines.
 <img src="/docs/images/Auto-shutdown-options.png" width="1275" height="439">
 
 
-### Start/Stop VMs - Azure Automation:
+### Start/Stop VMs - Azure Automation:<a name="SSVM"></a>
 Content to be added
 
 https://learn.microsoft.com/en-us/azure/azure-functions/start-stop-vms/overview
