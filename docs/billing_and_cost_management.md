@@ -10,7 +10,7 @@ This guide aims to answer these questions.
 - [Managing Subscription Costs](#managing-subscription-costs)
 - [Billing](#billing)
 
-## Resource Tagging<a name="RT">asdas</a>
+## Resource Tagging<a name="RT"></a>
 
 One of the first steps to understanding costs is resource naming and tagging. Billing reports will be aggregated across time and services, and it can be hard to figure out how much did that variant calling pipeline cost to run? 
 Tagging allows you attach metadata to resources that you can later filter for in Billing reports. Azure has a Resource Naming and Tagging decision guide [here](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2Fazure%2Fazure-resource-manager%2Fmanagement%2Ftoc.json).
