@@ -6,11 +6,11 @@ Understanding how to manage your costs can be difficult in the cloud. For one th
 Further, some Cloud Lab users are interested in understanding how to forecast cloud costs for a larger project. For example, if you want to understand the cost of calling somatic variants on 100 samples, but in Cloud Lab you plan to benchmark using five samples. How would you go about doing that? 
 This guide aims to answer these questions. 
 
-- [Resource Tagging](#RT)
-- [Managing Subscription Costs](#MSC)
-- [Billing](#BG)
+- [Resource Tagging](#resource-tagging)
+- [Managing Subscription Costs](#managing-subscription-costs)
+- [Billing](#billing)
 
-## Resource Tagging<a name="RT"></a>
+## Resource Tagging<a name="RT">asdas</a>
 
 One of the first steps to understanding costs is resource naming and tagging. Billing reports will be aggregated across time and services, and it can be hard to figure out how much did that variant calling pipeline cost to run? 
 Tagging allows you attach metadata to resources that you can later filter for in Billing reports. Azure has a Resource Naming and Tagging decision guide [here](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2Fazure%2Fazure-resource-manager%2Fmanagement%2Ftoc.json).
