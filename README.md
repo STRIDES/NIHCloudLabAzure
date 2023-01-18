@@ -73,16 +73,10 @@ Many Cloud Lab users are interested in understanding how to estimate the price o
 In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect..
 
 ## **Cost Optimization** <a name="COST"></a>
-Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for details on how to monitor costs, set up budget alerts, and cost-benchmark specific analyses using resource tagging. In addition, here are a few tips to help you stay on budget.
-+ Configure auto-shutdown on your Virtual Machines in Azure following [this guide](/docs/auto-shutdown-instance.md). This will prevent you from accidentally leaving instances running.  Further information can be found [here](https://learn.microsoft.com/en-us/azure/devtest-labs/devtest-lab-auto-shutdown)
-+ Make sure you shut down resources after using them to reduce costs.
-+ Ensure that you are using all the compute resources you have provisioned. If you spin up a VM with 16 CPUs, you can see if they are all being utilized using. If you are only really using 8 CPUs for example, then just change your machine size to fit the analysis. You can also view our CPU optimization guide [here]
-
+Azure related cost management guide
 
 ## **Getting Support** <a name="SUP"></a>
-As part of your participation in Cloud Lab you will be added to the Cloud Lab Teams channel where you can chat with other Cloud Lab users, and gain support from the Cloud Lab team. For NIH Intramural users, you can submit a support ticket to Service Now. For issues related to the cloud environment, feel free to request [Azure Enterprise Support](/docs/request_enterprise_support.md). For issues related to scientific use cases, such as, how can I best run an RNAseq pipeline in Azure, email us at `CloudLab@nih.gov`.
-
-If you have a question about Quota Limits, visit our [documentation](/docs/service_quotas.md) on how to request a limit increase. 
+ As part of your participation in Cloud Lab you will be added to the Cloud Lab Teams channel where you can chat with other Cloud Lab users, and gain support from the Cloud Lab team. For NIH Intramural users, you can submit a support ticket to Service Now.
 
 ## **Additional Training** <a name="TR"></a>
 This repo only scratches the surface of what can be done in the cloud. If you are interested in additional cloud training opportunities please visit the [STRIDES Training page](https://cloud.nih.gov/training/). For more information on the STRIDES Initiative at the NIH, visit [our website](https://cloud.nih.gov) or contact the NIH STRIDES team at STRIDES@nih.gov for more information.
