@@ -6,7 +6,11 @@ Understanding how to manage your costs can be difficult in the cloud. For one th
 Further, some Cloud Lab users are interested in understanding how to forecast cloud costs for a larger project. For example, if you want to understand the cost of calling somatic variants on 100 samples, but in Cloud Lab you plan to benchmark using five samples. How would you go about doing that? 
 This guide aims to answer these questions. 
 
-## 1. Resource Tagging
+- [Resource Tagging](#resource-tagging)
+- [Managing Subscription Costs](#managing-subscription-costs)
+- [Billing](#billing)
+
+## Resource Tagging<a name="RT">asdas</a>
 
 One of the first steps to understanding costs is resource naming and tagging. Billing reports will be aggregated across time and services, and it can be hard to figure out how much did that variant calling pipeline cost to run? 
 Tagging allows you attach metadata to resources that you can later filter for in Billing reports. Azure has a Resource Naming and Tagging decision guide [here](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2Fazure%2Fazure-resource-manager%2Fmanagement%2Ftoc.json).
@@ -49,20 +53,9 @@ You can add a tag to pretty much any resource but let's look at a few examples. 
    
     <img src="/docs/images/view-resources-by-tag.png" width="600" height="431">
 
-## 2. Explore Billing Reports
-You can find a lot of billing tools by searching for billing in the bar at the top of your console. 
-
-**Next text to put in**
-
-## 3. Create Budget Alerts
-One way to help stay on budget is to create budget alerts. You can do this using the *Budgets* tool within *Cost Management*.
-
-**Next text to put in**
 
 
-*******
-
-##  Managing Subscription Costs
+##  Managing Subscription Costs<a name="MSC"></a>
 
 The left panel on the subscription home screen lists your options for manageing costs within your subscription. Overview gives you a snapshot of your current and predicted future spending rates.  
 
@@ -88,7 +81,7 @@ Click on **Advisor Recommendations** This will take you to a screen where you ca
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/116583981/207887409-cb6ec273-1495-430e-8129-3b16253112c3.png">
 
-## Billing
+## Billing<a name="BG"></a>
 
 Further down on the left panel is another subtitle called "Billing". Under this subtitle Click on **Billing Profile Invoices** to view both current and past invoices. You can click on the link **Learn more about billing profiles** to get more information on billing account. 
 
