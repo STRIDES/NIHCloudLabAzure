@@ -73,7 +73,7 @@ Many Cloud Lab users are interested in understanding how to estimate the price o
 In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect..
 
 ## **Cost Optimization** <a name="COST"></a>
-Azure related cost management guide
+Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for details on how to monitor costs, set up budget alerts, and cost-benchmark specific analyses using resource tagging. In addition, here are a few tips to help you stay on budget.
 
 ## **Getting Support** <a name="SUP"></a>
  As part of your participation in Cloud Lab you will be added to the Cloud Lab Teams channel where you can chat with other Cloud Lab users, and gain support from the Cloud Lab team. For NIH Intramural users, you can submit a support ticket to Service Now.
