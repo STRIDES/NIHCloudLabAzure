@@ -32,4 +32,31 @@ KubeFlow installation
 
     -Unpack the tar ball
         -tar -xvf kfctl_v1.2.0_<platform>.tar.gz
+
+Run the following commands to set up and deploy Kubeflow in order. The code below includes an optional command to add the binary  kfctl to your path. If you don’t add the binary to your path, you must use the full path to the kfctl binary each time you run it.
+
+
+    - export PATH=$PATH:"<path-to-kfctl>
+
+    - export KF_NAME=<your choice of name for the Kubeflow deployment>
+
+    - export BASE_DIR=<path to a base directory>
         
+    - export KF_DIR=${BASE_DIR}/${KF_NAME}
+
+    - export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.2-branch/kfdef/kfctl_k8s_istio.v1.2.0.yaml"
+
+    - mkdir -p ${KF_DIR}
+    - cd ${KF_DIR}
+    - kfctl apply -V -f ${CONFIG_URI}
+
+
+Run this command to check that the resources have been deployed correctly in namespace kubeflow
+
+    - kubectl get all -n kubeflow
+
+Open the KubeFlow Dashboard , the default installation does not create an external endpoint but you can use port-forwarding to visit your cluster. Run the following command
+
+    - kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+
+Next, open http://localhost:8080 in your browser.
