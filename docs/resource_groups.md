@@ -1,3 +1,13 @@
+- [Guide to Azure Resource Groups](#guide-to-azure-resource-groups)
+    - [Logical Grouping](#logical-grouping)
+    - [Life cycle](#life-cycle)
+    - [Authorization](#authorization)
+  - [Resource Group Tutorials](#resource-group-tutorials)
+    - [Create Resource Group](#create-resource-group)
+    - [List Resource Groups](#list-resource-groups)
+    - [Open Resource Group](#open-resource-group)
+    - [Delete Resource Groups](#delete-resource-groups)
+    - [Move to another resource group](#move-to-another-resource-group)
 
 # Guide to Azure Resource Groups
 Resource groups are a fundamental element of the Azure platform. A resource group is a logical container for resources deployed on Azure. These resources are anything you create in an Azure subscription like VMs, Azure Application Gateway instances, and Azure Cosmos DB instances. All resources must be in a resource group, and a resource can only be a member of a single resource group. Many resources can be moved between resource groups with some services having specific limitations or requirements to move. Resource groups can't be nested. Before any resource can be provisioned, you need a resource group for it to be placed in.
@@ -13,18 +23,9 @@ If you delete a resource group, all resources contained within it are also delet
 ### Authorization
 Resource groups are also a scope for applying role-based access control (RBAC) permissions. By applying RBAC permissions to a resource group, you can ease administration and limit access to allow only what's needed.
 
-## Resource Group Tutorials
-- [Guide to Azure Resource Groups](#guide-to-azure-resource-groups)
-    - [Logical Grouping](#logical-grouping)
-    - [Life cycle](#life-cycle)
-    - [Authorization](#authorization)
-  - [Resource Group Tutorials](#resource-group-tutorials)
-    - [Create Resource Group](#create-resource-group)
-    - [List Resource Groups](#list-resource-groups)
-    - [Open Resource Group](#open-resource-group)
-    - [Delete Resource Groups](#delete-resource-groups)
-    - [Move to another resource group](#move-to-another-resource-group)
+---------------------------------
 
+## Resource Group Tutorials
 ### Create Resource Group<a name="crg"></a>
 1. Sign in to the Azure portal.
 2. Select Resource groups
@@ -52,7 +53,7 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
 1. Sign in to the Azure portal.
 2. To list the resource groups, select Resource groups
 
-<img alt="image" src="/docs/images/manage-resource-groups-list-groups.png">
+<img alt="image" src="/docs/images/manage manage-resource-groups-list-groups.png">
 
 3. To customize the information displayed for the resource groups, select Edit columns.
 
