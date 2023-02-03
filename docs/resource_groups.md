@@ -24,7 +24,6 @@ If you delete a resource group, all resources contained within it are also delet
 Resource groups are also a scope for applying role-based access control (RBAC) permissions. By applying RBAC permissions to a resource group, you can ease administration and limit access to allow only what's needed.
 
 ---------------------------------
-
 ## Resource Group Tutorials
 ### Create Resource Group<a name="crg"></a>
 1. Sign in to the Azure portal.
@@ -53,7 +52,7 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
 1. Sign in to the Azure portal.
 2. To list the resource groups, select Resource groups
 
-<img alt="image" src="/docs/images/manage manage-resource-groups-list-groups.png">
+<img alt="image" src="/docs/images/manage-resource-groups-list-groups.png">
 
 3. To customize the information displayed for the resource groups, select Edit columns.
 
