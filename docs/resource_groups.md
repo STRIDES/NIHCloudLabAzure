@@ -23,6 +23,8 @@ If you delete a resource group, all resources contained within it are also delet
 ### Authorization
 Resource groups are also a scope for applying role-based access control (RBAC) permissions. By applying RBAC permissions to a resource group, you can ease administration and limit access to allow only what's needed.
 
+Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal).
+
 ---------------------------------
 ## Resource Group Tutorials
 ### Create Resource Group<a name="crg"></a>
@@ -45,7 +47,7 @@ Resource groups are also a scope for applying role-based access control (RBAC) p
 
 <img alt="image" src="/docs/images/manage-resource-groups-add-group-go-to-resource-group.png">
 
-Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups).
+Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups).
 
 
 ###  List Resource Groups<a name="lrg"></a>
@@ -56,14 +58,14 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
 
 3. To customize the information displayed for the resource groups, select Edit columns.
 
-Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#list-resource-groups).
+Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#list-resource-groups).
 
 ### Open Resource Group<a name="org"></a>
 1. Sign in to the Azure portal.
 2. Select Resource groups.
 3. Select the resource group you want to open.
    
-Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#open-resource-groups).
+Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#open-resource-groups).
 
 ###  Delete Resource Groups<a name="drg"></a>
 1. Open the resource group you want to delete. See Open resource groups.
@@ -71,7 +73,7 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
    
 <img alt="image" src="/docs/images/delete-group.png">
 
-Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#delete-resource-groups).
+Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#delete-resource-groups).
 
 
 ###  Move to another resource group<a name="mtarg"></a>
@@ -106,7 +108,7 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
 
 <img alt="image" src="/docs/images/view-notification.png">
 
-Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription).
+Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription).
 
 
 
