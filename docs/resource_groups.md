@@ -52,7 +52,7 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
 1. Sign in to the Azure portal.
 2. To list the resource groups, select Resource groups
 
-<img alt="image" src="/docs/images/manage-resource-groups-list-groups.png.png">
+<img alt="image" src="/docs/images/manage-resource-groups-list-groups.png">
 
 3. To customize the information displayed for the resource groups, select Edit columns.
 
@@ -69,7 +69,7 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
 1. Open the resource group you want to delete. See Open resource groups.
 2. Select Delete resource group.
    
-<img alt="image" src="docs/images/delete-group.png">
+<img alt="image" src="/docs/images/delete-group.png">
 
 Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#delete-resource-groups).
 
@@ -78,11 +78,11 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
 1. To move resources, select the resource group that contains those resources.
 2. Select the resources you want to move. To move all of the resources, select the checkbox at the top of list. Or, select resources individually.
 
-<img alt="image" src="docs/images/select-resources-to-move.png">
+<img alt="image" src="/docs/images/select-resources-to-move.png">
 
 3. Select the Move button.
 
-<img alt="image" src="docs/images/select-move.png">
+<img alt="image" src="/docs/images/select-move.png">
 
 4. This button gives you three options:
     - Move to a new resource group.
@@ -91,20 +91,20 @@ Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/az
 5. Select whether you're moving the resources to a new resource group or a new subscription.
 6. The source resource group is automatically set. Specify the destination resource group. If you're moving to a new subscription, also specify the subscription. Select Next.
 
-<img alt="image" src="docs/images/select-destination-group.png">
+<img alt="image" src="/docs/images/select-destination-group.png">
 
 7. The portal validates that the resources can be moved. Wait for validation to complete.
 
-<img alt="image" src="docs/images/validation.png">
+<img alt="image" src="/docs/images/validation.png">
 
 8. When validation completes successfully, select Next.
 9. Acknowledge that you need to update tools and scripts for these resources. To start moving the resources, select Move.
 
-<img alt="image" src="docs/images/acknowledge-change.png">
+<img alt="image" src="/docs/images/acknowledge-change.png">
 
 10. When the move has completed, you're notified of the result.
 
-<img alt="image" src="docs/images/view-notification.png">
+<img alt="image" src="/docs/images/view-notification.png">
 
 Direct Microsoft documentation link [here.](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription).
 
