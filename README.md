@@ -12,6 +12,7 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 
 + [Getting Started](#gs)
 + [Overview](#ov)
++ [Resource Groups](#rg)
 + [Command Line Tools](#cli)
 + [Azure Marketplace](#mark)
 + [Ingest and Store Data](#sto)
@@ -33,6 +34,13 @@ You can learn a lot of what is possible on Azure in the Azure Getting Started [T
 
 ## **Overview** <a name="ov"></a>
 There are three primary ways you can run analyses using Azure: using **Virtual Machines**, **Jupyter Notebook instances**, and **Serverless services**. We give a breif overview of each of these here and go into more detail in the sections below. [Virtual Machines](https://azure.microsoft.com/en-us/products/virtual-machines/) are like desktop computers, but you access them through the cloud console and you get to pick the operating system and the specifications such as CPU and memory. In Azure, these virtual machines are called VMs for short. Jupyter Notebook instances are virtual machines with a preconfigured Jupyter Lab. On Azure these are run through [Azure Machine Learning](https://azure.microsoft.com/en-us/products/machine-learning/#product-overview), which is also Azure's ML/AI platform. You decide what kind of virtual machine you want to 'spin up' and then you can run Juptyer notebooks on that virtual machine. Finally, Serverless services are services that allow you to run things, an analysis, an app, a website, and not have to deal with your own servers (VMs). There are still servers running somewhere, you just don't have to manage them. All you have to do is call a command that runs your analysis in the background, and copies the output files to a storage bucket. [Azure Batch](https://learn.microsoft.com/en-us/azure/batch/batch-technical-overview) is a common example. 
+
+## **Resource Groups** <a name="rg"></a>
+A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. Generally, add resources that share the same lifecycle to the same resource group so you can easily deploy, update, and delete them as a group.  
+
+The resource group stores metadata about the resources. Therefore, when you specify a location for the resource group, you are specifying where that metadata is stored. For compliance reasons, you may need to ensure that your data is stored in a particular region.
+
+To see more information on how to manage resource groups, visit this link [Managing Resource Groups](/docs/resource_groups.md).
 
 ## **Command Line Tools** <a name="cli"></a>
 Most tasks in Azure can be done without the command line, but the command line tools will generally make your life easier in the long run. Command line interface (CLI) tools are those that you use directly in a terminal/shell as opposed to clicking within the Azure portals graphical user interface (GUI). The primary tool you will need is the Azure CLI, which will allow you to interact with Virtual Machines (VMs) or Storage Accounts (see below) from your local terminal. Instructions for the CLI can be found [here](https://learn.microsoft.com/en-us/cli/azure/). If you are unable to install locally, you can use all the CLI commands from within VM and Machine Learning instances, or from the [Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/overview).
