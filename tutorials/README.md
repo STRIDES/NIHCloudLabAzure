@@ -16,6 +16,8 @@
 
 ## **Microsoft Genomics** <a name="Bio"></a>
 
+https://microsoft.github.io/Genomics-Community/index.html
+
 **needed updates**
 + We need to add a description here about MS Genomics
 + Need to update autoshutdown docs for the disclaimer below
@@ -35,6 +37,9 @@ Genome wide association studies, or GWAS, are statistical analyses that look for
 
 ## **Medical Imaging Analysis** <a name="IM"></a>
 +Need to add imaging analysis
+
+https://github.com/Azure/medical-imaging
+
 Medical imaging analysis requires the analysis of large image files and often requires elastic storage and accelerated computing.
 - Most medical imaging analyses are done using notebooks, so we would recommend accessing this [Jupyter Notebook](/tutorials/notebooks/SpleenLiverSegmentation) and cloning it into SageMaker. The tutorial walks through image segmentation.
 - AWS has a nice intro to Machine Learning in a SageMaker notebook that predicts breast cancer from features extracted from image data, which walks you through both image analysis and some of the ML functionality of SageMaker, the notebook is found [here](https://github.com/aws/amazon-sagemaker-examples/blob/main/introduction_to_applying_machine_learning/breast_cancer_prediction/Breast%20Cancer%20Prediction.ipynb).
