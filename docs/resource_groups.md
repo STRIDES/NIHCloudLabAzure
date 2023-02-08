@@ -1,3 +1,10 @@
+# Guide to Azure Resource Groups
+Resource groups are a fundamental element of the Azure platform. A resource group is a logical container for resources deployed on Azure. These resources are anything you create in an Azure subscription like VMs, Azure Application Gateway instances, and Azure Cosmos DB instances. All resources must be in a resource group, and a resource can only be a member of a single resource group. Many resources can be moved between resource groups with some services having specific limitations or requirements to move. Resource groups can't be nested. Before any resource can be provisioned, you need a resource group for it to be placed in.
+
+<img alt="image" src="/docs/images/ResourceGroups1.png">
+
+## Overview of Page Contents
+
 - [Guide to Azure Resource Groups](#guide-to-azure-resource-groups)
     - [Logical Grouping](#logical-grouping)
     - [Life cycle](#life-cycle)
@@ -8,12 +15,7 @@
     - [Open Resource Group](#open-resource-group)
     - [Delete Resource Groups](#delete-resource-groups)
     - [Move to another resource group](#move-to-another-resource-group)
-
-# Guide to Azure Resource Groups
-Resource groups are a fundamental element of the Azure platform. A resource group is a logical container for resources deployed on Azure. These resources are anything you create in an Azure subscription like VMs, Azure Application Gateway instances, and Azure Cosmos DB instances. All resources must be in a resource group, and a resource can only be a member of a single resource group. Many resources can be moved between resource groups with some services having specific limitations or requirements to move. Resource groups can't be nested. Before any resource can be provisioned, you need a resource group for it to be placed in.
-
-<img alt="image" src="/docs/images/ResourceGroups1.png">
-
+ 
 ### Logical Grouping
 Resource groups exist to help manage and organize your Azure resources. By placing resources of similar usage, type, or location in a resource group, you can provide order and organization to resources you create in Azure. Logical grouping is the aspect that you're most interested in here, because there's disorder among our resources.
 
