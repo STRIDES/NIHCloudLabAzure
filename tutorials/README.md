@@ -1,4 +1,4 @@
-# AWS Tutorial Resources
+# Microsoft Azure Tutorial Resources
 
 ---------------------------------
 ## Overview of Page Contents
@@ -15,6 +15,8 @@
 + [Open Data](#OPEN)
 
 ## **Microsoft Genomics** <a name="Bio"></a>
+
+https://microsoft.github.io/Genomics-Community/index.html
 
 **needed updates**
 + We need to add a description here about MS Genomics
@@ -35,6 +37,9 @@ Genome wide association studies, or GWAS, are statistical analyses that look for
 
 ## **Medical Imaging Analysis** <a name="IM"></a>
 +Need to add imaging analysis
+
+https://github.com/Azure/medical-imaging
+
 Medical imaging analysis requires the analysis of large image files and often requires elastic storage and accelerated computing.
 - Most medical imaging analyses are done using notebooks, so we would recommend accessing this [Jupyter Notebook](/tutorials/notebooks/SpleenLiverSegmentation) and cloning it into SageMaker. The tutorial walks through image segmentation.
 - AWS has a nice intro to Machine Learning in a SageMaker notebook that predicts breast cancer from features extracted from image data, which walks you through both image analysis and some of the ML functionality of SageMaker, the notebook is found [here](https://github.com/aws/amazon-sagemaker-examples/blob/main/introduction_to_applying_machine_learning/breast_cancer_prediction/Breast%20Cancer%20Prediction.ipynb).
@@ -44,7 +49,7 @@ Medical imaging analysis requires the analysis of large image files and often re
 ## **RNAseq** <a name="RNA"></a>
 RNAseq is a technique for quantifying gene levels of gene expression across the genome. 
 **Update how to run on Azure**
-- You can run this [Nextflow tutorial](https://nf-co.re/rnaseq/3.7) for RNAseq a variety of ways on AWS. Following the instructions outlined above, you could use EC2, SageMaker, or AWS Batch(/docs/Genomics_Workflows.md).
+- You can run this [Nextflow on Azure tutorial](https://microsoft.github.io/Genomics-Community/mydoc_nextflow.html) for RNAseq a variety of ways on Azure. Following the instructions outlined above, you could use Virtual Machines, Azure Machine Learning, or Azure Batch. for more information on Microsoft Genomics check [here](/docs/Genomics_Workflows.md).
 - **Test this notebook in Azure ML**
 - For a notebook version of a complete RNAseq pipeline from Fastq to Salmon quantification from the King Lab of the University of Maine INBRE use this [notebook](/tutorials/notebooks/rnaseq-myco-tutorial-main), which we re-wrote to work on AWS. You can also use any of Ben King's excellent [notebooks](https://github.com/King-Laboratory/rnaseq-myco-notebook) as well, but they are originally written for GCP.
 
