@@ -18,6 +18,8 @@
 
 https://microsoft.github.io/Genomics-Community/index.html
 
+Cromwell on Azure https://github.com/microsoft/CromwellOnAzure
+
 **needed updates**
 + We need to add a description here about MS Genomics
 + Need to update autoshutdown docs for the disclaimer below
