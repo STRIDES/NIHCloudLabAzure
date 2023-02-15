@@ -19,6 +19,7 @@
 https://microsoft.github.io/Genomics-Community/index.html
 
 Cromwell on Azure https://github.com/microsoft/CromwellOnAzure
+The common workflows for Cromwell can be found here https://github.com/microsoft/CromwellOnAzure#run-common-workflows
 
 **needed updates**
 + We need to add a description here about MS Genomics
