@@ -21,6 +21,8 @@ https://microsoft.github.io/Genomics-Community/index.html
 Cromwell on Azure https://github.com/microsoft/CromwellOnAzure
 The common workflows for Cromwell can be found here https://github.com/microsoft/CromwellOnAzure#run-common-workflows
 
+How to interact with genomics tool https://learn.microsoft.com/en-us/azure/genomics/quickstart-run-genomics-workflow-portal
+
 **needed updates**
 + We need to add a description here about MS Genomics
 + Need to update autoshutdown docs for the disclaimer below
