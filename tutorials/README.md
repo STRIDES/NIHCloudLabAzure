@@ -4,13 +4,12 @@
 ## Overview of Page Contents
 
 + [Microsoft Genomics](#bio)
-+ [Clinical Informatics(#ci)
++ [Clinical Informatics](#ci)
 + [Download SRA Data](#sra)
 + [GWAS](#gwas)
 + [Medical Imaging](#mi)
 + [RNAseq](#rna)
 + [scRNAseq](#sc)
-+ [BLAST](#bl)
 + [Long Read Sequencing Analysis](#long)
 + [AI/ML Pipeline](#ai)
 + [Open Data](#open)
