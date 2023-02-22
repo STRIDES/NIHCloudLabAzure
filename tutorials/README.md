@@ -72,6 +72,11 @@ InnerEye-DeepLearning (IE-DL) is a toolbox that Microsoft developed for easily t
 •	Any PyTorch Lightning model, via a bring-your-own-model setup.
 This project exists in a separate GitHub repository available to [here](https://github.com/microsoft/InnerEye-DeepLearning).
 
+Azure Machine Learning
+Azure Machine Learning provides a cloud service for accelerating and managing the machine learning project lifecycle. You can use it to train and deploy models, and manage MLOps. One of the use cases for Azure Machine Learning is medical imaging. You can use it to analyze medical images and extract insights from them.
+A separate [repository](https://github.com/Azure/medical-imaging) exists to provide demonstration use-cases and Python notebooks for researchers to explore Azure Machine Learning functionality
+
+
 ## **RNAseq** <a name="rna"></a>
 RNAseq is a technique for quantifying gene levels of gene expression across the genome. 
 **Update how to run on Azure**
@@ -93,6 +98,10 @@ Oxford Nanopore has a pretty complete offering of notebook tutorials for handlin
 **Need to update to azure ML language**
 Artificial intelligence and machine learning algorithms are being applied to a variety of biomedical research questions, ranging from image classification to genomic variant calling. AWS is moving all AI/ML workflows to SageMaker, the Juptyer notebook platform we have used a few times already. AWS has a very general tutorial [here](https://aws.amazon.com/getting-started/hands-on/build-train-deploy-machine-learning-model-sagemaker/) on how to build out an AI pipeline on Sagememaker. You can also look at the [breast cancer tutorial](https://github.com/aws/amazon-sagemaker-examples/blob/main/introduction_to_applying_machine_learning/breast_cancer_prediction/Breast%20Cancer%20Prediction.ipynb) from the imaging section above for a more applied example. 
 You can also submit a training job to SageMaker, and have your final model uploaded to S3 using [PyTorch](https://sagemaker.readthedocs.io/en/stable/frameworks/pytorch/using_pytorch.html#train-a-model-with-pytorch), [Tensorflow](https://docs.aws.amazon.com/sagemaker/latest/dg/tf.html) or [Apache MXNet](https://docs.aws.amazon.com/sagemaker/latest/dg/mxnet.html).
+
+Federated Learning
+The Federated Learning paradigm gained a lot of interest in the healthcare community, because it enables model training on all available data, without sharing data between institutions. NVIDIA Flare is a domain-agnostic, open-source and extensible SDK for federated learning. A separate [GitHub repository](https://github.com/Azure/medical-imaging/tree/main/federated-learning) describes how NVIDIA Flare can be run on Azure.
+
 
 ## **Open Data** <a name="open"></a>
 **Update to Azure Open Data Content**
