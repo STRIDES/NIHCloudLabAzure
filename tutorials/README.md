@@ -31,13 +31,12 @@ How to interact with genomics tool https://learn.microsoft.com/en-us/azure/genom
  **Please note, GPU machines cost more than most CPU machines, so be sure to shut these machines down after use, or use the auto shutdown feature [lifecycle configuration](/docs/auto-shutdown-instance.md). You may also encounter service quotas to protect you from the accidental use of expensive machine types. If that happens, and you still want to use a certain instance type, follow these [instructions](/docs/service_quotas.md).**
  
  ## **Clinical Informatics with FHIR** <a name="ci"></a>
- Azure Health Data Services is a set of services that enables you to store, process, and analyze medical data in Microsoft Azure. These services are designed to help organizations quickly connect disparate health data sources and formats, such as structured, imaging, and device data, and normalize it to be persisted in the cloud. 
-At its core, Azure Health Data Services possesses the ability to transform and ingest data into FHIR (Fast Healthcare Interoperability Resources) format. This allows you to transform health data from legacy formats, such as HL7v2 or CDA, or from high-frequency IoT data in device proprietary formats to FHIR. This makes it easier to connect data stored in Azure Health Data Services with services across the Azure ecosystem, like Azure Synapse Analytics, and Azure Machine Learning (Azure ML).
+ Azure Health Data Services is a set of services that enables you to store, process, and analyze medical data in Microsoft Azure. These services are designed to help organizations quickly connect disparate health data sources and formats, such as structured, imaging, and device data, and normalize it to be persisted in the cloud. At its core, Azure Health Data Services possesses the ability to transform and ingest data into FHIR (Fast Healthcare Interoperability Resources) format. This allows you to transform health data from legacy formats, such as HL7v2 or CDA, or from high-frequency IoT data in device proprietary formats to FHIR. This makes it easier to connect data stored in Azure Health Data Services with services across the Azure ecosystem, like Azure Synapse Analytics, and Azure Machine Learning (Azure ML).
+
 Azure Health Data Services includes support for multiple health data standards for the exchange of structured data, and the ability to deploy multiple instances of different service types (FHIR, DICOM, and MedTech) that seamlessly work with one another. Services deployed within a workspace also share a compliance boundary and common configuration settings. The product scales automatically to meet the varying demands of your workloads, so you spend less time managing infrastructure and more time generating insights from health data. 
-Leveraging Azure Synapse Analytics to Analyze EHR Data
+
 Copying healthcare data stored in Azure FHIR Server to Synapse Analytics allows researchers to leverage a cloud-scale data warehousing and analytics tool to extract insights from their data as well as build scalable research pipelines. 
-For information on how to perform this export and downstream analytics, please visit this repository. 
-![image](https://user-images.githubusercontent.com/102973993/220756340-bb6e6afc-9211-4fcd-97c9-9ac9ffc5f99f.png)
+For information on how to perform this export and downstream analytics, please visit [this repository](https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/healthcare-apis/fhir/copy-to-synapse.md). 
 
 
 ## **Download Data From the Sequence Read Archive (SRA)** <a name="sra"></a>
@@ -53,13 +52,25 @@ Genome wide association studies, or GWAS, are statistical analyses that look for
 ## **Medical Imaging Analysis** <a name="mi"></a>
 +Need to add imaging analysis
 
-https://github.com/Azure/medical-imaging
+Microsoft Azure offers cloud-based medical imaging analysis capabilities through its Azure Healthcare APIs and Azure Medical Imaging solutions. Azure's DICOM Server allows for the secure storage, management, and processing of medical images in the cloud, using industry standard DICOM (Digital Imaging and Communications in Medicine) format. The DICOM Server provides features like high availability, disaster recovery, and scalable storage options, making it an ideal solution pipelines that want to store, manage, and analyze large amounts of medical imaging data. In addition, the server integrates with other Azure services like Azure Machine Learning, allowing healthcare organizations to use advanced machine learning algorithms for image analysis tasks such as object detection, segmentation, and classification. 
+Microsoft has several medical imaging notebooks that showcase different medical imaging use-cases on Azure Machine Learning. These notebooks demonstrate various data science techniques such as manual model development with PyTorch, automated machine learning, and MLOPS-based examples for automating the machine learning lifecycle in medical use cases, including retraining.
+These notebooks are available [here](https://github.com/Azure/medical-imaging).
 
 Medical imaging analysis requires the analysis of large image files and often requires elastic storage and accelerated computing.
 - Most medical imaging analyses are done using notebooks, so we would recommend accessing this [Jupyter Notebook](/tutorials/notebooks/SpleenLiverSegmentation) and cloning it into SageMaker. The tutorial walks through image segmentation.
 - AWS has a nice intro to Machine Learning in a SageMaker notebook that predicts breast cancer from features extracted from image data, which walks you through both image analysis and some of the ML functionality of SageMaker, the notebook is found [here](https://github.com/aws/amazon-sagemaker-examples/blob/main/introduction_to_applying_machine_learning/breast_cancer_prediction/Breast%20Cancer%20Prediction.ipynb).
 - You can also view this [AWS blog](https://aws.amazon.com/blogs/machine-learning/annotate-dicom-images-and-build-an-ml-model-using-the-monai-framework-on-amazon-sagemaker/) on how to annotate DICOM images and build a custom AI model with the data.
 - You can learn to deidentify medical images following this AWS [tutorial](https://aws.amazon.com/blogs/machine-learning/de-identify-medical-images-with-the-help-of-amazon-comprehend-medical-and-amazon-rekognition/).
+
+DICOMCast
+DICOMcast provides the ability to synchronize the data from a DICOM service to a FHIR service, which allows researchers to integrate clinical and imaging data. DICOMcast expands the use cases for health data by supporting both a streamlined view of longitudinal patient data and the ability to effectively create cohorts for medical studies, analytics, and machine learning. For more information on how to utilize DICOMcast please visit Microsoft’s [documentation](https://learn.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-cast-overview) or the open-source [GitHub repository](https://github.com/microsoft/dicom-server/blob/main/docs/quickstarts/deploy-dicom-cast.md).
+
+Project InnerEye
+InnerEye-DeepLearning (IE-DL) is a toolbox that Microsoft developed for easily training deep learning models on 3D medical images. Simple to run both locally and in the cloud with AzureML, it allows users to train and run inference on the following:
+•	Segmentation models.
+•	Classification and regression models.
+•	Any PyTorch Lightning model, via a bring-your-own-model setup.
+This project exists in a separate GitHub repository available to [here](https://github.com/microsoft/InnerEye-DeepLearning).
 
 ## **RNAseq** <a name="rna"></a>
 RNAseq is a technique for quantifying gene levels of gene expression across the genome. 
