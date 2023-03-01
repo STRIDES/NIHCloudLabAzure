@@ -16,19 +16,12 @@
 
 ## **Microsoft Genomics** <a name="bio"></a>
 
-https://microsoft.github.io/Genomics-Community/index.html
+Microsoft has genomics-related offerings that will be useful to some Cloud Lab users. For a broad overview, visit the [Microsof Genomics Community site](https://microsoft.github.io/Genomics-Community/index.html). You can also get an overview of different execution options from [this blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/genomic-workflow-managers-on-microsoft-azure/ba-p/3747052), and a detailed analysis for Nextflow with AWS Batch at [this blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/rna-sequencing-analysis-on-azure-using-nextflow-configuration/ba-p/3738854). We highlight a few key services here: 
++ [Genomics Notebooks](https://github.com/microsoft/genomicsnotebook): These example notebooks highlight many common use cases in genomics research.
++ [Cromwell on Azure](https://github.com/microsoft/CromwellOnAzure): Documentation on how to spin up the resources needed to run Cromwell on Azure. 
++ [Microsoft Genomics](https://learn.microsoft.com/en-us/azure/genomics/quickstart-run-genomics-workflow-portal): Run BWA and GATK using this managed service.
++ [Nextflow on Azure](https://microsoft.github.io/Genomics-Community/mydoc_nextflow.html): Run Nextflow workflows using Azure Batch. 
 
-Cromwell on Azure https://github.com/microsoft/CromwellOnAzure
-The common workflows for Cromwell can be found here https://github.com/microsoft/CromwellOnAzure#run-common-workflows
-
-How to interact with genomics tool https://learn.microsoft.com/en-us/azure/genomics/quickstart-run-genomics-workflow-portal
-
-**needed updates**
-+ We need to add a description here about MS Genomics
-+ Need to update autoshutdown docs for the disclaimer below
-+ Are there service quotas in Azure Cloud Lab?  
- 
- **Please note, GPU machines cost more than most CPU machines, so be sure to shut these machines down after use, or use the auto shutdown feature [lifecycle configuration](/docs/auto-shutdown-instance.md). You may also encounter service quotas to protect you from the accidental use of expensive machine types. If that happens, and you still want to use a certain instance type, follow these [instructions](/docs/service_quotas.md).**
  
  ## **Clinical Informatics with FHIR** <a name="ci"></a>
  Azure Health Data Services is a set of services that enables you to store, process, and analyze medical data in Microsoft Azure. These services are designed to help organizations quickly connect disparate health data sources and formats, such as structured, imaging, and device data, and normalize it to be persisted in the cloud. At its core, Azure Health Data Services possesses the ability to transform and ingest data into FHIR (Fast Healthcare Interoperability Resources) format. This allows you to transform health data from legacy formats, such as HL7v2 or CDA, or from high-frequency IoT data in device proprietary formats to FHIR. This makes it easier to connect data stored in Azure Health Data Services with services across the Azure ecosystem, like Azure Synapse Analytics, and Azure Machine Learning (Azure ML).
