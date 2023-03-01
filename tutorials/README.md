@@ -3,7 +3,7 @@
 ---------------------------------
 ## Overview of Page Contents
 
-+ [Microsoft Genomics](#bio)
++ [Genomics on Azure](#bio)
 + [Clinical Informatics](#ci)
 + [Download SRA Data](#sra)
 + [GWAS](#gwas)
@@ -31,10 +31,7 @@ Azure Health Data Services includes support for multiple health data standards f
 Copying healthcare data stored in Azure FHIR Server to Synapse Analytics allows researchers to leverage a cloud-scale data warehousing and analytics tool to extract insights from their data as well as build scalable research pipelines. 
 For information on how to perform this export and downstream analytics, please visit [this repository](https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/healthcare-apis/fhir/copy-to-synapse.md). 
 
-
-## **Download Data From the Sequence Read Archive (SRA)** <a name="sra"></a>
-+ We need to update this with an updated d
-Next Generation genetic sequence data is housed in the NCBI Sequence Read Archive (SRA). You can access these data using the SRA Toolkit. We walk you through this using [this notebook](/tutorials/notebooks/SRADownload), which also walks you through how to set up and search Athena tables tp generate an accession list. You can also read [this guide](https://www.ncbi.nlm.nih.gov/sra/docs/sra-aws-download/) for more information on available dataset tables.
+You can also see a hands-on example of using [FHIR on Azure](https://github.com/microsoft/genomicsnotebook/tree/main/fhirgenomics), but note that you will need to supply your own VCF files as these are not provided in the tutorial content. 
 
 ## **Genome Wide Association Studies** <a name="gwas"></a>
 + Need to update a GWAS notebook for Azure
