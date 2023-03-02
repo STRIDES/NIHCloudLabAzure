@@ -3,24 +3,18 @@
 ---------------------------------
 ## Overview of Page Contents
 
-+ [Genomics on Azure](#bio)
++ [Medical Imaging](#mi)
 + [Clinical Informatics](#ci)
++ [Genomics on Azure](#bio)
 + [GWAS](#gwas)
 + [BLAST](#blast)
-+ [Medical Imaging](#mi)
 + [RNAseq](#rna)
++ [VCF Query](#vcf)
 + [scRNAseq](#sc)
 + [Long Read Sequencing Analysis](#long)
 + [AI/ML Pipeline](#ai)
 + [Open Data](#open)
 
-## **Microsoft Genomics** <a name="bio"></a>
-
-Microsoft has genomics-related offerings that will be useful to many Cloud Lab users. For a broad overview, visit the [Microsof Genomics Community site](https://microsoft.github.io/Genomics-Community/index.html). You can also get an overview of different execution options from [this blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/genomic-workflow-managers-on-microsoft-azure/ba-p/3747052), and a detailed analysis for Nextflow with AWS Batch at [this blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/rna-sequencing-analysis-on-azure-using-nextflow-configuration/ba-p/3738854). We highlight a few key services here: 
-+ [Genomics Notebooks](https://github.com/microsoft/genomicsnotebook): These example notebooks highlight many common use cases in genomics research.
-+ [Cromwell on Azure](https://github.com/microsoft/CromwellOnAzure): Documentation on how to spin up the resources needed to run Cromwell on Azure. 
-+ [Microsoft Genomics](https://learn.microsoft.com/en-us/azure/genomics/quickstart-run-genomics-workflow-portal): Run BWA and GATK using this managed service.
-+ [Nextflow on Azure](https://microsoft.github.io/Genomics-Community/mydoc_nextflow.html): Run Nextflow workflows using Azure Batch. 
 
  ## **Clinical Informatics with FHIR** <a name="ci"></a>
  Azure Health Data Services is a set of services that enables you to store, process, and analyze medical data in Microsoft Azure. These services are designed to help organizations quickly connect disparate health data sources and formats, such as structured, imaging, and device data, and normalize it to be persisted in the cloud. At its core, Azure Health Data Services possesses the ability to transform and ingest data into FHIR (Fast Healthcare Interoperability Resources) format. This allows you to transform health data from legacy formats, such as HL7v2 or CDA, or from high-frequency IoT data in device proprietary formats to FHIR. This makes it easier to connect data stored in Azure Health Data Services with services across the Azure ecosystem, like Azure Synapse Analytics, and Azure Machine Learning (Azure ML).
@@ -31,17 +25,6 @@ Copying healthcare data stored in Azure FHIR Server to Synapse Analytics allows 
 For information on how to perform this export and downstream analytics, please visit [this repository](https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/healthcare-apis/fhir/copy-to-synapse.md). 
 
 You can also see hands-on examples of using [FHIR on Azure](https://github.com/microsoft/genomicsnotebook/tree/main/fhirgenomics), but note that you will need to supply your own VCF files as these are not provided in the tutorial content. 
-
-## **Genome Wide Association Studies** <a name="gwas"></a>
-+ Need to update a GWAS notebook for Azure
-Genome wide association studies, or GWAS, are statistical analyses that look for associations between genomic variants and phenotypic traits.
-- This [NIH CFDE written tutorial](https://training.nih-cfde.org/en/latest/Bioinformatic-Analyses/GWAS-in-the-cloud
-) walks you through running a simple GWAS using EC2. The tutorials asks you to select the Ohio region, make sure you change your region to N. Virginia otherwise you will have network issues. Note that the CFDE page has a few other bioinformatics related tutorials like BLAST and Illumina read simulation. We also converted the GWAS tutorial to a simplified [notebook version](/tutorials/notebooks/GWAS) if you prefer that format. See our [notebook guide](/docs/Jupyter_notebook.md) for help with that.
-
-## **NCBI BLAST** <a name="blast"></a>
-The NCBI Basic Local Alignment Search Tool (BLAST) find regions of similarity between input sequences. 
-- [This Microsoft Blog](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/running-ncbi-blast-on-azure-performance-scalability-and-best/ba-p/2410483) explains how to optimize BLAST analyses on Azure virtual machines. 
-
 
 ## **Medical Imaging Analysis** <a name="mi"></a>
 Microsoft Azure offers cloud-based medical imaging analysis capabilities through its Azure Healthcare APIs and Azure Medical Imaging solutions. Azure's DICOM Service allows for the secure storage, management, and processing of medical images in the cloud, using industry standard DICOM (Digital Imaging and Communications in Medicine) format. The DICOM Service provides features like high availability, disaster recovery, and scalable storage options, making it an ideal solution for pipelines that need to store, manage, and analyze large amounts of medical imaging data. In addition, the server integrates with other Azure services like Azure Machine Learning, facilitating the use of advanced machine learning algorithms for image analysis tasks such as object detection, segmentation, and classification. Read about how to deploy the service [here](https://learn.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure).
@@ -56,6 +39,26 @@ For users hoping to train deep learning models on imaging data, InnerEye-DeepLea
 •	Classification and regression models.
 •	Any PyTorch Lightning model, via a bring-your-own-model setup.
 This project exists in a separate GitHub repository available to [here](https://github.com/microsoft/InnerEye-DeepLearning).
+
+## **Microsoft Genomics** <a name="bio"></a>
+Microsoft has genomics-related offerings that will be useful to many Cloud Lab users. For a broad overview, visit the [Microsof Genomics Community site](https://microsoft.github.io/Genomics-Community/index.html). You can also get an overview of different execution options from [this blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/genomic-workflow-managers-on-microsoft-azure/ba-p/3747052), and a detailed analysis for Nextflow with AWS Batch at [this blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/rna-sequencing-analysis-on-azure-using-nextflow-configuration/ba-p/3738854). We highlight a few key services here: 
++ [Genomics Notebooks](https://github.com/microsoft/genomicsnotebook): These example notebooks highlight many common use cases in genomics research.
++ [Cromwell on Azure](https://github.com/microsoft/CromwellOnAzure): Documentation on how to spin up the resources needed to run Cromwell on Azure. 
++ [Microsoft Genomics](https://learn.microsoft.com/en-us/azure/genomics/quickstart-run-genomics-workflow-portal): Run BWA and GATK using this managed service.
++ [Nextflow on Azure](https://microsoft.github.io/Genomics-Community/mydoc_nextflow.html): Run Nextflow workflows using Azure Batch. 
+
+## **Genome Wide Association Studies** <a name="gwas"></a>
++ Need to update a GWAS notebook for Azure
+Genome wide association studies, or GWAS, are statistical analyses that look for associations between genomic variants and phenotypic traits.
+- This [NIH CFDE written tutorial](https://training.nih-cfde.org/en/latest/Bioinformatic-Analyses/GWAS-in-the-cloud
+) walks you through running a simple GWAS using EC2. The tutorials asks you to select the Ohio region, make sure you change your region to N. Virginia otherwise you will have network issues. Note that the CFDE page has a few other bioinformatics related tutorials like BLAST and Illumina read simulation. We also converted the GWAS tutorial to a simplified [notebook version](/tutorials/notebooks/GWAS) if you prefer that format. See our [notebook guide](/docs/Jupyter_notebook.md) for help with that.
+
+## **NCBI BLAST** <a name="blast"></a>
+The NCBI Basic Local Alignment Search Tool (BLAST) find regions of similarity between input sequences. 
+- [This Microsoft Blog](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/running-ncbi-blast-on-azure-performance-scalability-and-best/ba-p/2410483) explains how to optimize BLAST analyses on Azure virtual machines. 
+
+## **Query a VCF file in Azure Synapse** <a name="rna"></a>
+- You can use SQL to rapidly query a VCF file in Azure Synapse. The requires converting the file from VCF to Parquet format, a common format for databases. Read more about how to do this in Azure on [this Microsoft blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/genomic-data-in-parquet-format-on-azure/ba-p/3150554). 
 
 ## **RNAseq** <a name="rna"></a>
 RNAseq is a technique for quantifying gene levels of gene expression across the genome. 
