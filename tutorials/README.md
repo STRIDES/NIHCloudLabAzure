@@ -5,8 +5,8 @@
 
 + [Genomics on Azure](#bio)
 + [Clinical Informatics](#ci)
-+ [Download SRA Data](#sra)
 + [GWAS](#gwas)
++ [BLAST](#blast)
 + [Medical Imaging](#mi)
 + [RNAseq](#rna)
 + [scRNAseq](#sc)
@@ -37,6 +37,11 @@ You can also see hands-on examples of using [FHIR on Azure](https://github.com/m
 Genome wide association studies, or GWAS, are statistical analyses that look for associations between genomic variants and phenotypic traits.
 - This [NIH CFDE written tutorial](https://training.nih-cfde.org/en/latest/Bioinformatic-Analyses/GWAS-in-the-cloud
 ) walks you through running a simple GWAS using EC2. The tutorials asks you to select the Ohio region, make sure you change your region to N. Virginia otherwise you will have network issues. Note that the CFDE page has a few other bioinformatics related tutorials like BLAST and Illumina read simulation. We also converted the GWAS tutorial to a simplified [notebook version](/tutorials/notebooks/GWAS) if you prefer that format. See our [notebook guide](/docs/Jupyter_notebook.md) for help with that.
+
+## **NCBI BLAST** <a name="blast"></a>
+The NCBI Basic Local Alignment Search Tool (BLAST) find regions of similarity between input sequences. 
+- [This Microsoft Blog](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/running-ncbi-blast-on-azure-performance-scalability-and-best/ba-p/2410483) explains how to optimize BLAST analyses on Azure virtual machines. 
+
 
 ## **Medical Imaging Analysis** <a name="mi"></a>
 Microsoft Azure offers cloud-based medical imaging analysis capabilities through its Azure Healthcare APIs and Azure Medical Imaging solutions. Azure's DICOM Service allows for the secure storage, management, and processing of medical images in the cloud, using industry standard DICOM (Digital Imaging and Communications in Medicine) format. The DICOM Service provides features like high availability, disaster recovery, and scalable storage options, making it an ideal solution for pipelines that need to store, manage, and analyze large amounts of medical imaging data. In addition, the server integrates with other Azure services like Azure Machine Learning, facilitating the use of advanced machine learning algorithms for image analysis tasks such as object detection, segmentation, and classification. Read about how to deploy the service [here](https://learn.microsoft.com/en-us/azure/healthcare-apis/dicom/deploy-dicom-services-in-azure).
