@@ -27,6 +27,8 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 + [Getting Support](#sup)
 + [Additional Training](#tr)
 
+**Add Managing Containers and Code Repositories to this page!!**
+
 ## **Getting Started** <a name="gs"></a>
 You can learn a lot of what is possible on Azure in the Azure Getting Started [Tutorials Page](https://azure.microsoft.com/en-us/get-started/) and we recommend you go there and explore some of the tutorials on offer. Nonetheless, it can be hard to know where to start if you are new to the cloud. To help you, we thought through some of the most common tasks you will encounter doing cloud-enabled research, and gathered tutorials and guides specific to those topics. We hope the following materials are helpful as you explore cloud-based research.
 
