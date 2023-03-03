@@ -70,8 +70,11 @@ Azure Container Registry allows you to build, store, and manage container images
 Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](), but you can also use pip to create [virtual Python environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/). 
 
 
-## **Clusters** <a name="clu"></a>
-One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/). Azure Cycle cloud has [tutorials](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) on cluster creation.
+## **HPC Clusters** <a name="clu"></a>
+
+[Azure CycleCloud](https://learn.microsoft.com/en-us/azure/cyclecloud/overview?view=cyclecloud-8) is an enterprise-friendly tool for orchestrating and managing High Performance Computing (HPC) environments on Azure. With CycleCloud, users can provision infrastructure for HPC systems, deploy familiar HPC schedulers, and automatically scale the infrastructure to run jobs efficiently at any scale. Through CycleCloud, users can create different types of file systems and mount them to the compute cluster nodes to support HPC workloads.
+
+Azure CycleCloud is targeted at HPC administrators and users who want to deploy an HPC environment with a specific scheduler in mind -- commonly used schedulers such as Slurm, PBSPro, LSF, Grid Engine, and HT-Condor are supported out of the box. CycleCloud is the sister product to [Azure Batch](https://learn.microsoft.com/en-us/azure/batch/), which provides a Scheduler as a Service on Azure.
 
 **Update with SLURM Cluster after DChester testing**
 
