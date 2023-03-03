@@ -50,7 +50,7 @@ Once you click generate, copy the **Blob SAS token**. We will need this for file
 
 Now we have a secure path to copy data in and out of the container. The format Microsoft uses is as follows: 
 
-`https://<source-storage-account-name>.blob.core.windows.net/<container-name>/<blob-path>?<SAS-token>
+`https://<source-storage-account-name>.blob.core.windows.net/<container-name>/<blob-path>?<SAS-token>`
 
 ## 4. Copy data in and out
 
@@ -59,6 +59,13 @@ Usually you want to move data with Microsoft's command line tool called [azcopy]
 It should be installed on an Azure VM, but if you are moving from a Linux cluster or your laptop, install using conda/mamba using `mamba install -c conda-forge azcopy`. You can also download the executable [here](https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10#download-azcopy).
 
 Now, you can run use azcopy to move data as desired. See [these docs](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits) for more details.
+
+One example would be: 
+
+`azcopy copy test.txt "https://<source-storage-account-name>.blob.core.windows.net/<container-name>/test.txt?<SAS-token>"`
+
+You may or may not need the double quotes around the URL, on a Mac you will need the double quotes. 
+
 
 
 
