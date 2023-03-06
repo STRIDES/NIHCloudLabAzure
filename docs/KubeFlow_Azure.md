@@ -1,4 +1,4 @@
-Instructions for deploying Kubeflow
+**Instructions for deploying Kubeflow**
     
     Prerequisites
         - install [kubectl](https://kubernetes.io/docs/tasks/tools/#install-kubectl-on-linux)
@@ -10,7 +10,8 @@ Instructions for deploying Kubeflow
 
     
 
-Azure Setup 
+**Azure Setup**
+
     -To log into Azure from the command line interface, run the following commands
         -az login
         -az account set --subscription <NAME OR ID OF SUBSCRIPTION>
@@ -24,7 +25,8 @@ Azure Setup
 
 
 
-KubeFlow installation
+**KubeFlow installation**
+
     -Create user credentials. You only need to run this command once.
         -az aks get-credentials -n <NAME> -g <RESOURCE_GROUP_NAME>
 
@@ -33,7 +35,7 @@ KubeFlow installation
     -Unpack the tar ball
         -tar -xvf kfctl_v1.2.0_<platform>.tar.gz
 
-Run the following commands to set up and deploy Kubeflow in order. The code below includes an optional command to add the binary  kfctl to your path. If you don’t add the binary to your path, you must use the full path to the kfctl binary each time you run it.
+    Run the following commands to set up and deploy Kubeflow in order. The code below includes an optional command to add the binary  kfctl to your path. If you don’t add the binary to your path, you must use the full path to the kfctl binary each time you run it.
 
 
     - export PATH=$PATH:"<path-to-kfctl>
@@ -51,12 +53,12 @@ Run the following commands to set up and deploy Kubeflow in order. The code belo
     - kfctl apply -V -f ${CONFIG_URI}
 
 
-Run this command to check that the resources have been deployed correctly in namespace kubeflow
+    Run this command to check that the resources have been deployed correctly in namespace kubeflow
 
     - kubectl get all -n kubeflow
 
-Open the KubeFlow Dashboard , the default installation does not create an external endpoint but you can use port-forwarding to visit your cluster. Run the following command
+    Open the KubeFlow Dashboard , the default installation does not create an external endpoint but you can use port-forwarding to visit your cluster. Run the following command
 
     - kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
 
-Next, open http://localhost:8080 in your browser.
+    Next, open http://localhost:8080 in your browser.
