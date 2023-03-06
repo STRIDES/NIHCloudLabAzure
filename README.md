@@ -22,7 +22,6 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 + [Creating a Conda Environment](#co)
 + [Clusters](#clu)
 + [Billing and Benchmarking](#bb)
-+ [Cost Optimization](#cost)
 + [Getting Support](#sup)
 + [Additional Training](#tr)
 
@@ -37,7 +36,7 @@ A resource group is a container that holds related resources for an Azure soluti
 
 The resource group stores metadata about the resources. Therefore, when you specify a location for the resource group, you are specifying where that metadata is stored. For compliance reasons, you may need to ensure that your data is stored in a particular region.
 
-To see more information on how to manage resource groups, visit or docs about [Managing Resource Groups](/docs/resource_groups.md).
+To see more information on how to manage resource groups, visit the docs about [Managing Resource Groups](/docs/resource_groups.md).
 
 ## **Command Line Tools** <a name="cli"></a>
 Most tasks in Azure can be done without the command line, but the command line tools will generally make your life easier in the long run. Command line interface (CLI) tools are those that you use directly in a terminal/shell as opposed to clicking within the Azure portals graphical user interface (GUI). The primary tool you will need is the Azure CLI, which will allow you to interact with Virtual Machines (VMs) or Storage Accounts (see below) from your local terminal. Instructions for the CLI can be found [here](https://learn.microsoft.com/en-us/cli/azure/). If you are unable to install locally, you can use all the CLI commands from within VM and Machine Learning instances, or from the [Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/overview).
@@ -63,15 +62,12 @@ Azure Container Registry allows you to build, store, and manage container images
 Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment), but you can also use pip to create [virtual Python environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/). [Our docs](/docs/create_conda_env.md) demonstrate how to create a conda environment on a virtual machine. 
 
 ## **Clusters** <a name="clu"></a>
-One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/), or a SLURM cluster using Azure Cycle cloud. See a Cycle Cloud tutorial [here](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) or see our [user guide]().
+One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/), or a SLURM cluster using Azure Cycle cloud. See a Cycle Cloud tutorial [here](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) or see our [user guide](/docs/cycle_cloud.md). **UPdate with Dannys Link!**
 
 ## **Billing and Benchmarking** <a name="bb"></a>
 Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
 
-In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect. See our [docs](/dev/docs/Using_The_Azure_Price_Calculator.md) for more info. 
-
-## **Cost Optimization** <a name="cost"></a>
-Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for details on how to monitor costs, set up budget alerts, and cost-benchmark specific analyses using resource tagging. In addition, here are a few tips to help you stay on budget.
+In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect. See our [docs](/docs/Using_The_Azure_Price_Calculator.md) for more info. 
 
 ## **Getting Support** <a name="sup"></a>
 As part of your participation in Cloud Lab you will be added to the Cloud Lab Teams channel where you can chat with other Cloud Lab users, and gain support from the Cloud Lab team. For NIH Intramural users, you can submit a support ticket to Service Now. For issues related to the cloud environment, feel free to request [Azure Enterprise Support](/docs/request_enterprise_support.md). For issues related to scientific use cases, such as, how can I best run an RNAseq pipeline in Azure, email us at `CloudLab@nih.gov`.
