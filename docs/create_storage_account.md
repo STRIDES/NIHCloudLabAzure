@@ -44,7 +44,7 @@ From within the container, click **Shared access tokens** on the left hand menu.
 
 <img src="/docs/images/8_SAS.png" width="550" height="450">
 
-We recommend on this page you select **Account key** for the first option, but the rest are up to you depending what you are trying to do. View more info on SAS keys at this [Microsoft page](https://learn.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature).
+We recommend on this page you select **Account key** for the first option, but the rest are up to you depending what you are trying to do. View more info on SAS keys at this [Microsoft page](https://learn.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature). Make sure you grant sufficient permissions! The default is only 'READ' but you will need at least 'LIST' and probably a few others.
 
 Once you click generate, copy the **Blob SAS URL**. We will need this for file copy paths.
 
