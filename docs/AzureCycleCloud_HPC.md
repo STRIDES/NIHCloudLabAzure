@@ -6,4 +6,4 @@ Azure CycleCloud deploys autoscaling plugins on top of the supported schedulers,
 
 navigate to the Azure [portal](portal.azure.com) and type in "marketplace" in the search bar on top of screen.
 
-<img src="/docs/images/Marketplace_Azure.png" width="500" height="500">
+<img src="/docs/images/Marketplace_Azure.png" width="600">
