@@ -17,17 +17,14 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 + [Azure Marketplace](#mark)
 + [Ingest and Store Data](#sto)
 + [Virtual Machines](#vm)
-+ [Disk Images](#im)
++ [Azure Container Registry](#con)
 + [Azure Machine learning](#sag)
 + [Creating a Conda Environment](#co)
-+ [Managing Containers and Code Repositories](#dock)
 + [Clusters](#clu)
 + [Billing and Benchmarking](#bb)
 + [Cost Optimization](#cost)
 + [Getting Support](#sup)
 + [Additional Training](#tr)
-
-**Add Managing Containers and Code Repositories to this page!!**
 
 ## **Getting Started** <a name="gs"></a>
 You can learn a lot of what is possible on Azure in the Azure Getting Started [Tutorials Page](https://azure.microsoft.com/en-us/get-started/) and we recommend you go there and explore some of the tutorials on offer. Nonetheless, it can be hard to know where to start if you are new to the cloud. To help you, we thought through some of the most common tasks you will encounter doing cloud-enabled research, and gathered tutorials and guides specific to those topics. We hope the following materials are helpful as you explore cloud-based research.
@@ -68,8 +65,6 @@ Virtual environments allow you to manage package versions without having package
 ## **Clusters** <a name="clu"></a>
 One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/), or a SLURM cluster using Azure Cycle cloud. See a Cycle Cloud tutorial [here](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) or see our [user guide]().
 
-**Update with SLURM Cluster after DChester testing**
-
 ## **Billing and Benchmarking** <a name="bb"></a>
 Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
 
@@ -80,9 +75,6 @@ Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for det
 
 ## **Getting Support** <a name="sup"></a>
 As part of your participation in Cloud Lab you will be added to the Cloud Lab Teams channel where you can chat with other Cloud Lab users, and gain support from the Cloud Lab team. For NIH Intramural users, you can submit a support ticket to Service Now. For issues related to the cloud environment, feel free to request [Azure Enterprise Support](/docs/request_enterprise_support.md). For issues related to scientific use cases, such as, how can I best run an RNAseq pipeline in Azure, email us at `CloudLab@nih.gov`.
-
-**Update this**
-If you have a question about Quota Limits, visit our [documentation](/docs/service_quotas.md) on how to request a limit increase. 
 
 ## **Additional Training** <a name="tr"></a>
 This repo only scratches the surface of what can be done in the cloud. If you are interested in additional cloud training opportunities please visit the [STRIDES Training page](https://cloud.nih.gov/training/). For more information on the STRIDES Initiative at the NIH, visit [our website](https://cloud.nih.gov) or contact the NIH STRIDES team at STRIDES@nih.gov for more information.
