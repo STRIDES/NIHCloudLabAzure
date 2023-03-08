@@ -46,6 +46,7 @@ Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal
 
 ## **Disk Images** <a name="IM"></a>
 Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved.
+
 ## **Command Line Tools** <a name="cli"></a>
 Most tasks in Azure can be done without the command line, but the command line tools will generally make your life easier in the long run. Command line interface (CLI) tools are those that you use directly in a terminal/shell as opposed to clicking within the Azure portals graphical user interface (GUI). The primary tool you will need is the Azure CLI, which will allow you to interact with Virtual Machines (VMs) or Storage Accounts (see below) from your local terminal. Instructions for the CLI can be found [here](https://learn.microsoft.com/en-us/cli/azure/). If you are unable to install locally, you can use all the CLI commands from within VM and Machine Learning instances, or from the [Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/overview).
 
@@ -65,9 +66,38 @@ Many Cloud Lab users are interested in understanding how to estimate the price o
 
 In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect. See our [docs](/docs/Using_The_Azure_Price_Calculator.md) for more info. 
 
-## **Getting Support** <a name="sup"></a>
+## **Launch a Machine Learning Workspace** <a name="SAG"></a>
+[Azure Machine Learning studio](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is one of the preferred tools whne using Azure Machine learning. ML studion allows for you to run your own code in managed jupyter notebooks. Foll the [Quickstart](https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-run-notebooks) page to begin running Jupyter Notebooks in studio.
+
+
+## **Creating a Conda Environment** <a name="CO"></a>
+Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#:~:text=A%20conda%20environment%20is%20a,NumPy%201.6%20for%20legacy%20testing). 
+
+
+## **Managing Containers with Azure Container Registry** <a name="DOCK"></a>
+You can host containers within Azure Container Registry. We outline how to build a container, push to Azure Container Registry, and pull to a compute environment in our [docs](/docs/ecr.md).
+
+
+## **Clusters** <a name="CLU"></a>
+One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/). Azure Cycle cloud has [tutorials](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) on cluster creation 
+
+## **Billing and Benchmarking** <a name="BB"></a>
+Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
+
+In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect..
+
+## **Cost Optimization** <a name="COST"></a>
+Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for details on how to monitor costs, set up budget alerts, and cost-benchmark specific analyses using resource tagging. In addition, here are a few tips to help you stay on budget.
++ Configure auto-shutdown on your EC2 instances following [this guide](/docs/auto-shutdown-instance.md). This will prevent you from accidentally leaving instances running.
++ Make sure you shut down other resources after you use them, and periodically 'clean up' your account. This can include S3 buckets, virtual machines/notebooks, Batch environments and Cloud Formation scripts. For Batch environments, you will also need to go to EC2 and delete the autoscaling groups (far bottom left option on the EC2 page).
++ Ensure that you are using all the compute resources you have provisioned. If you spin up a VM with 16 CPUs, you can see if they are all being utilized using [CloudWatch](https://docs.Azure.amazon.com/AmazonCloudWatch/latest/monitoring/US_SingleMetricPerInstance.html). If you are only really using 8 CPUs for example, then just change your machine size to fit the analysis. You can also view our CPU optimization guide [here](/docs/right_sizing_vm.md).
++ Explore using [Spot Instances](https://Azure.amazon.com/ec2/spot/?cards.sort-by=item.additionalFields.startDateTime&cards.sort-order=asc&trk=8e336330-37e5-41e0-8438-bc1c75320d09&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Compute|EC2%20Spot|US|EN|Text&s_kwcid=AL!4422!3!517520538473!e!!g!!ec2%20spot%20instances&ef_id=Cj0KCQjwgYSTBhDKARIsAB8KuksD7LV6FQEACly0PY4VJnEIONcvLuFG_Tq5RWp1p3OQkFbhBDRSjQcaAlMHEALw_wcB:G:s&s_kwcid=AL!4422!3!517520538473!e!!g!!ec2%20spot%20instances) or [Reserved](https://Azure.amazon.com/ec2/pricing/reserved-instances/) for running workflows.
+
+## **Getting Support** <a name="SUP"></a>
 As part of your participation in Cloud Lab you will be added to the Cloud Lab Teams channel where you can chat with other Cloud Lab users, and gain support from the Cloud Lab team. For NIH Intramural users, you can submit a support ticket to Service Now. For issues related to the cloud environment, feel free to request [Azure Enterprise Support](/docs/request_enterprise_support.md). For issues related to scientific use cases, such as, how can I best run an RNAseq pipeline in Azure, email us at `CloudLab@nih.gov`.
 
-## **Additional Training** <a name="tr"></a>
+If you have a question about Quota Limits, visit our [documentation](/docs/service_quotas.md) on how to request a limit increase. 
+
+## **Additional Training** <a name="TR"></a>
 This repo only scratches the surface of what can be done in the cloud. If you are interested in additional cloud training opportunities please visit the [STRIDES Training page](https://cloud.nih.gov/training/). For more information on the STRIDES Initiative at the NIH, visit [our website](https://cloud.nih.gov) or contact the NIH STRIDES team at STRIDES@nih.gov for more information.
 
