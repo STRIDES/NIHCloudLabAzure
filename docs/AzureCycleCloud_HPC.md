@@ -24,7 +24,7 @@ Enter the IP address of you Azure CycleCloud instance in a browser, if this is t
 
 <img src="/docs/images/Add_Subscription_CycleCloud.png" width="600">
 
-Fill out the neccassary information required, you may have to configure a custom role for Azure CycleCloud to find your subscription. Here is our documentation on how to create a custom role for Azure Cycle Cloud
+Fill out the neccassary information required, you may have to configure a custom role for Azure CycleCloud to find your subscription. Here is [documentation](https://learn.microsoft.com/en-us/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8) on how to create a custom role for Azure Cycle Cloud
 
 ## Create Cluster from Azure CycleCloud UI
 
