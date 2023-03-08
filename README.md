@@ -55,7 +55,7 @@ One great thing about the cloud is its ability to scale with demand. When you su
 ## **Ingest and Store Data using Azure Storage Accounts** <a name="sto"></a>
 Microsoft's object storage solution for the cloud is called Azure Blob. Blob is optimized for storing massive amounts of unstructured data. Azure also offers many different storage services listed [here](https://azure.microsoft.com/en-us/products/category/storage/). To get started you must create a [Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal). Users can grant limited access to Azure storage resources using [Shared Access Signatures](https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview)(SAS). You can also read our guide to Storage Accounts and moving data in and out of Cloud Lab [here](/docs/create_storage_account.md)
 
-Virtual Machines
+## **Virtual Machines** <a name="sto"></a>
 Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal. More information on Vms can be found here as well as guide on how to use SSH keys with windows in Azure. To view the different types of VMs availabe in Azure check out the Virtual Machine Series
 ## **Billing and Benchmarking** <a name="bb"></a>
 Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
