@@ -12,28 +12,25 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 
 + [Getting Started](#gs)
 + [Overview](#ov)
-+ [GitHub](#gh)
 + [Resource Groups](#rg)
 + [Command Line Tools](#cli)
 + [Azure Marketplace](#mark)
 + [Ingest and Store Data](#sto)
 + [Virtual Machines](#vm)
-+ [Azure Container Registry](#con)
-+ [Azure Machine learning](#sag)
++ [Azure Machine Learning](#sag)
 + [Creating a Conda Environment](#co)
 + [Clusters](#clu)
++ [Azure Container Registry](#con)
++ [GitHub](#gh)
 + [Billing and Benchmarking](#bb)
 + [Getting Support](#sup)
 + [Additional Training](#tr)
 
-## **Overview** <a name="ov"></a>
-There are three primary ways you can run analyses using Azure: using **Virtual Machines**, **Jupyter Notebook instances**, and **Serverless services**. We give a brief overview of each of these here and go into more detail in the sections below. [Virtual Machines](https://azure.microsoft.com/en-us/products/virtual-machines/) are like desktop computers, but you access them through the cloud console and you get to pick the operating system and the specifications such as CPU and memory. In Azure, these virtual machines are called VMs for short. Jupyter Notebook instances are virtual machines with a preconfigured Jupyter Lab. On Azure these are run through [Azure Machine Learning](https://azure.microsoft.com/en-us/products/machine-learning/#product-overview), which is also Azure's ML/AI platform. You decide what kind of virtual machine you want to 'spin up' and then you can run Juptyer notebooks on that virtual machine. Finally, Serverless services are services that allow you to run things, an analysis, an app, a website, and not have to deal with your own servers (VMs). There are still servers running somewhere, you just don't have to manage them. All you have to do is call a command that runs your analysis in the background, and copies the output files to a storage bucket. [Azure Batch](https://learn.microsoft.com/en-us/azure/batch/batch-technical-overview) is a common example. 
-
 ## **Getting Started** <a name="gs"></a>
 You can learn a lot of what is possible on Azure in the Azure Getting Started [Tutorials Page](https://azure.microsoft.com/en-us/get-started/) and we recommend you go there and explore some of the tutorials on offer. Nonetheless, it can be hard to know where to start if you are new to the cloud. To help you, we thought through some of the most common tasks you will encounter doing cloud-enabled research, and gathered tutorials and guides specific to those topics. We hope the following materials are helpful as you explore cloud-based research.
 
-## **Github** <a name="gh"></a>
-GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. This [tutorial](https://docs.github.com/en/get-started/quickstart/hello-world) teaches you GitHub essentials like repositories, branches, commits, and pull requests. You'll create your own Hello World repository and learn GitHub's pull request workflow, a popular way to create and review code.
+## **Overview** <a name="ov"></a>
+There are three primary ways you can run analyses using Azure: using **Virtual Machines**, **Jupyter Notebook instances**, and **Serverless services**. We give a brief overview of each of these here and go into more detail in the sections below. [Virtual Machines](https://azure.microsoft.com/en-us/products/virtual-machines/) are like desktop computers, but you access them through the cloud console and you get to pick the operating system and the specifications such as CPU and memory. In Azure, these virtual machines are called VMs for short. Jupyter Notebook instances are virtual machines with a preconfigured Jupyter Lab. On Azure these are run through [Azure Machine Learning](https://azure.microsoft.com/en-us/products/machine-learning/#product-overview), which is also Azure's ML/AI platform. You decide what kind of virtual machine you want to 'spin up' and then you can run Juptyer notebooks on that virtual machine. Finally, Serverless services are services that allow you to run things, an analysis, an app, a website, and not have to deal with your own servers (VMs). There are still servers running somewhere, you just don't have to manage them. All you have to do is call a command that runs your analysis in the background, and copies the output files to a storage bucket. [Azure Batch](https://learn.microsoft.com/en-us/azure/batch/batch-technical-overview) is a common example. 
 
 ## **Resource Groups** <a name="rg"></a>
 A resource group is a container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that you want to manage as a group. You decide how you want to allocate resources to resource groups based on what makes the most sense for your organization. Generally, add resources that share the same lifecycle to the same resource group so you can easily deploy, update, and delete them as a group.  
@@ -62,14 +59,17 @@ Part of the power of virtual machines is that they offer a blank slate for you t
 ## **Launch a Machine Learning Workspace (Jupyter Environment)** <a name="SAG"></a>
 [Azure Machine Learning studio](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is one of the preferred tools whne using Azure Machine learning. ML studion allows for you to run your own code in managed jupyter notebooks. Follow the [Quickstart](https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-run-notebooks) page to begin running Jupyter Notebooks in studio.
 
+## **Clusters** <a name="CLU"></a>
+One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/). Azure Cycle cloud has [tutorials](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) on cluster creation 
+
 ## **Creating a Conda Environment** <a name="CO"></a>
 Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#:~:text=A%20conda%20environment%20is%20a,NumPy%201.6%20for%20legacy%20testing). 
 
 ## **Managing Containers with Azure Container Registry** <a name="DOCK"></a>
 You can host or pull containers with Azure Container Registry. See [Microsoft's documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal?tabs=azure-cli) on how to use this service.
 
-## **Clusters** <a name="CLU"></a>
-One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/). Azure Cycle cloud has [tutorials](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) on cluster creation 
+## **Github** <a name="gh"></a>
+GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. This [tutorial](https://docs.github.com/en/get-started/quickstart/hello-world) teaches you GitHub essentials like repositories, branches, commits, and pull requests. You'll create your own Hello World repository and learn GitHub's pull request workflow, a popular way to create and review code.
 
 ## **Billing and Benchmarking** <a name="bb"></a>
 Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
