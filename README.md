@@ -53,6 +53,8 @@ Microsoft's object storage solution for the cloud is called Azure Blob. Blob is 
 ## **Virtual Machines** <a name="vm"></a>
 Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal. More information on Vms can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview) as well as this [guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to use SSH keys with windows in Azure. To view the different types of VMs availabe in Azure check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/). 
 
+You can also spin up preconfigured VMs, such as the Azure Data Science VM, which has many data science tools preinstalled and may save you time on environment set up. Read more in [our docs](/docs/Azure_Data_Science_VMs.md).
+
 ## **Disk Images** <a name="disk"></a>
 Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved. You can later redeploy these images to spin up a new machine with data or environments already installed.
 
