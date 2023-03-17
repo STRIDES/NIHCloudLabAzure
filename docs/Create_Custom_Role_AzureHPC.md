@@ -18,7 +18,7 @@ Review + Create Role
 
 # Assign Custom Role to VMs Managed Identity at the subscription level
 
-Preqrequisite: Azure Cycle Cloud Virtual Machine deployed and configured(VM)
+Preqrequisite: Azure Cycle Cloud Virtual Machine deployed and configured(VM) and Custom role created
 
 Navigate to the Azure CycleCloud VM 
 
