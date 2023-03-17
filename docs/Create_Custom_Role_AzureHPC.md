@@ -14,7 +14,7 @@ Select "Start from JSON" option on the bottom followed by seletced the blue fold
 
 Review + Create Role
 
-<img src="/docs/images/Custom_Role_json.png" width="600">
+<img src="/docs/images/Custom_role3.png" width="600">
 
 # Assign Custom Role to VMs Managed Identity at the subscription level
 
