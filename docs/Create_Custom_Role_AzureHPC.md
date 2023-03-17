@@ -12,8 +12,6 @@ Give the Custom Role a name
 
 Select "Start from JSON" option on the bottom followed by seletced the blue folder and choosing the JSON file you recently created
 
-<img src="/docs/images/Custom_role_Json.png" width="600">
-
 Review + Create Role
 
 # Assign Custom Role to VMs Managed Identity at the subscription level
