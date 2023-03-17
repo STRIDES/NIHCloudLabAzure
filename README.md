@@ -12,6 +12,7 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 
 + [Getting Started](#gs)
 + [Overview](#ov)
++ [GitHub](#gh)
 + [Resource Groups](#rg)
 + [Command Line Tools](#cli)
 + [Azure Marketplace](#mark)
@@ -31,7 +32,7 @@ There are three primary ways you can run analyses using Azure: using **Virtual M
 ## **Getting Started** <a name="gs"></a>
 You can learn a lot of what is possible on Azure in the Azure Getting Started [Tutorials Page](https://azure.microsoft.com/en-us/get-started/) and we recommend you go there and explore some of the tutorials on offer. Nonetheless, it can be hard to know where to start if you are new to the cloud. To help you, we thought through some of the most common tasks you will encounter doing cloud-enabled research, and gathered tutorials and guides specific to those topics. We hope the following materials are helpful as you explore cloud-based research.
 
-## **Github** <a name="ov"></a>
+## **Github** <a name="gh"></a>
 GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere. This [tutorial](https://docs.github.com/en/get-started/quickstart/hello-world) teaches you GitHub essentials like repositories, branches, commits, and pull requests. You'll create your own Hello World repository and learn GitHub's pull request workflow, a popular way to create and review code.
 
 ## **Resource Groups** <a name="rg"></a>
@@ -41,12 +42,6 @@ The resource group stores metadata about the resources. Therefore, when you spec
 
 To see more information on how to manage resource groups, visit the docs about [Managing Resource Groups](/docs/resource_groups.md).
 
-## **Virtual Machines** <a name="VM"></a>
-Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal. More information on Vms can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview) as well as [guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to use SSH keys with windows in Azure. To view the different types of VMs availabe in Azure check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) 
-
-## **Disk Images** <a name="IM"></a>
-Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved.
-
 ## **Command Line Tools** <a name="cli"></a>
 Most tasks in Azure can be done without the command line, but the command line tools will generally make your life easier in the long run. Command line interface (CLI) tools are those that you use directly in a terminal/shell as opposed to clicking within the Azure portals graphical user interface (GUI). The primary tool you will need is the Azure CLI, which will allow you to interact with Virtual Machines (VMs) or Storage Accounts (see below) from your local terminal. Instructions for the CLI can be found [here](https://learn.microsoft.com/en-us/cli/azure/). If you are unable to install locally, you can use all the CLI commands from within VM and Machine Learning instances, or from the [Cloud Shell](https://learn.microsoft.com/en-us/azure/cloud-shell/overview).
 
@@ -55,36 +50,31 @@ To install and configure Azure CLI, redirect to [Get started with Azure CLI](htt
 ## **Azure Marketplace** <a name="mark"></a>
 The [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/) is an online store in Azure that contains thousands of software applications and services to fit your research needs. For example, you can find VMs configured for Microsoft Genomics or NVIDIA machine learning.
 
-## **Clusters** <a name="clu"></a>
-One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/), or a SLURM cluster using Azure Cycle cloud. See a Cycle Cloud tutorial [here](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) or see our [user guide]().
-
 ## **Ingest and Store Data using Azure Storage Accounts** <a name="sto"></a>
 Microsoft's object storage solution for the cloud is called Azure Blob. Blob is optimized for storing massive amounts of unstructured data. Azure also offers many different storage services listed [here](https://azure.microsoft.com/en-us/products/category/storage/). To get started you must create a [Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal). Users can grant limited access to Azure storage resources using [Shared Access Signatures](https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview)(SAS). You can also read our guide to Storage Accounts and moving data in and out of Cloud Lab [here](/docs/create_storage_account.md)
 
-## **Billing and Benchmarking** <a name="bb"></a>
-Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
+## **Virtual Machines** <a name="VM"></a>
+Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal. More information on Vms can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview) as well as [guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to use SSH keys with windows in Azure. To view the different types of VMs availabe in Azure check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) 
 
-In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect. See our [docs](/docs/Using_The_Azure_Price_Calculator.md) for more info. 
+## **Disk Images** <a name="IM"></a>
+Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved.
 
-## **Launch a Machine Learning Workspace** <a name="SAG"></a>
-[Azure Machine Learning studio](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is one of the preferred tools whne using Azure Machine learning. ML studion allows for you to run your own code in managed jupyter notebooks. Foll the [Quickstart](https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-run-notebooks) page to begin running Jupyter Notebooks in studio.
-
+## **Launch a Machine Learning Workspace (Jupyter Environment)** <a name="SAG"></a>
+[Azure Machine Learning studio](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is one of the preferred tools whne using Azure Machine learning. ML studion allows for you to run your own code in managed jupyter notebooks. Follow the [Quickstart](https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-run-notebooks) page to begin running Jupyter Notebooks in studio.
 
 ## **Creating a Conda Environment** <a name="CO"></a>
 Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#:~:text=A%20conda%20environment%20is%20a,NumPy%201.6%20for%20legacy%20testing). 
 
-
 ## **Managing Containers with Azure Container Registry** <a name="DOCK"></a>
-You can host containers within Azure Container Registry. We outline how to build a container, push to Azure Container Registry, and pull to a compute environment in our [docs](/docs/ecr.md).
-
+You can host or pull containers with Azure Container Registry. See [Microsoft's documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal?tabs=azure-cli) on how to use this service.
 
 ## **Clusters** <a name="CLU"></a>
 One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/). Azure Cycle cloud has [tutorials](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) on cluster creation 
 
-## **Billing and Benchmarking** <a name="BB"></a>
+## **Billing and Benchmarking** <a name="bb"></a>
 Many Cloud Lab users are interested in understanding how to estimate the price of a large scale project using a reduced sample size. Generally, you should be able to benchmark with a few representative samples to get an idea of time and cost required for a larger scale project. Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) to see how to tag specific resources for workflow benchmarking. 
 
-In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect..
+In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect. See our [docs](/docs/Using_The_Azure_Price_Calculator.md) for more info.
 
 ## **Cost Optimization** <a name="COST"></a>
 Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for details on how to monitor costs, set up budget alerts, and cost-benchmark specific analyses using resource tagging. In addition, here are a few tips to help you stay on budget.
