@@ -3,10 +3,9 @@
 Go to this [link](https://learn.microsoft.com/en-us/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8) and copy the JSON policy and optional section and paste into notepad and save as a .JSON file
 
 In the Azure [portal](https://portal.azure.com), open a subscription or resource group where you want the custom role to be assignable and then open Access control (IAM).
+<img src="/docs/images/Custom_role1.png" width="600">
 
 Click Add and then click Add custom role.
-
-<img src="/docs/images/Custom_role1.png" width="600">
 
 Give the Custom Role a name
 
