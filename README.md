@@ -17,12 +17,14 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 + [Azure Marketplace](#mark)
 + [Ingest and Store Data](#sto)
 + [Virtual Machines](#vm)
++ [Disk Images](#disk)
 + [Azure Machine Learning](#sag)
-+ [Creating a Conda Environment](#co)
 + [Clusters](#clu)
++ [Creating a Conda Environment](#co)
 + [Azure Container Registry](#con)
 + [GitHub](#gh)
 + [Billing and Benchmarking](#bb)
++ [Cost Optimization](#cost)
 + [Getting Support](#sup)
 + [Additional Training](#tr)
 
@@ -50,22 +52,22 @@ The [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/m
 ## **Ingest and Store Data using Azure Storage Accounts** <a name="sto"></a>
 Microsoft's object storage solution for the cloud is called Azure Blob. Blob is optimized for storing massive amounts of unstructured data. Azure also offers many different storage services listed [here](https://azure.microsoft.com/en-us/products/category/storage/). To get started you must create a [Storage Account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal). Users can grant limited access to Azure storage resources using [Shared Access Signatures](https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview)(SAS). You can also read our guide to Storage Accounts and moving data in and out of Cloud Lab [here](/docs/create_storage_account.md)
 
-## **Virtual Machines** <a name="VM"></a>
+## **Virtual Machines** <a name="vm"></a>
 Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal. More information on Vms can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview) as well as [guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to use SSH keys with windows in Azure. To view the different types of VMs availabe in Azure check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/) 
 
-## **Disk Images** <a name="IM"></a>
+## **Disk Images** <a name="disk"></a>
 Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved.
 
-## **Launch a Machine Learning Workspace (Jupyter Environment)** <a name="SAG"></a>
+## **Launch a Machine Learning Workspace (Jupyter Environment)** <a name="ml"></a>
 [Azure Machine Learning studio](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is one of the preferred tools whne using Azure Machine learning. ML studion allows for you to run your own code in managed jupyter notebooks. Follow the [Quickstart](https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-run-notebooks) page to begin running Jupyter Notebooks in studio.
 
-## **Clusters** <a name="CLU"></a>
+## **Clusters** <a name="clu"></a>
 One great thing about the cloud is its ability to scale with demand. When you submit a job to a traditional cluster, you specify up front how many CPUs and memory you want to give to your job, and you may over or under utilize these resources. With managed resources like serverless and clusters you can leverage a feature called autoscaling, where the compute resources will scale up or down with the demand. This is more efficient and keeps costs down when demand is low, but prevents latency when demand is high (think about workshop participants all submitting jobs at the same time to a cluster). For most users of Cloud Lab, the best way to leverage scaling is to use Azure Batch, but in some cases, maybe for a whole lab group or large project, it may make sense to spin up a [Kubernetes cluster](https://azure.microsoft.com/en-us/products/kubernetes-service/). Azure Cycle cloud has [tutorials](https://learn.microsoft.com/en-us/azure/cyclecloud/tutorials/tutorial?view=cyclecloud-8) on cluster creation 
 
-## **Creating a Conda Environment** <a name="CO"></a>
+## **Creating a Conda Environment** <a name="ca"></a>
 Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#:~:text=A%20conda%20environment%20is%20a,NumPy%201.6%20for%20legacy%20testing). 
 
-## **Managing Containers with Azure Container Registry** <a name="DOCK"></a>
+## **Managing Containers with Azure Container Registry** <a name="dock"></a>
 You can host or pull containers with Azure Container Registry. See [Microsoft's documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal?tabs=azure-cli) on how to use this service.
 
 ## **Github** <a name="gh"></a>
@@ -76,14 +78,14 @@ Many Cloud Lab users are interested in understanding how to estimate the price o
 
 In terms of cost, the best way to estimate costs is to use the Azure pricing calculator [here](https://azure.microsoft.com/en-us/pricing/calculator/) for an initial figure, which is a pricing tool that forcasts costs based on products and useage. Then, you can run some benchmarks and double check that everything is acting as you expect. See our [docs](/docs/Using_The_Azure_Price_Calculator.md) for more info.
 
-## **Cost Optimization** <a name="COST"></a>
+## **Cost Optimization** <a name="cost"></a>
 Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for details on how to monitor costs, set up budget alerts, and cost-benchmark specific analyses using resource tagging. In addition, here are a few tips to help you stay on budget.
 + Configure auto-shutdown on your EC2 instances following [this guide](/docs/auto-shutdown-instance.md). This will prevent you from accidentally leaving instances running.
 + Make sure you shut down other resources after you use them, and periodically 'clean up' your account. This can include S3 buckets, virtual machines/notebooks, Batch environments and Cloud Formation scripts. For Batch environments, you will also need to go to EC2 and delete the autoscaling groups (far bottom left option on the EC2 page).
 + Ensure that you are using all the compute resources you have provisioned. If you spin up a VM with 16 CPUs, you can see if they are all being utilized using [CloudWatch](https://docs.Azure.amazon.com/AmazonCloudWatch/latest/monitoring/US_SingleMetricPerInstance.html). If you are only really using 8 CPUs for example, then just change your machine size to fit the analysis. You can also view our CPU optimization guide [here](/docs/right_sizing_vm.md).
 + Explore using [Spot Instances](https://Azure.amazon.com/ec2/spot/?cards.sort-by=item.additionalFields.startDateTime&cards.sort-order=asc&trk=8e336330-37e5-41e0-8438-bc1c75320d09&sc_channel=ps&sc_campaign=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Compute|EC2%20Spot|US|EN|Text&s_kwcid=AL!4422!3!517520538473!e!!g!!ec2%20spot%20instances&ef_id=Cj0KCQjwgYSTBhDKARIsAB8KuksD7LV6FQEACly0PY4VJnEIONcvLuFG_Tq5RWp1p3OQkFbhBDRSjQcaAlMHEALw_wcB:G:s&s_kwcid=AL!4422!3!517520538473!e!!g!!ec2%20spot%20instances) or [Reserved](https://Azure.amazon.com/ec2/pricing/reserved-instances/) for running workflows.
 
-## **Getting Support** <a name="SUP"></a>
+## **Getting Support** <a name="sup"></a>
 As part of your participation in Cloud Lab you will be added to the Cloud Lab Teams channel where you can chat with other Cloud Lab users, and gain support from the Cloud Lab team. For NIH Intramural users, you can submit a support ticket to Service Now. For issues related to the cloud environment, feel free to request [Azure Enterprise Support](/docs/request_enterprise_support.md). For issues related to scientific use cases, such as, how can I best run an RNAseq pipeline in Azure, email us at `CloudLab@nih.gov`.
 
 If you have a question about Quota Limits, visit our [documentation](/docs/service_quotas.md) on how to request a limit increase. 
