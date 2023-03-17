@@ -1,6 +1,6 @@
 # Create Custom Role for Azure CycleCloud HPC
 
-Go to this [link](https://learn.microsoft.com/en-us/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8) and copy the JSON policy and paste into the JSON and optional section into notepad and save as a .JSON file
+Go to this [link](https://learn.microsoft.com/en-us/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8) and copy the JSON policy and optional section and paste into notepad and save as a .JSON file
 
 In the Azure [portal](https://portal.azure.com), open a subscription or resource group where you want the custom role to be assignable and then open Access control (IAM).
 
