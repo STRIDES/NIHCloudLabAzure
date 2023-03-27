@@ -10,7 +10,7 @@ Click Add and then click Add custom role.
 
 Give the Custom Role a name
 
-Select "Start from JSON" option on the bottom followed by seletced the blue folder and choosing the JSON file you recently created
+Select "Start from JSON" option on the bottom followed by selected the blue folder and choosing the JSON file you recently created
 
 Review + Create Role
 
