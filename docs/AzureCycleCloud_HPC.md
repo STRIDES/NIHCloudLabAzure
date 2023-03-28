@@ -4,7 +4,7 @@ Azure CycleCloud deploys autoscaling plugins on top of the supported schedulers,
 
 ## Deploy Azure CycleCloud from Azure Marketplace and Add a Subscription to the CycleCloud instance
 
-navigate to the Azure [portal](https://portal.azure.com/) and type in "marketplace" in the search bar on top of screen.
+Navigate to the Azure [portal](https://portal.azure.com/) and type in "marketplace" in the search bar on top of screen.
 
 <img src="/docs/images/Marketplace_Azure.png" width="600">
 
@@ -12,15 +12,17 @@ Once in the Azure Marketplace, in the Marketplace search bar , search for "Azure
 
 <img src="/docs/images/AzureCycleCloud.png" width="600">
 
-Click "Azure CycleCloud" followed by seletcing the version you want and then "Create"
+Click "Azure CycleCloud" followed by selecting the version you want (we recommend the most recent) and then "Create"
 
-Fill out the appropriate information for the Virtual Machine to run and then click "Review + Create"
+Fill out the appropriate information for the Virtual Machine to run and then click "Review + Create". Most of the options you can leave as default, but pay attention to the size of the machine, and we recommend you use the autoshutdown feature to stop your cluster if you forget to manually shut it down.
 
 Once the Azure CycleCloud virtual machine is deployed, navigate to the resource in the portal and look for the IP address
 
 <img src="/docs/images/Azure_cycleCloud2.png" width="600">
 
-Enter the IP address of you Azure CycleCloud instance in a browser, if this is the first time opening up Azure CycleCloud a pop up should display to associate your subscription and virtual machine with Azure Cycle Cloud. See below:
+Enter the IP address of you Azure CycleCloud instance in a browser. It may take a few minutes for the IP to populate so if it says 'Site can't be reached' just try after a few minutes. Also, on Chrome you may get 'Connection is not Private' Warning, you can click 'Advanced' then 'Proceed to IP (unsafe). 
+
+If this is the first time opening up Azure CycleCloud a pop up should display to associate your subscription and virtual machine with Azure Cycle Cloud. See below:
 
 <img src="/docs/images/Add_Subscription_CycleCloud.png" width="600">
 
