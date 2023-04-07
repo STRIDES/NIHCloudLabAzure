@@ -46,6 +46,7 @@ Microsoft has several genomics-related offerings that will be useful to many Clo
 + [Cromwell on Azure](https://github.com/microsoft/CromwellOnAzure): Documentation on how to spin up the resources needed to run Cromwell on Azure. 
 + [Microsoft Genomics](https://learn.microsoft.com/en-us/azure/genomics/quickstart-run-genomics-workflow-portal): Run BWA and GATK using this managed service. Note that it uses Python 2.7 and thus is not compatible with AzureML (which uses Python 3), but you can run it from any other shell environment.
 + [Nextflow on Azure](https://microsoft.github.io/Genomics-Community/mydoc_nextflow.html): Run Nextflow workflows using Azure Batch. 
++ [NVIDIA Parabricks on Azure](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/benchmarking-the-nvidia-clara-parabricks-for-secondary-genomics/ba-p/3722434). Follow this guide to run Parabricks on a VM by pulling the Docker container directly from NVIDIA.
 
 ## **Genome Wide Association Studies** <a name="gwas"></a>
 Genome wide association studies, or GWAS, are statistical analyses that look for associations between genomic variants and phenotypic traits.
