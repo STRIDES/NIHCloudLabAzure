@@ -1,5 +1,3 @@
-# **Content Being Updated**
-
 # Guide to implementing auto-shutdown features in virtual machines in Azure
 
 ## Automatic shutdown Azure Virtual Machine instance
