@@ -9,26 +9,23 @@ NIH Cloud Lab’s goal is to make Cloud easy and accessible for you, so that you
 Use this repository to learn about how to use Azure by exploring the linked resources and walking through the tutorials. If you are a beginner, we suggest you begin with this jumpstart section. If you already have foundational knowledge of Azure and Cloud, feel free to skip ahead to the [tutorials](/tutorials/) section for in-depth examples of how to run specific workflows such as genomic variant calling and medical image analysis.
 
 ## Overview of Page Contents
-
-- [NIH Cloud Lab for Azure](#nih-cloud-lab-for-azure)
-  - [Overview of Page Contents](#overview-of-page-contents)
-  - [**Getting Started** ](#getting-started-)
-  - [**Overview** ](#overview-)
-  - [**Resource Groups** ](#resource-groups-)
-  - [**Command Line Tools** ](#command-line-tools-)
-  - [**Azure Marketplace** ](#azure-marketplace-)
-  - [**Ingest and Store Data using Azure Storage Accounts** ](#ingest-and-store-data-using-azure-storage-accounts-)
-  - [**Virtual Machines** ](#virtual-machines-)
-  - [**Disk Images** ](#disk-images-)
-  - [**Launch a Machine Learning Workspace (Jupyter Environment)** ](#launch-a-machine-learning-workspace-jupyter-environment-)
-  - [**Clusters** ](#clusters-)
-  - [**Creating a Conda Environment** ](#creating-a-conda-environment-)
-  - [**Managing Containers with Azure Container Registry** ](#managing-containers-with-azure-container-registry-)
-  - [**GitHub** ](#github-)
-  - [**Billing and Benchmarking** ](#billing-and-benchmarking-)
-  - [**Cost Optimization** ](#cost-optimization-)
-  - [**Getting Support** ](#getting-support-)
-  - [**Additional Training** ](#additional-training-)
++ [Getting Started](#gs)
++ [Overview](#ov)
++ [Resource Groups](#rg)
++ [Command Line Tools](#cli)
++ [Azure Marketplace](#mark)
++ [Ingest and Store Data](#sto)
++ [Virtual Machines](#vm)
++ [Disk Images](#disk)
++ [Azure Machine Learning](#sag)
++ [Clusters](#clu)
++ [Creating a Conda Environment](#co)
++ [Azure Container Registry](#con)
++ [GitHub](#gh)
++ [Billing and Benchmarking](#bb)
++ [Cost Optimization](#cost)
++ [Getting Support](#sup)
++ [Additional Training](#tr)
 
 ## **Getting Started** <a name="gs"></a>
 You can learn a lot of what is possible on Azure in the Azure Getting Started [Tutorials Page](https://azure.microsoft.com/en-us/get-started/) and we recommend you go there and explore some of the tutorials on offer. Nonetheless, it can be hard to know where to start if you are new to the cloud. To help you, we thought through some of the most common tasks you will encounter doing cloud-enabled research, and gathered tutorials and guides specific to those topics. We hope the following materials are helpful as you explore using Azure! 
@@ -56,6 +53,13 @@ Microsoft's object storage solution for the cloud is called Azure Blob. Blob is 
 Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal. More information on VMs can be found [here](https://azure.microsoft.com/en-us/products/virtual-machines/#overview) as well as this [guide](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to use SSH keys with windows in Azure. To view the different types of VMs available in Azure check out the [Virtual Machine Series](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/). 
 
 You can also spin up preconfigured VMs, such as the Azure Data Science VM, which has many data science tools preinstalled and may save you time on environment set up. Read more in [our docs](/docs/Azure_Data_Science_VMs.md).
+
+The roles granted to Azure Cloud Lab subscribers have been reduced to protect the NIH network.
+Best Practices for provisioning VM's include:
+-Use the provided Virtual Network (vNet)
+-Use the provided Network Security Group (NSG)
+-Select "Delete public IP and NIC when VM is deleted"
+-Set the Virtual Machine to auto shut down [guide](/docs/auto-shutdown-instance.md)
 
 ## **Disk Images** <a name="disk"></a>
 Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved. You can later redeploy these images to spin up a new machine with data or environments already installed.
