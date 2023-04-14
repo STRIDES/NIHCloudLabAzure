@@ -6,7 +6,7 @@ Best Practices for provisioning VM's include:
 - [Guide to Azure Virtual Machine Best Practices](#guide-to-azure-virtual-machine-best-practices)
   - [Ensure the "Delete with VM" checkbox is checked on the Disks page](#ensure-the-delete-with-vm-checkbox-is-checked-on-the-disks-page)
   - [Virtual Network Configurations](#virtual-network-configurations)
-  - [Configure your VMs to autoshutdown"](#configure-your-vms-to-autoshutdown)
+  - [Configure your VMs to autoshutdown](#configure-your-vms-to-autoshutdown)
   - [VM Validations](#vm-validations)
 
 ## Ensure the "Delete with VM" checkbox is checked on the Disks page<a name="disks"></a>
@@ -27,7 +27,7 @@ These will available at VM provisioning time, on the Networking tab.
 <img src="/docs/images/VM-Networking.png" width="1098" height="1377">
 
 
-## Configure your VMs to autoshutdown"<a name="autoshutdown"></a>
+## Configure your VMs to autoshutdown<a name="autoshutdown"></a>
 Depending on the workload, you may not want to have your VM running 24 hours a day, 7 days a week.  In this case it's a good practice to use the built in autoshutdown in Azure to power down the VM at a certain time, every day, if running.  If the VM is not running, nothing will happen.
 You can find the STRIDES GitHub guide [here](/docs/auto-shutdown-instance.md).
 This is available at VM provisioning time, on the Management tab.
