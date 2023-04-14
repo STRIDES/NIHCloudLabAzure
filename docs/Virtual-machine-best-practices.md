@@ -19,11 +19,11 @@ Conversely, if you choose to keep your disks even after VM deprovisioning, then 
 Due to controls around using the NIH Azure network, settings will be predefined for your CloudLab subscription.  
 These will available at VM provisioning time, on the Networking tab.  
 
- - [Please use the Provided Virtual Network (vNet)]
- - [Change "Public IP" to "None"]
- - [Use the provided Network Security Group (NSG)]
- - [Select "Delete public IP and NIC when VM is deleted"]
- - - After using the VM, you may want to deprovision and create another or start over.  To ensure the VM and it's child resources get deleted, check the "Delete public IP and NIC when the VM is deleted.  This is available at VM provisioning time, on the Networking tab.
+ - Please use the Provided Virtual Network (vNet)
+ - Change "Public IP" to "None"
+ - Use the provided Network Security Group (NSG)
+ - Select "Delete public IP and NIC when VM is deleted"
+   - After using the VM, you may want to deprovision and create another or start over.  To ensure the VM and it's child resources get deleted, check the "Delete public IP and NIC when the VM is deleted.  This is available at VM provisioning time, on the Networking tab.
 <img src="/docs/images/VM-Networking.png" width="1098" height="1377">
 
 
