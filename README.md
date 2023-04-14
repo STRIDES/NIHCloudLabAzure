@@ -54,17 +54,12 @@ Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal
 
 You can also spin up preconfigured VMs, such as the Azure Data Science VM, which has many data science tools preinstalled and may save you time on environment set up. Read more in [our docs](/docs/Azure_Data_Science_VMs.md).
 
-The roles granted to Azure Cloud Lab subscribers have been reduced to protect the NIH network.
-Best Practices for provisioning VM's include:
--Use the provided Virtual Network (vNet)
--Use the provided Network Security Group (NSG)
--Select "Delete public IP and NIC when VM is deleted"
--Set the Virtual Machine to auto shut down [guide](/docs/auto-shutdown-instance.md)
+Also, for best VM provisioning experience, please see this link for VM best practices in [our docs](/docs/Virtual-machine-best-practices.md).
 
 ## **Disk Images** <a name="disk"></a>
 Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved. You can later redeploy these images to spin up a new machine with data or environments already installed.
 
-## **Launch a Machine Learning Workspace (Jupyter Environment)** <a name="ml"></a>
+## **Launch a Machine Learning Workspace (Jupyter Environment)** <a name="sag"></a>
 [Azure Machine Learning studio](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) is Azure's ML/AI solution. ML studio allows for you to run your own code in managed Jupyter notebooks. Follow the [Quickstart](https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-run-notebooks) page to begin running Jupyter Notebooks in studio. Note that you will need to start and stop your compute environment, which is run separately from the notebook. Once in the AzureML portal, go to compute, then you can select Jupyter, Notebooks, or VS Code, which means a lot of flexibility in the way you utilize the compute environment.
 
 ## **Clusters** <a name="clu"></a>
@@ -72,10 +67,10 @@ One great thing about the cloud is its ability to scale with demand. When you su
 
 If you are interested in using a more traditional scheduler like SLURM or Sun Grid, you can use Azure CycleCloud, which has an easy to use GUI as well as CLI options. Read our guide [here](/docs/AzureCycleCloud_HPC.md) specifically for how to spin up a SLURM cluster. 
 
-## **Creating a Conda Environment** <a name="ca"></a>
+## **Creating a Conda Environment** <a name="co"></a>
 Virtual environments allow you to manage package versions without having package conflicts. For example, if you needed Python 3 for one analysis, but Python 2.7 for another, you could create separate environments to use the two versions of Python. One of the most popular package managers used for creating virtual environments is the [conda package manager](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#:~:text=A%20conda%20environment%20is%20a,NumPy%201.6%20for%20legacy%20testing). We also made a quick guide that you can reference [here](/docs/create_conda_env.md)
 
-## **Managing Containers with Azure Container Registry** <a name="dock"></a>
+## **Managing Containers with Azure Container Registry** <a name="con"></a>
 You can host or pull containers with Azure Container Registry. See [Microsoft's documentation](https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal?tabs=azure-cli) on how to use this service.
 
 ## **GitHub** <a name="gh"></a>
@@ -93,6 +88,6 @@ Follow our [Cost Management Guide](/docs/billing_and_cost_management.md) for det
 ## **Getting Support** <a name="sup"></a>
 As part of your participation in Cloud Lab you will be added to the Cloud Lab Teams channel where you can chat with other Cloud Lab users, and gain support from the Cloud Lab team. For NIH Intramural users, you can submit a support ticket to Service Now. For issues related to the cloud environment, feel free to request [Azure Enterprise Support](/docs/request_enterprise_support.md). For issues related to scientific use cases, such as, `how can I best run an RNAseq pipeline in Azure?`, email us at `CloudLab@nih.gov`.
 
-## **Additional Training** <a name="TR"></a>
+## **Additional Training** <a name="tr"></a>
 This repo only scratches the surface of what can be done in the cloud. If you are interested in additional cloud training opportunities, please visit the [STRIDES Training page](https://cloud.nih.gov/training/). For more information on the STRIDES Initiative at the NIH, visit [our website](https://cloud.nih.gov) or contact the NIH STRIDES team at STRIDES@nih.gov for more information.
 
