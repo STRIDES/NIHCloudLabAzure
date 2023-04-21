@@ -4,10 +4,22 @@ The roles granted to Azure Cloud Lab subscribers have been reduced to protect th
 
 Best Practices for provisioning VM's include:
 - [Guide to Azure Virtual Machine Best Practices](#guide-to-azure-virtual-machine-best-practices)
+  - [Creating the Virtual Machine Basics](#creating-the-virtual-machine-basics)
   - [Ensure the "Delete with VM" checkbox is checked on the Disks page](#ensure-the-delete-with-vm-checkbox-is-checked-on-the-disks-page)
   - [Virtual Network Configurations](#virtual-network-configurations)
   - [Configure your VMs to autoshutdown](#configure-your-vms-to-autoshutdown)
   - [VM Validations](#vm-validations)
+
+## Creating the Virtual Machine Basics<a name="vmb"></a>
+When creating a new Virtual Machine, start on the Basics screen. Most of this is self explanatory, but there are specific things to note:
+1. For Resource Group, you can either:
+   - Create a new Resource Group
+   - Select and existing Resource Group
+2. Regions have been limited down, select an applicable region, such as "East US 2"
+3. For the licensing, leave this box unchecked.  The intent for Cloud Lab is to be short lived.
+<img src="/docs/images/VM-Basics-1.png" width="816" height="801">
+<img src="/docs/images/VM-Basics-2.png" width="807" height="515">
+
 
 ## Ensure the "Delete with VM" checkbox is checked on the Disks page<a name="disks"></a>
 After using the VM, you may want to deprovision and create another or start over.  To ensure the VM and it's child resources get deleted, check the "Delete with VM" box. This ensures orphaned disks don't remain in your subscription consuming cost inadvertently.  This is available at VM provisioning time, on the Disks tab.
