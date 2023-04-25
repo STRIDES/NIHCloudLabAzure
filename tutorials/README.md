@@ -12,7 +12,8 @@
 + [RNAseq](#rna)
 + [scRNAseq](#sc)
 + [Long Read Sequencing Analysis](#long)
-+ [AI/ML Pipeline](#ai)
++ [How to Set Up an Azure Machine Learning Compute Instance](#aml)
++ [Azure Machine Learning Observability](#obs)
 + [Open Data](#open)
 
 
@@ -34,7 +35,7 @@ These notebooks are available [here](https://github.com/Azure/medical-imaging). 
 
 For Cloud Lab users interested in multi-modal clinical informatics, DICOMcast provides the ability to synchronize data from a DICOM service to a FHIR service, allowing users to integrate clinical and imaging data. DICOMcast expands the use cases for health data by supporting both a streamlined view of longitudinal patient data and the ability to effectively create cohorts for medical studies, analytics, and machine learning. For more information on how to utilize DICOMcast please visit Microsoft’s [documentation](https://learn.microsoft.com/en-us/azure/healthcare-apis/dicom/dicom-cast-overview) or the open-source [GitHub repository](https://github.com/microsoft/dicom-server/blob/main/docs/quickstarts/deploy-dicom-cast.md).
 
-For users hoping to train deep learning models on imaging data, InnerEye-DeepLearning (IE-DL) is a toolbox that Microsoft developed for easily training deep learning models on 3D medical images. Simple to run both locally and in the cloud with AzureML, it allows users to train and run inference on the following:
+For users hoping to train deep learning models on imaging data, InnerEye-DeepLearning (IE-DL) is a toolbox that Microsoft developed for easily training deep learning models on 3D medical images. Simple to run both locally and in the cloud with Azure Machine Learning, it allows users to train and run inference on the following:
 •	Segmentation models
 •	Classification and regression models
 •	Any PyTorch Lightning model, via a bring-your-own-model setup
@@ -46,12 +47,12 @@ Microsoft has several genomics-related offerings that will be useful to many Clo
 + [Cromwell on Azure](https://github.com/microsoft/CromwellOnAzure): Documentation on how to spin up the resources needed to run Cromwell on Azure. 
 + [Microsoft Genomics](https://learn.microsoft.com/en-us/azure/genomics/quickstart-run-genomics-workflow-portal): Run BWA and GATK using this managed service. Note that it uses Python 2.7 and thus is not compatible with AzureML (which uses Python 3), but you can run it from any other shell environment.
 + [Nextflow on Azure](https://microsoft.github.io/Genomics-Community/mydoc_nextflow.html): Run Nextflow workflows using Azure Batch. 
-+ [NVIDIA Parabricks on Azure](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/benchmarking-the-nvidia-clara-parabricks-for-secondary-genomics/ba-p/3722434). Follow this guide to run Parabricks on a VM by pulling the Docker container directly from NVIDIA.
++ [NVIDIA Parabricks for Secondary Genomics Analysis on Azure](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/benchmarking-the-nvidia-clara-parabricks-for-secondary-genomics/ba-p/3722434). Follow this guide to run Parabricks on a VM by pulling the Docker container directly from NVIDIA.
 
 ## **Genome Wide Association Studies** <a name="gwas"></a>
 Genome wide association studies, or GWAS, are statistical analyses that look for associations between genomic variants and phenotypic traits.
-- This [NIH CFDE written tutorial](https://training.nih-cfde.org/en/latest/Bioinformatic-Analyses/GWAS-in-the-cloud
-) walks you through running a simple GWAS on AWS, but can be adapted for Azure. Note that the CFDE page has a few other bioinformatics related tutorials like BLAST and Illumina read simulation. We also converted the GWAS tutorial to a simplified [notebook version](/tutorials/notebooks/GWAS) if you prefer that format. 
+- GWAS tutorial is available in this simplified [notebook version](/tutorials/notebooks/GWAS).
+- This blog post [illustrates some of the costs associated](https://techcommunity.)microsoft.com/t5/azure-high-performance-computing/azure-to-accelerate-genome-wide-analysis-study/ba-p/2644120) with running GWAS on Azure
 
 ## **NCBI BLAST** <a name="blast"></a>
 The NCBI Basic Local Alignment Search Tool (BLAST) find regions of similarity between input sequences. 
@@ -75,11 +76,13 @@ Single Cell RNAseq (scRNAseq) analyses allow for gene expression profiling at th
 Long read DNA sequence analysis involves analyzing sequencing reads typically longer than 10 thousand base pairs (bp) in length, compared with short read sequencing where reads are about 150 bp in length.
 Oxford Nanopore has a pretty complete offering of notebook tutorials for handling long read data to do a variety of things including variant calling, RNAseq, Sars-Cov-2 analysis and much more. Access the notebooks [here](https://labs.epi2me.io/nbindex/). These notebooks expect you are running locally and accessing the epi2me notebook server. To run them in Cloud Lab, skip the first cell that connects to the server and then the rest of the notebook should run correctly, with a few tweaks. If you are just looking to try out notebooks, don't start with these. If you are interested in long read sequence analysis, then some troubleshooting may be needed to adapt these to the Cloud Lab environment. You may even need to rewrite them in a fresh notebook by adapting the commands. Feel free to reach out to our support team for help.
 
-## **AI/ML Pipelines** <a name="ai"></a>
-Artificial intelligence and machine learning algorithms are being applied to a variety of biomedical research questions, ranging from image classification to genomic variant calling. [Azure Machine Learning](https://learn.microsoft.com/en-us/azure/machine-learning/overview-what-is-azure-machine-learning) provides a cloud service for accelerating and managing the machine learning project lifecycle. You can use it to train and deploy models, and manage MLOps. 
+## **How to Set Up an Azure Machine Learning Compute Instance** <a name="aml"></a>
+The [Azure Machine Learning compute instance](https://learn.microsoft.com/en-us/azure/machine-learning/concept-compute-instance?view=azureml-api-2) is a secure, cloud-based Azure workstation that provides data scientists with a Jupyter Notebook server, JupyterLab, and a fully managed machine learning environment. Compute instances make it easy to get started with Azure Machine Learning development and provide management and enterprise readiness capabilities for IT administrators.
 
-The Federated Learning paradigm has recently gained a lot of interest in the biomedical community, because it enables model training on all available data, without sharing data between institutions. NVIDIA Flare is a domain-agnostic, open source and extensible SDK for federated learning. A separate [GitHub repository](https://github.com/Azure/medical-imaging/tree/main/federated-learning) describes how NVIDIA Flare can be run on Azure.
+The Azure file share account of your Azure Machine Learning workspace is mounted as a drive on the compute instance. This drive is the default working directory for Jupyter, Jupyter Labs, RStudio, and Posit Workbench. This means that the notebooks and other files you create in Jupyter, JupyterLab, RStudio, or Posit are automatically stored on the file share and available to use in other compute instances as well.
 
+## **Azure Machine Learning Observability** <a name="obs"></a>
+Azure Machine Learning Observability solution accelerator provides [libraries](https://github.com/microsoft/AzureML-Observability) for model monitoring and data drift analysis. The library is extensible to plug in different drift detection algorithms and runs on top of the scalable Azure Data Explorer. This Microsoft [blog post](https://techcommunity.microsoft.com/t5/ai-machine-learning-blog/azureml-observability-a-scalable-and-extensible-solution-for-ml/ba-p/3474066) has a solution overview of how to use this library.
 
 ## **Open Data** <a name="open"></a>
 These publicly available datasets can save you time on data discovery and preparation by being curated and ready to use in your workflows.
