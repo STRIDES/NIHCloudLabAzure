@@ -52,7 +52,7 @@ Microsoft has several genomics-related offerings that will be useful to many Clo
 ## **Genome Wide Association Studies** <a name="gwas"></a>
 Genome wide association studies, or GWAS, are statistical analyses that look for associations between genomic variants and phenotypic traits.
 - GWAS tutorial is available in this simplified [notebook version](/tutorials/notebooks/GWAS).
-- This blog post [illustrates some of the costs associated](https://techcommunity.)microsoft.com/t5/azure-high-performance-computing/azure-to-accelerate-genome-wide-analysis-study/ba-p/2644120) with running GWAS on Azure
+- This blog post [illustrates some of the costs associated](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/azure-to-accelerate-genome-wide-analysis-study/ba-p/2644120) with running GWAS on Azure
 
 ## **NCBI BLAST** <a name="blast"></a>
 The NCBI Basic Local Alignment Search Tool (BLAST) find regions of similarity between input sequences. 
