@@ -1,5 +1,3 @@
-# **Content Being Updated**
-
 # Guide to Azure Billing and Cost Management
 
 Understanding how to manage your costs can be difficult in the cloud. For one thing, you have to keep track of how much you have spent with the obvious services, like Virtual Machines, Azure Machine Learning and Azure Storage Accounts. On the other hand, how can you figure out how much you are being charged for your network (Virtual Networks)? 

@@ -6,6 +6,7 @@ Resource groups are a fundamental element of the Azure platform. A resource grou
 ## Overview of Page Contents
 
 - [Guide to Azure Resource Groups](#guide-to-azure-resource-groups)
+  - [Overview of Page Contents](#overview-of-page-contents)
     - [Logical Grouping](#logical-grouping)
     - [Life cycle](#life-cycle)
     - [Authorization](#authorization)
@@ -32,17 +33,18 @@ Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azu
 
 ### Create Resource Group<a name="crg"></a>
 1. Sign in to the Azure portal.
-2. Select **Resource groups**
+2. Select **Resource groups** or search for **Resource groups** in the top search bar.
 
 <img alt="image" src="/docs/images/manage-resource-groups-add-group.png">
+<img alt="image" src="/docs/images/manage-resource-groups-add-group-2.png">
 
 3. Select **Add**.
 4. Enter the following values:
     - Subscription: Select your Azure subscription.
     - Resource group: Enter a new resource group name.
-    - Region: Select an Azure location, such as `Central US`.
+    - Region: Select an Azure location, such as `East US 2`.
 
-<img alt="image" src="/docs/images/manage-resource-groups-create-group.png">
+<img alt="image" src="/docs/images/manage-resource-groups-create-group-2.png">
 
 5. Select **Review + Create**
 6. Select Create. It takes a few seconds to create a resource group.
@@ -55,7 +57,7 @@ Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azu
 
 ###  List Resource Groups<a name="lrg"></a>
 1. Sign in to the Azure portal.
-2. To list the resource groups, select **Resource groups**
+2. To list the resource groups, select **Resource groups** or search for **Resource groups** in the top search bar.
 
 <img alt="image" src="/docs/images/manage-resource-groups-list-groups.png">
 
@@ -65,7 +67,7 @@ Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azu
 
 ### Open Resource Group<a name="org"></a>
 1. Sign in to the Azure portal.
-2. Select **Resource groups**.
+2. Select **Resource groups** or search for **Resource groups** in the top search bar.
 3. Select the resource group you want to open.
    
 Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#open-resource-groups).

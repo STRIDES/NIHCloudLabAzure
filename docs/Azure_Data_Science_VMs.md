@@ -1,5 +1,3 @@
-# **Content Being Updated**
-
 # Azure Data Science VMs
 The Azure Marketplace comes with preconfigured Data Science VMs (DSVMs). These machines come with all the different types of tools required for data analytics and machine learning within the Azure Cloud Lab. To view the available Azure DSVMs from the Marketplace search bar type in: "Data Science Virtual Machines". Once the search completes, you will be presented with the different machines available along with their hourly costs.
 
