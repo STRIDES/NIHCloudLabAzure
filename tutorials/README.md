@@ -56,8 +56,7 @@ Genome wide association studies, or GWAS, are statistical analyses that look for
 
 ## **NCBI BLAST** <a name="blast"></a>
 The NCBI Basic Local Alignment Search Tool (BLAST) find regions of similarity between input sequences. 
-- [This Microsoft Blog](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/running-ncbi-blast-on-azure-performance-scalability-and-best/ba-p/2410483) explains how to optimize BLAST analyses on Azure VMs.
-- [This GitHub Repository](https://github.com/Azure/azurehpc/tree/master/apps/blast) walks you through how to repeat the analysis. To keep it simple, just use the VM rather than cluster option, but use the example scripts to install and test BLAST.
+- [This Microsoft Blog](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/running-ncbi-blast-on-azure-performance-scalability-and-best/ba-p/2410483) explains how to optimize BLAST analyses on Azure VMs. Feel free to install BLAST+ on a VM or an AzureML notebook and run queries there. d
 
 ## **Query a VCF file in Azure Synapse** <a name="vcf"></a>
 - You can use SQL to rapidly query a VCF file in Azure Synapse. The requires converting the file from VCF to Parquet format, a common format for databases. Read more about how to do this in Azure on [this Microsoft blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/genomic-data-in-parquet-format-on-azure/ba-p/3150554). 
