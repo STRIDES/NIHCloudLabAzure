@@ -14,7 +14,7 @@ Once in the Azure Marketplace, in the Marketplace search bar , search for "Azure
 
 Click "Azure CycleCloud" followed by selecting the version you want (we recommend the most recent) and then "Create"
 
-Fill out the appropriate information for the Virtual Machine to run and then click "Review + Create". Most of the options you can leave as default, but pay attention to the size of the machine, and we recommend you use the autoshutdown feature to stop your cluster if you forget to manually shut it down. Azure Cycle Cloud VMs require a key pair to be created, there are multiple ways to create a key pair, please see [documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/) and then navigate to the dropdown on the right side of the documetation and open "Instances" and then click the "Connect to Virtual Machines" drop down to access information on how to create a key pair in Linux and Windows.
+Fill out the appropriate information for the Virtual Machine to run and then click "Review + Create". Most of the options you can leave as default, but pay attention to the size of the machine, and we recommend you use the autoshutdown feature to stop your cluster if you forget to manually shut it down. Azure Cycle Cloud VMs require a key pair to be created, there are multiple ways to create a key pair, please see [documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/) and then navigate to the dropdown on the right side of the documentation and open "Instances" and then click the "Connect to Virtual Machines" drop down to access information on how to create a key pair in Linux and Windows.
 
 Once the Azure CycleCloud virtual machine is deployed, navigate to the resource in the portal and look for the IP address
 

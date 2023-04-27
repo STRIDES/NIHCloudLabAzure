@@ -1,4 +1,4 @@
-**Instructions for deploying Kubeflow**
+# Instructions for deploying Kubeflow
     
     Prerequisites
         - install [kubectl](https://kubernetes.io/docs/tasks/tools/#install-kubectl-on-linux)
@@ -10,7 +10,7 @@
 
     
 
-**Azure Setup**
+# Azure Setup
 
     -To log into Azure from the command line interface, run the following commands
         -az login
@@ -25,7 +25,7 @@
 
 
 
-**KubeFlow installation**
+# KubeFlow installation
 
     -Create user credentials. You only need to run this command once.
         -az aks get-credentials -n <NAME> -g <RESOURCE_GROUP_NAME>
