@@ -49,3 +49,5 @@ Click start, once cluster is up you can SSH into the clusters scheduler node, se
 Click connect and screen should prompt you with a command to ssh into scheduler node:
 
 <img src="/docs/images/SSH_2.png" width="600">
+
+we recommend using the Azure CycleCloud Cli, for further instructions go to this [link](https://learn.microsoft.com/en-us/azure/cyclecloud/how-to/install-cyclecloud-cli?view=cyclecloud-8)
