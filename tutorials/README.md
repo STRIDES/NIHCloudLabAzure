@@ -51,12 +51,15 @@ Microsoft has several genomics-related offerings that will be useful to many Clo
 
 ## **Genome Wide Association Studies** <a name="gwas"></a>
 Genome wide association studies, or GWAS, are statistical analyses that look for associations between genomic variants and phenotypic traits.
-- GWAS tutorial is available in this simplified [notebook version](/tutorials/notebooks/GWAS).
+
+- This [NIH CFDE written tutorial](https://training.nih-cfde.org/en/latest/Bioinformatic-Analyses/GWAS-in-the-cloud
+) walks you through running a simple GWAS on AWS, but can be adapted for Azure. Note that the CFDE page has a few other bioinformatics related tutorials like BLAST and Illumina read simulation.
+- We converted the CFDE [GWAS tutorial to notebook format](/tutorials/notebooks/GWAS) so that you can easily run it on Azure.
 - This blog post [illustrates some of the costs associated](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/azure-to-accelerate-genome-wide-analysis-study/ba-p/2644120) with running GWAS on Azure
 
 ## **NCBI BLAST** <a name="blast"></a>
 The NCBI Basic Local Alignment Search Tool (BLAST) find regions of similarity between input sequences. 
-- [This Microsoft Blog](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/running-ncbi-blast-on-azure-performance-scalability-and-best/ba-p/2410483) explains how to optimize BLAST analyses on Azure VMs. Feel free to install BLAST+ on a VM or an AzureML notebook and run queries there. d
+- [This Microsoft Blog](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/running-ncbi-blast-on-azure-performance-scalability-and-best/ba-p/2410483) explains how to optimize BLAST analyses on Azure VMs. Feel free to install BLAST+ on a VM or an AzureML notebook and run queries there.
 
 ## **Query a VCF file in Azure Synapse** <a name="vcf"></a>
 - You can use SQL to rapidly query a VCF file in Azure Synapse. The requires converting the file from VCF to Parquet format, a common format for databases. Read more about how to do this in Azure on [this Microsoft blog](https://techcommunity.microsoft.com/t5/healthcare-and-life-sciences/genomic-data-in-parquet-format-on-azure/ba-p/3150554). Although the notebooks for this tutorial are bundled with the other genomics notebooks, to get them to work you will need to use Azure Databricks or Synapse Analytics, not AzureML. 
