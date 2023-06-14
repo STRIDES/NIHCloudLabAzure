@@ -50,4 +50,4 @@ Click connect and screen should prompt you with a command to ssh into scheduler 
 
 <img src="/docs/images/SSH_2.png" width="600">
 
-we recommend using the Azure CycleCloud Cli, for further instructions go to this [link](https://learn.microsoft.com/en-us/azure/cyclecloud/how-to/install-cyclecloud-cli?view=cyclecloud-8)
+We recommend using the Azure CycleCloud Cli, for further instructions go to this [link](https://learn.microsoft.com/en-us/azure/cyclecloud/how-to/install-cyclecloud-cli?view=cyclecloud-8)
