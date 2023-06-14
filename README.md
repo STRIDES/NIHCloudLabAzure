@@ -16,6 +16,7 @@ Use this repository to learn about how to use Azure by exploring the linked reso
 + [Azure Marketplace](#mark)
 + [Ingest and Store Data](#sto)
 + [Virtual Machines](#vm)
++ [Azure Functions](#vm)
 + [Disk Images](#disk)
 + [Azure Machine Learning](#sag)
 + [Clusters](#clu)
@@ -55,6 +56,9 @@ Virtual machines (VMs) on Azure can be accessed via SSH or from the Azure portal
 You can also spin up preconfigured VMs, such as the Azure Data Science VM, which has many data science tools preinstalled and may save you time on environment set up. Read more in [our docs](/docs/Azure_Data_Science_VMs.md).
 
 Also, for best VM provisioning experience, please see this link for VM best practices in [our docs](/docs/Virtual-machine-best-practices.md).
+
+## **Azure Functions** <a name="vm"></a>
+Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running. For more information click [here](https://learn.microsoft.com/en-us/azure/azure-functions/)
 
 ## **Disk Images** <a name="disk"></a>
 Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved. You can later redeploy these images to spin up a new machine with data or environments already installed.
