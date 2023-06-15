@@ -58,7 +58,7 @@ You can also spin up preconfigured VMs, such as the Azure Data Science VM, which
 Also, for best VM provisioning experience, please see this link for VM best practices in [our docs](/docs/Virtual-machine-best-practices.md).
 
 ## **Azure Functions** <a name="vm"></a>
-Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running. For more information click [here](https://learn.microsoft.com/en-us/azure/azure-functions/)
+Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running. For more information click [here](https://learn.microsoft.com/en-us/azure/azure-functions/). In general, you can consider functions for automating workflows.
 
 ## **Disk Images** <a name="disk"></a>
 Part of the power of virtual machines is that they offer a blank slate for you to configure as desired. [Azure VM Image Builder](https://azure.microsoft.com/en-us/products/image-builder/#overview) simplifies the image building process allowing for custom built images to be saved. You can later redeploy these images to spin up a new machine with data or environments already installed.
