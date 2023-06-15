@@ -12,8 +12,6 @@
 + [RNAseq](#rna)
 + [scRNAseq](#sc)
 + [Long Read Sequencing Analysis](#long)
-+ [How to Set Up an Azure Machine Learning Compute Instance](#aml)
-+ [Azure Machine Learning Observability](#obs)
 + [Open Data](#open)
 
 
