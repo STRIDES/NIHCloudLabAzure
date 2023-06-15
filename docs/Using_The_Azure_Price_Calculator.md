@@ -1,5 +1,3 @@
-# **Content Being Updated**
-
 # Azure Pricing Calculator
 The Azure Price Calculator is an important tool to use as you are beginning to determine what resources you will need in Azure. When used correctly it will show you the potential hourly and monthly costs of each resource. It is important that you understand that both the type of resource and the amount of time it is being used effects the total cost for using that resource. So try to use the lowest cost resource for your projects to prevent cost overuns. Reading through these instructions before using the Calculator will help you better understand the options available to you.   
  [Azure Price Calculator](https://azure.microsoft.com/en-us/pricing/calculator/?OCID=AIDcmm5edswduu_SEM_0578e77bc86314f796a884a07b206fd0:G:s&ef_id=0578e77bc86314f796a884a07b206fd0:G:s&msclkid=0578e77bc86314f796a884a07b206fd0).
