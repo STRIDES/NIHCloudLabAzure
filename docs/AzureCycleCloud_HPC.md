@@ -6,11 +6,11 @@ Azure CycleCloud deploys autoscaling plugins on top of the supported schedulers,
 
 Navigate to the [Azure Portal](https://portal.azure.com/) and type in "marketplace" in the search bar on top of screen.
 
-[Screenshot of the Azure Marketplace](/docs/images/Marketplace_Azure.png)
+![Screenshot of the Azure Marketplace](/docs/images/Marketplace_Azure.png)
 
 Once in the Azure Marketplace, in the Marketplace search bar , search for "Azure CycleCloud" see below.
 
-[Screenshot of Azure CycleCloud in the Marketplace](docs/images/AzureCycleCloud.png)
+![Screenshot of Azure CycleCloud in the Marketplace](/docs/images/AzureCycleCloud.png)
 
 Click "Azure CycleCloud" followed by selecting the version you want (we recommend the most recent) and then "Create"
 
