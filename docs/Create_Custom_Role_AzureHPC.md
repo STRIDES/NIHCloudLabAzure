@@ -2,13 +2,13 @@
 
 Go to this [link](https://learn.microsoft.com/en-us/azure/cyclecloud/how-to/managed-identities?view=cyclecloud-8) and copy the JSON policy and optional section and paste into notepad and save as a .JSON file
 
-In the Azure [portal](https://portal.azure.com), open a subscription or resource group where you want the custom role to be assignable and then open Access control (IAM).
+In the [Azure portal](https://portal.azure.com), open a subscription or resource group where you want the custom role to be assignable and then open Access control (IAM).
 
 <img src="/docs/images/Custom_role1.png" width="600">
 
 Click Add and then click Add custom role.
 
-Give the Custom Role a name
+Give the custom role a name
 
 Select "Start from JSON" option on the bottom followed by selected the blue folder and choosing the JSON file you recently created
 
