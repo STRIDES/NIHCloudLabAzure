@@ -8,7 +8,7 @@ There are 2 main ways to manage shutdowns for your Azure Virtual Machines.
         - This is built into each virtual machine and gives you the ability to set a shutdown time, timezone, and notification options.
   
 2. [Start/Stop VMs - Azure Automation](#startstop-vms---azure-automation)
-        - This is a solution based on Azure Automation and gives you more flex
+        - This is a solution based on Azure Automation and gives you more flexibility.
 
 
 ### Auto-Shutdown:<a name="AS"></a>
