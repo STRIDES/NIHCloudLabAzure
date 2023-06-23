@@ -10,7 +10,7 @@ Navigate to the [Azure Portal](https://portal.azure.com/) and type in "marketpla
 
 Once in the Azure Marketplace, in the Marketplace search bar , search for "Azure CycleCloud" see below.
 
-![Screenshot of Azure CycleCloud in the Marketplace](docs/images/AzureCycleCloud.png)
+[Screenshot of Azure CycleCloud in the Marketplace](docs/images/AzureCycleCloud.png)
 
 Click "Azure CycleCloud" followed by selecting the version you want (we recommend the most recent) and then "Create"
 
