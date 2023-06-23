@@ -18,7 +18,7 @@ Fill out the appropriate information for the virtual machine to run and then cli
 
 Once the Azure CycleCloud virtual machine is deployed, navigate to the resource in the portal and look for the IP address
 
-![Screenshot of an Azure CycleCloud virtual machine](/docs/images/Azure_cycleCloud2.png)
+![Screenshot of an Azure CycleCloud virtual machine](/docs/images/AzureCycleCloud2.png)
 
 Enter the IP address of you Azure CycleCloud instance in a browser. It may take a few minutes for the IP to populate so if it says 'Site can't be reached' just try after a few minutes. Also, on Chrome you may get 'Connection is not Private' Warning, you can click 'Advanced' then 'Proceed to IP (unsafe). 
 
