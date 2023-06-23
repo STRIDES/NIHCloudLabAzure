@@ -25,14 +25,8 @@ There are 2 main ways to manage shutdowns for your Azure Virtual Machines.
    - **Email address (optional):**  Provide a set of semicolon-delimited email addresses to receive alert notification emails.
 6. Click the "Save" button at the top
 
-<img src="/docs/images/VirtualMachine-Properties-Autoshutdown.png" width="1685" height="1324">
-<img src="/docs/images/Auto-shutdown-options.png" width="1275" height="439">
-
-
-### Start/Stop VMs - Azure Automation:<a name="SSVM"></a>
-Content to be added
-
-https://learn.microsoft.com/en-us/azure/azure-functions/start-stop-vms/overview
+![VM Autoshutdown](/docs/images/VirtualMachine-Properties-Autoshutdown.png)
+![Autoshutdown options](/docs/images/Auto-shutdown-options.png)
 
 
 
