@@ -14,7 +14,7 @@ Select "Start from JSON" option on the bottom followed by selected the blue fold
 
 Review + Create Role
 
-<img src="/docs/images/Custom_role3.png" width="600">
+![Screenshot on creating custom role](/docs/images/Custom_role3.png)
 
 # Assign Custom Role to VMs Managed Identity at the subscription level
 
@@ -34,4 +34,4 @@ Select the subscription the Azure CycleCloud instance is on
 
 Select the custom role you just created, example below: 
 
-<img src="/docs/images/Custom_role2.png" width="600">
+![Screenshot on creating custom role](/docs/images/Custom_role2.png)
