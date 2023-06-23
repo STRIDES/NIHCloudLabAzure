@@ -24,7 +24,7 @@ Enter the IP address of you Azure CycleCloud instance in a browser. It may take 
 
 If this is the first time opening up Azure CycleCloud a pop up should display to associate your subscription and virtual machine with Azure Cycle Cloud. See below:
 
-![Screenshot configuring Azure CycleCloud](/docs/images/Add_Subscription_CycleCloud.png)
+![Screenshot configuring Azure CycleCloud](/docs/images/Add_Subscription2.png)
 
 Fill out the neccassary information required, you will need to configure a custom role for Azure CycleCloud to find your subscription. Here is [documentation](https://github.com/STRIDES/NIHCloudLabAzure/blob/main/docs/Create_Custom_Role_AzureHPC.md) on how to create a custom role for Azure Cycle Cloud.
 
