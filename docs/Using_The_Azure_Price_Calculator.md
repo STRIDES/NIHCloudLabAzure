@@ -13,7 +13,7 @@ Before we review the use of the tabs, we need to get a basic understanding of ho
 Below are screen shots of the claculations for a simple Virtual Machine (VM).The first one shows the total monthly cost for the VM at $14.60 for 730 hours of operation. (That is the average total amount of hours in a month.) 
 <img width="600" alt="A0 1Core 730" src="https://user-images.githubusercontent.com/116583981/217034381-881b0b0b-5d53-498f-b77d-15e7f4f29b1f.png">
 
-Now lets take that same VM and only run it during working hours, eight hours a day for twenty days. you see that by shutting down the VM after hours and when not in use will generate significant savings. In this case the cost drops to $3.20 for the same resource for the month.
+Now lets take that same virtual machine and only run it during working hours, eight hours a day for twenty days. you see that by shutting down the VM after hours and when not in use will generate significant savings. In this case the cost drops to $3.20 for the same resource for the month.
 <img width="600" alt="A0 1Core 160" src="https://user-images.githubusercontent.com/116583981/217039565-3d9cda15-c28c-4594-897a-16e585d05447.png">
 
 With a small resource, as in the example above, we see little effect on our monthly budget. But what about if we used something larger? The screen shot below shows the largest of the A series VMs, an A7, and the cost for 730 hours is $876.00. (That's $376.00 over the Cloud Lab subscription's monthly budget of $500.00.)
