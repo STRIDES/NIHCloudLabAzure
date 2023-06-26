@@ -1,8 +1,8 @@
 # Guide to implementing auto-shutdown features in virtual machines in Azure
 
-## Automatic shutdown Azure Virtual Machine instance
+## Automatic shutdown Azure virtual machine instance
 
-There are 2 main ways to manage shutdowns for your Azure Virtual Machines.
+There are 2 main ways to manage shutdowns for your Azure virtual machines.
 
 1. [Auto-Shutdown](#auto-shutdown)
         - This is built into each virtual machine and gives you the ability to set a shutdown time, timezone, and notification options.
@@ -13,8 +13,8 @@ There are 2 main ways to manage shutdowns for your Azure Virtual Machines.
 
 ### Auto-Shutdown:<a name="AS"></a>
 1. First login to Azure Portal
-2. Go to Virtual Machines (or if that option isn't available, use the search bar to find and open Virtual Machines)
-3. Next select a Virtual Machine
+2. Go to virtual machines (or if that option isn't available, use the search bar to find and open virtual machines)
+3. Next select a virtual machine
 4. Scroll to the Operations section and click Auto-Shutdown
 5. Fill in the required details
    - **Enabled:**  Enables/disabled the auto-shutdown
