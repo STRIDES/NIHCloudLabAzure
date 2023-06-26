@@ -1,6 +1,6 @@
 # Azure Virtual Machine Best Practices
 
-The roles granted to Azure Cloud Lab subscribers have been reduced to protect the NIH network.  To have the best experience when provisioning Virtual Machines (VM's), follow these best practices to avoid any validation errors, and thus review and correction of VM configuration.
+The roles granted to Azure Cloud Lab subscribers have been reduced to protect the NIH network.  To have the best experience when provisioning virtual machines (VM's), follow these best practices to avoid any validation errors, and thus review and correction of VM configuration.
 
 Best Practices for provisioning VM's include:
 - [Azure Virtual Machine Best Practices](#azure-virtual-machine-best-practices)
@@ -11,7 +11,7 @@ Best Practices for provisioning VM's include:
   - [VM Validations - Review + Create Page](#vm-validations---review--create-page)
 
 ## Creating the Virtual Machine - Basics Page<a name="vmb"></a>
-When creating a new Virtual Machine, start on the Basics screen. Most of this is self explanatory, but there are specific things to note:
+When creating a new virtual machine, start on the Basics screen. Most of this is self explanatory, but there are specific things to note:
 1. For Resource Group, you can either:
    - Create a new Resource Group
    - Select an existing Resource Group
