@@ -1,16 +1,16 @@
 # Azure Data Science VMs
-The Azure Marketplace comes with preconfigured Data Science VMs (DSVMs). These machines come with all the different types of tools required for data analytics and machine learning within the Azure Cloud Lab. To view the available Azure DSVMs from the Marketplace search bar type in: "Data Science Virtual Machines". Once the search completes, you will be presented with the different machines available along with their hourly costs.
+The Azure Marketplace comes with preconfigured Data Science virtual machines (DSVMs). These machines come with all the different types of tools required for data analytics and machine learning within the Azure Cloud Lab. To view the available Azure DSVMs from the Marketplace search bar type in: "Data Science Virtual Machines". Once the search completes, you will be presented with the different machines available along with their hourly costs. below is a screen shot of Azure DSVMs in the Marketplace
 
 <img width="600" alt="Market_DSVM" src="https://user-images.githubusercontent.com/116583981/220430837-950597ee-c00e-4aa0-a92a-0920a5d76bf1.png">
 
 As an example, you can view what is pre-installed in the [Windows 2019 DSVM](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft-dsvm.dsvm-win-2019?tab=Overview&culture=en-us&country=us).
 
 ## Creating a Windows 2019 DSVM
-The steps to create a DSVM are basically the same as they are in creating any type of resource. You select the type of DSVM you want to build and click Create. Here is a quick example using the Windows 2019 DSVM.
+The steps to create a DSVM are basically the same as they are in creating any type of resource. You select the type of DSVM you want to build and click "Create". Below is a screenshot of the Windows 2019 DSVM in the Azure Marketplace.
 
 <img width="600" alt="win2019DSVM" src="https://user-images.githubusercontent.com/116583981/221194985-b023cc0a-e6bc-42fb-8ee0-1203eac456ef.png">
 
-The following two screen shots show the standard Create Virtual Machine start page. 
+The following two screen shots show the standard Create virtual machine start page. 
 
 <img width="600" alt="CreateDSVM1" src="https://user-images.githubusercontent.com/116583981/221196073-1da9bf02-d21b-4925-bbcf-216004a89e4d.png">
 
