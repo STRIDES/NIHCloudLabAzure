@@ -46,8 +46,7 @@ You can add a tag to pretty much any resource but let's look at a few examples. 
    ![Select Resources](/docs/images/select-multiple-resources.png)
 
 2. Add names and values. When done, select Save.
-    <img src="/docs/images/select-assign.png" width="700" height="669">
-
+   ![Select Assign](/docs/images/select-assign.png)
 
 ### Viewing all Resources with a Tag
 1. On the Azure portal menu, search for tags. Select it from the available options.
@@ -57,6 +56,7 @@ You can add a tag to pretty much any resource but let's look at a few examples. 
 2. Select the tag for viewing resources.
 
    ![Select Tag](/docs/images/select-tag.png)
+   
 4. All resources with that tag are displayed.
 
    ![View Resources by Tag](/docs/images/view-resources-by-tag.png)
@@ -65,32 +65,31 @@ You can add a tag to pretty much any resource but let's look at a few examples. 
 
 The left panel on the subscription home screen lists your options for managing costs within your subscription. Overview gives you a snapshot of your current and predicted future spending rates.  
 
-![Billing Dashboard](https://user-images.githubusercontent.com/116583981/207394433-0ab9e7c8-49cb-47a7-a4da-8e1313469f49.png)
+   ![Billing Dashboard](/docs/images/1_billing_dashboard_image)
 
 Under **Cost Management** there are three tools to help you manage costs, Cost analysis, Cost alerts, and Budgets. Additionally there is one tool called Advisor recommendations to help you configure your Subscription, and resources, in the most cost effective manners. 
 
 Clicking on **Cost Analysis** displays a screen similar to Overview but with a breakdown on the costs. In the screen shot below the costs are broken down by Service, Location, and Resource Group. 
 
-![Cost Analysis](https://user-images.githubusercontent.com/116583981/207634759-27b95689-2ed5-40f6-9d54-d586454385b7.png)
+   ![Cost Analysis](/docs/images/2_cost_analysis.png)
 
 Click on **Cost Alert** on the left panel. Here you are able to configure alerts for budgets and create cost anomaly alerts to automatically get notified if an anomaly is detected. Such as a resource running up costs to quickly. Click on **Learn more** to get detailed descriptions and instructions.
 
-![Image of Billing v1](https://user-images.githubusercontent.com/116583981/207636401-415dfe0f-b591-4f0d-9c65-7e1bcd9db163.png)
+   ![Image of Billing v1](/docs/images/3_cost_analysis.png)
 
 Click on **Budgets** on the left panel. This is where you will set the spending limits for your organization and send notifications out when certain limits of the budget are reached. You can click on the **Visit the budget documentation** for a short tutorial on creating and managing budgets.
 
-![Image of Billing 2](https://user-images.githubusercontent.com/116583981/207643270-82bf0525-9ef3-461e-8ec6-d79a71f5e1ea.png)
+   ![Image of Billing 2](/docs/images/4_budget.png)
 
 There is one final tool under Cost Management. As stated before this tool can help you manage your budget and keep your costs inline.
 
 Click on **Advisor Recommendations** This will take you to a screen where you can see what steps you can take to help minimize costs to help meet any budget constraints. Click on **See list of cost recommendations** to get indepth information on ways to configure your resources in a cost effective manner.   
 
-![Image of Billing 3](https://user-images.githubusercontent.com/116583981/207887409-cb6ec273-1495-430e-8129-3b16253112c3.png)
+   ![Image of Billing 3](/docs/images/5_advisor.png)
 
 ## Billing<a name="BG"></a>
 
 Further down on the left panel is another subtitle called "Billing". Under this subtitle Click on **Billing Profile Invoices** to view both current and past invoices. You can click on the link **Learn more about billing profiles** to get more information on billing account. 
 
-![Image of Billing 3](https://user-images.githubusercontent.com/116583981/207899718-73c544de-901c-4c1a-b5e2-7c5f5dffb576.png)
-
+   ![Image of Billing 4](/docs/images/6_amount_due.png)
 
