@@ -9,16 +9,31 @@ Welcome to this repository, a comprehensive collection of examples that will hel
   
 The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python.
 
-## Azure OpenAI Playground
+## 1. Azure OpenAI Playground Prerequisites
 
-Important steps: 
+Navigate to Azure OpenAI. The easiest way is to search at the top of the page.
 
-Ensure the following files are inside of a container, in the Azure storage account: 
+  ![search for azure openai](/docs/images/1_navigate_openai.png)
 
-- ```Hurricane_Irene_(2005).pdf``` 
+At the time of writing, Azure OpenAI is in Beta and only available to customers via an application form, if you click **Create** that is the message you will see. If you click **Create** and do not get this message, then feel free to create a new OpenAI Service. Otherwise, please email us at CloudLab@nih.gov and ask us to set this part up for you. Once you have an OpenAI Service provisioned, click to open it. 
 
- - ```New_York_State_Route_373.pdf```
-  
+  ![click to open azure open ai](/docs/images/2_select_openai_project.png)
+
+Now click **Go to Azure OpenAI Studio** or **Explore** to be connected to the Azure OpenAI studio user interface. 
+
+  ![connect to OpenAI UI](/docs/images/3_connect_open_ai.png)
+
+Click **Chat**
+
+  ![click chat image](/docs/images/4_click_chat.png)
+
+Now we will look at [adding and querying over your own data](own-data) and then review [prompt engineering best practices](prompt engineering) using a general GPT model.
+
+## Upload your own data and query over it (#own-data)
+
+Now, if you want to add your own data and query it, keep going here. If you want to jump ahead to prompt engineering with the general GPT model, jump down to [Prompt Engineering Best Practices](prompt_engineering).
+
+Within this repo there is 
 
 If access needed to the files above, please visit the [search_documents](https://github.com/t-cjackson/Azure-OpenAI-Workshop/tree/main/search_documents) folder in this repository. 
 
@@ -37,7 +52,7 @@ Example queries to execute:
     3. Which company designed and built the New York State Route?
 
 
-## Prompt Egineering Best Practices
+## Prompt Engineering Best Practices (#prompt_engineering)
 
 ### Write Clear Instructions 
 1. Alter the system message to reply with a document that includes a playful comment or joke in each paragraph when responding to inquiries concerning writing assistance. This format should only be used for writing-related questions.
