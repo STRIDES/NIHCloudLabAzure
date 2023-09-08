@@ -1,5 +1,6 @@
-# Azure OpenAI Fed Civ Workshop
- 
+# Azure OpenAI Tutorial
+❗ The following tutorial was adapted from this [excellent Microsoft workshop](https://github.com/t-cjackson/AOAI-FED-CIV-Workshop) developed by [Cameron Jackson](https://github.com/t-cjackson).
+
 Welcome to this repository, a comprehensive collection of examples that will help you chat with your data using the Azure OpenAI Playground, create highly efficient large language model prompts, and build Azure OpenAI embedding applications. This repository offers a wide range of examples that can be catered to your use cases, including:
 - 2 documents for LLM interactions in the Azure OpenAI Playground. 
 - 7 best practices for implementing prompt egineering in LLM applications.  
