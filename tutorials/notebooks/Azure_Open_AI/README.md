@@ -33,9 +33,35 @@ Now we will look at [adding and querying over your own data](own-data) and then 
 
 Now, if you want to add your own data and query it, keep going here. If you want to jump ahead to prompt engineering with the general GPT model, jump down to [Prompt Engineering Best Practices](prompt_engineering).
 
-Within this repo there is 
+Within this repo there is a directory called `search_documents`. This directory contains a few PDFs that we will upload and query over related to [Immune Response to Mpox in Woman Living with HIV](https://www.niaid.nih.gov/news-events/immune-response-mpox) and the [DCEG Diesel Exhaust in Minors Study](https://dceg.cancer.gov/news-events/news/2023/dems-ii).
 
-If access needed to the files above, please visit the [search_documents](https://github.com/t-cjackson/Azure-OpenAI-Workshop/tree/main/search_documents) folder in this repository. 
+We are going to upload these PDFs to an Azure Storage Account and then add them to our Azure OpenAI workspace. 
+
+Follow [this guide](/docs/create_storage_account.md) to create and upload to a storage account. Use a separate browswer window so that you can easily get back to Azure OpenAI.
+
+Once you have uploaded your PDFs, navigate back to Azure OpenAI and click **Add a data source**.
+
+  ![Add data source image](/docs/images/5_add_data_source.png)
+
+Select `Azure Blob Storage`, and then the correct `Storage Account` and `Container`. If this is your first time indexing documents, for `Select Azure Cognitive Search resource` click **Create a new Azure Cognitive Search resource** which will open a new window. 
+
+  ![select data source](/docs/images/6_point_to_data.png)
+
+If needed, create the new Azure Cognitive Search resource. Make sure you delete this when you are finished with Azure OpenAI because it will accrue charges over time. 
+
+  ![create cog search](/docs/images/7_cog_search_resource.png)
+
+Now select your newly made Azure Cognitive Search resource, and click **Next**. On the Data Management Page, choose **Semantic**, then click **Next**.
+
+  ![choose semantic](/docs/images/8_choose_semantic.png)
+
+On the last page, click **Save and close**. It will now take a few minutes to index your updated data.
+
+  ![Save and close](/docs/images/9_review_and_close.png)
+
+
+
+
 
 Example queries to execute:
 
