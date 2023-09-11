@@ -70,11 +70,11 @@ If you have not already (A) Navigate to the Chat Playground. Here we will walk t
 
 On the next tab over, you can (A) add your own data, which we dive into in the [next section](own-data). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
 
-  ![add your own data](/data/images/18_add_custom_data.png)
+  ![add your own data](/docs/images/18_add_custom_data.png)
 
 On the far right, you can modify which model you are deploying, which allows you to switch between different model deployments depending on the context. 
 
-  ![modify deployment](/data/images/19_deployment.png)
+  ![modify deployment](/docs/images/19_deployment.png)
 
 Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
 
