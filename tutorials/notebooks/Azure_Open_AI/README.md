@@ -12,13 +12,9 @@ The purpose of this workshop is to equip participants with the necessary skills 
 ## Overview of Page Contents
 + [Azure OpenAI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
 + [Chat Playground Navigation](#Chat-Playground-Navigation)
-+ [Resource Groups](#rg)
-+ [Command Line Tools](#cli)
-+ [Azure Marketplace](#mark)
-+ [Ingest and Store Data](#sto)
-+ [Virtual Machines](#vm)
-+ [Azure Functions](#vm)
-+ [Disk Images](#disk)
++ [Upload your own data and query over it](Upload-your-own-data-and-query-over-it)
++ [Prompt Engineering Best Practices](Prompt-Engineering-Best-Practices)
++ [Azure OpenAI Embeddings](Azure-OpenAI-Embeddings)
 
 ## Azure OpenAI Playground Prerequisites
 
@@ -80,7 +76,7 @@ Finally, you can select the `parameters` tab to modify the model parameters. Rev
 
   ![modify parameters](/docs/images/20_parameters.png)
 
-## Upload your own data and query over it (#own-data)
+## Upload your own data and query over it
 
 For an in-depth overview of adding your own data, check out this [Microsoft documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio). We give a quick start version here. 
 
@@ -138,23 +134,23 @@ Does exposure to Diesel exhaust increase your risk for lung cancer? What about o
 
   ![search custom data files](/docs/images/16_search_custom_data.png)
 
-## Prompt Engineering Best Practices (#prompt_engineering)
+## Prompt Engineering Best Practices
 
 ### Write Clear Instructions 
-1. Alter the system message to reply with a document that includes a playful comment or joke in each paragraph when responding to inquiries concerning writing assistance. This format should only be used for writing-related questions.
-   ```
-        SYSTEM: 
-        
-        You are a comedian English professor at the University of Giggles.  When I ask for help to write something, you will reply with a document that contains at least one joke or playful comment.
+1. Alter the system message to reply with a document that includes a playful comment or joke in each paragraph when responding to inquiries concerning writing assistance. This format should only be used for writing-related questions
 
-        QUERY:
-
-         Write a thank you note to my steel bolt vendor for getting a delivery in on time with short notice. This made it possible for my company to deliver an important order. 
-    ```
-    Note: Add the following to the SYSTEM message, directing the LLM to only answer questions that involve writing assistance:
-    ```
-    If the user query does not have "write" in it, respond I do not know truthfully. 
-    ```
+Add the following in the System Message box (SYSTEM:) 
+```
+You are a comedian English professor at the University of Giggles.  When I ask for help to write something, you will reply with a document that contains at least one joke or playful comment.
+```
+Add this query to the chat prompt box (QUERY:).
+```
+Write a thank you note to my steel bolt vendor for getting a delivery in on time with short notice. This made it possible for my company to deliver an important order.
+```
+Add the following to the system message, directing the LLM to only answer questions that involve writing assistance and then rerun the original query.
+```
+If the user query does not have "write" in it, respond I do not know truthfully. 
+```
 2. Modify the system message by adding the prefix "Summary:" which should summarize the paragraph given, delimited with XML tags. Following the summary, the system should translate the paragraph from English to Spanish and add the prefix "Translation:".
 To accomplish these tasks, the following steps should be taken:
    1. Identify the paragraph to be summarized, which should be delimited by XML tags.
@@ -163,22 +159,25 @@ To accomplish these tasks, the following steps should be taken:
     4.	Translate the paragraph from English to Spanish.
     5.	Add the prefix "Translation:" to the beginning of the translated paragraph.
 
-             SYSTEM: 
-
-            You will be given a paragraph delimited by XML tags. Use the following step-by-step sequence to respond to user inputs.
+SYSTEM: 
+```
+You will be given a paragraph delimited by XML tags. Use the following step-by-step sequence to respond to user inputs.
 
             Step 1) The user will provide you with a paragraph delimited by XML tags. Summarize the paragraph in one sentence with a prefix “Summary:” 
             Step 2) Translate the summary from Step 1 into Spanish, with a prefix “Translation:”
+```
+QUERY: 
+```
+<paragraph> Artificial intelligence (AI) refers to the simulation of human intelligence in machines that are designed to perform tasks that normally require human intelligence, such as learning, problem-solving, and decision-making. AI technology uses algorithms and statistical models to analyze data and make predictions and can be applied to a wide range of fields, including healthcare, finance, and transportation. AI is a rapidly growing field that has the potential to revolutionize many industries by increasing efficiency and productivity. However, as with any technology, there are also concerns about the ethical implications of AI, such as job displacement and privacy concerns. </paragraph>
+```
 
-            QUERY:
-
-            <paragraph> Artificial intelligence (AI) refers to the simulation of human intelligence in machines that are designed to perform tasks that normally require human intelligence, such as learning, problem-solving, and decision-making. AI technology uses algorithms and statistical models to analyze data and make predictions and can be applied to a wide range of fields, including healthcare, finance, and transportation. AI is a rapidly growing field that has the potential to revolutionize many industries by increasing efficiency and productivity. However, as with any technology, there are also concerns about the ethical implications of AI, such as job displacement and privacy concerns. </paragraph>
-
-    Note: When implementing the above example, you might encounter a problem in Step 2 of the prompt where the model translates the entire paragraph instead of the single sentence summary. This issue is likely to arise when using the gpt-35-turbo model, primarily due to its limitations in reasoning capabilities, which impact its translation proficiency. A solution to this minor glitch is the gpt-4 model, which is designed to reason more effectively than the gpt-35-turbo model.
+Note: When implementing the above example, you might encounter a problem in Step 2 of the prompt where the model translates the entire paragraph instead of the single sentence summary. This issue is likely to arise when using the gpt-35-turbo model, primarily due to its limitations in reasoning capabilities, which impact its translation proficiency. A solution to this minor glitch is the gpt-4 model, which is designed to reason more effectively than the gpt-35-turbo model.
 
 1. Revise the model to classify the text it is given as either positive, neutral or negative. Once classified, have the LLM recognize the adjective it used to classify the text. Provide an example to the assitant for the LLM to comprehend tasks. 
-   
-         SYSTEM: Classify the text as either positive, neutral, or negative. Then find the adjective that allows you to classify the text. Follow the example to respond.
+
+SYSTEM
+```
+Classify the text as either positive, neutral, or negative. Then find the adjective that allows you to classify the text. Follow the example to respond.
 
          USER: The movie was awesome!
 
@@ -193,6 +192,7 @@ To accomplish these tasks, the following steps should be taken:
          ASSISTANT: Neutral. The adjective here is: ok.
 
          QUERY: I can’t wait to go to the beach.
+```
 
 ### Providing Reference Text
 
@@ -203,29 +203,29 @@ To accomplish this, the following steps should be taken:
    3.	Generate four bullet points that succinctly summarize each principle.
    4.	Display the bullet points in the system message.
 
-            SYSTEM: 
-            
-            You will be given text delimited by triple quotes. Create 4 bullet points on the key principles of the text. Answer in the following format:
+SYSTEM: 
+```
+You will be given text delimited by triple quotes. Create 4 bullet points on the key principles of the text. Answer in the following format:
             -	Key principle 1
             -	Key principle 2
             -	Key principle 3
             -	Key principle 4
-
-            QUERY: 
-
+```
+QUERY: 
+```
             “””
             Learning a new language is an excellent way to broaden your horizons and improve your cognitive abilities. Firstly, being multilingual can open new opportunities both personally and professionally, such as traveling to new countries, connecting with people from different cultures, and expanding your job prospects. Secondly, it has been shown that learning a new language can improve cognitive function, such as memory, problem-solving, and decision-making skills. Additionally, it can increase empathy and cultural understanding, as well as enhance creativity and communication skills. Finally, it can boost confidence and self-esteem, as mastering a new language is a significant achievement and can provide a sense of accomplishment. Overall, the benefits of learning a new language are numerous and can have a positive impact on many aspects of your life. 
             “””
-
+```
 ### Split complex tasks into simpler subtasks
 5. Give the system message primary and secondary categories for classifying customer service inquiries. The system should:
    - take in customer service queries
    - classify the query into primary and secondary categories
    - output the response in JSON format with the following keys: primary and secondary 
 
-            SYSTEM: 
-
-            You will be provided with customer services queries. Classify each query into a primary category and a secondary category. Provide your output in JSON format with the keys: primary and secondary
+SYSTEM: 
+```
+You will be provided with customer services queries. Classify each query into a primary category and a secondary category. Provide your output in JSON format with the keys: primary and secondary
             Primary categories: Billing, Technical Support, Account Management, or General Inquiry 
             Billing secondary categories:
             -	Unsubscribe or upgrade 
@@ -246,16 +246,17 @@ To accomplish this, the following steps should be taken:
             -	Pricing 
             -	Feedback 
             -	Speak to a human
-
-            QUERY: 
-            
-            I need to get my internet working again.
-
+```
+QUERY: 
+```
+I need to get my internet working again.
+```
 (5) Continued: Based on the classification of the customer query from above, provide a set of more specific set of instructions to the system message for troubleshooting in a technical support context. 
 
-      SYSTEM:
+SYSTEM:
 
-      You will be provided with customer service inquiries that require troubleshooting in a technical support context. Help the user by:
+```
+You will be provided with customer service inquiries that require troubleshooting in a technical support context. Help the user by:
       -	Check all router cables are connected properly. If not, reconnect them as needed.
       -	Ask the customer which router model they are using.
       -	For MTD-327J model, instruct the customer to hold the red button for 5 seconds and wait 5 minutes before testing the connection.
@@ -264,16 +265,17 @@ To accomplish this, the following steps should be taken:
       -	If the customer's questions are unrelated to troubleshooting, ask if they would like to end the chat and classify their request accordingly.
 
       <insert primary/secondary classification scheme from above here>
-
-      QUERY: 
-      
-      I need to get my internet working again. 
+```
+QUERY:     
+```
+I need to get my internet working again. 
+```
 
 ### Give GPTs time to "think"
 
 6. Modify the system message to determine if the student’s solution is correct or not. The model should work out its own solution before comparing it to the student’s solution. Following an in-depth comparison, a decision on whether the answer is correct or not should be made. Add the following example so the model knows how to solve the problem correctly:
 
-         SYSTEM: 
+SYSTEM: 
 
          First work out your own solution to the problem. Then compare your solution to the student's solution and evaluate if the student's solution is correct or not. Don't decide if the student's solution is correct until you have done the problem yourself.
 
@@ -293,7 +295,7 @@ To accomplish this, the following steps should be taken:
          3. Maintenance cost: 100,000 + 10x
          Total cost: 100x + 250x + 100,000 + 10x = 360x + 100,000
 
-         QUERY: 
+QUERY: 
 
          Problem Statement: I'm building a solar power installation and I need help working out the financials. 
          - Land costs $100 / square foot 
@@ -312,7 +314,7 @@ To accomplish this, the following steps should be taken:
     -	Neil Armstrong was the first person to walk on the moon. 
     -	The date Neil Armstrong walked on the moon was July 21, 1969. 
 
-            SYSTEM: 
+SYSTEM: 
             
             You will be provided with text delimited by triple quotes that is supposed to be the answer to a question. Check if the following pieces of information are directly contained in the answer:
 
@@ -327,7 +329,7 @@ To accomplish this, the following steps should be taken:
             Step 4 - Write "yes" if the answer to 3 was yes, otherwise write "no".
             Finally, provide a count of how many "yes" answers there are. Provide this count as {"count": <insert count here>}.
 
-            QUERY: 
+QUERY: 
             
             """Neil Armstrong is famous for being the first human to set foot on the Moon. This historic event took place on July 21, 1969, during the Apollo 11 mission."""
 
