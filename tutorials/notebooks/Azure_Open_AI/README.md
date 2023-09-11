@@ -12,9 +12,9 @@ The purpose of this workshop is to equip participants with the necessary skills 
 ## Overview of Page Contents
 + [Azure OpenAI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
 + [Chat Playground Navigation](#Chat-Playground-Navigation)
-+ [Upload your own data and query over it](Upload-your-own-data-and-query-over-it)
-+ [Prompt Engineering Best Practices](Prompt-Engineering-Best-Practices)
-+ [Azure OpenAI Embeddings](Azure-OpenAI-Embeddings)
++ [Upload your own data and query over it](#Upload-your-own-data-and-query-over-it)
++ [Prompt Engineering Best Practices](#Prompt-Engineering-Best-Practices)
++ [Azure OpenAI Embeddings](#Azure-OpenAI-Embeddings)
 
 ## Azure OpenAI Playground Prerequisites
 
