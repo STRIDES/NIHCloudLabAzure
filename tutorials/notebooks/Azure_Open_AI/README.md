@@ -32,7 +32,7 @@ At the time of writing, Azure OpenAI is in Beta and only available to customers 
 
 Now click **Go to Azure OpenAI Studio** or **Explore** to be connected to the Azure OpenAI studio user interface. 
 
-  ![connect to OpenAI UI](/docs/images/3_connect_open_ai.png)
+  ![connect to OpenAI UI](/docs/images/3_connet_open_ai.png)
 
 Click **Chat**
 
