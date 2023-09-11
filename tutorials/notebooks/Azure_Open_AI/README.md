@@ -38,7 +38,8 @@ Click **Chat**
 
   ![click chat image](/docs/images/4_click_chat.png)
 
-Next, you need to deploy an OpenAI model
+Next, you need to deploy an OpenAI model.
+
 ## Deploy an OpenAI model
 
 On the left navigation panel, click **Models**
@@ -63,7 +64,23 @@ Run a quick test to ensure our deployment is acting as expected. Navigate to `Ch
 
 Now we will look at [adding and querying over your own data](own-data) and then review [prompt engineering best practices](prompt engineering) using a general GPT model.
 
-## Upload your own data and query over it
+## Chat Playground Navigation
+
+If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message#define-the-models-profile-capabilities-and-limitations-for-your-scenario) in the prompt box, then (D) click **Save**. 
+
+On the next tab over, you can (A) add your own data, which we dive into in the [next section](own-data). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
+
+  ![add your own data](/data/images/18_add_custom_data.png)
+
+On the far right, you can modify which model you are deploying, which allows you to switch between different model deployments depending on the context. 
+
+  ![modify deployment](/data/images/19_deployment.png)
+
+Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
+
+  ![modify parameters](/docs/images/20_parameters.png)
+
+## Upload your own data and query over it (#own-data)
 
 For an in-depth overview of adding your own data, check out this [Microsoft documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio). We give a quick start version here. 
 
@@ -87,9 +104,9 @@ If needed, create the new Azure Cognitive Search resource. Make sure you delete 
 
   ![create cog search](/docs/images/7_cog_search_resource.png)
 
-Now select your newly made Azure Cognitive Search resource, and click **Next**. On the Data Management Page, choose **Semantic**, then click **Next**.
+Now select your newly made Azure Cognitive Search resource, and click **Next**. On the Data Management Page, choose **Keyword**, then click **Next**.
 
-  ![choose semantic](/docs/images/8_choose_semantic.png)
+  ![choose keyword](/docs/images/choose_keyword.png)
 
 On the last page, click **Save and close**. It will now take a few minutes to index your updated data.
 
@@ -118,6 +135,8 @@ Describe the primary findings of the Diesel Exhaust in Miners Study?
 ```
 Does exposure to Diesel exhaust increase your risk for lung cancer? What about other cancers?  Keep your response to one sentence for each of these queries.    
 ```
+
+  ![search custom data files](/docs/images/16_search_custom_data.png)
 
 ## Prompt Engineering Best Practices (#prompt_engineering)
 
