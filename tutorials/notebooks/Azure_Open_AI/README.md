@@ -1,5 +1,5 @@
 # Azure OpenAI Tutorial
-❗ The following tutorial was adapted from this [excellent Microsoft workshop](https://github.com/t-cjackson/AOAI-FED-CIV-Workshop) developed by [Cameron Jackson](https://github.com/t-cjackson).
+❗ The following tutorial was modified from this excellent [Microsoft workshop](https://github.com/t-cjackson/AOAI-FED-CIV-Workshop) developed by [Cameron Jackson](https://github.com/t-cjackson).
 
 Welcome to this repository, a comprehensive collection of examples that will help you chat with your data using the Azure OpenAI Playground, create highly efficient large language model prompts, and build Azure OpenAI embedding applications. This repository offers a wide range of examples that can be catered to your use cases, including:
 - 2 documents for LLM interactions in the Azure OpenAI Playground. 
@@ -8,6 +8,17 @@ Welcome to this repository, a comprehensive collection of examples that will hel
 - 42 in-depth content slides on the information covered in this workshop. Please find ```aoai_workshop_content.pdf``` in [search_documents](https://github.com/t-cjackson/Azure-OpenAI-Workshop/tree/main/search_documents) folder in this repository. 
   
 The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python.
+
+## Overview of Page Contents
++ [Getting Started](#gs)
++ [Overview](#ov)
++ [Resource Groups](#rg)
++ [Command Line Tools](#cli)
++ [Azure Marketplace](#mark)
++ [Ingest and Store Data](#sto)
++ [Virtual Machines](#vm)
++ [Azure Functions](#vm)
++ [Disk Images](#disk)
 
 ## 1. Azure OpenAI Playground Prerequisites
 
@@ -27,6 +38,29 @@ Click **Chat**
 
   ![click chat image](/docs/images/4_click_chat.png)
 
+Next, you need to deploy an OpenAI model
+## Deploy an OpenAI model
+
+On the left navigation panel, click **Models**
+
+  ![Click Models](/docs/images/10_click_models.png)
+
+Select the (A) `gpt-35-turbo model`, click (B) **Deploy**. You can learn more about the available models by clicking (C) **Learn more about the different types of base models**.
+
+  ![Deploy the model](/docs/images/11_deploy_model.png)
+
+Name your deployment and then click **Create**.
+
+  ![Name your Deployment](/docs/images/12_name_your_deployment.png)
+
+Now if you select `Deployments` on the left panel, you should see your deployed model listed. 
+
+  ![Check Deployments](/docs/images/13_check_deployments.png)
+
+Run a quick test to ensure our deployment is acting as expected. Navigate to `Chat`, add an optional system message (we will cover this more later), and then type `Hello World` in the chat box. If you get a response, things are working well!
+
+  ![test model](/docs/images/14_test_your_model.png)
+
 Now we will look at [adding and querying over your own data](own-data) and then review [prompt engineering best practices](prompt engineering) using a general GPT model.
 
 ## Upload your own data and query over it (#own-data)
@@ -39,7 +73,7 @@ We are going to upload these PDFs to an Azure Storage Account and then add them 
 
 Follow [this guide](/docs/create_storage_account.md) to create and upload to a storage account. Use a separate browswer window so that you can easily get back to Azure OpenAI.
 
-Once you have uploaded your PDFs, navigate back to Azure OpenAI and click **Add a data source**.
+Once you have uploaded your PDFs, navigate back to the `Chat` section of Azure OpenAI and click **Add a data source**.
 
   ![Add data source image](/docs/images/5_add_data_source.png)
 
@@ -59,23 +93,13 @@ On the last page, click **Save and close**. It will now take a few minutes to in
 
   ![Save and close](/docs/images/9_review_and_close.png)
 
+Once it is complete, you should see your data source listed. Note that you can select the box that says `Limit responses to your data content` depending on if you want to limit to your data or query your data plus the general model. 
+
+Now let's run some example queries of our custom data set. 
 
 
 
 
-Example queries to execute:
-
-### ```Hurricane_Irene_(2005).pdf``` 
-
-    1. What category hurricane was Irene?
-    2. Which areas were impacted the most by hurricane Irene?
-    3. Please explain the meteorological history of the hurricane.  
-
-
-###  ```New_York_State_Route_373.pdf```
-    1. What year was the New York State Route built?
-    2. Describe the New York State Route. 
-    3. Which company designed and built the New York State Route?
 
 
 ## Prompt Engineering Best Practices (#prompt_engineering)
