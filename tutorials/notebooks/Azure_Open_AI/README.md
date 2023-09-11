@@ -1,5 +1,5 @@
 # Azure OpenAI Tutorial
-❗ The following tutorial was modified from this excellent [Microsoft workshop](https://github.com/t-cjackson/AOAI-FED-CIV-Workshop) developed by [Cameron Jackson](https://github.com/t-cjackson).
+✨ The following tutorial was modified from this excellent [Microsoft workshop](https://github.com/t-cjackson/AOAI-FED-CIV-Workshop) developed by [Cameron Jackson](https://github.com/t-cjackson). ✨
 
 Welcome to this repository, a comprehensive collection of examples that will help you chat with your data using the Azure OpenAI Playground, create highly efficient large language model prompts, and build Azure OpenAI embedding applications. This repository offers a wide range of examples that can be catered to your use cases, including:
 - 2 documents for LLM interactions in the Azure OpenAI Playground. 
@@ -63,7 +63,7 @@ Run a quick test to ensure our deployment is acting as expected. Navigate to `Ch
 
 Now we will look at [adding and querying over your own data](own-data) and then review [prompt engineering best practices](prompt engineering) using a general GPT model.
 
-## Upload your own data and query over it (#own-data)
+## Upload your own data and query over it
 
 For an in-depth overview of adding your own data, check out this [Microsoft documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio). We give a quick start version here. 
 
