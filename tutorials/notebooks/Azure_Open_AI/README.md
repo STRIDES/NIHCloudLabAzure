@@ -10,7 +10,7 @@ Welcome to this repository, a comprehensive collection of examples that will hel
 The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf).
 
 ## Overview of Page Contents
-+ [Azure OpenAI Playground Prerequisites](#1.-Azure-OpenAI-Playground-Prerequisites)
++ [Azure OpenAI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
 + [Overview](#ov)
 + [Resource Groups](#rg)
 + [Command Line Tools](#cli)
