@@ -11,7 +11,7 @@ The purpose of this workshop is to equip participants with the necessary skills 
 
 ## Overview of Page Contents
 + [Azure OpenAI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
-+ [Overview](#ov)
++ [Chat Playground Navigation](#Chat-Playground-Navigation)
 + [Resource Groups](#rg)
 + [Command Line Tools](#cli)
 + [Azure Marketplace](#mark)
@@ -20,7 +20,7 @@ The purpose of this workshop is to equip participants with the necessary skills 
 + [Azure Functions](#vm)
 + [Disk Images](#disk)
 
-## 1. Azure OpenAI Playground Prerequisites
+## Azure OpenAI Playground Prerequisites
 
 Navigate to Azure OpenAI. The easiest way is to search at the top of the page.
 
