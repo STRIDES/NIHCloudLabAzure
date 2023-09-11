@@ -7,7 +7,7 @@ Welcome to this repository, a comprehensive collection of examples that will hel
 - 4 Python scripts that demonstrate how to use Azure OpenAI Embeddings to create embedding applications. 
 - 42 in-depth content slides on the information covered in this workshop. Please find ```aoai_workshop_content.pdf``` in [search_documents](https://github.com/t-cjackson/Azure-OpenAI-Workshop/tree/main/search_documents) folder in this repository. 
   
-The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python.
+The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf).
 
 ## Overview of Page Contents
 + [Getting Started](#gs)
@@ -65,6 +65,8 @@ Now we will look at [adding and querying over your own data](own-data) and then 
 
 ## Upload your own data and query over it (#own-data)
 
+For an in-depth overview of adding your own data, check out this [Microsoft documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio). We give a quick start version here. 
+
 Now, if you want to add your own data and query it, keep going here. If you want to jump ahead to prompt engineering with the general GPT model, jump down to [Prompt Engineering Best Practices](prompt_engineering).
 
 Within this repo there is a directory called `search_documents`. This directory contains a few PDFs that we will upload and query over related to [Immune Response to Mpox in Woman Living with HIV](https://www.niaid.nih.gov/news-events/immune-response-mpox) and the [DCEG Diesel Exhaust in Minors Study](https://dceg.cancer.gov/news-events/news/2023/dems-ii).
@@ -95,12 +97,27 @@ On the last page, click **Save and close**. It will now take a few minutes to in
 
 Once it is complete, you should see your data source listed. Note that you can select the box that says `Limit responses to your data content` depending on if you want to limit to your data or query your data plus the general model. 
 
-Now let's run some example queries of our custom data set. 
+Also check that the index is complete by viewing your Cognitive Search resource, and going to `Indexes`. Ensure that the number of documents listed > 0. 
 
+  ![Cog Search](/docs/images/15_check_index.png)
 
+Now let's run some example queries of our custom data set. Feel free to modify and experiment. After reading the prompt engineering section below, return to this section and see how you can improve these examples. If you get errors after adding your data, try to refresh the page, and if all else fails, send us an email at CloudLab@nih.gov.
 
-
-
+```
+Summarize each of the documents I uploaded in a single paragraph, listing the title, the authors, followed by a five sentence summary for each. Give a new line after each summary.
+```
+```
+What were some of the phenotypic presentations of MPOX on patients with HIV?
+```
+```
+Are the phenotypic effects of MPOX the same for a patient with HIV and other patients?
+```
+```
+Describe the primary findings of the Diesel Exhaust in Miners Study?
+```
+```
+Does exposure to Diesel exhaust increase your risk for lung cancer? What about other cancers?  Keep your response to one sentence for each of these queries.    
+```
 
 ## Prompt Engineering Best Practices (#prompt_engineering)
 
