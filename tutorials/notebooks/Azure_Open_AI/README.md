@@ -333,28 +333,11 @@ QUERY:
             
             """Neil Armstrong is famous for being the first human to set foot on the Moon. This historic event took place on July 21, 1969, during the Apollo 11 mission."""
 
-## Azure OpenAI Embeddings
+## Azure OpenAI API
 
-### Installation
- 
-To run the Python scripts in this repository, you will need to first create a virtual environment in your workspace. Next you must have the necessary packages installed. You can complete both tasks via the following commands:
+### Environment Setup
+Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_Open_AI/AzureOpenAI.ipynb). 
 
-To create a virtual environment in your workspace:
-
-
-1. Open the command palette: ```CTRL + SHIFT + P```
-2. Search: ```Python: Create Environment```
-3. Select: ```Venv```
-4. Select the latest version of Python installed on your device.
-5. .venv environment created  
-
-To install the necessary packages:
-
-```bash
-pip install -r requirements.txt  
- ```
-
-Make sure you have Python and pip installed on your machine.
 
 ### Dataset
  
