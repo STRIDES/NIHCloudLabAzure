@@ -14,7 +14,8 @@ The purpose of this workshop is to equip participants with the necessary skills 
 + [Chat Playground Navigation](#Chat-Playground-Navigation)
 + [Upload your own data and query over it](#Upload-your-own-data-and-query-over-it)
 + [Prompt Engineering Best Practices](#Prompt-Engineering-Best-Practices)
-+ [Azure OpenAI Embeddings](#Azure-OpenAI-Embeddings)
++ [Azure OpenAI API](#Azure-OpenAI-API)
++ [Additional Resources](#Additional-Resources)
 
 ## Azure OpenAI Playground Prerequisites
 
@@ -336,64 +337,17 @@ QUERY:
 ## Azure OpenAI API
 
 ### Environment Setup
-Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_Open_AI/AzureOpenAI.ipynb). 
+Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
+
+Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_Open_AI/AzureOpenAI.ipynb). 
 
 You will need a variety of parameters to authenticate with the API. You can find these within the Chat Playground by clicking **View Code**. Input these parameters into the notebook cell when asked.
 
   ![Code View Image](/docs/images/find_endpoint.png)
 
+Follow along with the notebook, and when finished, feel free to navigate back here to view the Additional Resources. Make sure to **Stop your Compute** when finished in Azure ML Studio.
 
-
-
-### Dataset
- 
-A pre-chunked .csv file ```microsoft-earnings.csv``` is provided in this repository. This file will be used for embedding and search operations in the provided scripts. However, you're free to use any other .csv files of your choice.
-
-### Usage
- 
-This repository contains four Python scripts: ``` workshop_embedding.py```, ```workshop_search.py```, ``` aoai_embeddings.py```, and ```acs_embeddings.py```.
-
-To run any of these scripts, navigate to the repository root and execute one of the following commands:
-```bash
-python workshop_embedding.py  
-python workshop_search.py  
-cd embedding_demos -> streamlit run aoai_embeddings.py
-cd embedding_demos -> streamlit run acs_embeddings.py
- ```
-
-### workshop_embedding.py
- 
-This script demonstrates how to calculate word embeddings using Azure OpenAI.
-
-### workshop_search.py
- 
-This script demonstrates how to perform a search using Azure OpenAI embeddings.
-
-### aoai_embeddings.py
- 
-Located in the embeddings_demo subfolder, this script provides a complete web app demonstration of the Azure OpenAI Embeddings functionality using Streamlit. It offers an interactive GUI where users can choose to execute the functionality demonstrated in the other two scripts. It creates embeddings from a given data file and allows for search queries within the created embeddings.
-
-Note: You should adjust the file path in lines 42, 47, and 70 in aoai_embeddings.py to fit your specific file path.
-
-### acs_embeddings.py
-
-Located in the embeddings_demo subfolder, this script provides a complete web app demonstration of the Azure OpenAI Embeddings functionality along with Azure Cognitive Search using Streamlit. It creates embeddings from relevant documents found in your Azure Cognitive Search index. Documents in your index only related to the query asked will be embedded and stored. The vector storage only saves embedded documents for the duration of the program's execution. Must use Azure Cognitive Search Query API Key in .env file. 
-
-### Configuration
- 
-To use Azure OpenAI, you need to configure the necessary environment variables. Create a .env file in the repository root directory and set the following variables:
-```dotenv
-AZURE_OPENAI_VERSION = your_version  
-AZURE_OPENAI_ENDPOINT = your_endpoint  
-AZURE_OPENAI_KEY = your_api_key 
-AZURE_COGNITIVE_SEARCH_SERVICE_NAME = your_cognitive_search_service_name 
-AZURE_COGNITIVE_SEARCH_INDEX_NAME = your_cognitive_search_index_name 
-AZURE_COGNITIVE_SEARCH_API_KEY = your_cognitive_search_api_query_key
-```
-
-Replace your_version, your_endpoint, and your_api_key with your actual values.
-
-## Extra Resources 
+## Additional Resources 
 
 ### Azure OpenAI PLayground
 
