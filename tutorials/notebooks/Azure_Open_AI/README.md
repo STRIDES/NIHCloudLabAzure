@@ -343,7 +343,7 @@ Navigate to `Notebooks`, then clone this Git repo into your environment and navi
 
 You will need a variety of parameters to authenticate with the API. You can find these within the Chat Playground by clicking **View Code**. Input these parameters into the notebook cell when asked.
 
-  ![Code View Image](/docs/images/find_endpoint.png)
+  ![Code View Image](/docs/images/find_endpointv2.png)
 
 Follow along with the notebook, and when finished, feel free to navigate back here to view the Additional Resources. Make sure to **Stop your Compute** when finished in Azure ML Studio.
 
