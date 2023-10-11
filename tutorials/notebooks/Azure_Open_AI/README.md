@@ -1,20 +1,23 @@
 # Azure OpenAI Tutorial
 ✨ The following tutorial was modified from this excellent [Microsoft workshop](https://github.com/t-cjackson/AOAI-FED-CIV-Workshop) developed by [Cameron Jackson](https://github.com/t-cjackson). ✨
 
-Welcome to this repository, a comprehensive collection of examples that will help you chat with your data using the Azure OpenAI Playground, create highly efficient large language model prompts, and build Azure OpenAI embedding applications. This repository offers a wide range of examples that can be catered to your use cases, including:
-- 2 documents for LLM interactions in the Azure OpenAI Playground. 
+Welcome to this repository, a comprehensive collection of examples that will help you chat with your data using the Azure OpenAI Playground, create highly efficient large language model prompts, and build Azure OpenAI embeddings. This repository offers a wide range of examples that can be catered to your use cases, including:
+
+- Documents for LLM interactions in the Azure OpenAI Playground. 
 - 7 best practices for implementing prompt egineering in LLM applications.  
 - 4 Python scripts that demonstrate how to use Azure OpenAI Embeddings to create embedding applications. 
 - 42 in-depth content slides on the information covered in this workshop. Please find ```aoai_workshop_content.pdf``` in [search_documents](https://github.com/t-cjackson/Azure-OpenAI-Workshop/tree/main/search_documents) folder in this repository. 
   
 The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf).
 
+You can also learn a lot about the details of using Azure OpenAI at this [site](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio).
+
 ## Overview of Page Contents
 + [Azure OpenAI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
 + [Chat Playground Navigation](#Chat-Playground-Navigation)
 + [Upload your own data and query over it](#Upload-your-own-data-and-query-over-it)
 + [Prompt Engineering Best Practices](#Prompt-Engineering-Best-Practices)
-+ [Azure OpenAI API](#Azure-OpenAI-API)
++ [Azure OpenAI Embeddings](#Azure-OpenAI-Embeddings)
 + [Additional Resources](#Additional-Resources)
 
 ## Azure OpenAI Playground Prerequisites
@@ -43,7 +46,7 @@ On the left navigation panel, click **Models**
 
   ![Click Models](/docs/images/10_click_models.png)
 
-Select the (A) `gpt-35-turbo model`, click (B) **Deploy**. You can learn more about the available models by clicking (C) **Learn more about the different types of base models**.
+Select the (A) `gpt-35-turbo model`, click (B) **Deploy**. You can learn more about the available models by clicking (C) **Learn more about the different types of base models**, or [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
 
   ![Deploy the model](/docs/images/11_deploy_model.png)
 
@@ -59,13 +62,13 @@ Run a quick test to ensure our deployment is acting as expected. Navigate to `Ch
 
   ![test model](/docs/images/14_test_your_model.png)
 
-Now we will look at [adding and querying over your own data](own-data) and then review [prompt engineering best practices](prompt engineering) using a general GPT model.
+Now we will look at [adding and querying over your own data](#Upload-your-own-data-and-query-over-it) and then review [prompt engineering best practices](#prompt-engineering-best-practices) using a general GPT model.
 
 ## Chat Playground Navigation
 
 If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message#define-the-models-profile-capabilities-and-limitations-for-your-scenario) in the prompt box, then (D) click **Save**. 
 
-On the next tab over, you can (A) add your own data, which we dive into in the [next section](own-data). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
+On the next tab over, you can (A) add your own data, which we dive into in the [next section](Upload-your-own-data-and-query-over-it). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
 
   ![add your own data](/docs/images/18_add_custom_data.png)
 
@@ -81,15 +84,22 @@ Finally, you can select the `parameters` tab to modify the model parameters. Rev
 
 For an in-depth overview of adding your own data, check out this [Microsoft documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio). We give a quick start version here. 
 
-Now, if you want to add your own data and query it, keep going here. If you want to jump ahead to prompt engineering with the general GPT model, jump down to [Prompt Engineering Best Practices](prompt_engineering).
+Now, if you want to add your own data and query it, keep going here. If you want to jump ahead to prompt engineering with the general GPT model, jump down to [Prompt Engineering Best Practices](#prompt-engineering-best-practices).
 
 Within this repo there is a directory called `search_documents`. This directory contains a few PDFs that we will upload and query over related to [Immune Response to Mpox in Woman Living with HIV](https://www.niaid.nih.gov/news-events/immune-response-mpox) and the [DCEG Diesel Exhaust in Minors Study](https://dceg.cancer.gov/news-events/news/2023/dems-ii).
 
-We are going to upload these PDFs to an Azure Storage Account and then add them to our Azure OpenAI workspace. 
+We are going to upload these PDFs to an Azure Storage Account and then add them to our Azure OpenAI workspace. Note that there are [upload limits](https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits#quotas-and-limits-reference) on the number and size of documents you can query within Azure OpenAI, but sure to read these before getting started. For example, you can only query over a max of 30 documents and/or 1 GB of data. You can only upload the datatypes [listed below] [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data#data-formats-and-file-types), and will have the best results with markdown files.
+
++ `.txt`
++ `.md`
++ `.html`
++ Microsoft Word files
++ Microsoft PowerPoint files
++ PDF
 
 Follow [this guide](/docs/create_storage_account.md) to create and upload to a storage account. Use a separate browswer window so that you can easily get back to Azure OpenAI.
 
-Once you have uploaded your PDFs, navigate back to the `Chat` section of Azure OpenAI and click **Add a data source**.
+Once you have uploaded your PDFs (or other datatypes if you are trying that), navigate back to the `Chat` section of Azure OpenAI and click **Add a data source**.
 
   ![Add data source image](/docs/images/5_add_data_source.png)
 
@@ -101,11 +111,11 @@ If needed, create the new Azure Cognitive Search resource. Make sure you delete 
 
   ![create cog search](/docs/images/7_cog_search_resource.png)
 
-Now select your newly made Azure Cognitive Search resource, and click **Next**. On the Data Management Page, choose **Keyword**, then click **Next**.
+Now select your newly made Azure Cognitive Search resource, and click **Next**. You can select to search with either [Keyword or Semantic search](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data#search-options). Keyword is simple keyword-driven search, semantic search takes the context of the words into account and is normally better. If Semantic search is not allowed in your account, just use **Keyword**. Select **Next**.
 
   ![choose keyword](/docs/images/choose_keyword.png)
 
-On the last page, click **Save and close**. It will now take a few minutes to index your updated data.
+On the last page, click **Save and close**. It will now take a few minutes to index your updated data. Read more [here](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) about how Azure Cognitive Search is working behind the scenes. 
 
   ![Save and close](/docs/images/9_review_and_close.png)
 
@@ -136,8 +146,10 @@ Does exposure to Diesel exhaust increase your risk for lung cancer? What about o
   ![search custom data files](/docs/images/16_search_custom_data.png)
 
 ## Prompt Engineering Best Practices
+First, review [this summary of prompt engineering](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering) from Microsoft.
 
 ### Write Clear Instructions 
+
 1. Alter the system message to reply with a document that includes a playful comment or joke in each paragraph when responding to inquiries concerning writing assistance. This format should only be used for writing-related questions
 
 Add the following in the System Message box (SYSTEM:) 
@@ -219,6 +231,7 @@ QUERY:
             “””
 ```
 ### Split complex tasks into simpler subtasks
+
 5. Give the system message primary and secondary categories for classifying customer service inquiries. The system should:
    - take in customer service queries
    - classify the query into primary and secondary categories
@@ -334,7 +347,10 @@ QUERY:
             
             """Neil Armstrong is famous for being the first human to set foot on the Moon. This historic event took place on July 21, 1969, during the Apollo 11 mission."""
 
-## Azure OpenAI API
+## Azure OpenAI Embeddings
+
+### Background
+Creating embeddings of search documents allows you to use vector search, which is much more powerful than the keyword search we used above. First, review this page on [how to create embeddings](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-generate-embeddings), and then review [how vector search works](https://learn.microsoft.com/en-us/azure/search/vector-search-overview).
 
 ### Environment Setup
 Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
