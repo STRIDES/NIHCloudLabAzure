@@ -4,7 +4,7 @@ openai[embeddings]
 pandas 
 numpy 
 streamlit
-langchain==0.0.312
+langchain==0.0.325
 azure-search-documents==11.4.0b6
 tiktoken
 faiss-cpu
