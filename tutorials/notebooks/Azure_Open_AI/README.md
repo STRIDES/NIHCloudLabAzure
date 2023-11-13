@@ -12,6 +12,8 @@ The purpose of this workshop is to equip participants with the necessary skills 
 
 You can also learn a lot about the details of using Azure OpenAI at this [site](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio).
 
+We recommend you 1) go through the steps in this readme, 2) complete the general notebook called `notebooks/AzureOpenAI.ipynb`, then 3) complete the notebook called `notebooks/AzureOpenAI-langchain.ipynb`. 
+
 ## Overview of Page Contents
 + [Azure OpenAI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
 + [Chat Playground Navigation](#Chat-Playground-Navigation)
@@ -347,7 +349,7 @@ QUERY:
             
             """Neil Armstrong is famous for being the first human to set foot on the Moon. This historic event took place on July 21, 1969, during the Apollo 11 mission."""
 
-## Azure OpenAI Embeddings
+## Azure OpenAI API and Embeddings
 
 ### Background
 Creating embeddings of search documents allows you to use vector search, which is much more powerful than the keyword search we used above. First, review this page on [how to create embeddings](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-generate-embeddings), and then review [how vector search works](https://learn.microsoft.com/en-us/azure/search/vector-search-overview).
@@ -355,13 +357,15 @@ Creating embeddings of search documents allows you to use vector search, which i
 ### Environment Setup
 Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
 
-Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_Open_AI/AzureOpenAI.ipynb). 
+Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_Open_AI/notebooks/AzureOpenAI.ipynb). 
 
 You will need a variety of parameters to authenticate with the API. You can find these within the Chat Playground by clicking **View Code**. Input these parameters into the notebook cell when asked.
 
   ![Code View Image](/docs/images/find_endpointv2.png)
 
-Follow along with the notebook, and when finished, feel free to navigate back here to view the Additional Resources. Make sure to **Stop your Compute** when finished in Azure ML Studio.
+Follow along with the notebook, and when finished, feel free to move onto the next notebook called [AzureOpenAI-langchain.ipynb](/tutorials/notebooks/Azure_Open_AI/notebooks/AzureOpenAI-langchain.ipynb) which shows you how to interface with your models using Langchain.
+
+Finally, navigate back here to view the Additional Resources. Make sure to **Stop your Compute** when finished in Azure ML Studio.
 
 ## Additional Resources 
 
