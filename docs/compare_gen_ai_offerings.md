@@ -44,7 +44,19 @@ AWS Foundation models include:
 Google Cloud offers Generative AI services through Vertex AI.
 
 Vertex contains the following services:
-+ 
++ Generative AI Studio with Language, Vision and Speech
++ Model Garden with Foundation and Fine-tunable models
++ Ability to deploy models to an endpoint
+
+  ![Google Cloud Studio](/docs/images/vertexai_text.png)
+
+Google Cloud offers the following models:
++ 53 Foundation Models all of which can be deployed to an endpoint and accessed from notebook/application
++ 79 models with example notebooks
++ Six models available in Generative AI Studio: PaLM 2 for Text, Chirp for Speech, PaLM 2 for Chat, Codey for Code Generation, Codey for Code Chat, Imagen for Captioning.
+
+  ![Vertexai models](/docs/images/vertexai_models.png)
+  
 
 
 
