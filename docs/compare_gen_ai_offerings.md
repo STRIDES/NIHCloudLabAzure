@@ -1,5 +1,7 @@
 ## Comparison of Generative AI Offerings across Cloud Service Providers
 
+This guide is meant to give a short overview of the interfaces, service offerings, and 'out of the box' models offered by each CSP. In most cases, fine-tuning the latest models is redundant and you will be better served by strategic prompt engineering, but, if you want to re-train/fine-tune models or create custom models, we have Cloud Lab tutorials to walk you through it and do not highlight those services here.
+
 ### Azure
 Azure offers Gen AI services through the Azure OpenAI Service.
 
@@ -9,17 +11,17 @@ Azure OpenAI offers:
 + Image generation with DALL E
 + API access to deployed models (could be from AzureML notebooks)
 
-  ![azure openai screenshot](/docs/images/)
+  ![azure openai screenshot](/docs/images/openaichatplayground.png)
 
 Azure OpenAI allows for the deployment and use of the following models:
 + GPT-35 series chat models
 + text-embedding-ada-002 embedding model
 + GPT-4 series upon request
 
-  
+  ![azure models](/docs/images/azure_models.png)
 
 ### AWS
-Amazon offers Gen AI services through Amazon Bedrock and the Sagemaker suite. Note that AWS refers to chat models as text models. Models can be accessed via API or deployed locally and used within your account.
+Amazon offers Gen AI services through Amazon Bedrock and the Sagemaker suite. Models can be accessed via API or deployed locally and used within your account.
 
 Amazon offers: 
 + Access to Chat and Text Playground through Bedrock
@@ -39,7 +41,10 @@ AWS Foundation models include:
   ![AWS models](/docs/images/sagemaker_models.png)
 
 ### Google Cloud
-Google Cloud offers models via 
+Google Cloud offers Generative AI services through Vertex AI.
+
+Vertex contains the following services:
++ 
 
 
 
