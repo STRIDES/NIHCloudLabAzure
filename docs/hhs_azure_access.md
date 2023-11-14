@@ -5,11 +5,11 @@ Once your access has been approved, you will receive an invitation to join the N
 
   ![email image](/docs/images/0_receive_email.png)
 
-Next, navigate to `portal.azure.com`. In the top right, click your account avator (in this case my headshot), and then click `Switch directory`. 
+Next, navigate to `portal.azure.com`. In the top right, click your account avatar (in this case my headshot), and then click `Switch directory`. 
 
   ![click switch dir](/docs/images/1_find_account.png)
 
-Now under Directorys and Subscriptions, find the National Institutes of Health Directory and click `Switch`.
+Now under Directorys and Subscriptions, find the National Institutes of Health Directory and click `Switch`. Agree to terms and conditions the first time you do this (not shown here).
 
   ![find NIH dir](/docs/images/2_selectdir.png)
 
