@@ -70,7 +70,7 @@ Now we will look at [adding and querying over your own data](#Upload-your-own-da
 
 If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message#define-the-models-profile-capabilities-and-limitations-for-your-scenario) in the prompt box, then (D) click **Save**. 
 
-On the next tab over, you can (A) add your own data, which we dive into in the [next section](Upload-your-own-data-and-query-over-it). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
+On the next tab over, you can (A) add your own data, which we dive into in the [next section](#Upload-your-own-data-and-query-over-it). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
 
   ![add your own data](/docs/images/18_add_custom_data.png)
 

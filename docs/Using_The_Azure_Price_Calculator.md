@@ -59,12 +59,12 @@ Products are available but probably not used in Azure Cloud lab.
 ### Containers
 The Containers tab displays tiles showing the options for Azure based containers.
 
-![Screenshot of Container Products](/docs/images/(9_container_products.png)
+![Screenshot of Container Products](/docs/images/9_container_products.png)
 
 ### Databases
 The Databases tab displays tiles listing your Azure database options.
 
-![Screenshot of Database Products](/docs/images/(10_db_products.png)
+![Screenshot of Database Products](/docs/images/10_db_products.png)
 
 ### Analytics
 This tab displays the available Azure based analytic tools.
@@ -74,17 +74,17 @@ This tab displays the available Azure based analytic tools.
 ### AI + machine learning
 The AI + machine learning tab displays tiles of of available products related to the title.
 
-![Screenshot of AIML Products](/docs/images/(12_AI_products.png)
+![Screenshot of AIML Products](/docs/images/12_AI_products.png)
 
 ### Internet of Things
 The IOT tab displays products related to IOT operations plus some analytics and machine learning products.
 
-![Screenshot of AIML Products](/docs/images/(13_IOT_products.png)
+![Screenshot of AIML Products](/docs/images/13_IOT_products.png)
 
 ### Integration
 This tab displays tiles of products relating to integrating with operations outside of the Azure Cloud. 
 
-![Screenshot of Integration Products](/docs/images/(14_integration_products.png)
+![Screenshot of Integration Products](/docs/images/14_integration_products.png)
 
 ### Identity
 Products are available but probably not used in Azure Cloud lab.
@@ -115,15 +115,15 @@ Products aavailable but probably not used in Azure Cloud lab.
 The Examples tab is exactly what it describes. It shows you six examples of figuring the total cost of various products that you would need for your projects. 
 If we choose Real-time analysis we are presented with a project drawing with a listing of the products that will be used. 
 
-![Screenshot of RealTimeAnaltyics](/docs/images/(15_RT_Analytics.png)
+![Screenshot of RealTimeAnaltyics](/docs/images/15_RT_Analytics.png)
 
 If you click the Add to Estimate button you will then see a breakdown of each item's cost. Please note the number of instances and the default number of hours used to generate the estimate.   
 
-![Screenshot of RealTimeAnaltyics](/docs/images/(16_get_estimate.png)
+![Screenshot of RealTimeAnaltyics](/docs/images/16_get_estimate.png)
 
 Now, if we do the same steps with the example above as we did under calculating costs by removing items and reducing hours. We can then bring the costs down to something that is under the Cloud Lab monthly budget. 
 
-![Screenshot of RealTimeAnaltyics](/docs/images/(17_revise_estimate.png)
+![Screenshot of RealTimeAnaltyics](/docs/images/17_revise_estimate.png)
 
 ## Saved Estimates Tab
 Just what it implies. You will find any previously saved estimates under this tab.
