@@ -69,7 +69,7 @@ The Databases tab displays tiles listing your Azure database options.
 ### Analytics
 This tab displays the available Azure based analytic tools.
 
-![Screenshot of Analytics Products](/docs/images/(11_analytics_products.png)
+![Screenshot of Analytics Products](/docs/images/11_analytics_products.png)
 
 ### AI + machine learning
 The AI + machine learning tab displays tiles of of available products related to the title.
