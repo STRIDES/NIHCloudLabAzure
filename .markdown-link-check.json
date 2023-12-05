@@ -4,7 +4,7 @@
       "pattern": "^#"
     },
     {
-      "pattern": "^https://platform.openai.com/docs/guides/prompt-engineering"
+      "pattern": "^https://platform.openai.com/docs/guides/"
     }
   ],
   "replacementPatterns": [
