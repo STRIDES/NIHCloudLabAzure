@@ -69,41 +69,34 @@ Name your deployment and then click **Deploy**.
 
   ![deploy your model](/docs/images/10_name_and_deploy.png)
 
+Now under Deployments you should see your model. Feel free to deploy other models here, but be aware that you will pay for those deployed models. 
 
+  ![model is deployed](/docs/images/11_model_is_deployed.png)
 
+Run a quick test to ensure our deployment is acting as expected. Navigate to `Playground`, add an optional system message (we will cover this more later), and then type `Hello World` in the chat box. If you get a response, things are working well! Double check that on the far right it shows the correct deployment.
 
-10_name_and_deploy
-
-
-
-
-
-
-Now if you select `Deployments` on the left panel, you should see your deployed model listed. 
-
-  ![Check Deployments](/docs/images/13_check_deployments.png)
-
-Run a quick test to ensure our deployment is acting as expected. Navigate to `Chat`, add an optional system message (we will cover this more later), and then type `Hello World` in the chat box. If you get a response, things are working well!
-
-  ![test model](/docs/images/14_test_your_model.png)
+  ![test model](/docs/images/12_test_hello_world.png)
 
 Now we will look at [adding and querying over your own data](#Upload-your-own-data-and-query-over-it) and then review [prompt engineering best practices](#prompt-engineering-best-practices) using a general GPT model.
 
-## Chat Playground Navigation
+## Playground Navigation
 
-If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message#define-the-models-profile-capabilities-and-limitations-for-your-scenario) in the prompt box, then (D) click **Save**. 
+If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message) in the prompt box, then (D) click **Apply Changes**. 
 
 On the next tab over, you can (A) add your own data, which we dive into in the [next section](Upload-your-own-data-and-query-over-it). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
 
-  ![add your own data](/docs/images/18_add_custom_data.png)
-
-On the far right, you can modify which model you are deploying, which allows you to switch between different model deployments depending on the context. 
+On the far right under *Configuration*, you can modify which model you are deploying, which allows you to switch between different model deployments depending on the context. You can also modify the model's parameters on the same tab.
 
   ![modify deployment](/docs/images/19_deployment.png)
 
-Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
+Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/Azure_AI_Studio/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
 
   ![modify parameters](/docs/images/20_parameters.png)
+
+Finally, click on **Prompt Samples** along the top and explore a few of these example prompts. 
+
+  ![modify parameters](/docs/images/13_prompt_examples.png)
+
 
 ## Upload your own data and query over it
 
