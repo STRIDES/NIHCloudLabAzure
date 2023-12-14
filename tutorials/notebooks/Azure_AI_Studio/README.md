@@ -102,9 +102,9 @@ Finally, click on **Prompt Samples** along the top and explore a few of these ex
 
 For an in-depth overview of adding your own data, check out this [Microsoft documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio). We give a quick start version here. 
 
-Now, if you want to add your own data and query it, keep going here. If you want to jump ahead to prompt engineering with the general GPT model, jump down to [Prompt Engineering Best Practices](#prompt-engineering-best-practices).
+Now, if you want to add your own data and query it, keep going here. If you want to jump ahead to prompt engineering with LLMs, jump down to [Prompt Engineering Best Practices](#prompt-engineering-best-practices).
 
-Within this repo there is a directory called `search_documents`. This directory contains a few PDFs that we will upload and query over related to [Immune Response to Mpox in Woman Living with HIV](https://www.niaid.nih.gov/news-events/immune-response-mpox) and the [DCEG Diesel Exhaust in Minors Study](https://dceg.cancer.gov/news-events/news/2023/dems-ii).
+Within this repo there is a directory called `search_documents`. This directory contains a few PDFs that we will upload and query over related to [Immune Response to Mpox in a Woman Living with HIV](https://www.niaid.nih.gov/news-events/immune-response-mpox) and the [DCEG Diesel Exhaust in Minors Study](https://dceg.cancer.gov/news-events/news/2023/dems-ii).
 
 We are going to upload these PDFs to an Azure Storage Account and then add them to our Azure OpenAI workspace. Note that there are [upload limits](https://learn.microsoft.com/en-us/azure/ai-services/openai/quotas-limits#quotas-and-limits-reference) on the number and size of documents you can query within Azure OpenAI, but sure to read these before getting started. For example, you can only query over a max of 30 documents and/or 1 GB of data. You can only upload the datatypes [listed below] [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data#data-formats-and-file-types), and will have the best results with markdown files.
 
@@ -117,33 +117,37 @@ We are going to upload these PDFs to an Azure Storage Account and then add them 
 
 Follow [this guide](/docs/create_storage_account.md) to create and upload to a storage account. Use a separate browswer window so that you can easily get back to Azure OpenAI.
 
-Once you have uploaded your PDFs (or other datatypes if you are trying that), navigate back to the `Chat` section of Azure OpenAI and click **Add a data source**.
+Once you have uploaded your PDFs (or other datatypes if you are trying that), navigate back to the `Playground`, select `Add your data` then click **Add a data source**.
 
-  ![Add data source image](/docs/images/5_add_data_source.png)
+  ![Add data source image](/docs/images/14_add_your_data.png)
 
-Select `Azure Blob Storage`, and then the correct `Storage Account` and `Container`. If this is your first time indexing documents, for `Select Azure Cognitive Search resource` click **Create a new Azure Cognitive Search resource** which will open a new window. 
+Select `Azure Blob Storage`, and then the correct `Storage Account` and `Container`. If this is your first time indexing documents, for `Select Azure AI Search resource` click **Create a new AI Search resource** which will open a new window. You can add vector search to your AI Search resource, but you will need to first deploy the embedding model for it to be available.
 
-  ![select data source](/docs/images/6_point_to_data.png)
+  ![select data source](/docs/images/15_point_to_data.png)
 
-If needed, create the new Azure Cognitive Search resource. Make sure you delete this when you are finished with Azure OpenAI because it will accrue charges over time. 
+If needed, create the new Azure AI Search resource. Make sure you delete this when you are finished with Azure AI because it will accrue charges over time.
 
   ![create cog search](/docs/images/7_cog_search_resource.png)
+ 
+Now select your newly made Azure Cognitive Search resource, and click **Next**. You can select to search with either [Vector](https://learn.microsoft.com/en-us/azure/search/vector-search-overview) or [Hybrid](https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview) search.
 
-Now select your newly made Azure Cognitive Search resource, and click **Next**. You can select to search with either [Keyword or Semantic search](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/use-your-data#search-options). Keyword is simple keyword-driven search, semantic search takes the context of the words into account and is normally better. If Semantic search is not allowed in your account, just use **Keyword**. Select **Next**.
+  ![choose keyword](/docs/images/16_hybrid_search.png)
 
-  ![choose keyword](/docs/images/choose_keyword.png)
+On the last page, click **Save and close**. It will now take a few minutes to index your updated data. Read more [here](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) about how Azure AI Search is working behind the scenes. 
 
-On the last page, click **Save and close**. It will now take a few minutes to index your updated data. Read more [here](https://learn.microsoft.com/en-us/azure/search/search-what-is-azure-search) about how Azure Cognitive Search is working behind the scenes. 
+  ![Save and close](/docs/images/17_save_and_close.png)
 
-  ![Save and close](/docs/images/9_review_and_close.png)
+Once it is complete, you should see your data source listed. 
 
-Once it is complete, you should see your data source listed. Note that you can select the box that says `Limit responses to your data content` depending on if you want to limit to your data or query your data plus the general model. 
+Also check that the index is complete by viewing your AI Search resource, and going to `AI Search` on the left. 
+  
+    ![Cog Search](/docs/images/18_check_ai_search.png)
 
-Also check that the index is complete by viewing your Cognitive Search resource, and going to `Indexes`. Ensure that the number of documents listed > 0. 
+Now select your resource, select **indexes**, and then ensure that the number of documents listed is greater then 0. 
 
   ![Cog Search](/docs/images/15_check_index.png)
 
-Now let's run some example queries of our custom data set. Feel free to modify and experiment. After reading the prompt engineering section below, return to this section and see how you can improve these examples. If you get errors after adding your data, try to refresh the page, and if all else fails, send us an email at CloudLab@nih.gov.
+Now let's got back to the Playground and run some example queries of our custom data set. Feel free to modify and experiment. After reading the prompt engineering section below, return to this section and see how you can improve these examples. If you get errors after adding your data, try to refresh the page, and if all else fails, send us an email at CloudLab@nih.gov.
 
 ```
 Summarize each of the documents I uploaded in a single paragraph, listing the title, the authors, followed by a five sentence summary for each. Give a new line after each summary.
@@ -368,14 +372,14 @@ QUERY:
 ## Azure OpenAI API and Embeddings
 
 ### Background
-Creating embeddings of search documents allows you to use vector search, which is much more powerful than the keyword search we used above. First, review this page on [how to create embeddings](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-generate-embeddings), and then review [how vector search works](https://learn.microsoft.com/en-us/azure/search/vector-search-overview).
+Creating embeddings of search documents allows you to use vector search, which is much more powerful than basic keyword search. First, review this page on [how to create embeddings](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-generate-embeddings), and then review [how vector search works](https://learn.microsoft.com/en-us/azure/search/vector-search-overview).
 
 ### Environment Setup
 Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
 
-Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_Open_AI/notebooks/AzureOpenAI.ipynb). 
+Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_AI_Studio/notebooks/AzureOpenAI.ipynb). 
 
-You will need a variety of parameters to authenticate with the API. You can find these within the Chat Playground by clicking **View Code**. Input these parameters into the notebook cell when asked.
+You will need a variety of parameters to authenticate with the API. You can find these within the Playground by clicking **View Code**. Input these parameters into the notebook cell when asked.
 
   ![Code View Image](/docs/images/find_endpointv2.png)
 
@@ -386,6 +390,8 @@ Finally, navigate back here to view the Additional Resources. Make sure to **Sto
 ## Additional Resources 
 
 ### Azure OpenAI PLayground
+
+*These resources are for the older Azure OpenAI, but not all the docs have been updated to Azure AI Studio. While the front end has changed, the underlying services largely have not, so these docs should still serve you well.*
 
 [Azure OpenAI Service models](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models)
 
