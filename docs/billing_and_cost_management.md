@@ -65,7 +65,7 @@ You can add a tag to pretty much any resource but let's look at a few examples. 
 
 The left panel on the subscription home screen lists your options for managing costs within your subscription. Overview gives you a snapshot of your current and predicted future spending rates.  
 
-   ![Billing Dashboard](/docs/images/1_billing_dashboard_image)
+   ![Billing Dashboard](/docs/images/1_billing_dashboard_image.png)
 
 Under **Cost Management** there are three tools to help you manage costs, Cost analysis, Cost alerts, and Budgets. Additionally there is one tool called Advisor recommendations to help you configure your Subscription, and resources, in the most cost effective manners. 
 
