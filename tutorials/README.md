@@ -3,6 +3,7 @@
 ---------------------------------
 ## Overview of Page Contents
 
++ [Artificial Intelligence](#ai)
 + [Clinical Informatics](#ci)
 + [Medical Imaging](#mi)
 + [Genomics on Azure](#bio)
@@ -14,6 +15,8 @@
 + [Long Read Sequencing Analysis](#long)
 + [Open Data](#open)
 
+## **Artificial Intelligence** <a name="ai"></a>
+Machine learning is a subfield of artificial intelligence that focuses on the development of algorithms and models that enable computers to learn from and make predictions or decisions based on data, without being explicitly programmed. Artificial intelligence and machine learning algorithms are being applied to a variety of biomedical research questions, ranging from image classification to genomic variant calling. Azure offers AI services through the Azure AI Studio, as well as Azure Machine Learning. See our suite of tutorials for using the new [Azure AI Studio](/tutorials/notebooks/Azure_AI_Studio) as well as the older [Azure OpenAI](/tutorials/notebooks/Azure_Open_AI). With each of these folders the README contains many links for you to learn more.
 
  ## **Clinical Informatics with FHIR** <a name="ci"></a>
  Azure Health Data Services is a set of services that enables you to store, process, and analyze medical data in Azure. These services are designed to help organizations quickly connect disparate health data sources and formats, such as structured, imaging, and device data, and normalize it to be persisted in the cloud. At its core, Azure Health Data Services possesses the ability to transform and ingest data into FHIR (Fast Healthcare Interoperability Resources) format. This allows you to transform health data from legacy formats, such as HL7v2 or CDA, or from high-frequency IoT data in device proprietary formats to FHIR. This makes it easier to connect data stored in Azure Health Data Services with services across the Azure ecosystem, like Azure Synapse Analytics, and Azure Machine Learning (Azure ML).
