@@ -167,6 +167,25 @@ Does exposure to Diesel exhaust increase your risk for lung cancer? What about o
 
   ![search custom data files](/docs/images/16_search_custom_data.png)
 
+### Bonus, try uploading the grant data in the search_documents and run a few queries
+Follow the instructions above for the two files in search_documents called `grant_data_sub1.txt` and `grant_data_sub2.txt`. These data were produced by searching [NIH Reporter](https://reporter.nih.gov/) for NCI-funded projects from fiscal year 2022-2024. The data were downloaded as a csv, converted to txt using Excel, then split in half using a very simple `head -2500 data.txt > grant_data_sub1.txt` and `tail -2499 data.txt > grant_data_sub2.txt`. The reason we split the data is that Azure has an upload limit of 16 MB and the downloaded file was over 30MB. If you are downloading your own data be mindful of these limits and split your files as necessary. 
+
+Once the data is uploaded, try adding a system message like the following: 
+```
+Pretend to be a Program Officer at the National Institutes of Health in the National Cancer Institute. Your job is to review and summarize funded opportunities. Respond in a professional manner.
+```
+Now try some prompts like these:
+
+```
+What funding years are included in the data I provided?
+```
+```
+Based on the Project Abstract, Project Title, and public health relevance please list the Project number of all projects related to women's health research and provide an summary of the women's health relevance for each.
+```
+```
+Based on the Project Abstracts, what were the most commonly funded research areas in Fiscal Year 2022?
+```
+
 ## Prompt Engineering Best Practices
 First, review [this summary of prompt engineering](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering) from Microsoft.
 
