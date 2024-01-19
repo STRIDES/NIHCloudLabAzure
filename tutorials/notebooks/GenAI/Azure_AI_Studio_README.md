@@ -79,7 +79,7 @@ Run a quick test to ensure our deployment is acting as expected. Navigate to `Pl
 
 Now we will look at [adding and querying over your own data](#Upload-your-own-data-and-query-over-it) and then review [prompt engineering best practices](#prompt-engineering-best-practices) using a general GPT model.
 
-## Playground Navigation
+## Chat Playground Navigation
 
 If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message) in the prompt box, then (D) click **Apply Changes**. 
 
