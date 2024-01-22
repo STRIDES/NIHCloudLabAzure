@@ -8,7 +8,7 @@ Welcome to this repository, a comprehensive collection of examples that will hel
 - 4 Python scripts that demonstrate how to use Azure OpenAI Embeddings to create embedding applications. 
 - 42 in-depth content slides on the information covered in this workshop. Please find ```aoai_workshop_content.pdf``` in [search_documents](https://github.com/t-cjackson/Azure-OpenAI-Workshop/tree/main/search_documents) folder in this repository. 
   
-The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf).
+The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/GenAI/search_documents/aoai_workshop_content.pdf).
 
 You can also learn a lot about the details of using Azure OpenAI at this [site](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio).
 
@@ -78,7 +78,7 @@ On the far right, you can modify which model you are deploying, which allows you
 
   ![modify deployment](/docs/images/19_deployment.png)
 
-Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
+Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/GenAI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
 
   ![modify parameters](/docs/images/20_parameters.png)
 
@@ -357,13 +357,13 @@ Creating embeddings of search documents allows you to use vector search, which i
 ### Environment Setup
 Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
 
-Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_Open_AI/notebooks/AzureOpenAI.ipynb). 
+Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/GenAI/notebooks/AzureOpenAI.ipynb). 
 
 You will need a variety of parameters to authenticate with the API. You can find these within the Chat Playground by clicking **View Code**. Input these parameters into the notebook cell when asked.
 
   ![Code View Image](/docs/images/find_endpointv2.png)
 
-Follow along with the notebook, and when finished, feel free to move onto the next notebook called [AzureOpenAI-langchain.ipynb](/tutorials/notebooks/Azure_Open_AI/notebooks/AzureOpenAI-langchain.ipynb) which shows you how to interface with your models using Langchain.
+Follow along with the notebook, and when finished, feel free to move onto the next notebook called [AzureOpenAI-langchain.ipynb](/tutorials/notebooks/GenAI/notebooks/AzureOpenAI-langchain.ipynb) which shows you how to interface with your models using Langchain.
 
 Finally, navigate back here to view the Additional Resources. Make sure to **Stop your Compute** when finished in Azure ML Studio.
 
