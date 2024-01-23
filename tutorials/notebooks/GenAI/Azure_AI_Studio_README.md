@@ -9,7 +9,7 @@ The purpose of this workshop is to equip participants with the necessary skills 
 
 You can also learn a lot about the details of using Azure AI at this [site](https://azure.microsoft.com/en-us/products/ai-studio).
 
-We recommend you 1) go through the steps in this README, 2) complete the general notebook called `notebooks/AzureAIStudio.ipynb`, then 3) complete the notebook called `notebooks/AzureOpenAI-langchain.ipynb`. 
+We recommend you 1) go through the steps in this README, 2) complete the general notebook called `notebooks/AzureOpenAI.ipynb`, then 3) complete the notebook called `notebooks/AzureOpenAI-langchain.ipynb`. 
 
 ## Overview of Page Contents
 + [Azure AI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
