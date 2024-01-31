@@ -5,11 +5,11 @@ Microsoft Azure migrated the AI front end from Azure OpenAI to Azure AI Studio.
 
 Welcome to this repository, a comprehensive collection of examples that will help you chat with your data using the Azure OpenAI Studio Playground, create highly efficient large language model prompts, and build Azure OpenAI embeddings. 
   
-The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/Azure_Open_AI/search_documents/aoai_workshop_content.pdf).
+The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/GenAI/search_documents/aoai_workshop_content.pdf).
 
 You can also learn a lot about the details of using Azure AI at this [site](https://azure.microsoft.com/en-us/products/ai-studio).
 
-We recommend you 1) go through the steps in this README, 2) complete the general notebook called `notebooks/AzureAIStudio.ipynb`, then 3) complete the notebook called `notebooks/AzureOpenAI-langchain.ipynb`. 
+We recommend you 1) go through the steps in this README, 2) complete the general notebook called `notebooks/AzureOpenAI.ipynb`, then 3) complete the notebook called `notebooks/AzureOpenAI-langchain.ipynb`. 
 
 ## Overview of Page Contents
 + [Azure AI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
@@ -49,7 +49,7 @@ When ready, go to **Build** and then click **+ New Project**.
 
 Fill in the info with the resource name and relevant information. Make sure you put your resource in the same resource group and region as your other Azure AI resources/environments. Then click **Create a Project**.
 
-    ![create new project and resource](/docs/images/7_create_new_project.png)
+  ![create new project and resource](/docs/images/7_create_new_project.png)
 
 When ready, select your project. Now go to **Build** then **Playground**. 
 
@@ -83,13 +83,13 @@ Now we will look at [adding and querying over your own data](#Upload-your-own-da
 
 If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message) in the prompt box, then (D) click **Apply Changes**. 
 
-On the next tab over, you can (A) add your own data, which we dive into in the [next section](Upload-your-own-data-and-query-over-it). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
+On the next tab over, you can (A) add your own data, which we dive into in the [next section](#Upload-your-own-data-and-query-over-it). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
 
 On the far right under *Configuration*, you can modify which model you are deploying, which allows you to switch between different model deployments depending on the context. You can also modify the model's parameters on the same tab.
 
   ![modify deployment](/docs/images/19_deployment.png)
 
-Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/Azure_AI_Studio/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
+Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/GenAI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
 
   ![modify parameters](/docs/images/20_parameters.png)
 
@@ -129,7 +129,7 @@ If needed, create the new Azure AI Search resource. Make sure you delete this wh
 
   ![create cog search](/docs/images/7_cog_search_resource.png)
  
-Now select your newly made Azure Cognitive Search resource, and click **Next**. You can select to search with either [Vector](https://learn.microsoft.com/en-us/azure/search/vector-search-overview) or [Hybrid](https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview) search.
+Now select your newly made Azure AI Search (formally know as Cognitive Search) resource, and click **Next**. You can select to search with either [Vector](https://learn.microsoft.com/en-us/azure/search/vector-search-overview) or [Hybrid](https://learn.microsoft.com/en-us/azure/search/hybrid-search-overview) search.
 
   ![choose keyword](/docs/images/16_hybrid_search.png)
 
@@ -141,7 +141,7 @@ Once it is complete, you should see your data source listed.
 
 Also check that the index is complete by viewing your AI Search resource, and going to `AI Search` on the left. 
   
-    ![Cog Search](/docs/images/18_check_ai_search.png)
+  ![Cog Search](/docs/images/18_check_ai_search.png)
 
 Now select your resource, select **indexes**, and then ensure that the number of documents listed is greater then 0. 
 
@@ -396,13 +396,13 @@ Creating embeddings of search documents allows you to use vector search, which i
 ### Environment Setup
 Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
 
-Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/Azure_AI_Studio/notebooks/AzureOpenAI.ipynb). 
+Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI.ipynb](/tutorials/notebooks/GenAI/notebooks/AzureOpenAI.ipynb). 
 
 You will need a variety of parameters to authenticate with the API. You can find these within the Playground by clicking **View Code**. Input these parameters into the notebook cell when asked.
 
   ![Code View Image](/docs/images/find_endpointv2.png)
 
-Follow along with the notebook, and when finished, feel free to move onto the next notebook called [AzureOpenAI-langchain.ipynb](/tutorials/notebooks/Azure_Open_AI/notebooks/AzureOpenAI-langchain.ipynb) which shows you how to interface with your models using Langchain.
+Follow along with the notebook, and when finished, feel free to move onto the next notebook called [AzureOpenAI-langchain.ipynb](/tutorials/notebooks/GenAI/notebooks/AzureOpenAI-langchain.ipynb) which shows you how to interface with your models using Langchain.
 
 Finally, navigate back here to view the Additional Resources. Make sure to **Stop your Compute** when finished in Azure ML Studio.
 
