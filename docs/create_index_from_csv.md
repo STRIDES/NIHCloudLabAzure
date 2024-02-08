@@ -19,7 +19,17 @@ On the home page, navigate to `Storage Accounts`.
 
   ![Nav Storage Account](/docs/images/2_storage_accounts.png)
 
+[Create a new storage account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal) if needed. Place your storage account in useast region. 
 
+Create a new container if needed, otherwise navigate to an existing container.
+
+  ![Create new container](/docs/images/3_create_container.png)
+
+Select `Upload` and then add your file by dropping or browsing. 
+
+  ![Add your file](/docs/images/4_add_your_csv.png)
+
+### 3) Index your CSV
 
 
 
