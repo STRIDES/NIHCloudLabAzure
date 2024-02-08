@@ -69,7 +69,7 @@ Navigate to `Indexes` on the left panel and wait until your index shows as many 
   ![Check index](/docs/images/10_check_index.png)
 
 
-And that is it! Now return to [the tutorial notebook to run queries against this csv using GPT-4]( /tutorials/notebooks/GenAI/LLM_query_csv.ipynb).
+And that is it! Now return to [the tutorial notebook to run queries against this csv using GPT-4]( /tutorials/notebooks/GenAI/llm_query_csv.ipynb).
 
 
 
