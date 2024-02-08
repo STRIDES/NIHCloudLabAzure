@@ -1,4 +1,4 @@
-### Create an Azure search inded from a csv file
+### Create an Azure search index from a csv file
 :sparkles: Here we outline how to create an Azure search index from a CSV file summarizing funded award data exported from Reporter.nih.gov
 
 ### 1) Generate input CSV
@@ -30,6 +30,16 @@ Select `Upload` and then add your file by dropping or browsing.
   ![Add your file](/docs/images/4_add_your_csv.png)
 
 ### 3) Index your CSV
+
+Navigate to AI Search and [create a new search](https://learn.microsoft.com/en-us/azure/search/search-create-service-portal).
+
+  ![Create new search](/docs/images/5_create_new_db.png)
+
+Click `Import data`
+
+  ![Import Data](/docs/images/6_import_data.png)
+
+
 
 
 
