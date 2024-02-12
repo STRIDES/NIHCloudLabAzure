@@ -13,13 +13,13 @@ Select your export columns and make sure you export as a csv. In the example inp
 If using the UI to upload, you need to make two small edits to the csv that gets exported. First, remove the extra comma at the end of each line. Second, replace the spaces in column names in the header row. You can do this using something like Python, or just do a find/replace in a text editor.
 
 ### 2) Import data into Azure blob storage
-:ear: If you already added your data to blob storage skip to to section (3)
+:ear: If you already added your data to blob storage skip to section (3)
 
 On the home page, navigate to `Storage Accounts`.
 
   ![Nav Storage Account](/docs/images/2_storage_accounts.png)
 
-[Create a new storage account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal) if needed. Place your storage account in useast region. 
+[Create a new storage account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal) if needed. Place your storage account in US East region. 
 
 Create a new container if needed, otherwise navigate to an existing container.
 
@@ -42,7 +42,7 @@ Click `Import data`
 Now fill out all the necessary parameters. 
 + Data Source: Select `Azure Blob Storage`. New options will drop down.
 + Data source name: This can be anything, but go with something like `grant-data`.
-+ Data to extrac: Select `Content and metadata`.
++ Data to extract: Select `Content and metadata`.
 + Parsing mode: Select `Delimited text`. Check the `First Line Contains Header` box and leave `Delimiter Character` as `,`.
 + Connection string: Click `Choose an existing connection` and navigate to your storage account and container.
 + Managed identity authentication: Leave as default.
