@@ -1,4 +1,10 @@
+>This repository falls under the NIH STRIDES Initiative. STRIDES aims to harness the power of the cloud to accelerate biomedical discoveries. To learn more, visit https://cloud.nih.gov. 
+
 # Microsoft Azure Tutorial Resources
+
+NIH Cloud Lab’s goal is to make Cloud easy and accessible for you, so that you can spend less time on administrative tasks and focus more on research.
+
+Use this repository to learn about how to use Azure by exploring the linked resources and walking through the tutorials. If you are a beginner, we suggest you begin the jumpstart section on the [Cloud Lab website](https://cloud.nih.gov/resources/cloudlab/).
 
 ---------------------------------
 ## Overview of Page Contents
