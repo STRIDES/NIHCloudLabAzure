@@ -8,11 +8,11 @@ Welcome to this repository, a comprehensive collection of examples that will hel
 - 4 Python scripts that demonstrate how to use Azure OpenAI Embeddings to create embedding applications. 
 - 42 in-depth content slides on the information covered in this workshop. Please find ```aoai_workshop_content.pdf``` in [search_documents](https://github.com/t-cjackson/Azure-OpenAI-Workshop/tree/main/search_documents) folder in this repository. 
   
-The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/GenAI/search_documents/aoai_workshop_content.pdf).
+The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/notebooks/GenAI/search_documents/aoai_workshop_content.pdf).
 
 You can also learn a lot about the details of using Azure OpenAI at this [site](https://learn.microsoft.com/en-us/azure/ai-services/openai/use-your-data-quickstart?tabs=command-line&pivots=programming-language-studio).
 
-We recommend you 1) go through the steps in this README, 2) complete the general notebook called `notebooks/AzureOpenAI_embeddings.ipynb`, then 3) explore the other notebooks at [this directory](/tutorials/notebooks/GenAI/notebooks) 
+We recommend you 1) go through the steps in this README, 2) complete the general notebook called `notebooks/AzureOpenAI_embeddings.ipynb`, then 3) explore the other notebooks at [this directory](/notebooks/GenAI/notebooks) 
 
 ## Overview of Page Contents
 + [Azure OpenAI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
