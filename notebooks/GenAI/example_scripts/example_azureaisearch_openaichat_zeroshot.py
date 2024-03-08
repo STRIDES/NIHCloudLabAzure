@@ -1,7 +1,7 @@
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
-from langchain.chat_models import AzureChatOpenAI
-from langchain.retrievers import AzureCognitiveSearchRetriever
+from langchain_community.retrievers import AzureCognitiveSearchRetriever
+from langchain_openai import AzureChatOpenAI
 import sys
 import json
 import os
