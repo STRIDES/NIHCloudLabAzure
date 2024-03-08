@@ -5,11 +5,11 @@ Microsoft Azure migrated the AI front end from Azure OpenAI to Azure AI Studio.
 
 Welcome to this repository, a comprehensive collection of examples that will help you chat with your data using the Azure OpenAI Studio Playground, create highly efficient large language model prompts, and build Azure OpenAI embeddings. 
   
-The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/tutorials/notebooks/GenAI/search_documents/aoai_workshop_content.pdf).
+The purpose of this workshop is to equip participants with the necessary skills to make the most out of the Azure OpenAI Playground, Prompt Engineering, and Azure OpenAI Embeddings in Python. You can view in-depth info on these topics in the [workshop slides](/notebooks/GenAI/search_documents/aoai_workshop_content.pdf).
 
 You can also learn a lot about the details of using Azure AI at this [site](https://azure.microsoft.com/en-us/products/ai-studio).
 
-We recommend you 1) go through the steps in this README, 2) complete the general notebook called `notebooks/AzureOpenAI_embeddings.ipynb`, then 3) explore the other notebooks at [this directory](/tutorials/notebooks/GenAI/notebooks) 
+We recommend you 1) go through the steps in this README, 2) complete the general notebook called `notebooks/AzureOpenAI_embeddings.ipynb`, then 3) explore the other notebooks at [this directory](/notebooks/GenAI/notebooks) 
 
 ## Overview of Page Contents
 + [Azure AI Playground Prerequisites](#Azure-OpenAI-Playground-Prerequisites)
@@ -89,7 +89,7 @@ On the far right under *Configuration*, you can modify which model you are deplo
 
   ![modify deployment](/docs/images/19_deployment.png)
 
-Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/tutorials/notebooks/GenAI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
+Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/notebooks/GenAI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
 
   ![modify parameters](/docs/images/20_parameters.png)
 
@@ -396,7 +396,7 @@ Creating embeddings of search documents allows you to use vector search, which i
 ### Environment Setup
 Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
 
-Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI_embeddings.ipynb](/tutorials/notebooks/GenAI/notebooks/AzureOpenAI_embeddings.ipynb). 
+Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI_embeddings.ipynb](/notebooks/GenAI/notebooks/AzureOpenAI_embeddings.ipynb). 
 
 You will need a variety of parameters to authenticate with the API. You can find these within the Playground by clicking **View Code**. Input these parameters into the notebook cell when asked.
 
