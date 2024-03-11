@@ -1,7 +1,6 @@
 from langchain.retrievers import PubMedRetriever
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
-from langchain.llms import VertexAI
 import sys
 import json
 import os
