@@ -16,7 +16,7 @@
 
   ![authenticate ms](/docs/images/AZ_D_3.png)
 
-4. You may be taken to an Apps Dashboard, you can ignore this page
+4. You may be taken to an Apps Dashboard, you can ignore this page.
 
   ![apps](/docs/images/AZ_D_4.png)
 
@@ -28,7 +28,7 @@
 
   ![portal](/docs/images/AZ_D_7.png)
 
-7. Select the NIH directory
+7. Select the NIH directory.
 
   ![directory](/docs/images/AZ_D_8.png)
 
@@ -40,39 +40,39 @@
 
 *Depending on if your account has been linked with Microsoft or not in the past, these steps may look slightly different*
 
-2. Follow the prompts to login or create a new Microsoft account
+2. Follow the prompts to login or create a new Microsoft account.
 
   ![topright dir](/docs/images/AZ_gm_2.png)
 
-3. Create a password if prompted
+3. Create a password if prompted.
 
   ![topright dir](/docs/images/AZ_gm_6.png)
 
-4. Enter your name if prompted
+4. Enter your name if prompted.
 
   ![topright dir](/docs/images/AZ_gm_7.png)
 
-5. Follow the prompts to get a code to your email
+5. Follow the prompts to get a code to your email.
 
   ![topright dir](/docs/images/AZ_gm_8.png)
 
-6. Enter the code and any puzzles you may be asked to fill out
+6. Enter the code and any puzzles you may be asked to fill out.
 
   ![topright dir](/docs/images/AZ_gm_12.png)
 
-7. Accept the terms for NIH
+7. Accept the terms for NIH.
 
   ![accept terms](/docs/images/AZ_gm_13.png)
 
-8. Now authenticate using Microsoft Authenticator
+8. Now authenticate using Microsoft Authenticator.
 
   ![authenticate](/docs/images/AZ_gm_15.png)
 
-9. Accept the terms of use
+9. Accept the terms of use.
 
   ![authenticate](/docs/images/AZ_gm_18.png)
 
-10. Accept the TOU agreement
+10. Accept the TOU agreement.
 
   ![TOU](/docs/images/AZ_gm_19.png)
 
@@ -80,7 +80,7 @@
 
   ![TOU](/docs/images/AZ_gm_20.png)
 
-12. Navigate to `portal.azure.com`, click Get Started and tell Microsoft how you plan to use the platform if asked. 
+12. Navigate to `portal.azure.com`, click ~Get Started* and tell Microsoft how you plan to use the platform if prompted. 
 
   ![TOU](/docs/images/AZ_gm_24.png)
 
