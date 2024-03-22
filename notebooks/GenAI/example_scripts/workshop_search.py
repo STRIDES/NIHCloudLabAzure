@@ -1,5 +1,4 @@
 import openai
-from openai.embeddings_utils import get_embedding, cosine_similarity # must pip install openai[embeddings]
 import pandas as pd
 import numpy as np
 import os
@@ -10,14 +9,21 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
-
-
 # set keys and configure Azure OpenAI
-openai.api_type = 'azure'
-openai.api_version = os.environ['AZURE_OPENAI_VERSION']
-openai.api_base = os.environ['AZURE_OPENAI_ENDPOINT']
-openai.api_key = os.environ['AZURE_OPENAI_KEY']
+os.environ["AZURE_OPENAI_ENDPOINT"] = "<YOUR OPENAI ENDPOINT>"
+os.environ["AZURE_OPENAI_KEY"] = "<YOUR OPENAI KEY>"
+
+#create embeddings functions to apply to a given column
+    
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_OPENAI_KEY"),  
+    api_version="2023-05-15",
+    azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+    )
+
+#create cosine function
+def cosine_similarity(a, b):
+    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 
 # read in the embeddings .csv 
 # convert elements in 'embedding' column back to numpy array

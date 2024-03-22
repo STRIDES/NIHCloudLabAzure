@@ -71,7 +71,7 @@ def build_chain():
 
 def run_chain(chain, prompt: str, history=[]):
     print(prompt)
-    return chain({"question": prompt, "chat_history": history})
+    return chain.invoke({"question": prompt, "chat_history": history})
 
 if __name__ == "__main__":
   chat_history = []
