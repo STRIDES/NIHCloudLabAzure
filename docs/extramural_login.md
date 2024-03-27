@@ -36,6 +36,8 @@
 
   ![topright dir](/docs/images/AZ_D_9.png)
 
+**Note:** If you are interested in utilizing OpenAI's services and models like GPT 4 and GPT 3.5 you must submit a request form that you can find [here](azure_model_access.md) with instructions. 
+
 ## Option 2 – Accessing with a non-Microsoft managed identify <a name="non-managed"></a>
 
 *Depending on if your account has been linked with Microsoft or not in the past, these steps may look slightly different*
@@ -87,6 +89,8 @@
 13. Navigate to *Settings > Directories and Subscriptions* and confirm that the NIH directory is shown. If it is not, then switch to the NIH directory to see your subscriptions. 
 
   ![TOU](/docs/images/AZ_gm_29.png)
+
+**Note:** If you are interested in utilizing OpenAI's services and models like GPT 4 and GPT 3.5 you must submit a request form that you can find [here](azure_model_access.md) with instructions. 
 
 
 
