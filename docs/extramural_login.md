@@ -66,27 +66,38 @@
 
   ![accept terms](/docs/images/AZ_gm_13.png)
 
-8. Now authenticate using Microsoft Authenticator.
+8. Select 'Next' to move forward to the multifactor authentication.
+   ![accept terms](/docs/images/AZ_gm_14.png)
+
+9. Now authenticate using Microsoft Authenticator. Follow the steps for setting up Microsoft Authenicator app on your phone [here](/docs/microsoft_authenticator.md).
 
   ![authenticate](/docs/images/AZ_gm_15.png)
 
-9. Accept the terms of use.
+10. On your computer screen you should see a message similar to the one below, click 'Next'.
+  ![authenticate](/docs/images/AZ_gm_16.png)
+
+11. You should then see a QR code as is decribed in our Microsoft Authenticator guide, scan the QR code.
+    
+12. Once you have the Authenicator set up on your phone you should see the following message on your computer screen
+    ![authenticate](/docs/images/AZ_gm_17.png)
+    
+13. Accept the terms of use.
 
   ![authenticate](/docs/images/AZ_gm_18.png)
 
-10. Accept the TOU agreement.
+14. Accept the TOU agreement.
 
   ![TOU](/docs/images/AZ_gm_19.png)
 
-11. Now you are on the NIH Apps page. Ignore this page and go to the next step. 
+15. Now you are on the NIH Apps page. Ignore this page and go to the next step. 
 
   ![TOU](/docs/images/AZ_gm_20.png)
 
-12. Navigate to `portal.azure.com`, click ~Get Started* and tell Microsoft how you plan to use the platform if prompted. 
+16. Navigate to `portal.azure.com`, click ~Get Started* and tell Microsoft how you plan to use the platform if prompted. 
 
   ![TOU](/docs/images/AZ_gm_24.png)
 
-13. Navigate to *Settings > Directories and Subscriptions* and confirm that the NIH directory is shown. If it is not, then switch to the NIH directory to see your subscriptions. 
+17. Navigate to *Settings > Directories and Subscriptions* and confirm that the NIH directory is shown. If it is not, then switch to the NIH directory to see your subscriptions. 
 
   ![TOU](/docs/images/AZ_gm_29.png)
 
