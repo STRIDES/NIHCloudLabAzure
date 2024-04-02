@@ -12,15 +12,15 @@
    
     ![Search App Store](/docs/images/Auth_4.png)
 
-4. Select **Scan QR Code** and give permission to access your camera if needed
+4. Select **Scan QR Code** and give permission to access your camera if needed. Scan the QR code that appears on your computer screen.
 
     ![Search App Store](/docs/images/Auth_5.png)
 
-5. Now you should see the NIH account on your authenticator list
+5. Now you should see the NIH account on your authenticator list.
 
     ![Search App Store](/docs/images/Auth_7.png)
 
-6. Now you can access codes or respond to a numerical prompt from Microsoft Online
+6. Now you can access codes or respond to a numerical prompt from Microsoft Online.
 
     ![Search App Store](/docs/images/Auth_x.png)
 
