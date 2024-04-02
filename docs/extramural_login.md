@@ -76,7 +76,7 @@
 10. On your computer screen you should see a message similar to the one below, click 'Next'.
   ![authenticate](/docs/images/AZ_gm_16.png)
 
-11. You should then see a QR code as is decribed in our Microsoft Authenticator guide, scan the QR code.
+11. You should then see a QR code on your compter screen as is decribed in our Microsoft Authenticator guide, scan the QR code with your phone.
     
 12. Once you have the Authenicator set up on your phone you should see the following message on your computer screen
     ![authenticate](/docs/images/AZ_gm_17.png)
