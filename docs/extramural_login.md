@@ -1,139 +1,77 @@
 # Accessing NIH Cloud Lab on Azure – Instructions for NIH-Affiliated Researchers
 
-1. From an incognito or private browsing window, open the link you received in your welcome email.
-
-   ![Open Email](/docs/images/AZ_gm_1.png)
-
-## Option 1 – Accessing with a Microsoft managed identify <a name="managed"></a>
-
-*If the link takes you directly to the NIH login page (as in the photo below), then your identity is managed by Microsoft. If instead the link takes you to a fresh Microsoft login, skip ahead to the [non-managed identity](#non-managed) section.*
-
-  ![managed ID login](/docs/images/AZ_D_2.png)
-
-2. Follow the prompts to sign in with your email to the NIH login page.
-   
-3.  Now authenticate using Microsoft Authenticator. If do not yet have Microsoft Authenticator on your phone, visit [Microsoft's Documentation](https://support.microsoft.com/en-us/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a) or our [Microsoft Authenticator Guide](/docs/microsoft_authenticator.md). After confirming the authenticator has been installed click 'Next'.
-  ![authenticate](/docs/images/AZ_gm_15.png) 
-
-4. On your computer screen you should see a message similar to the one below, click 'Next'.
-  ![authenticate](/docs/images/AZ_gm_16.png)
-
-5. You should then see a QR code on your compter screen as is decribed in our Microsoft Authenticator guide, scan the QR code with your phone.
-    ![authenticate](/docs/images/QR_Code.png)
-    
-6. Once you have the Authenicator set up on your phone you should see the following message on your computer screen. Click 'Done'.
-    ![authenticate](/docs/images/AZ_gm_17.png)
-
-7. Authenticate with Microsoft Authenticator, by entering the code that appears on your computer screen in the authenicator app when prompted.
-
-  ![authenticate ms](/docs/images/AZ_D_3.png)
-
-8. Read the terms of use (TOU).
-
-  ![authenticate](/docs/images/AZ_gm_18.png)
+Follow the steps in this document to access your Azure Cloud Lab account for the first time. To improve navigation, we’ve broken the steps into the following sections, which you must complete in order:
+- **Section 1 – Launch the Account Set Up Process** – *Takes about 2 minutes*
+- **Section 2 – Confirm Your Identity** – *Takes about 2 minutes*
+- **Section 3 – Set Up the Microsoft Authenticator App** – *Takes about 5 minutes*
+- **Section 4 – Access Your Cloud Lab Account** – *Takes about 1 minute*
   
-9. Accept the TOU agreement.
+*If you’ve already completed the account setup steps in Sections 1 through 3, jump to Section 4, which provides instructions for logging in to your Cloud Lab account moving forward. If you need assistance at any point in this process, please contact the NIH Cloud Lab team at CloudLab@nih.gov.*
 
-  ![TOU](/docs/images/AZ_gm_19.png)
+## Section 1 of 4 – Launch the Account Set Up Process - *Takes about 2 minutes* <a name="sec1"></a>
 
-10. You may be taken to an Apps Dashboard, you can ignore this page.
+1. Look through your inbox for an automated email from Microsoft Invitations on behalf of the National Institutes of Health. Open the email and copy your personalized invitation link (outlined in red below).*Note: If you can’t find the email, check your junk or spam folders before contacting CloudLab@nih.gov.*
+   ![Open Email](/docs/images/AZ_gm_1.png)
+2. Paste the link into an incognito or private browser (you may experience login issues if you don’t use an incognito or private browser). If an **NIH login screen** opens (below left), follow the steps in Version A of the next section of this document. If a **Microsoft login screen** opens (below right), follow the steps in Version B of the next section of this document.
 
-  ![apps](/docs/images/AZ_D_4.png)
+## Section 2 of 4 – Version A – Confirm Your Identity *– Takes about 2 minutes* <a name="sec2a"></a>
+*Follow these instructions if your invitation link took you to an NIH login screen.*
+1. Enter your university or institution email address and click "Next". Then, follow the prompts to sign in with your standard university or institution username and password.
+   [image]
+2. If you are directed to a "More information required screen", click the "Next" button.
+   [image]
+3. Skip to Section 3, and follow the steps to set up the Microsoft Authenticator mobile app.
+## Section 2 of 4 – Version B – Confirm Your Identity *– Takes about 2 minutes* <a name="sec2b"></a>
+*Follow these instructions if your invitation link took you to a Microsoft login screen. Please note that these steps may look slightly different if your account has been linked with Microsoft in the past.*
+1.	Enter the email address you used to submit the Cloud Lab Account Request Form and click "Next" (first image below). You will likely receive a message that the account doesn’t exist – that’s normal! Click the "Create one" link (second image below). *Note: If you already have a Microsoft account tied to the email address you used to submit the Account Request Form, follow the prompts to log in with your Microsoft password and then jump to the last few steps in this section.*
+   [image]
+2. If prompted, create a password for your new Microsoft account and then click "Next".
+   [image]
+3. If prompted, provide your first and last name. Then click "Next".
+   [image]
+4. Check your email for a confirmation code (if you don’t see it, check your junk or spam folders). Copy the code, return to the Microsoft login screen, enter the code where prompted, uncheck the promotional email option, and click "Next".
+   [image]
+5. If prompted, complete any additional verification steps. When you’re done, you may see a confirmation notice on screen. If prompted, advance to the next screen.
+   [image]
+6.	If prompted, accept the permissions requested by the National Institutes of Health. This will enable us to move cloud credits into your account.
+   [image]
+7.	If you are directed to a "More information required screen", click the "Next" button.
+   [image]
+8.	Advance to Section 3, and follow the steps to set up the Microsoft Authenticator mobile app.
+## Section 3 of 4 – Set Up the Microsoft Authenticator Mobile App – *Takes about 5 minutes* <a name="sec3"></a>
+*To keep the NIH environment safe for all researchers, Cloud Lab participants must use the Microsoft Authenticator mobile app to confirm their login attempts. **Please note that the next few steps switch back and forth between your personal or work smartphone and your computer.***
+1.	**On your computer:** At this point, you should see a "Keep your account secure" message on your screen. You can disregard this message for now and move to the next step.
+   [image]
+2.	**On your smartphone:** Check whether you have the Microsoft Authenticator mobile app installed on your personal or work smartphone. If you don’t already have it, use the App Store or Google Play to install it.
+   [image]
+3.	**On your computer:** Once the app is installed on your smartphone, click the “Next” button on your computer screen.
+   [image]
+4.	**On your smartphone:** Open the Microsoft Authenticator mobile app (first image below), accept any permissions, and skip any welcome messages until you’re at the home screen. Click the "+" sign (second image below) and then select the "Work or school account" option (third image below). In the menu that opens, select "Scan a QR code" (last image below), which will open your smartphone’s camera.
+   [image]
+5.	**On your computer:** Click the "Next" button. A QR code should appear on your computer screen (second image below).
+   [image]
+6.	**On your smartphone:** Use your camera to scan the QR code.
+7.	**On your computer:** Click the "Next" button. A "Let’s try it out" message should appear on your computer screen (second image below).
+   [image]
+8.	**On your smartphone:** A notification should appear prompting you to confirm the login attempt. Enter the number from your computer screen into the Microsoft Authenticator app notification window and tap "Yes".
+   [image]
+9.	**On your computer:** A “Notification approved” message should appear. Click the "Next" button and then click "Done".
+    [image]
+10. **On your computer:** A Cloud Lab terms of use screen should appear. Click the document title to open and review it. Then click “Accept.” After accepting the terms of use, you may be redirected to an “Apps dashboard” screen (second image below). Disregard this screen and move to the final section of this document.
+    [image]
+## Section 4 of 4 – Access Your Cloud Lab Account – *Takes about 1 minute* <a name="sec4"></a>
+*Congratulations! At this point, your account is set up, and you’re ready to log in. In the future, repeat the steps in this section each time you want to access your Cloud Lab account.*
+***Important:** If you plan to use Azure OpenAI services with your Cloud Lab account, you may want to submit Microsoft’s mandatory [OpenAI enablement request form](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUNTZBNzRKNlVQSFhZMU9aV09EVzYxWFdORCQlQCN0PWcu) now ([step-by-step instructions available here](https://github.com/STRIDES/NIHCloudLabAzure/blob/model_access_doc/docs/azure_model_access.md) if needed). Once you submit the form, you can expect to get access to OpenAI within two to ten business days. You only need to complete this step once.*
 
-11. In your browser navigate to `portal.azure.com`.
-  
-  ![portal](/docs/images/AZ_D_5.png)
+1.	Launch the Azure portal by visiting [portal.azure.com](https://portal.azure.com/). If a login screen opens, sign in with the credentials you used to set up your account (either your university/institution username and password or your Microsoft username and password). 
 
-12. Next you will need to switch directories to access NIH subscriptions. Click the user icon in the top right and select `Switch directory`. 
-
-  ![portal](/docs/images/AZ_D_7.png)
-
-13. Select the NIH directory.
-
-  ![directory](/docs/images/AZ_D_8.png)
-
-14. Now you should see the NIH as your directory in the top right. 
-
-  ![topright dir](/docs/images/AZ_D_9.png)
-
-**Note:** If you are interested in utilizing OpenAI's services and models like GPT 4 and GPT 3.5 you must submit a request form that you can find [here](azure_model_access.md) with instructions. 
-
-## Option 2 – Accessing with a non-Microsoft managed identify <a name="non-managed"></a>
-
-*Depending on if your account has been linked with Microsoft or not in the past, these steps may look slightly different*
-
-2. Follow the prompts to login or create a new Microsoft account.
-
-  ![topright dir](/docs/images/AZ_gm_2.png)
-
-3. Create a password if prompted.
-
-  ![topright dir](/docs/images/AZ_gm_6.png)
-
-4. Enter your name if prompted.
-
-  ![topright dir](/docs/images/AZ_gm_7.png)
-
-5. Follow the prompts to get a code to your email.
-
-  ![topright dir](/docs/images/AZ_gm_8.png)
-
-6. Enter the code and any puzzles you may be asked to fill out.
-
-  ![topright dir](/docs/images/AZ_gm_12.png)
-
-7. Accept the terms for NIH.
-
-  ![accept terms](/docs/images/AZ_gm_13.png)
-
-8. Select 'Next' to move forward to the multifactor authentication.
-   ![accept terms](/docs/images/AZ_gm_14.png)
-
-9. Now authenticate using Microsoft Authenticator. If do not yet have Microsoft Authenticator on your phone, visit [Microsoft's Documentation](https://support.microsoft.com/en-us/account-billing/download-and-install-the-microsoft-authenticator-app-351498fc-850a-45da-b7b6-27e523b8702a) or our [Microsoft Authenticator Guide](/docs/microsoft_authenticator.md).
-
-  ![authenticate](/docs/images/AZ_gm_15.png)
-
-10. On your computer screen you should see a message similar to the one below, click 'Next'.
-  ![authenticate](/docs/images/AZ_gm_16.png)
-
-11. You should then see a QR code on your compter screen as is decribed in our Microsoft Authenticator guide, scan the QR code with your phone.
-    ![authenticate](/docs/images/QR_Code.png)
-    
-12. Once you have the Authenicator set up on your phone you should see the following message on your computer screen. Click 'Done'.
-    ![authenticate](/docs/images/AZ_gm_17.png)
-
-13. Authenticate with Microsoft Authenticator, by entering the code that appears on your computer screen in the authenicator app when prompted.
-
-  ![authenticate ms](/docs/images/AZ_D_3.png)
-    
-14. Accept the terms of use.
-
-  ![authenticate](/docs/images/AZ_gm_18.png)
-
-15. Accept the TOU agreement.
-
-  ![TOU](/docs/images/AZ_gm_19.png)
-
-16. Now you are on the NIH Apps page. Ignore this page and go to the next step. 
-
-  ![TOU](/docs/images/AZ_gm_20.png)
-
-17. Navigate to `portal.azure.com`, click ~Get Started* and tell Microsoft how you plan to use the platform if prompted. 
-
-  ![TOU](/docs/images/AZ_gm_24.png)
-
-18. Navigate to *Settings > Directories and Subscriptions* and confirm that the NIH directory is shown. If it is not, then switch to the NIH directory to see your subscriptions. 
-
-  ![TOU](/docs/images/AZ_gm_29.png)
-
-**Note:** If you are interested in utilizing OpenAI's services and models like GPT 4 and GPT 3.5 you must submit a request form that you can find [here](azure_model_access.md) with instructions. 
-
-
-
-
-
-
-
-
-
-
+2.	If your computer prompts you to approve the sign in attempt (first image below), enter the code that appears on your computer screen into the Microsoft Authenticator notification that pops up on your smartphone and then tap “Yes” (second image below).
+   [image]
+3.	You should now arrive at the Azure homepage. You can cancel or advance through any welcome content.
+   [image]
+4.	Check the area to the left of your profile icon under your username. If this area is blank or contains your university or institution’s name, click your profile icon and select the "Switch directory" option.
+*Note: If this area already says "National Institutes of Health", you are all set and ready to use your account.*
+5.	In the list of directories toward the bottom of the screen, find the "National Institutes of Health" option and click the "Switch" button next to it.
+   [image]
+6.	Once you see "National Institutes of Health" listed next to your profile icon at the top right of the screen, you are all logged in and ready to use your $500 of Cloud Lab credits. Check out our [Azure Jumpstart page](https://cloud.nih.gov/resources/cloudlab/azure-jumpstart/) for ideas on what to do next!
+   [image]
