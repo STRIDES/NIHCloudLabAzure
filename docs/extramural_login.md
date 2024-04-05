@@ -10,7 +10,9 @@ Follow the steps in this document to access your Azure Cloud Lab account for the
 
 ## Section 1 of 4 – Launch the Account Set Up Process - *Takes about 2 minutes* <a name="sec1"></a>
 
-1. Look through your inbox for an automated email from Microsoft Invitations on behalf of the National Institutes of Health. Open the email and copy your personalized invitation link (outlined in red below).*Note: If you can’t find the email, check your junk or spam folders before contacting CloudLab@nih.gov.*
+1. Look through your inbox for an automated email from Microsoft Invitations on behalf of the National Institutes of Health. Open the email and copy your personalized invitation link (outlined in red below).
+   
+   ***Note:** If you can’t find the email, check your junk or spam folders before contacting CloudLab@nih.gov.*
    
    ![Microsoft email with invitation link in red outline](/docs/images/AZ_gm_1.png)
    
@@ -33,34 +35,36 @@ Follow the steps in this document to access your Azure Cloud Lab account for the
 ## Section 2 of 4 – Version B – Confirm Your Identity - *Takes about 2 minutes* <a name="sec2b"></a>
 *Follow these instructions if your invitation link took you to a Microsoft login screen. Please note that these steps may look slightly different if your account has been linked with Microsoft in the past.*
 
-1.	Enter the email address you used to submit the Cloud Lab Account Request Form and click "Next" (first image below). You will likely receive a message that the account doesn’t exist – that’s normal! Click the "Create one" link (second image below). *Note: If you already have a Microsoft account tied to the email address you used to submit the Account Request Form, follow the prompts to log in with your Microsoft password and then jump to [the last few steps in this section](#sec2b_perms).*
+1.	Enter the email address you used to submit the Cloud Lab Account Request Form and click "Next" (first image below). You will likely receive a message that the account doesn’t exist – that’s normal! Click the "Create one" link (second image below).
+  
+     ***Note:** If you already have a Microsoft account tied to the email address you used to submit the Account Request Form, follow the prompts to log in with your Microsoft password and then jump to [the last few steps in this section](#sec2b_perms).*
 
   	![example of known email on the left and example of unrecognized email to the right](/docs/images/AZ_gm_5.png)
   	
-2. If prompted, create a password for your new Microsoft account and then click "Next".
+3. If prompted, create a password for your new Microsoft account and then click "Next".
 
    ![Prompt for password](/docs/images/AZ_gm_6.png)
    
-3. If prompted, provide your first and last name. Then click "Next".
+4. If prompted, provide your first and last name. Then click "Next".
 
    ![Prompt for first and last name](/docs/images/AZ_gm_7.png)
    
-4. Check your email for a confirmation code (if you don’t see it, check your junk or spam folders). Copy the code, return to the Microsoft login screen, enter the code where prompted, uncheck the promotional email option, and click "Next".
+5. Check your email for a confirmation code (if you don’t see it, check your junk or spam folders). Copy the code, return to the Microsoft login screen, enter the code where prompted, uncheck the promotional email option, and click "Next".
 
    ![Verify email prompt to enter code outlined in red](/docs/images/AZ_gm_8.png)
    
-5. If prompted, complete any additional verification steps. When you’re done, you may see a confirmation notice on screen. If prompted, advance to the next screen.
+6. If prompted, complete any additional verification steps. When you’re done, you may see a confirmation notice on screen. If prompted, advance to the next screen.
    ![Verification complete confirmation](/docs/images/AZ_gm_9.png)
    
-6.	If prompted, accept the permissions requested by the National Institutes of Health. This will enable us to move cloud credits into your account. <a name="sec2b_perms"></a>
+7.	If prompted, accept the permissions requested by the National Institutes of Health. This will enable us to move cloud credits into your account. <a name="sec2b_perms"></a>
 
   	![Additional permissions request with accept button outlined in red](/docs/images/AZ_gm_10.png)
   	
-7.	If you are directed to a "More information required screen", click the "Next" button.
+8.	If you are directed to a "More information required screen", click the "Next" button.
 
   	![Prompt for additional info with next button outlined in red](/docs/images/AZ_gm_11.png)
   	
-8.	Advance to [Section 3](#sec3), and follow the steps to set up the Microsoft Authenticator mobile app.
+9.	Advance to [Section 3](#sec3), and follow the steps to set up the Microsoft Authenticator mobile app.
    
 ## Section 3 of 4 – Set Up the Microsoft Authenticator Mobile App – *Takes about 5 minutes* <a name="sec3"></a>
 *To keep the NIH environment safe for all researchers, Cloud Lab participants must use the Microsoft Authenticator mobile app to confirm their login attempts. **Please note that the next few steps switch back and forth between your personal or work smartphone and your computer.***
