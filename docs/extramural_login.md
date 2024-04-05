@@ -124,7 +124,7 @@ Follow the steps in this document to access your Azure Cloud Lab account for the
   	
 4.	Check the area to the left of your profile icon under your username. If this area is blank or contains your university or institution’s name, click your profile icon and select the "Switch directory" option.
    
-    *Note: If this area already says "National Institutes of Health", you are all set and ready to use your account.*
+    ***Note:** If this area already says "National Institutes of Health", you are all set and ready to use your account.*
    
    ![Azure homepage with univeristy name and switch directory outlined iin red](/docs/images/AZ_gm_23.png)
 
