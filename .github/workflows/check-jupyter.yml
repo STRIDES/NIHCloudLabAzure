@@ -28,7 +28,7 @@ jobs:
 
     - name: Execute Notebooks
       run: |
-        find tutorials/notebooks/* -name '*.ipynb' -exec jupyter nbconvert --to notebook --execute {} +
+        find tutorials/notebooks/* -name '*.ipynb' -exec jupyter nbconvert --to notebook --execute --kernel ir {} +
 
     - name: Check for errors
       run: |
