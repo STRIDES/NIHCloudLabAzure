@@ -13,7 +13,7 @@
       "replacement": "https://github.com/STRIDES/NIHCloudLabAzure/tree/main/docs"
     },
     {
-      "pattern": "^/notebooks/",
+      "pattern": "^/notebooks",
       "replacement": "https://github.com/STRIDES/NIHCloudLabAzure/tree/main/notebooks"
     }
 
