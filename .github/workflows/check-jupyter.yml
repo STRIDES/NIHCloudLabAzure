@@ -23,16 +23,23 @@ jobs:
 
     - name: Check - Install dependencies
       run: |
+        echo -e "\n\n ---------------- Doing install of pip BELOW ---- \n"
         python -m pip install --upgrade pip
+        echo -e "\n\n ------- Doing pip install of jupyter BELOW ----\n"
         pip install jupyter nbformat nbconvert
+        echo -e "\n\n ------- Doing install of R BELOW ----- \n"
         sudo apt install r-base r-base-dev -y
-        R
+        echo -e "\n\n -------- Starting R BELOW ----- \n"
+        R --vanilla
+        echo -e "\n\n ------  Doing install of IRkernel BELOW --- \n"
         install.packages('IRkernel')
         IRkernel::installspec()
+        echo -e "\n\n ------- Listing the kernels installed BELOW ----\n"
         jupyter kernelspec list
 
     - name: Execute Notebooks
       run: |
+        echo -e "\n\n\n\n -------- Finding and checking the Jupyter notebooks BELOW ----- \n\n"
         find tutorials/notebooks/* -name '*.ipynb' -exec jupyter nbconvert --to notebook --execute {} +
 
     - name: Check for errors
