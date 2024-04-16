@@ -31,7 +31,7 @@ jobs:
         sudo apt install r-base r-base-dev -y
         echo -e "\n\n -------- Starting R BELOW ----- \n"
         sudo R --vanilla << EOF
-        install.packages('IRkernel')
+        install.packages('IRkernel',repos='https://cloud.r-project.org/')
         IRkernel::installspec()
         EOF
         echo -e "\n\n ------- Listing the kernels installed BELOW ----\n"
