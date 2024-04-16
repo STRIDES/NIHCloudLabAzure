@@ -30,7 +30,7 @@ jobs:
         echo -e "\n\n ------- Doing install of R BELOW ----- \n"
         sudo apt install r-base r-base-dev -y
         echo -e "\n\n -------- Starting R BELOW ----- \n"
-        R --vanilla << EOF
+        sudo R --vanilla << EOF
         install.packages('IRkernel')
         IRkernel::installspec()
         EOF
