@@ -26,14 +26,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install jupyter nbformat nbconvert
         sudo apt install r-base r-base-dev -y
-        r
+        R
         install.packages('IRkernel')
         IRkernel::installspec()
         jupyter kernelspec list
 
     - name: Execute Notebooks
       run: |
-        find tutorials/notebooks/* -name '*.ipynb' -exec jupyter nbconvert --to notebook --execute --kernel ir {} +
+        find tutorials/notebooks/* -name '*.ipynb' -exec jupyter nbconvert --to notebook --execute {} +
 
     - name: Check for errors
       run: |
