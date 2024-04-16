@@ -33,6 +33,9 @@ jobs:
         sudo R --vanilla << EOF
         install.packages('IRkernel',repos='https://cloud.r-project.org/')
         install.packages("jupyter_client",repos='https://cloud.r-project.org/')
+        EOF
+        echo -e "\n\n -------- Re-Starting R and installig IRkernel BELOW ----- \n
+        sudo R << EOF
         IRkernel::installspec()
         EOF
         echo -e "\n\n ------- Listing the kernels installed BELOW ----\n"
