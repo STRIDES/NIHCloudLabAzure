@@ -32,7 +32,7 @@ jobs:
         echo -e "\n\n -------- Starting R BELOW ----- \n"
         sudo R --vanilla << EOF
         install.packages('IRkernel',repos='https://cloud.r-project.org/')
-        install.packages("jupyter_client",repos='https://cloud.r-project.org/')
+        #install.packages("jupyter_client",repos='https://cloud.r-project.org/')
         EOF
         echo -e "\n\n -------- Re-Starting R and installig IRkernel BELOW ----- \n
         sudo R << EOF
