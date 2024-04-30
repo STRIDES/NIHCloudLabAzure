@@ -8,18 +8,18 @@ on:
 
 jobs:
   Check-Dependencies:
-    runs-on: ubuntu-latest
-  
+    runs-on: ubuntu-latest 
+    
     steps:
-      - name: Checkout the Repo contents
-      - uses: actions/checkout@v2
+    - name: Checkout the Repo contents
+      uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run:
+    - name: Install dependencies
+      run:
           pip install pytest nbmake
 
-      -name: Check each notebook
-        run:
+    - name: Check each notebook
+      run:
           find notebooks/* -name '*.ipynb' -exec pytest --nbmake --nbmake-kernel=python3 --nbmake-find-import-errors \ 
             --nbmake-timeout=20 {} +
 
