@@ -20,8 +20,7 @@ jobs:
 
     - name: Check each notebook
       run:
-          find notebooks/* -name '*.ipynb' -exec pytest --nbmake --nbmake-kernel=python3 --nbmake-find-import-errors \ 
-            --nbmake-timeout=20 {} +
+          find notebooks/* -name '*.ipynb' -exec pytest --nbmake --nbmake-kernel=python3 --nbmake-find-import-errors {} +
 
     - name: Check for errors
       run: |
