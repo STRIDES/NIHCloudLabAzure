@@ -8,7 +8,7 @@ on:
 
 jobs:
   Check-Dependencies:
-    runs-on: ubuntu-latesst
+    runs-on: ubuntu-latest
   
     steps:
       - name: Checkout the Repo contents
