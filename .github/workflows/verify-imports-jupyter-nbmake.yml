@@ -1,0 +1,37 @@
+name: Verify Imports in Jupyter Notebooks
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+    
+  workflow_dispatch:
+
+jobs:
+  Check-Dependencies:
+    runs-on: ubuntu-latesst
+  
+    steps:
+      - name: Checkout the Repo contents
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run:
+          pip install pytest nbmake
+
+      -name: Check each notebook
+        run:
+          find notebooks/* -name '*.ipynb' -exec pytest --nbmake --nbmake-kernel=python3 --nbmake-find-import-errors \ 
+            --nbmake-timeout=20 {} +
+
+    - name: Check for errors
+      run: |
+        if [ $? -ne 0 ]; then
+          echo "Notebook execution failed."
+          exit 1
+        fi
+        
+
+      
+
+
+
