@@ -17,10 +17,11 @@ jobs:
     - name: Install dependencies
       run:
           pip install pytest nbmake
+          pip install pytest-xdist
 
     - name: Check each notebook
       run:
-          find notebooks/* -name '*.ipynb' -exec pytest --nbmake --nbmake-kernel=python3 --nbmake-find-import-errors {} +
+          find notebooks/* -name '*.ipynb' -exec pytest --nbmake -n=auto --nbmake-kernel=python3 --nbmake-find-import-errors {} +
 
     - name: Check for errors
       run: |
