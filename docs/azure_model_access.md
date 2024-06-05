@@ -2,7 +2,7 @@
 To access OpenAI models such as GPT series (4, 3.5, 3, etc.), DALL-E, Whisper, and embedding models, users must submit a request form by choosing one of the options below.
 
 ## Option 1 – Access the Request Form via Direct Link
-1. Submit the Request Access to Azure OpenAI Service form via the linked [here].(https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUNTZBNzRKNlVQSFhZMU9aV09EVzYxWFdORCQlQCN0PWcu).
+1. Submit the Request Access to Azure OpenAI Service form via the linked [here](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUNTZBNzRKNlVQSFhZMU9aV09EVzYxWFdORCQlQCN0PWcu).
    ![open ai service](/docs/images/OAI_model_access_0.png)
 ## Option 2 – Access the Request Form via Azure OpenAI <a name="managed"></a>
 1. Navigate to your Azure console and search for `Azure OpenAI`
