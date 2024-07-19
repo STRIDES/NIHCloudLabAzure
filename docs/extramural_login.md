@@ -1,5 +1,8 @@
 # Accessing NIH Cloud Lab on Azure – Instructions for NIH-Affiliated Researchers
 
+> [!IMPORTANT]  
+> *If you receive an error message or have any trouble completing these steps, please don't hesitate to contact us at CloudLab@nih.gov. Be sure to add **"Support"** at the beginning of your subject line so that we can properly route your request.*
+
 Follow the steps in this document to access your Azure Cloud Lab account for the first time. To improve navigation, we’ve broken the steps into the following sections, which you must complete in order:
 - **Section 1 – Launch the Account Set Up Process** – *Takes about 2 minutes*
 - **Section 2 – Confirm Your Identity** – *Takes about 2 minutes*
