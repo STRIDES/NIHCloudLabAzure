@@ -23,7 +23,7 @@ Follow the steps in this document to access your Azure Cloud Lab account for the
     ![NIH login screen on the left and Microsoft login screen on the right](/docs/images/AZ_gm_2.png)
    
 ## Section 2 of 4 – Version A – Confirm Your Identity – *Takes about 2 minutes* <a name="sec2a"></a>
-*Follow these instructions if your invitation link took you to an NIH login screen. If you prefer a guided video version of these instructions, open this [Version A video](https://www.youtube.com/watch?v=UcGUEH3ciYo&t=143s). The relevant information starts at 1:43.*
+*Follow these instructions if your invitation link took you to an NIH login screen. **If you prefer a guided video version of these instructions, open this [Version A video](https://www.youtube.com/watch?v=UcGUEH3ciYo&t=143s). The relevant information starts at 1:43.***
 
 1. Enter your university or institution email address and click "Next". Then, follow the prompts to sign in with your standard university or institution username and password.
    
@@ -36,7 +36,7 @@ Follow the steps in this document to access your Azure Cloud Lab account for the
 3. [Skip to Section 3](#sec3), and follow the steps to set up the Microsoft Authenticator mobile app.
    
 ## Section 2 of 4 – Version B – Confirm Your Identity - *Takes about 2 minutes* <a name="sec2b"></a>
-*Follow these instructions if your invitation link took you to a Microsoft login screen. Please note that these steps may look slightly different if your account has been linked with Microsoft in the past. If you prefer a guided video version of these instructions, open this [Version B video](https://www.youtube.com/watch?v=7G1NEVFRQBI&t=100s). The relevant information starts at 1:40.*
+*Follow these instructions if your invitation link took you to a Microsoft login screen. Please note that these steps may look slightly different if your account has been linked with Microsoft in the past. **If you prefer a guided video version of these instructions, open this [Version B video](https://www.youtube.com/watch?v=7G1NEVFRQBI&t=100s). The relevant information starts at 1:40.***
 
 1.	Enter the email address you used to submit the Cloud Lab Account Request Form and click "Next" (first image below). You will likely receive a message that the account doesn’t exist – that’s normal! Click the "Create one" link (second image below).
   
