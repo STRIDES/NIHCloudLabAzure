@@ -8,21 +8,13 @@ on:
     branches:
       - '*'
 jobs:
-  check-links:
+  link-check:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-
-    - name: Install dependencies
-      run: |
-        npm install -g markdown-link-check
-
-    - name: Check links in Markdown files
-      run: find . -name '*.md' -print0 | xargs -0 -n1 markdown-link-check -q -c .markdown-link-check.json
+      - name: Run Link Checker
+        uses: mr8lu/link-validator@v1.0.0
+        with:
+          directory: '.'  # Adjust the directory as needed
