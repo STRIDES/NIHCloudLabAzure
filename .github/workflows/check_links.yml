@@ -15,6 +15,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Link Checker
-        uses: mr8lu/link-validator@v1.0.0
+        uses: mr8lu/link-validator@v1
         with:
           directory: '.'  # Adjust the directory as needed
