@@ -60,8 +60,7 @@ Microsoft has several genomics-related offerings that will be useful to many Clo
 
 ## **Genome Wide Association Studies** <a name="gwas"></a>
 Genome-wide association studies (GWAS) are large-scale investigations that analyze the genomes of many individuals to identify common genetic variants associated with traits, diseases, or other phenotypes.
-- This [NIH CFDE written tutorial](https://training.nih-cfde.org/en/latest/Bioinformatic-Analyses/GWAS-in-the-cloud
-) walks you through running a simple GWAS on AWS, thus we converted it to Azure in [this notebook](/notebooks/GWAS). Note that the CFDE page has a few other bioinformatics related tutorials like BLAST and Illumina read simulation. 
+- This [NIH CFDE written tutorial](https://training.nih-cfde.org/en/latest/Bioinformatic-Analyses/GWAS-in-the-cloud/) walks you through running a simple GWAS on AWS, thus we converted it to Azure in [this notebook](/notebooks/GWAS). Note that the CFDE page has a few other bioinformatics related tutorials like BLAST and Illumina read simulation. 
 - This blog post [illustrates some of the costs associated](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/azure-to-accelerate-genome-wide-analysis-study/ba-p/2644120) with running GWAS on Azure
 
 ## **NCBI BLAST+** <a name="blast"></a>
