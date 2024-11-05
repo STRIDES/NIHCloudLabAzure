@@ -1,0 +1,116 @@
+/* Global font family */  
+body, .stApp, .stApp * {  
+    font-family: sans-serif;  
+}  
+  
+.stApp > header {  
+    background-color: #ffffff;  
+    color: #f8f8f8;  
+    padding: 2rem;  
+}  
+  
+.stApp {  
+    background-color: #ffffff;  
+    color: #000000;  
+    padding: 2rem;  
+}  
+  
+/* Sidebar styling */  
+[data-testid="stSidebar"] {  
+    background-color: #2c5483;  
+    color: #ffffff;  
+}  
+  
+[data-testid="stSidebarNav"] {  
+    background-image: url(https://cloud.nih.gov/nih_logo.png);  
+    background-repeat: no-repeat;  
+    padding-top: 175px;  
+    background-position: center 0px;  
+    background-size: 200px;  
+}  
+  
+[data-testid="stSidebarNav"]::before {  
+    content: "";  
+    margin-left: 60px;  
+    margin-top: 20px;  
+    font-size: 30px;  
+    position: relative;  
+    top: 100px;  
+    font-weight: bold;  
+    text-align: center;  
+}  
+  
+/* Ensure all text in sidebar is white */  
+[data-testid="stSidebar"] * {  
+    color: #ffffff !important;  
+}  
+  
+/* Success message styling */  
+.success-message {  
+    text-align: center;  
+    margin: 20px 0;  
+}  
+  
+/* Main title styling */  
+h1 {  
+    color: #000400;  
+    text-align: center;  
+    margin-bottom: 20px;  
+    font-size: 40px;  
+}  
+  
+/* Select box styling */  
+.css-2trqyj {  
+    font-size: 18px;  
+}  
+  
+/* Number input styling */  
+.css-1siy2j7 {  
+    font-size: 18px;  
+}  
+  
+/* Radio button styling */  
+.css-1awt6go {  
+    font-size: 18px;  
+}  
+  
+/* DataFrame styling */  
+.css-1l269bu {  
+    margin-top: 20px;  
+}  
+  
+/* Spinner styling */  
+.css-1f6lu8k {  
+    margin-top: 20px;  
+    text-align: center;  
+}  
+  
+/* Pages Menu styling */  
+.st-emotion-cache-1rtdyuf.eczjsme13 {  
+    color: #ffffff; /* This sets the text color to white */  
+}  
+  
+.st-emotion-cache-6tkfeg.eczjsme13 {  
+    color: #ffffff !important;  
+}  
+  
+.css-10trblm, .css-1r7vkyz, .css-2trqyj {  
+    color: black;  
+}  
+  
+/* Modify the streamlit menu in top right corner */  
+.st-emotion-cache-w3nhqi.ef3psqc5 {  
+    color: black !important;  
+}  
+  
+.st-emotion-cache-1wbqy5l.e17vllj40 {  
+    color: black !important;  
+}  
+  
+.st-emotion-cache-jdyw56.en6cib60 {  
+    color: black !important;  
+}  
+
+.st-emotion-cache-cgqxho.ef3psqc6 {  
+    color: black !important;  
+}  
