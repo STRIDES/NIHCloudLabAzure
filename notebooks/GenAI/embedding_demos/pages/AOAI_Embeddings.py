@@ -61,8 +61,14 @@ def embeddings_search():
 
     # Streamlit configuration
     st.subheader("Vector Search")
-    st.write('This process generates embeddings based on user queries, utilizing the compiled CSV that was created, to search for the most similar\
-              documents within the vector store by employing cosine similarity.')
+    st.write('''
+This process generates embeddings based on user queries, utilizing the compiled CSV that was created, to search for the most similar
+documents within the vector store by employing cosine similarity. Example questions a user can ask about the microsoft-earnings.csv: 
+- What was said about the budget?
+- How many people utilize GitHub to build software?
+- How many points did Microsoft Cloud gross margin percentage increase by?
+- What are the expectations for the Q2 cash flow?''')
+    
     if 'answer' not in st.session_state:
         st.session_state.answer = []  
     if 'score' not in st.session_state:
