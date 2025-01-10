@@ -21,26 +21,34 @@ from dotenv import load_dotenv
 from openai import AzureOpenAI  
 import tiktoken  
 from styling import global_page_style  
-import re
+import re  
   
 # Load environment variables  
 load_dotenv()  
   
 # Configure Azure AI Search parameters  
-search_endpoint = os.getenv('AZURE_SEARCH_ENDPOINT')  
-search_key = os.getenv('AZURE_SEARCH_ADMIN_KEY')  
+search_endpoint = os.getenv('AZURE_SEARCH_ENDPOINT')  # The endpoint for your Azure AI Search instance 
+search_key = os.getenv('AZURE_SEARCH_ADMIN_KEY')  # Your AI Search API key 
   
 def chat_on_your_data(query, search_index, messages):  
     """  
     Perform retrieval queries over documents from the Azure AI Search Index.  
+      
+    Args:  
+        query (str): The user's search query.  
+        search_index (str): The name of the search index.  
+        messages (list): List of messages to display in the chat.  
+      
+    Returns:  
+        None  
     """  
     # Configure Azure OpenAI parameters  
-    azure_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')  
-    azure_openai_api_key = os.getenv('AZURE_OPENAI_KEY')  
-    azure_openai_api_version = os.getenv('AZURE_OPENAI_VERSION')  
-    azure_ada_deployment = os.getenv('AZURE_EMBEDDINGS_DEPLOYMENT')  
-    azure_gpt_deployment = os.getenv('AZURE_GPT_DEPLOYMENT')  
-
+    azure_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')  # The endpoint for your Azure OpenAI instance 
+    azure_openai_api_key = os.getenv('AZURE_OPENAI_KEY') # Your Azure OpenAI API key 
+    azure_openai_api_version = os.getenv('AZURE_OPENAI_VERSION')  # The version of the Azure OpenAI API you are using  
+    azure_ada_deployment = os.getenv('AZURE_EMBEDDINGS_DEPLOYMENT')  # The deployed ADA model for your Azure OpenAI instance 
+    azure_gpt_deployment = os.getenv('AZURE_GPT_DEPLOYMENT')   # The deployed GPT model for your Azure OpenAI instance 
+  
     messages.append({"role": "user", "content": query})  
       
     with st.chat_message("user"):  
@@ -91,25 +99,35 @@ def chat_on_your_data(query, search_index, messages):
                 }]  
             }  
         )  
-          
-        response_data = completion.to_dict() 
+  
+        response_data = completion.to_dict()  
         ai_response = response_data['choices'][0]['message']['content']  
-        ai_response_cleaned = re.sub(r'\s+\.$', '.', re.sub(r'\[doc\d+\]', '', ai_response)) 
+          
+        # Clean the AI response  
+        ai_response_cleaned = re.sub(r'\s+\.$', '.', re.sub(r'\[doc\d+\]', '', ai_response))  
         citation = response_data["choices"][0]["message"]["context"]["citations"][0]["url"]  
-        ai_response_final = f"{ai_response_cleaned}\n\nCitation(s):\n{citation}"
+        ai_response_final = f"{ai_response_cleaned}\n\nCitation(s):\n{citation}"  
+  
         messages.append({"role": "assistant", "content": ai_response_final})  
+      
         with st.chat_message("assistant"):  
             st.markdown(ai_response_final)  
   
 def setup_azure_openai(log_text):  
     """  
     Sets up Azure OpenAI.  
+      
+    Args:  
+        log_text (streamlit DeltaGenerator): Streamlit log text object for logging setup progress.  
+      
+    Returns:  
+        AzureOpenAI: Configured AzureOpenAI client instance.  
     """  
     log_text.write("Setting up Azure OpenAI...")  
     azure_openai = AzureOpenAI(  
-        api_key=os.getenv("Azure_OPENAI_KEY"),  
-        api_version=os.getenv('AZURE_OPENAI_VERSION'),  
-        azure_endpoint=os.getenv('AZURE_OPENAI_ENDPOINT')  
+        api_key=os.getenv("AZURE_OPENAI_KEY"),  # Your Azure OpenAI API key 
+        api_version=os.getenv('AZURE_OPENAI_VERSION'), # The version of the Azure OpenAI API you are using  
+        azure_endpoint=os.getenv('AZURE_OPENAI_ENDPOINT') # The endpoint for your Azure OpenAI instance 
     )  
     log_text.write("Azure OpenAI setup complete.")  
     return azure_openai  
@@ -117,6 +135,12 @@ def setup_azure_openai(log_text):
 def connect_to_blob_storage(log_text):  
     """  
     Connects to Azure Blob Storage.  
+      
+    Args:  
+        log_text (streamlit DeltaGenerator): Streamlit log text object for logging connection progress.  
+      
+    Returns:  
+        ContainerClient: Azure Blob Storage container client.  
     """  
     log_text.write("Connecting to Blob Storage...")  
     blob_service_client = BlobServiceClient.from_connection_string(os.getenv("BLOB_CONNECTION_STRING"))  
@@ -127,13 +151,23 @@ def connect_to_blob_storage(log_text):
 def split_text_with_metadata(text, metadata, max_length=800, overlap=75, encoding_name='cl100k_base'):  
     """  
     Splits the text into chunks with metadata.  
+      
+    Args:  
+        text (str): The text to split.  
+        metadata (dict): Metadata to associate with each chunk.  
+        max_length (int): Maximum length of each chunk in tokens.  
+        overlap (int): Number of tokens to overlap between chunks.  
+        encoding_name (str): Encoding name for tokenization.  
+      
+    Returns:  
+        list: List of chunks with associated metadata.  
     """  
     tokenizer = tiktoken.get_encoding(encoding_name)  
     tokens = tokenizer.encode(text)  
     chunks = []  
     start = 0  
     end = max_length  
-      
+  
     while start < len(tokens):  
         chunk = tokens[start:end]  
         chunk_text = tokenizer.decode(chunk)  
@@ -150,12 +184,21 @@ def split_text_with_metadata(text, metadata, max_length=800, overlap=75, encodin
         })  
         start = end - overlap  
         end = start + max_length  
-      
+  
     return chunks  
   
 def load_blob_content(blob_client):  
     """  
     Loads and returns the content of the PDF blob.  
+      
+    Args:  
+        blob_client (BlobClient): Azure Blob Storage blob client.  
+      
+    Returns:  
+        str: Extracted text from the PDF blob.  
+      
+    Raises:  
+        ValueError: If the blob is not a PDF file.  
     """  
     blob_name = blob_client.blob_name  
     if not blob_name.lower().endswith('.pdf'):  
@@ -164,7 +207,7 @@ def load_blob_content(blob_client):
     blob_data = blob_client.download_blob().readall()  
     pdf_stream = io.BytesIO(blob_data)  
     document_text = ""  
-      
+  
     with pdfplumber.open(pdf_stream) as pdf:  
         for page in pdf.pages:  
             document_text += page.extract_text() + "\n"  
@@ -174,6 +217,12 @@ def load_blob_content(blob_client):
 def vectorize(log_text):  
     """  
     Main function that orchestrates the vector workflow.  
+      
+    Args:  
+        log_text (streamlit DeltaGenerator): Streamlit log text object for logging workflow progress.  
+      
+    Returns:  
+        None  
     """  
     azure_openai = setup_azure_openai(log_text)  
     container_client = connect_to_blob_storage(log_text)  
@@ -191,9 +240,8 @@ def vectorize(log_text):
         blob_client = container_client.get_blob_client(blob)  
         try:  
             document = load_blob_content(blob_client)  
-            document_link = f'https://{os.getenv("BLOB_ACCOUNT_NAME")}.blob.core.windows.net/{os.getenv("BLOB_CONTAINER_NAME")}/{blob.name}'
-            metadata = {"blob_name": blob.name, 
-                        "document_link": document_link}  
+            document_link = f'https://{os.getenv("BLOB_ACCOUNT_NAME")}.blob.core.windows.net/{os.getenv("BLOB_CONTAINER_NAME")}/{blob.name}'  
+            metadata = {"blob_name": blob.name, "document_link": document_link}  
             chunks = split_text_with_metadata(document, metadata)  
             documents.extend(chunks)  
         except Exception as e:  
@@ -230,7 +278,7 @@ def vectorize(log_text):
         SimpleField(name="id", type=SearchFieldDataType.String, key=True),  
         SearchableField(name="content", type=SearchFieldDataType.String),  
         SearchableField(name="blob_name", type=SearchFieldDataType.String),  
-        SearchableField(name="document_link", type=SearchFieldDataType.String),
+        SearchableField(name="document_link", type=SearchFieldDataType.String),  
         SearchField(  
             name="embedding",  
             type=SearchFieldDataType.Collection(SearchFieldDataType.Single),  
@@ -264,8 +312,8 @@ def vectorize(log_text):
             "id": str(i),  
             "content": documents[i]["text"],  
             "embedding": doc["embedding"],  
-            "blob_name": doc["metadata"]["blob_name"],
-            "document_link": doc["metadata"]["document_link"] 
+            "blob_name": doc["metadata"]["blob_name"],  
+            "document_link": doc["metadata"]["document_link"]  
         })  
     search_client.upload_documents(documents=documents_to_upload)  
     log_text.success("Documents uploaded to search index.")  
@@ -273,9 +321,15 @@ def vectorize(log_text):
 def main():  
     """  
     Main program execution function.  
+      
+    This function sets up the Streamlit app interface, allowing users to choose between  
+    vectorizing documents or retrieving documents from the Azure AI Search Index.  
+      
+    Returns:  
+        None  
     """  
     st.markdown(  
-        f'<div style="text-align: center;"><img src="{"https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" }" width="{60}"></div>',  
+        f'<div style="text-align: center;"><img src="{"https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"}" width="{60}"></div>',  
         unsafe_allow_html=True  
     )  
     st.title("Demo - Azure OpenAI & AI Search")  
@@ -287,12 +341,12 @@ def main():
       
     # Task for retrieving documents from Azure AI Search in Streamlit UI  
     if task == 'Retrieve':  
-        st.write('This demo allows users to chat over the data in the Azure AI Search Index by \
-                 leveraging both semantic and vector search techniques alongside the GPT model. Semantic search enhances the querying process by comprehending \
-                 the meaning and context of user queries, thereby providing more pertinent results. Vector search, on the other hand, employs \
-                 numerical representations of text to identify similar content using cosine similarity. ***For users to effectively \
-                 utilize this demo, it is essential that they have previously created their Azure AI Search Index, by executing the \
-                 "vectorize" task.***')  
+        st.write(''''This demo allows users to chat over the data in the Azure AI Search Index by  
+                 leveraging both semantic and vector search techniques alongside the GPT model. Semantic search enhances the querying process by comprehending  
+                 the meaning and context of user queries, thereby providing more pertinent results. Vector search, on the other hand, employs 
+                 numerical representations of text to identify similar content using cosine similarity. ***For users to effectively 
+                 utilize this demo, it is essential that they have previously created their Azure AI Search Index, by executing the 
+                 "vectorize" task.***''')  
           
         if 'messages' not in st.session_state:  
             st.session_state.messages = []  
@@ -309,10 +363,10 @@ def main():
       
     # Task for embedding documents from Azure Blob to Azure AI Search index in Streamlit UI  
     elif task == 'Vectorize':  
-        st.write('This demo processes PDF files from Azure Blob Storage, generates embeddings, and uploads them to Azure AI Search for indexing. \
-                 **Please complete this process before performing retrieval.** \
-                 For users to effectively utilize this demo, it is essential that they upload PDF files from the \
-                 [/search_documents](https://github.com/STRIDES/NIHCloudLabAzure/tree/main/notebooks/GenAI/search_documents) directory to Azure Blob container.')  
+        st.write('''This demo processes PDF files from Azure Blob Storage, generates embeddings, and uploads them to Azure AI Search for indexing.  
+                 **Please complete this process before performing retrieval.** 
+                 For users to effectively utilize this demo, it is essential that they upload PDF files from the 
+                 [/search_documents](https://github.com/STRIDES/NIHCloudLabAzure/tree/main/notebooks/GenAI/search_documents) directory to Azure Blob container.''')  
         if st.button("Start Process"):  
             log_text = st.empty()  
             vectorize(log_text)  

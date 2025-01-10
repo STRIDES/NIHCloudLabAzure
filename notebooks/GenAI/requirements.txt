@@ -8,3 +8,4 @@ azure-identity
 azure-storage-blob
 pdfplumber
 tiktoken
+pyngrok

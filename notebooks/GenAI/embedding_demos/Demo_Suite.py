@@ -15,7 +15,8 @@ def main():
     st.title("Azure OpenAI RAG Demo Suite")  
     st.markdown("### Demo Overviews")  
     st.write("""  
-    Welcome to the Azure OpenAI RAG Demo Suite. On the left side-panel, you will find various demonstrations that showcase the capabilities of Azure OpenAI with a Streamlit frontend. Each demonstration is described in detail below, highlighting their unique features and functionalities.  
+    Welcome to the Azure OpenAI RAG Demo Suite. On the left side-panel, you will find various demonstrations that showcase the capabilities 
+    of Azure OpenAI with a Streamlit frontend. Each demonstration is described in detail below, highlighting their unique features and functionalities.  
     """)  
   
     # Horizontal divider  
@@ -24,7 +25,7 @@ def main():
     # Chat with Your Data section  
     st.markdown("### Generate & Search with Azure OpenAI & Azure AI Search (AI Search Query)")  
     st.write("""  
-This demo provides an interactive platform for users to manage documents stored in their Azure Blob Container. 
+This demo provides an interactive platform for users to chat over documents stored in their Azure Blob Container. 
 This is accomplished by indexing the documents in Azure AI Search and employing a combination of semantic and vector search techniques. 
 In this demo, we concentrate on real documents that are housed in an Azure Blob Container. 
 These documents undergo a process of chunking, after which embeddings from these chunks are stored in Azure AI Search, serving as our vector database.  

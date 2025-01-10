@@ -24,7 +24,8 @@ def cosine_similarity(a, b):
 
 # read in the embeddings .csv 
 # convert elements in 'embedding' column back to numpy array
-df = pd.read_csv('.\\microsoft-earnings_embeddings.csv')
+file_path = os.path.join('.', 'microsoft-earnings_embeddings.csv')
+df = pd.read_csv(file_path)
 df['embedding'] = df['embedding'].apply(eval).apply(np.array)
 
 # caluculate user query embedding 

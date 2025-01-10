@@ -1,14 +1,77 @@
-# Setting Up Azure Environment for Azure GenAI Cloud Lab  
-  
-Welcome! This guide will help you set up your Azure environment to complete the activities in the [Azure GenAI](../) directory of the NIH Cloud Lab. We will walk you through the steps required to configure PowerShell, deploy necessary resources using an ARM template, upload local files to Azure Storage Account, and acquire keys and secrets for `.env` variables.  
-  
-## Prerequisites  
+# Setting Up Azure Environment for Azure GenAI Cloud Lab 
+
+This guide will help you set up your Azure environment to complete the activities in the [GenAI](../) directory of the NIH Cloud Lab. 
+The purpose of this guide is to walk you through an automated deployment of the resources needed to carry out these activities. 
+This automated approach utilizes a pre-built [ARM template](arm_resources.json) file, which serves as an alternative approach
+to manually deploying and configuring resources via the Azure portal.
+
+## Page Contents
++ [Learning Objectives](#learning_objectives)
++ [Prerequisites](#prerequisites)
++ [Resources and Pricing](#resources_and_pricing)
++ [Get Started](#get_started)
++ [Conclusion](#conclusion)
++ [Clean Up](#clean_up)
+
+## Learning Objectives <a name="learning_objectives"></a>
+
+1. Configure PowerShell or Azure CLI
+    - Step-by-step instructions to set up and configure PowerShell and Azure CLI for the neccessary Azure resource deployments.
+2. Deploy Resources Using an ARM Template
+    - Detailed guidance on deploying the necessary resources in Azure using an ARM template for the [GenAI](../) directory.
+3. Upload Local Files to Azure Storage Account
+    - Instructions on how to upload files from the [search_documents](../search_documents/) directory to an Azure Storage Account Blob container.
+4. Acquire Keys and Secrets for .env Variables
+    - Steps to obtain keys and secrets from deployed resources and use them in your .env files for the tutorials in the [GenAI](../) directory.
+
+## Prerequisites <a name="prerequisites"></a>
 
 - An active Azure subscription  
 - PowerShell installed on your machine (option 1)
 - Azure CLI installed (option 2)
+
+### Powershell (option 1) vs. Azure CLI (option 2)
+
+Choosing between Azure CLI and PowerShell comes down to personal preference and the working environment:
+
+- **Cloud Environments**: For users working in the cloud, such as with Azure Machine Learning or Azure VMs, Azure CLI may be a more suitable option.
+    - ***Note***: If users are utilizing any of these environments, please skip Step 1 and move directly to Step 2 using Azure CLI (option 2).
+- **Local Environments**: For users working on a local machine, both Azure CLI and PowerShell are viable options. The choice depends on personal preference.
+    - ***Note***: If users are utilizing Azure CLI, please skip Step 1 and move directly to Step 2. 
+
+## Resources and Pricing <a name="resources_and_pricing"></a>
   
-## Steps  
+Provided is a list of resources that will be deployed by the provided ARM template along with the estimated cost breakdown for each resource.
+***An ARM Template is a JSON file that defines the infrastructure and configuration for your Azure project***. It allows you to deploy, manage, and configure 
+all the resources for your solution in a single, coordinated operation. When executing the provided ARM template, actual costs may vary depending on usage 
+and the Azure pricing model for each resource. Please find the resources that will be deployed below. 
+  
+### Resources Deployed 
+1. **Azure Storage Account**  
+   - **Resource Type**: Storage Account (Standard_LRS)  
+   - **Purpose**: This resource is used to store and manage files from [search_documents](../search_documents/) in a single container. 
+   - **Estimated Cost**: $0.018 per GB/$18.40 per 1000 GB per month
+  
+2. **Azure AI Search**  
+   - **Resource Type**: Cognitive Search (Basic)  
+   - **Purpose**: This resource provides AI search capabilities for the GenAI tutorials, including indexing and querying.  
+   - **Estimated Cost**: $0.10 per hour/$73.73 per month
+  
+3. **Azure OpenAI**  
+   - **Resource Type**: Cognitive Services (Standard)  
+   - **Purpose**: This resource provides access to OpenAI models, including GPT-4 and embeddings for AI processing.  
+   - **Models Deployed**:  
+     - **Model**: gpt-4o-mini  
+       - **Version**: 2024-07-18  
+       - **Cost per 1M Tokens**: $0.15 input/$0.60 output
+     - **Model**: text-embedding-3-small  
+       - **Version**: 1  
+       - **Cost per 1K Tokens**: $0.00002
+   - **Estimated Cost**: Varies based on model usage and API calls. Please refer to [Azure OpenAI Service Pricing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/?msockid=3df6a53ac4916aa73e41b1e3c5c36bd4) for more details. 
+  
+Please refer to the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/) for a more detailed and personalized estimate based on your specific usage patterns and region.  
+  
+## Get Started <a name="get_started"></a>
   
 ### 1. Setting Up the Azure Module in PowerShell  
   
@@ -17,9 +80,6 @@ First, you need to install the Azure module in PowerShell to connect to your Azu
 ```powershell  
 # Install the Az module (if using PowerShell)
 Install-Module -Name Az -AllowClobber -Force  
-  
-# Import the Az module (if using Azure CLI)
-Import-Module Az  
 ```
 
 ### 2. Logging into Azure 
@@ -32,7 +92,7 @@ You can log into your Azure account either using PowerShell or Azure CLI.
 Connect-AzAccount  
 ```
 **Using Azure CLI**
-```powershell
+```bash
 # Log into your Azure account 
 az login  
 ```
@@ -83,7 +143,7 @@ az group create --name $resourceGroupName --location $location
 
 ### 5. Deploying the ARM Template
 
-Deploy the [ARM template](/notebooks/GenAI/azure_infra_setup/arm_resources.json) to create the Azure Storage Account, Azure AI Search, and Azure OpenAI resources.
+Deploy the [ARM template](arm_resources.json) to create the Azure Storage Account, Azure AI Search, and Azure OpenAI resources.
 
 ***Using PowerShell***
 ```powershell
@@ -123,7 +183,11 @@ done
 
 ### 7. Retrieving API Keys
  
-Retrieve the API keys for each service created by the ARM template deployment. These secrets are confidential and should be handled appropriately. Once the output is received, the values will be added to your `.env` file, which should be created in the ./notebooks/GenAI directory. Note that this `.env` file is already added to the `.gitignore`.
+Retrieve the API keys for each service created by the ARM template deployment. These secrets are confidential and should be handled appropriately. 
+Once the output is received, the values should be added to your `.env` file, which should be created in the [GenAI](../) directory. 
+Note that this `.env` file is already added to the `.gitignore` file, which tells Git which files or directories to ignore in a project, 
+preventing them from being tracked or included in version control. Adding `.env` to `.gitignore` is crucial because it prevents sensitive information 
+like API keys and passwords from being exposed in your version control system.
 
 **Azure Storage Account**
 
@@ -221,9 +285,10 @@ AZURE_SEARCH_ADMIN_KEY = "Your Azure AI Search API key"
 BLOB_CONTAINER_NAME = "Your Azure Blob Container name hosting files from /search_documents"
 BLOB_CONNECTION_STRING = "Your Azure Blob connection string"
 ```
-## Conclusion
+## Conclusion <a name="conclusion"></a>
 
-Congratulations on completing the Azure setup! During this process, we established a new resource group dedicated to the NIH Cloud Lab environment and configured three Azure resources in your tenant using an ARM template file. The resources include:
+Congratulations on completing the Azure setup! During this process, we established a new resource group dedicated to the NIH Cloud Lab environment and 
+configured three Azure resources in your tenant using an ARM template file. The resources include:
 
 - An Azure Storage Account with a deployed Blob container and files uploaded from `../search_documents`
 - Azure AI Search
@@ -231,4 +296,7 @@ Congratulations on completing the Azure setup! During this process, we establish
 
 Additionally, we configured `.env` variables in your local `.env` file, which is added to `.gitignore` by default.
 
-You are now ready to proceed with the GenAI activities in the NIH Cloud Lab.
+You are now ready to proceed with the GenAI tutorials!
+
+## Clean Up <a name="clean_up"></a>
+No clean up neccessary, as the created resources will be used for tutorials found in [GenAI](../). 
