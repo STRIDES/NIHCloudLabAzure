@@ -14,7 +14,7 @@ The Azure OpenAI Demo w/ Streamlit Frontend is designed to host various demonstr
 
 ## Learning Objectives <a name="learning_objectives"></a>
 1. **Integrate Azure OpenAI with Streamlit**:
-    - Use Azure OpenAI in a Streamlit frontend to interact with data indexes in Azure AI Search.
+    - Use Azure OpenAI in a Streamlit frontend. 
 2. **Understand Streamlit Scripts**:
     - Learn the roles and functionalities of `Demo_Suite.py`, `AI_Search_Query.py`, and `AOAI_Embeddings.py`.
 3. **Generate and Query Embeddings**:
