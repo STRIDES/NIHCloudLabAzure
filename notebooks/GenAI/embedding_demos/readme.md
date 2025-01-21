@@ -165,7 +165,7 @@ Streamlit's native behavior expects to run applications locally on port 8501, wh
         ```
         ***Note: Access the Streamlit site from the provided URL in the terminal.***
         
-        %Insert Image Here%
+        ![Image](https://github.com/user-attachments/assets/663053ed-957f-4ec3-b8b1-340b820852cc)
 
 
 
