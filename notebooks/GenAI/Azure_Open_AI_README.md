@@ -58,19 +58,17 @@ Now we will look at [adding and querying over your own data](#Upload-your-own-da
 
 ## Chat Playground Navigation
 
-If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message#define-the-models-profile-capabilities-and-limitations-for-your-scenario) in the prompt box, then (D) click **Save**. 
+If you have not already navigate to the Chat Playground. In the middle of the page is where you actually interact with the model (A) through the chat prompts. First, you can specify a message which tells the model what context with which to respond to inquiries. To modify this, enter a prompt in the dialogue box(B). 
 
-On the next tab over, you can (A) add your own data, which we dive into in the [next section](#Upload-your-own-data-and-query-over-it). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
+Always (C) clear the chat after each session. On the next tab over, you can (D) add your own data, which we dive into in the [next section](#Upload-your-own-data-and-query-over-it). 
 
-  ![add your own data](/docs/images/18_add_custom_data.png)
+  ![add your own data](/docs/images/RM-chat-playground-spaces.jpeg)
 
 On the far right, you can modify which model you are deploying, which allows you to switch between different model deployments depending on the context. 
 
-  ![modify deployment](/docs/images/19_deployment.png)
-
 Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/notebooks/GenAI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
 
-  ![modify parameters](/docs/images/20_parameters.png)
+  ![modify parameters](/docs/images/RM-parameters.jpeg)
 
 ## Upload your own data and query over it
 
