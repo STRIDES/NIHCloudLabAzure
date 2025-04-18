@@ -30,39 +30,29 @@ Navigate to Azure OpenAI. The easiest way is to search at the top of the page.
 
 At the time of writing, Azure OpenAI is in Beta and only available to customers via an application form, if you click **Create** that is the message you will see. If you click **Create** and do not get this message, then feel free to create a new OpenAI Service. Otherwise, please email us at CloudLab@nih.gov and ask us to set this part up for you. Once you have an OpenAI Service provisioned, click to open it. 
 
-  ![click to open azure open ai](/docs/images/2_select_openai_project.png)
+  ![click to open azure open ai](/docs/images/RM_create-open-ai-1.jpeg)
 
-Now click **Go to Azure OpenAI Studio** or **Explore** to be connected to the Azure OpenAI studio user interface. 
+Now click **Go to Azure OpenAI Studio** or **Explore** to be connected to the Azure OpenAI studio user interface. Click **Chat**. 
 
-  ![connect to OpenAI UI](/docs/images/3_connet_open_ai.png)
+  ![connect to OpenAI UI](/docs/images/RM_chat-button.jpeg)
 
-Click **Chat**
-
-  ![click chat image](/docs/images/4_click_chat.png)
 
 Next, you need to deploy an OpenAI model.
 
 ## Deploy an OpenAI model
 
-On the left navigation panel, click **Models**
+Select **Create new deployment** and **from base models**. Select the model `gpt-4o-mini`. In the **Deployment type** select **Standard**. You can learn more about the available models by clicking (C) **Learn more about the different types of base models**, or [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
 
-  ![Click Models](/docs/images/10_click_models.png)
 
-Select the (A) `gpt-35-turbo model`, click (B) **Deploy**. You can learn more about the available models by clicking (C) **Learn more about the different types of base models**, or [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
+  ![Click Models](/docs/images/RM_gpt-4o-selection.jpeg)
 
-  ![Deploy the model](/docs/images/11_deploy_model.png)
+Click **Create**. Now if you select `Deployments` on the left panel, you should see your deployed model listed. 
 
-Name your deployment and then click **Create**.
-
-  ![Name your Deployment](/docs/images/12_name_your_deployment.png)
-
-Now if you select `Deployments` on the left panel, you should see your deployed model listed. 
-
-  ![Check Deployments](/docs/images/13_check_deployments.png)
+  ![Name your Deployment](/docs/images/RM_chat-playground.jpeg)
 
 Run a quick test to ensure our deployment is acting as expected. Navigate to `Chat`, add an optional system message (we will cover this more later), and then type `Hello World` in the chat box. If you get a response, things are working well!
 
-  ![test model](/docs/images/14_test_your_model.png)
+  ![test model](/docs/images/RM-hello.jpeg)
 
 Now we will look at [adding and querying over your own data](#Upload-your-own-data-and-query-over-it) and then review [prompt engineering best practices](#prompt-engineering-best-practices) using a general GPT model.
 
