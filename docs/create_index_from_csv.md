@@ -44,6 +44,7 @@ Now fill out all the necessary parameters.
 + Data source name: This can be anything, but go with something like `grant-data`.
 + Data to extract: Select `Content and metadata`.
 + Parsing mode: Select `Delimited text`. Check the `First Line Contains Header` box and leave `Delimiter Character` as `,`.
++ Delimiter Headers: Enter the comma-delimited list of column headers.
 + Connection string: Click `Choose an existing connection` and navigate to your storage account and container.
 + Managed identity authentication: Leave as default.
 + Container name: Should be populated when you connect via Connection String, but otherwise just enter your container name here.
