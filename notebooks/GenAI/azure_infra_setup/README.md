@@ -1,5 +1,7 @@
 # Setting Up Azure Environment for Azure GenAI Cloud Lab 
 
+**Skill Level: Beginner**
+
 This guide will help you set up your Azure environment to complete the activities in the [GenAI](../) directory of the NIH Cloud Lab. 
 The purpose of this guide is to walk you through an automated deployment of the resources needed to carry out these activities. 
 This automated approach utilizes a pre-built [ARM template](arm_resources.json) file, which serves as an alternative approach
