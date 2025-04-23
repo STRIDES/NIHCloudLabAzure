@@ -57,7 +57,9 @@ This script serves as the home page for the Azure OpenAI Demo site. It is the in
   - Launches the Streamlit UI.  
   - Displays descriptive information about the demo site content.  
   - Provides links and descriptions for each demo page.  
-- **Usage**: Run this script using the command `streamlit run demo_suite.py`.  
+- **Usage**: Run this script using the command `streamlit run demo_suite.py`. 
+
+![embeddings_demo](../../../docs/images/demo_suite1.png)
   
 ### AI_Search_Query.py  
   
@@ -83,7 +85,9 @@ This script serves as the frontend for the embedding demo that uses the Azure Op
   - Demonstrates how to generate embeddings for text using the Azure OpenAI SDK.  
   - Consistent with the [AzureOpenAI_embeddings.ipynb](../notebooks/AzureOpenAI_embeddings.ipynb) tutorial.  
   - Provides a user interface for generating and viewing embeddings.  
-- **Usage**: Accessible from the main page (demo_suite.py) via the left sidebar.   
+- **Usage**: Accessible from the main page (demo_suite.py) via the left sidebar.  
+
+![embeddings_demo](../../../docs/images/embeddings_demo1.png)
 
 ## Executing the Azure OpenAI Demo w/ Streamlit Frontend <a name="executing_the_azure_openai_demo"></a>
 

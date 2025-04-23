@@ -68,8 +68,6 @@ def connect_to_blob_storage(log_text):
     log_text.write("Connected to Blob Storage.")  
     return container_client  
 
-azure_openai = setup_azure_openai(log_text)  
-container_client = connect_to_blob_storage(log_text)
 
 def split_text_with_metadata(text, metadata, max_length=800, overlap=75, encoding_name='cl100k_base'):  
     """  
@@ -140,7 +138,9 @@ def load_blob_content(blob_client):
 
 
 
-def vectorize(log_text):  
+def vectorize(log_text): 
+    azure_openai = setup_azure_openai(log_text)  
+    container_client = connect_to_blob_storage(log_text)
     """  
     Main function that orchestrates the vector workflow.  
       
@@ -262,7 +262,8 @@ def chat_on_your_data(query, search_index, messages):
 #     azure_openai_api_version = os.getenv('AZURE_OPENAI_VERSION')  # The version of the Azure OpenAI API you are using  
 #     azure_ada_deployment = os.getenv('AZURE_EMBEDDINGS_DEPLOYMENT')  # The deployed ADA model for your Azure OpenAI instance 
 #     azure_gpt_deployment = os.getenv('AZURE_GPT_DEPLOYMENT')   # The deployed GPT model for your Azure OpenAI instance 
-  
+    azure_openai = setup_azure_openai(log_text)  
+    
     messages = []  
     
     messages.append({"role": "user", "content": query})  
@@ -271,12 +272,12 @@ def chat_on_your_data(query, search_index, messages):
         st.markdown(query)  
       
     with st.spinner('Processing...'):  
-        # client = AzureOpenAI(  
-        #     azure_endpoint=azure_endpoint,  
-        #     api_key=azure_openai_api_key,  
-        #     api_version=azure_openai_api_version,  
-        #)  
-        completion = azure_openai.chat.completions.create(  
+        client = AzureOpenAI(
+            api_key=os.getenv("AZURE_OPENAI_API_KEY"),  # Your Azure OpenAI API key 
+            api_version=os.getenv('AZURE_OPENAI_VERSION'), # The version of the Azure OpenAI API you are using  
+            azure_endpoint=os.getenv('AZURE_OPENAI_ENDPOINT') # The endpoint for your Azure OpenAI instance 
+        )   
+        completion = client.chat.completions.create(  
             model=os.getenv('AZURE_GPT_DEPLOYMENT'),  
             messages=[  
                 {"role": "system", "content": "You are an AI assistant that helps people find information. Ensure the Markdown responses are correctly formatted before responding."},  
@@ -340,6 +341,7 @@ def main():
     Returns:  
         None  
     """  
+    
     st.markdown(  
         f'<div style="text-align: center;"><img src="{"https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"}" width="{60}"></div>',  
         unsafe_allow_html=True  
