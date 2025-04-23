@@ -59,7 +59,7 @@ This script serves as the home page for the Azure OpenAI Demo site. It is the in
   - Provides links and descriptions for each demo page.  
 - **Usage**: Run this script using the command `streamlit run demo_suite.py`. 
 
-![embeddings_demo](../../../docs/images/demo_suite1.png)
+![demo_suite](../../../docs/images/demo_suite1.png)
   
 ### AI_Search_Query.py  
   
@@ -72,7 +72,9 @@ This script serves as the frontend for the embedding demo that utilizes Azure AI
   - Allows users to interact with documents stored in the [/search_documents](../search_documents) directory.  
   - Consistent with the [AISearch_RAG_chatbot.ipynb](../notebooks/AISearch_RAG_chatbot.ipynb) tutorial.  
   - Provides a user interface for querying and chatting over the documents using Azure AI Search and OpenAI capabilities.  
-- **Usage**: Accessible from the main page (demo_suite.py) via the left sidebar.  
+- **Usage**: Accessible from the main page (demo_suite.py) via the left sidebar. 
+
+![ai_search_query](../../../docs/images/ai_search_query1.png)
   
 ### AOAI_Embeddings.py  
   
@@ -92,10 +94,10 @@ This script serves as the frontend for the embedding demo that uses the Azure Op
 ## Executing the Azure OpenAI Demo w/ Streamlit Frontend <a name="executing_the_azure_openai_demo"></a>
 
 In this phase, you will choose your preferred environment to execute the Azure OpenAI Demo with a Streamlit frontend. You can either use Azure ML or run the demo locally using VSCode. Please choose an execution environment below:
-+ [Executing via Azure ML or VM](#executing_via_azure_ml_vm)
++ [Executing via Azure VM](#executing_via_azure_vm)
 + [Executing via VsCode](#executing_via_vscode)
 
-### Executing via Azure ML or VM <a name="executing_via_azure_ml_vm"></a>
+### Executing via Azure VM <a name="executing_via_azure_vm"></a>
 If you are in the NIH environment Streamlit's native behavior expects to run applications locally on port 8501, which isn't possible when executing this demo from Azure VM. 
 
 Inorder to connect to the streamlit you must change the **port to 3389**. This is an approved port and will ensure that you can access and interact with the Streamlit application without needing to run from your local machine.

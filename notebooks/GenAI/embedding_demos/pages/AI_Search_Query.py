@@ -255,14 +255,7 @@ def chat_on_your_data(query, search_index, messages):
       
     Returns:  
         None  
-    """  
-    # Configure Azure OpenAI parameters  
-#     azure_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')  # The endpoint for your Azure OpenAI instance 
-#     azure_openai_api_key = os.getenv('AZURE_OPENAI_API_KEY') # Your Azure OpenAI API key 
-#     azure_openai_api_version = os.getenv('AZURE_OPENAI_VERSION')  # The version of the Azure OpenAI API you are using  
-#     azure_ada_deployment = os.getenv('AZURE_EMBEDDINGS_DEPLOYMENT')  # The deployed ADA model for your Azure OpenAI instance 
-#     azure_gpt_deployment = os.getenv('AZURE_GPT_DEPLOYMENT')   # The deployed GPT model for your Azure OpenAI instance 
-    #azure_openai = setup_azure_openai(log_text)  
+    """   
     
     messages = []  
     
