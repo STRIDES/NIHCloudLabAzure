@@ -21,8 +21,8 @@ The Azure OpenAI Demo w/ Streamlit Frontend is designed to host various demonstr
     - Learn the roles and functionalities of `Demo_Suite.py` and the `AI_Search_Query.py`, and `AOAI_Embeddings.py` pages.
 3. **Generate and Query Embeddings**:
     - Create and query text embeddings using the Azure OpenAI SDK.
-4. **Use Ngrok with Azure ML**:
-    - Set up Ngrok to securely run the demo on Azure ML or a VM.
+4. **Use Azure VM (NIH only) vs VScode **:
+    - Set up Streamlit to securely run the demo on Azure VM.
 5. **Setup Development Environment**:
     - Create a virtual environment, install dependencies, and configure environment variables.
     - Execute the Streamlit demo locally and in cloud environments.
@@ -92,20 +92,11 @@ In this phase, you will choose your preferred environment to execute the Azure O
 + [Executing via VsCode](#executing_via_vscode)
 
 ### Executing via Azure ML or VM <a name="executing_via_azure_ml_vm"></a>
-Streamlit's native behavior expects to run applications locally on port 8501, which isn't possible when executing this demo from Azure ML or a VM. **Ngrok** is a tool that creates a secure tunnel to expose a local server to the internet. By using Ngrok, you can securely expose the Streamlit demo app running on Azure ML or a VM to the internet, bypassing the limitation of needing to run it on the local port 8501. This ensures that you can access and interact with the Streamlit application without needing to run from your local machine.
+If you are in the NIH environment Streamlit's native behavior expects to run applications locally on port 8501, which isn't possible when executing this demo from Azure VM. 
 
-**Phase 1 - Obtain a free Ngrok Authtoken:**
-    
-1. Visit the Ngrok website: https://ngrok.com.
-2. Click on the "Sign Up" button at the top right corner.
-3. Sign up using your email address and create a password, or use your GitHub account.
-4. Check your email for a verification message from Ngrok.
-5. Click the verification link in the email to activate your account.
-6. Log in to your Ngrok account.
-7. Once logged in, you will be taken to your dashboard.
-8. In your dashboard, find and copy your authentication (Authtoken) token. This token will be used for the `ngrok_key` variable in step 2. 
+Inorder to connect to the streamlit you must change the **port to 3389**. This is an approved port and will ensure that you can access and interact with the Streamlit application without needing to run from your local machine.
 
-**Phase 2 - Create a .env file:**
+**Phase 1 - Create a .env file:**
 
 **Note:** If you have followed the steps in the [ARM Deployment tutorial](../azure_infra_setup/README.md) you have already created this file with its variables and can skip to the next section.
 
@@ -130,7 +121,6 @@ Streamlit's native behavior expects to run applications locally on port 8501, wh
         AZURE_SEARCH_INDEX = "documents-index" # The index name 'documents-index' is used as default in this demo
         BLOB_CONTAINER_NAME = "Your Azure Blob Container name hosting files from /search_documents"
         BLOB_CONNECTION_STRING = "Your Azure Blob connection string"
-        ngrok_key = "Your Ngrok Authtoken from STEP 1"
     ```
 5. Save the `.env` file and exit the text editor:
     - Press `Ctrl + X` to exit the text editor. 
@@ -141,7 +131,7 @@ Streamlit's native behavior expects to run applications locally on port 8501, wh
     cat .env
     ```
 
-**Phase 3 - Configure the virtual environment:**
+**Phase 2 - Configure the virtual environment:**
 1. If not already in ***/GenAI***, navigate there by:
     ```bash
     cd ./notebooks/GenAI
@@ -161,17 +151,17 @@ Streamlit's native behavior expects to run applications locally on port 8501, wh
     pip install -r requirements.txt  
     ```
 
-**Phase 4 - Execute the Streamlit demo:**
+**Phase 3 - Execute the Streamlit demo:**
 1. Navigate to the /embeddings directory (location of the Streamlit demo):
     ```bash
     cd ./embedding_demos 
     ```
 2. Execute the Streamlit demo:
-    - Run the [Demo_Suite_ngrok.py](./Demo_Suite_ngrok.py) file. This file will generate the secure Ngrok tunnel to access the Streamlit app. You do not need to run the `Demo_Suite.py` file. 
-        ```bash
-        python Demo_Suite_ngrok.py
+    - Run the [Demo_Suite.py](./Demo_Suite.py) file.
+        ```sh
+        streamlit run Demo_Suite.py --server.port 3389
         ```
-        ***Note: Access the Streamlit site from the provided URL in the terminal.***
+        ***Note: Access the Streamlit site from the provided `External URL` in the terminal.***
         
         ![Image](https://github.com/user-attachments/assets/663053ed-957f-4ec3-b8b1-340b820852cc)
 
@@ -234,7 +224,7 @@ To excute this demo, be sure to complete the following steps:
     ```
 
 ## Conclusion <a name="conclusion"></a>
-By completing the "Azure OpenAI Demo w/ Streamlit Frontend" tutorial, you have gained valuable hands-on experience in integrating Azure OpenAI services with a Streamlit frontend. You have learned how to set up and configure essential components, including Azure OpenAI, Azure AI Search, and Azure Blob Storage. Additionally, you have explored the functionalities of key scripts and understood how to generate and query embeddings for interactive applications. This tutorial also guided you through executing the demo both on Azure ML using Ngrok and locally using VSCode, ensuring you are equipped to handle different deployment scenarios. We hope this tutorial has been informative and empowers you to leverage Azure OpenAI and Streamlit for your future projects.
+By completing the "Azure OpenAI Demo w/ Streamlit Frontend" tutorial, you have gained valuable hands-on experience in integrating Azure OpenAI services with a Streamlit frontend. You have learned how to set up and configure essential components, including Azure OpenAI, Azure AI Search, and Azure Blob Storage. Additionally, you have explored the functionalities of key scripts and understood how to generate and query embeddings for interactive applications. This tutorial also guided you through executing the demo both on Azure VM and locally using VSCode, ensuring you are equipped to handle different deployment scenarios. We hope this tutorial has been informative and empowers you to leverage Azure OpenAI and Streamlit for your future projects.
 
 ## Clean Up <a name="clean_up"></a>
 Make sure to shut down your Azure ML compute and if desired you can delete your Azure AI Search service, Azure Blob Storage Account, and Azure OpenAI service. ***Note these services can be used in other tutorials in this notebook.***
