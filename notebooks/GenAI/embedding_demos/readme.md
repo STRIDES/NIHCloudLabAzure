@@ -16,7 +16,7 @@ The Azure OpenAI Demo w/ Streamlit Frontend is designed to host various demonstr
 1. **Integrate Azure OpenAI with Streamlit**:
     - Use Azure OpenAI in a Streamlit frontend. 
 2. **Understand Streamlit Scripts**:
-    - Learn the roles and functionalities of `Demo_Suite.py`, `AI_Search_Query.py`, and `AOAI_Embeddings.py`.
+    - Learn the roles and functionalities of `Demo_Suite.py` and the `AI_Search_Query.py`, and `AOAI_Embeddings.py` pages.
 3. **Generate and Query Embeddings**:
     - Create and query text embeddings using the Azure OpenAI SDK.
 4. **Use Ngrok with Azure ML**:
@@ -28,17 +28,19 @@ The Azure OpenAI Demo w/ Streamlit Frontend is designed to host various demonstr
 ## Prerequisites <a name="prerequisites"></a>
 Before proceeding with this notebook, please ensure that you have the following Azure services deployed and configured. Resources can be deployed manually in Azure portal or automated by following along with the [ARM Deployment tutorial](../azure_infra_setup/README.md):  
   
-1. **Azure OpenAI Service**:   
+1. **Azure OpenAI Service**:
     - Ensure that you have deployed both a GPT model and an Ada model within your Azure OpenAI instance.
     - Estimated costs for this service varies based on the model usage and number of API calls.
-        - ***gpt-4o-mini(2024-07-18): $0.15 input/$0.60 output per 1M tokens***
-        - ***text-embedding-3-small(1): $0.00002 per 1K tokens***
-2. **Azure AI Search**:   
+        - **gpt-4o-mini(2024-07-18):** $0.15 input/$0.60 output per 1M tokens
+        - **text-embedding-3-small(1):** $0.00002 per 1K tokens
+        
+2. **Azure AI Search**:
     - Your Azure AI Search service should be a minimum of the Basic tier to ensure compatibility with Azure OpenAI.  
-    - ***Estimated cost for this service is $0.10 per hour.***
-3. **Azure Blob Storage Account**:   
+    - **Estimated cost for this service is $0.10 per hour.**
+    
+3. **Azure Blob Storage Account**:
     - You should have an Azure Blob Storage account with PDF files stored in a blob container. These files should be located in the `/search_documents` directory of the `GenAI` directory.  
-    - ***Estimated cost for this service is $0.018 per GB.***
+    - **Estimated cost for this service is $0.018 per GB.**
 
 ## Overview of Streamlit Scripts <a name="#overview_of_streamlit_scripts"></a>
   
@@ -102,6 +104,9 @@ Streamlit's native behavior expects to run applications locally on port 8501, wh
 8. In your dashboard, find and copy your authentication (Authtoken) token. This token will be used for the `ngrok_key` variable in step 2. 
 
 **Phase 2 - Create a .env file:**
+
+**Note:** If you have followed the steps in the [ARM Deployment tutorial](../azure_infra_setup/README.md) you have already created this file with its variables and can skip to the next section.
+
 1. Open the terminal in your Azure ML Studio or Azure VM instance. 
 2. Navigate to the ***/GenAI*** directory:
     ```bash
@@ -133,6 +138,7 @@ Streamlit's native behavior expects to run applications locally on port 8501, wh
     ```bash
     cat .env
     ```
+
 **Phase 3 - Configure the virtual environment:**
 1. If not already in ***/GenAI***, navigate there by:
     ```bash
@@ -142,7 +148,7 @@ Streamlit's native behavior expects to run applications locally on port 8501, wh
     ```bash
     python3 -m venv --clear .venv
     ```
-    ***Note: This command will create a virtual environment named venv in \GenAI***
+    ***Note: This command will create a virtual environment named venv in /GenAI***
 
 3. Activate the virtual environment:
     ```bash
@@ -199,14 +205,17 @@ To excute this demo, be sure to complete the following steps:
     ```
 
 3.  Create a .env file in the /GenAI directory and set the following variables:
+
+    **Note:** If you have followed the steps in the [ARM Deployment tutorial](../azure_infra_setup/README.md) you have already created this file with its variables and can skip to the next step.
+
     ```sh
     AZURE_OPENAI_VERSION = "Your Azure OpenAI API version"  
-    AZURE_OPENAI_BASE = "Your Azure OpenAI API endpoint"
-    AZURE_OPENAI_KEY = "Your Azure OpenAI API key"
+    AZURE_OPENAI_ENDPOINT = "Your Azure OpenAI API endpoint"
+    AZURE_OPENAI_API_KEY = "Your Azure OpenAI API key"
     AZURE_GPT_DEPLOYMENT = "Your Azure OpenAI deployed GPT model name"
     AZURE_EMBEDDINGS_DEPLOYMENT = "Your Azure OpenAI deployed ADA model name"
-    AZURE_SEARCH_ENDPOINT = "Your Azure AI Search API endpoint"
-    AZURE_SEARCH_ADMIN_KEY = "Your Azure AI Search API key"
+    AZURE_SEARCH_SERVICE_ENDPOINT = "Your Azure AI Search API endpoint"
+    AZURE_SEARCH_API_KEY = "Your Azure AI Search API key"
     AZURE_SEARCH_INDEX = "documents-index" # The index name 'documents-index' is used as default in this demo
     BLOB_CONTAINER_NAME = "Your Azure Blob Container name hosting files from /search_documents"
     BLOB_CONNECTION_STRING = "Your Azure Blob connection string"
@@ -227,3 +236,7 @@ By completing the "Azure OpenAI Demo w/ Streamlit Frontend" tutorial, you have g
 
 ## Clean Up <a name="clean_up"></a>
 Make sure to shut down your Azure ML compute and if desired you can delete your Azure AI Search service, Azure Blob Storage Account, and Azure OpenAI service. ***Note these services can be used in other tutorials in this notebook.***
+
+```python
+
+```

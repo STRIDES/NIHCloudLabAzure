@@ -13,13 +13,21 @@
         "accounts_cloudlabaoai_name": {
             "defaultValue": "cloudlabaoai5",
             "type": "String"
+        },
+        "model_name": {
+            "defaultValue": "gpt-4o-mini",
+            "type": "String"
+        },
+        "embeddingModel_name": {
+            "defaultValue": "text-embedding-3-small",
+            "type": "String"
         }
     },
     "variables": {},
     "resources": [
         {
             "type": "Microsoft.CognitiveServices/accounts",
-            "apiVersion": "2024-06-01-preview",
+            "apiVersion": "2025-04-01-preview",
             "name": "[parameters('accounts_cloudlabaoai_name')]",
             "location": "eastus2",
             "sku": {
@@ -39,7 +47,7 @@
         },
         {
             "type": "Microsoft.Search/searchServices",
-            "apiVersion": "2024-06-01-preview",
+            "apiVersion": "2025-02-01-preview",
             "name": "[parameters('searchServices_cloudlabsearch_name')]",
             "location": "East US 2",
             "sku": {
@@ -67,7 +75,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts",
-            "apiVersion": "2023-05-01",
+            "apiVersion": "2024-01-01",
             "name": "[parameters('storageAccounts_genaicloudlab_name')]",
             "location": "eastus2",
             "sku": {
@@ -110,19 +118,19 @@
         },
         {
             "type": "Microsoft.CognitiveServices/accounts/deployments",
-            "apiVersion": "2024-06-01-preview",
-            "name": "[concat(parameters('accounts_cloudlabaoai_name'), '/gpt-4o-mini')]",
+            "apiVersion": "2025-04-01-preview",
+            "name": "[concat(parameters('accounts_cloudlabaoai_name'),'/', (parameters('model_name')))]",
             "dependsOn": [
                 "[resourceId('Microsoft.CognitiveServices/accounts', parameters('accounts_cloudlabaoai_name'))]"
             ],
             "sku": {
-                "name": "GlobalStandard",
+                "name": "Standard",
                 "capacity": 10
             },
             "properties": {
                 "model": {
                     "format": "OpenAI",
-                    "name": "gpt-4o-mini",
+                    "name": "(parameters('model_name')",
                     "version": "2024-07-18"
                 },
                 "versionUpgradeOption": "OnceNewDefaultVersionAvailable",
@@ -132,8 +140,8 @@
         },
         {
             "type": "Microsoft.CognitiveServices/accounts/deployments",
-            "apiVersion": "2024-06-01-preview",
-            "name": "[concat(parameters('accounts_cloudlabaoai_name'), '/text-embedding-3-small')]",
+            "apiVersion": "2025-04-01-preview",
+            "name": "[concat(parameters('accounts_cloudlabaoai_name'), '/', (parameters('embeddingModel_name')))]",
             "dependsOn": [
                 "[resourceId('Microsoft.CognitiveServices/accounts', parameters('accounts_cloudlabaoai_name'))]"
             ],
@@ -144,7 +152,7 @@
             "properties": {
                 "model": {
                     "format": "OpenAI",
-                    "name": "text-embedding-3-small",
+                    "name": "parameters('embeddingModel_name')",
                     "version": "1"
                 },
                 "versionUpgradeOption": "OnceNewDefaultVersionAvailable",
@@ -154,7 +162,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices",
-            "apiVersion": "2023-05-01",
+            "apiVersion": "2024-01-01",
             "name": "[concat(parameters('storageAccounts_genaicloudlab_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_genaicloudlab_name'))]"
@@ -180,7 +188,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/fileServices",
-            "apiVersion": "2023-05-01",
+            "apiVersion": "2024-01-01",
             "name": "[concat(parameters('storageAccounts_genaicloudlab_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_genaicloudlab_name'))]"
@@ -204,7 +212,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/queueServices",
-            "apiVersion": "2023-05-01",
+            "apiVersion": "2024-01-01",
             "name": "[concat(parameters('storageAccounts_genaicloudlab_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_genaicloudlab_name'))]"
@@ -217,7 +225,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/tableServices",
-            "apiVersion": "2023-05-01",
+            "apiVersion": "2024-01-01",
             "name": "[concat(parameters('storageAccounts_genaicloudlab_name'), '/default')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_genaicloudlab_name'))]"
@@ -230,7 +238,7 @@
         },
         {
             "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
-            "apiVersion": "2023-05-01",
+            "apiVersion": "2024-01-01",
             "name": "[concat(parameters('storageAccounts_genaicloudlab_name'), '/default/cloudlabdocuments')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_genaicloudlab_name'), 'default')]",

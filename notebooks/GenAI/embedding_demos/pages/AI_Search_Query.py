@@ -27,92 +27,11 @@ import re
 load_dotenv()  
   
 # Configure Azure AI Search parameters  
-search_endpoint = os.getenv('AZURE_SEARCH_ENDPOINT')  # The endpoint for your Azure AI Search instance 
-search_key = os.getenv('AZURE_SEARCH_ADMIN_KEY')  # Your AI Search API key 
+search_endpoint = os.getenv('AZURE_SEARCH_SERVICE_ENDPOINT')  # The endpoint for your Azure AI Search instance 
+search_key = os.getenv('AZURE_SEARCH_API_KEY')  # Your AI Search API key
+credentials = AzureKeyCredential(search_key)
   
-def chat_on_your_data(query, search_index, messages):  
-    """  
-    Perform retrieval queries over documents from the Azure AI Search Index.  
-      
-    Args:  
-        query (str): The user's search query.  
-        search_index (str): The name of the search index.  
-        messages (list): List of messages to display in the chat.  
-      
-    Returns:  
-        None  
-    """  
-    # Configure Azure OpenAI parameters  
-    azure_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')  # The endpoint for your Azure OpenAI instance 
-    azure_openai_api_key = os.getenv('AZURE_OPENAI_KEY') # Your Azure OpenAI API key 
-    azure_openai_api_version = os.getenv('AZURE_OPENAI_VERSION')  # The version of the Azure OpenAI API you are using  
-    azure_ada_deployment = os.getenv('AZURE_EMBEDDINGS_DEPLOYMENT')  # The deployed ADA model for your Azure OpenAI instance 
-    azure_gpt_deployment = os.getenv('AZURE_GPT_DEPLOYMENT')   # The deployed GPT model for your Azure OpenAI instance 
-  
-    messages.append({"role": "user", "content": query})  
-      
-    with st.chat_message("user"):  
-        st.markdown(query)  
-      
-    with st.spinner('Processing...'):  
-        client = AzureOpenAI(  
-            azure_endpoint=azure_endpoint,  
-            api_key=azure_openai_api_key,  
-            api_version=azure_openai_api_version,  
-        )  
-        completion = client.chat.completions.create(  
-            model=azure_gpt_deployment,  
-            messages=[  
-                {"role": "system", "content": "You are an AI assistant that helps people find information. Ensure the Markdown responses are correctly formatted before responding."},  
-                {"role": "user", "content": query}  
-            ],  
-            max_tokens=800,  
-            temperature=0.7,  
-            top_p=0.95,  
-            frequency_penalty=0,  
-            presence_penalty=0,  
-            stop=None,  
-            stream=False,  
-            extra_body={  
-                "data_sources": [{  
-                    "type": "azure_search",  
-                    "parameters": {  
-                        "endpoint": search_endpoint,  
-                        "index_name": search_index,  
-                        "semantic_configuration": "default",  
-                        "query_type": "vector_simple_hybrid",  
-                        "fields_mapping": {},  
-                        "in_scope": True,  
-                        "role_information": "You are an AI assistant that helps people find information.",  
-                        "filter": None,  
-                        "strictness": 3,  
-                        "top_n_documents": 5,  
-                        "authentication": {  
-                            "type": "api_key",  
-                            "key": search_key  
-                        },  
-                        "embedding_dependency": {  
-                            "type": "deployment_name",  
-                            "deployment_name": azure_ada_deployment  
-                        }  
-                    }  
-                }]  
-            }  
-        )  
-  
-        response_data = completion.to_dict()  
-        ai_response = response_data['choices'][0]['message']['content']  
-          
-        # Clean the AI response  
-        ai_response_cleaned = re.sub(r'\s+\.$', '.', re.sub(r'\[doc\d+\]', '', ai_response))  
-        citation = response_data["choices"][0]["message"]["context"]["citations"][0]["url"]  
-        ai_response_final = f"{ai_response_cleaned}\n\nCitation(s):\n{citation}"  
-  
-        messages.append({"role": "assistant", "content": ai_response_final})  
-      
-        with st.chat_message("assistant"):  
-            st.markdown(ai_response_final)  
-  
+
 def setup_azure_openai(log_text):  
     """  
     Sets up Azure OpenAI.  
@@ -125,13 +44,14 @@ def setup_azure_openai(log_text):
     """  
     log_text.write("Setting up Azure OpenAI...")  
     azure_openai = AzureOpenAI(  
-        api_key=os.getenv("AZURE_OPENAI_KEY"),  # Your Azure OpenAI API key 
+        api_key=os.getenv("AZURE_OPENAI_API_KEY"),  # Your Azure OpenAI API key 
         api_version=os.getenv('AZURE_OPENAI_VERSION'), # The version of the Azure OpenAI API you are using  
         azure_endpoint=os.getenv('AZURE_OPENAI_ENDPOINT') # The endpoint for your Azure OpenAI instance 
     )  
     log_text.write("Azure OpenAI setup complete.")  
     return azure_openai  
-  
+
+
 def connect_to_blob_storage(log_text):  
     """  
     Connects to Azure Blob Storage.  
@@ -147,7 +67,10 @@ def connect_to_blob_storage(log_text):
     container_client = blob_service_client.get_container_client(os.getenv("BLOB_CONTAINER_NAME"))  
     log_text.write("Connected to Blob Storage.")  
     return container_client  
-  
+
+azure_openai = setup_azure_openai(log_text)  
+container_client = connect_to_blob_storage(log_text)
+
 def split_text_with_metadata(text, metadata, max_length=800, overlap=75, encoding_name='cl100k_base'):  
     """  
     Splits the text into chunks with metadata.  
@@ -186,7 +109,8 @@ def split_text_with_metadata(text, metadata, max_length=800, overlap=75, encodin
         end = start + max_length  
   
     return chunks  
-  
+
+
 def load_blob_content(blob_client):  
     """  
     Loads and returns the content of the PDF blob.  
@@ -212,8 +136,10 @@ def load_blob_content(blob_client):
         for page in pdf.pages:  
             document_text += page.extract_text() + "\n"  
       
-    return document_text  
-  
+    return document_text
+
+
+
 def vectorize(log_text):  
     """  
     Main function that orchestrates the vector workflow.  
@@ -224,8 +150,6 @@ def vectorize(log_text):
     Returns:  
         None  
     """  
-    azure_openai = setup_azure_openai(log_text)  
-    container_client = connect_to_blob_storage(log_text)  
       
     # Read and chunk documents with metadata  
     log_text.write("Listing blobs in container...")  
@@ -272,8 +196,8 @@ def vectorize(log_text):
       
     # Create Search Index  
     log_text.write("Creating search index...")  
-    credential = AzureKeyCredential(os.getenv("AZURE_SEARCH_ADMIN_KEY"))  
-    search_index_client = SearchIndexClient(endpoint=os.getenv("AZURE_SEARCH_ENDPOINT"), credential=credential)  
+    # credential = AzureKeyCredential(os.getenv("AZURE_SEARCH_ADMIN_KEY"))  
+    search_index_client = SearchIndexClient(endpoint=search_endpoint, credential=credentials)  
     fields = [  
         SimpleField(name="id", type=SearchFieldDataType.String, key=True),  
         SearchableField(name="content", type=SearchFieldDataType.String),  
@@ -304,7 +228,7 @@ def vectorize(log_text):
       
     # Upload chunks and embeddings to Azure AI Search  
     log_text.write("Uploading documents to search index...")  
-    search_client = SearchClient(endpoint=os.getenv("AZURE_SEARCH_ENDPOINT"), index_name="documents-index", credential=credential)  
+    search_client = SearchClient(endpoint=search_endpoint, index_name="documents-index", credential=credentials)  
     documents_to_upload = []  
       
     for i, doc in enumerate(embeddings):  
@@ -316,7 +240,95 @@ def vectorize(log_text):
             "document_link": doc["metadata"]["document_link"]  
         })  
     search_client.upload_documents(documents=documents_to_upload)  
-    log_text.success("Documents uploaded to search index.")  
+    log_text.success("Documents uploaded to search index.") 
+
+
+
+def chat_on_your_data(query, search_index, messages):  
+    """  
+    Perform retrieval queries over documents from the Azure AI Search Index.  
+      
+    Args:  
+        query (str): The user's search query.  
+        search_index (str): The name of the search index.  
+        messages (list): List of messages to display in the chat.  
+      
+    Returns:  
+        None  
+    """  
+    # Configure Azure OpenAI parameters  
+#     azure_endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')  # The endpoint for your Azure OpenAI instance 
+#     azure_openai_api_key = os.getenv('AZURE_OPENAI_API_KEY') # Your Azure OpenAI API key 
+#     azure_openai_api_version = os.getenv('AZURE_OPENAI_VERSION')  # The version of the Azure OpenAI API you are using  
+#     azure_ada_deployment = os.getenv('AZURE_EMBEDDINGS_DEPLOYMENT')  # The deployed ADA model for your Azure OpenAI instance 
+#     azure_gpt_deployment = os.getenv('AZURE_GPT_DEPLOYMENT')   # The deployed GPT model for your Azure OpenAI instance 
+  
+    messages = []  
+    
+    messages.append({"role": "user", "content": query})  
+      
+    with st.chat_message("user"):  
+        st.markdown(query)  
+      
+    with st.spinner('Processing...'):  
+        # client = AzureOpenAI(  
+        #     azure_endpoint=azure_endpoint,  
+        #     api_key=azure_openai_api_key,  
+        #     api_version=azure_openai_api_version,  
+        #)  
+        completion = azure_openai.chat.completions.create(  
+            model=os.getenv('AZURE_GPT_DEPLOYMENT'),  
+            messages=[  
+                {"role": "system", "content": "You are an AI assistant that helps people find information. Ensure the Markdown responses are correctly formatted before responding."},  
+                {"role": "user", "content": query}  
+            ],  
+            max_tokens=800,  
+            temperature=0.7,  
+            top_p=0.95,  
+            frequency_penalty=0,  
+            presence_penalty=0,  
+            stop=None,  
+            stream=False,  
+            extra_body={  
+                "data_sources": [{  
+                    "type": "azure_search",  
+                    "parameters": {  
+                        "endpoint": search_endpoint,  
+                        "index_name": search_index,  
+                        "semantic_configuration": "default",  
+                        "query_type": "vector_simple_hybrid",  
+                        "fields_mapping": {},  
+                        "in_scope": True,  
+                        "role_information": "You are an AI assistant that helps people find information.",  
+                        "filter": None,  
+                        "strictness": 3,  
+                        "top_n_documents": 5,  
+                        "authentication": {  
+                            "type": "api_key",  
+                            "key": search_key  
+                        },  
+                        "embedding_dependency": {  
+                            "type": "deployment_name",  
+                            "deployment_name": os.getenv('AZURE_EMBEDDINGS_DEPLOYMENT')  
+                        }  
+                    }  
+                }]  
+            }  
+        )  
+  
+        response_data = completion.to_dict()  
+        ai_response = response_data['choices'][0]['message']['content']  
+          
+        # Clean the AI response  
+        ai_response_cleaned = re.sub(r'\s+\.$', '.', re.sub(r'\[doc\d+\]', '', ai_response))  
+        citation = response_data["choices"][0]["message"]["context"]["citations"][0]["url"]  
+        ai_response_final = f"{ai_response_cleaned}\n\nCitation(s):\n{citation}"  
+  
+        messages.append({"role": "assistant", "content": ai_response_final})  
+      
+        with st.chat_message("assistant"):  
+            st.markdown(ai_response_final)  
+ 
   
 def main():  
     """  
@@ -370,7 +382,8 @@ def main():
         if st.button("Start Process"):  
             log_text = st.empty()  
             vectorize(log_text)  
-  
+
+            
 if __name__ == '__main__':  
     global_page_style()  
     main()  

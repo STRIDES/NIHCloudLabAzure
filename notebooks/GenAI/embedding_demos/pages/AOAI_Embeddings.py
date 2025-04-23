@@ -19,7 +19,7 @@ def get_embedding(text, engine):
     endpoint from environment variables loaded using load_dotenv().  
   
     Environment Variables:  
-        Azure_OPENAI_KEY: Your Azure OpenAI API key.  
+        Azure_OPENAI_API_KEY: Your Azure OpenAI API key.  
         AZURE_OPENAI_VERSION: The version of the Azure OpenAI API you are using.  
         AZURE_OPENAI_ENDPOINT: The endpoint for your Azure OpenAI instance.  
   
@@ -31,7 +31,7 @@ def get_embedding(text, engine):
         list: A list representing the generated embeddings.  
     """  
     client = AzureOpenAI(  
-        api_key=os.getenv("AZURE_OPENAI_KEY"),  # Your Azure OpenAI API key  
+        api_key=os.getenv("AZURE_OPENAI_API_KEY"),  # Your Azure OpenAI API key  
         api_version=os.getenv('AZURE_OPENAI_VERSION'),  # The version of the Azure OpenAI API you are using  
         azure_endpoint=os.getenv('AZURE_OPENAI_ENDPOINT')  # The endpoint for your Azure OpenAI instance  
     )  

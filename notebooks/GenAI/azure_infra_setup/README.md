@@ -76,8 +76,8 @@ Please refer to the [Azure Pricing Calculator](https://azure.microsoft.com/en-us
 ### 1. Setting Up the Azure Module in PowerShell  
   
 First, you need to install the Azure module in PowerShell to connect to your Azure account.  
-  
-```powershell  
+
+```powershell
 # Install the Az module (if using PowerShell)
 Install-Module -Name Az -AllowClobber -Force  
 ```
@@ -92,9 +92,9 @@ You can log into your Azure account either using PowerShell or Azure CLI.
 Connect-AzAccount  
 ```
 **Using Azure CLI**
-```bash
+```powershell
 # Log into your Azure account 
-az login  
+!az login  
 ```
 
 ### 3. Setting Variables 
@@ -114,16 +114,18 @@ $searchServiceName="cloudlabsearch"
 $openAIResourceName="cloudlabaoai"  
 ```
 **Using Azure CLI**
-```bash
+```powershell
 # Variables  
-resourceGroupName="nihcloudlabrg"   
-location="eastus2"   
-templateFilePath="Path To ./arm_resources.json"  
-storageAccountName="cloudlabstgacct"  
-containerName="cloudlabdocuments"  
-localFilePath="Path To ../search_documents"   
-searchServiceName="cloudlabsearch" 
-openAIResourceName="cloudlabaoai"  
+resourceGroupName = 'nihcloudlabrg'   
+location = 'eastus2'
+templateFilePath = "arm_resources.json"  
+storageAccountName = "cloudlabstgacct"  
+containerName = "cloudlabdocuments"  
+localFilePath = "../search_documents"   
+searchServiceName = "cloudlabsearch" 
+openAIResourceName = "cloudlabaoai"  
+openAImodel_name = "gpt-4o-mini"
+openAIEmbeddingmodel_name = "text-embedding-3-small"
 ```
 
 ### 4. Creating an Empty Resource Group
@@ -133,12 +135,12 @@ Create an empty resource group where the ARM template will deploy the necessary 
 **Using PowerShell**
 ```powershell
 # Create a resource group  
-New-AzResourceGroup -Name $resourceGroupName -Location $location  
+New-AzResourceGroup -Name $resourceGroupName -Location $location 
 ```
 **Using Azure CLI**
-```bash
+```powershell
 # Create a resource group  
-az group create --name $resourceGroupName --location $location  
+! az group create --name {resourceGroupName} --location {location}
 ```
 
 ### 5. Deploying the ARM Template
@@ -151,9 +153,17 @@ Deploy the [ARM template](arm_resources.json) to create the Azure Storage Accoun
 New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templateFilePath  
 ```
 ***Using Azure CLI***
-```bash
+```powershell
 # Deploy the ARM template  
-az deployment group create --resource-group $resourceGroupName --template-file $templateFilePath 
+!az deployment group create \
+--resource-group {resourceGroupName} \
+--template-file {templateFilePath} \
+--parameters accounts_cloudlabaoai_name={openAIResourceName} \
+--parameters model_name={openAImodel_name} \
+--parameters embeddingModel_name={openAIEmbeddingmodel_name} \
+--parameters searchServices_cloudlabsearch_name={searchServiceName} \
+--parameters storageAccounts_genaicloudlab_name={storageAccountName}
+
 ```
 
 ### 6. Uploading Local Files to Azure Storage
@@ -161,7 +171,7 @@ az deployment group create --resource-group $resourceGroupName --template-file $
 Upload your local files to the blob container in the Azure Storage Account.
 
 **Using PowerShell**
-```powershell  
+```powershell
 # Get storage account context  
 $storageContext = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName).Context  
   
@@ -171,14 +181,16 @@ Get-ChildItem -Path $localFilePath -File | ForEach-Object {
 }  
 ```
 **Using Azure CLI**
-```bash
-# Get storage account key  
-storageAccountKey=$(az storage account keys list --resource-group $resourceGroupName --account-name $storageAccountName --query "[0].value" --output tsv)  
-  
-# Upload all files in the directory  
-for file in localFilePath/*; do  
-    az storage blob upload --account-name $storageAccountName --account-key $storageAccountKey --container-name $containerName --file file --name (basename file)  
-done  
+```powershell
+# Get storage account key 
+storageAccountKey=!az storage account keys list --resource-group {resourceGroupName} --account-name {storageAccountName} --output tsv --query "[0].value"
+```
+
+```bash magic_args="-s \"$localFilePath\" \"$storageAccountName\" \"$storageAccountKey\" \"$containerName\""
+for file in $1/*;
+do
+    az storage blob upload --account-name $2 --account-key $3 --container-name $4 --file "$file" --name $(basename "$file")  
+done 
 ```
 
 ### 7. Retrieving API Keys
@@ -201,19 +213,26 @@ $connectionString = "DefaultEndpointsProtocol=https;AccountName=$storageAccountN
 Write-Output $connectionString
 ```
 ***Using Azure CLI***
-```bash
-# Get the storage account key  
-storageAccountKey=(az storage account keys list --resource-group $resourceGroupName --account-name $storageAccountName --query '[0].value' --output tsv)  
-echo $storageAccountKey
+```powershell
+# Get the storage account key that was made before in step 6 
+!echo "BLOB_CONTAINER_NAME={containerName}" >> .env
+!echo "BLOB_ACCOUNT_NAME={storageAccountName}" >> .env
 # Construct the Blob connection string  
-connectionString="DefaultEndpointsProtocol=https;AccountName=$storageAccountName;AccountKey=$storageAccountKey;EndpointSuffix=core.windows.net"
-echo $connectionString
+connectionString=f"DefaultEndpointsProtocol=https;AccountName={storageAccountName};AccountKey={storageAccountKey[0]};EndpointSuffix=core.windows.net"
+!echo "BLOB_CONNECTION_STRING={connectionString}" >> .env
+
 ```
 
-You now have the secrets to set the following .env variables in your local file. Copy the values to your `.env`:
-- ***BLOB_CONTAINER_NAME*** = Use the value of `$containerName` or `containerName`. 
-- ***BLOB_CONNECTION_STRING*** = Use the value of `$connectionString ` or `connectionString`.  
+Lets take a look at our .env file!
+
+```powershell
+!cat .env
+```
+
+You now have the secrets and variables set in a .env. If you run into any errors you can also copy them to your .env file using the info below:
+- ***BLOB_CONTAINER_NAME*** = Use the value of `$containerName` or `containerName`.  
 - ***BLOB_ACCOUNT_NAME*** = Use the value of `$storageAccountName` or `storageAccountName`. 
+- ***BLOB_CONNECTION_STRING*** = Use the value of `$connectionString ` or `connectionString`. 
 
 **Azure AI Search**
 
@@ -227,22 +246,31 @@ $searchServiceEndpoint="https://$searchServiceName.search.windows.net"
 Write-Output $searchServiceEndpoint
 ```
 ***Using Azure CLI***
-```bash
+```powershell
 # Acquire the AI Search Admin Key
-searchServiceKey = az search admin-key show --resource-group resourceGroupName --service-name $searchServiceName --query primaryKey -o tsv
-echo $searchServiceKey
+searchServiceKey = !az search admin-key show --resource-group {resourceGroupName} --service-name {searchServiceName} --query primaryKey -o tsv
+!echo "AZURE_SEARCH_API_KEY={searchServiceKey[0]}" >> .env
 # Construct the AI Search endpoint 
-searchServiceEndpoint="https://$searchServiceName.search.windows.net"
-echo $searchServiceEndpoint
+searchServiceEndpoint=f"https://{searchServiceName}.search.windows.net"
+!echo "AZURE_SEARCH_SERVICE_ENDPOINT={searchServiceEndpoint}" >> .env
 ```
 
-You now have the secrets to set the following .env variables in your local file. Copy the values to your `.env`:
-- ***AZURE_SEARCH_ENDPOINT*** =  Use the value of `$searchServiceEndpoint` or `searchServiceEndpoint`.
+Lets take a look at our .env file!
+
+```powershell
+!cat .env
+```
+
+<!-- #region -->
+You now have the secrets and variables set in a .env. If you run into any errors you can also copy them to your .env file using the info below:
 - ***AZURE_SEARCH_ADMIN_KEY*** = Use the value of `$searchServiceKey` or `searchServiceKey`.
+- ***AZURE_SEARCH_ENDPOINT*** =  Use the value of `$searchServiceEndpoint` or `searchServiceEndpoint`.
+
 
 **Azure OpenAI**
 
 ***Using PowerShell***
+<!-- #endregion -->
 ```powershell
 # Get the Azure OpenAI key 1
 $openAIKey = az cognitiveservices account keys list --resource-group $resourceGroupName --name $openAIResourceName --query "key1" --output tsv
@@ -252,39 +280,43 @@ $openAIEndpoint = "https://$openAIResourceName.openai.azure.com/"
 Write-Output $openAIEndpoint
 ```
 ***Using Azure CLI***
-```bash
-# Get the Azure OpenAI key  
-openAIKey=$(az cognitiveservices account keys list --resource-group $resourceGroupName --name $openAIResourceName  --query "key1" --output tsv)  
-echo $openAIKey
+```powershell
+!echo "AZURE_GPT_DEPLOYMENT={openAImodel_name}" >> .env
+!echo "AZURE_EMBEDDINGS_DEPLOYMENT={openAIEmbeddingmodel_name}" >>.env
+
 # Construct the Azure OpenAI endpoint
-openAIEndpoint = "https://$openAIResourceName.openai.azure.com/"
-echo $openAIEndpoint
+openAIEndpoint = f"https://{openAIResourceName}.openai.azure.com/"
+!echo "AZURE_OPENAI_ENDPOINT={openAIEndpoint}" >> .env
+# Get the Azure OpenAI key 
+openAIKey=!az cognitiveservices account keys list --resource-group {resourceGroupName} --name {openAIResourceName}  --query "key1" --output tsv  
+!echo "AZURE_OPENAI_API_KEY={openAIKey[0]}" >> .env
+
 ```
 
-You now have the secrets to set the following .env variables in your local file. Copy the values to your `.env`:
-- ***AZURE_OPENAI_ENDPOINT*** = Use the value of `$openAIEndpoint` or `openAIEndpoint`.
-- ***AZURE_OPENAI_KEY*** = Use the value of `$openAIKey` or `openAIKey`.
+```powershell
+cat .env
+```
+
+<!-- #region -->
+You now have the secrets and variables set in a .env. If you run into any errors you can also copy them to your .env file using the info below:
 - ***AZURE_GPT_DEPLOYMENT*** = Use the value of `gpt-4o-mini`.
 - ***AZURE_EMBEDDINGS_DEPLOYMENT*** = Use the value of `text-embedding-3-small`.
+- ***AZURE_OPENAI_ENDPOINT*** = Use the value of `$openAIEndpoint` or `openAIEndpoint`.
+- ***AZURE_OPENAI_KEY*** = Use the value of `$openAIKey` or `openAIKey`.
+
 
 **Note**: To find the ***API version (Azure_OPENAI_VERSION)*** for your resource in the Azure OpenAI playground, follow these steps:
 1. **Navigate to Deployments**: In the left side panel of the Azure OpenAI playground, click on “Deployments.”
 2. **Select the Model Deployment**: Click on the specific model deployment you are working with.
 3. **Locate the Endpoint Section**: In the endpoint section, you will see the Target URI.
-4. **Find the API Version**: Look for the part of the URL that includes `api-version=2024-08-01-preview`. This will be your API version.
+4. **Find the API Version**: Look for the part of the URL that looks similar to `api-version=2025-01-01-preview`. This will be your API version. This may differ between models
 
 Your final local `.env` file should look something like this:
-```sh
-AZURE_OPENAI_VERSION = "Your Azure OpenAI API version"  
-AZURE_OPENAI_ENDPOINT = "Your Azure OpenAI API endpoint"
-AZURE_OPENAI_KEY = "Your Azure OpenAI API key"
-AZURE_GPT_DEPLOYMENT = "Your Azure OpenAI deployed GPT model name"
-AZURE_EMBEDDINGS_DEPLOYMENT = "Your Azure OpenAI deployed ADA model name"
-AZURE_SEARCH_ENDPOINT = "Your Azure AI Search API endpoint"
-AZURE_SEARCH_ADMIN_KEY = "Your Azure AI Search API key"
-BLOB_CONTAINER_NAME = "Your Azure Blob Container name hosting files from /search_documents"
-BLOB_CONNECTION_STRING = "Your Azure Blob connection string"
+<!-- #endregion -->
+```powershell
+!cat .env
 ```
+
 ## Conclusion <a name="conclusion"></a>
 
 Congratulations on completing the Azure setup! During this process, we established a new resource group dedicated to the NIH Cloud Lab environment and 
@@ -299,4 +331,4 @@ Additionally, we configured `.env` variables in your local `.env` file, which is
 You are now ready to proceed with the GenAI tutorials!
 
 ## Clean Up <a name="clean_up"></a>
-No clean up neccessary, as the created resources will be used for tutorials found in [GenAI](../). 
+No clean up neccessary, as the created resources will be used for tutorials found in [GenAI](../) folder, specifically [embeddings demos](../embedding_demos/readme.md) and [AI Search RAG chatbot](../notebooks/AISearch_RAG_chatbot.ipynb) tutorial . 
