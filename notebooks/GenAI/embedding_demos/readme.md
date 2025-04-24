@@ -21,18 +21,18 @@ The Azure OpenAI Demo w/ Streamlit Frontend is designed to host various demonstr
     - Learn the roles and functionalities of `Demo_Suite.py` and the `AI_Search_Query.py`, and `AOAI_Embeddings.py` pages.
 3. **Generate and Query Embeddings**:
     - Create and query text embeddings using the Azure OpenAI SDK.
-4. **Use Azure VM (NIH only) vs VScode **:
+4. **Use Azure VM (NIH only) vs Virtual Studio Code (VS Code) **:
     - Set up Streamlit to securely run the demo on Azure VM.
 5. **Setup Development Environment**:
     - Create a virtual environment, install dependencies, and configure environment variables.
     - Execute the Streamlit demo locally and in cloud environments.
 
 ## Prerequisites <a name="prerequisites"></a>
-Before proceeding with this notebook, please ensure that you have the following Azure services deployed and configured. Resources can be deployed manually in Azure portal or automated by following along with the [ARM Deployment tutorial](../azure_infra_setup/README.md):  
+Before proceeding with this notebook, please ensure that you have the following Azure services deployed and configured. Resources can be deployed manually in the Azure portal or automated by following along with the [ARM Deployment tutorial](../azure_infra_setup/README.md):  
   
 1. **Azure OpenAI Service**:
     - Ensure that you have deployed both a GPT model and an Ada model within your Azure OpenAI instance.
-    - Estimated costs for this service varies based on the model usage and number of API calls.
+    - Estimated costs for this service vary based on the model usage and number of API calls.
         - **gpt-4o-mini(2024-07-18):** $0.15 input/$0.60 output per 1M tokens
         - **text-embedding-3-small(1):** $0.00002 per 1K tokens
         
@@ -98,9 +98,9 @@ In this phase, you will choose your preferred environment to execute the Azure O
 + [Executing via VsCode](#executing_via_vscode)
 
 ### Executing via Azure VM <a name="executing_via_azure_vm"></a>
-If you are in the NIH environment Streamlit's native behavior expects to run applications locally on port 8501, which isn't possible when executing this demo from Azure VM. 
+If you are in the NIH environment, Streamlit's native behavior expects to run applications locally on port 8501, which isn't possible when executing this demo from Azure VM. 
 
-Inorder to connect to the streamlit you must change the **port to 3389**. This is an approved port and will ensure that you can access and interact with the Streamlit application without needing to run from your local machine.
+In order to connect to the Streamlit you must change the **port to 3389**. This is an approved port and will ensure that you can access and interact with the Streamlit application without needing to run it from your local machine.
 
 **Phase 1 - Create a .env file:**
 
@@ -132,7 +132,7 @@ Inorder to connect to the streamlit you must change the **port to 3389**. This i
     - Press `Ctrl + X` to exit the text editor. 
     - Press `Shift + Y` to save the changes to the file. 
     - Press `Enter` to confirm the file name to be saved (filename will be .env since we used `nano .env` command)
-6. Output the `.env` variables from terminal to ensure all variables are present:
+6. Output the `.env` variables from the terminal to ensure all variables are present:
     ```bash
     cat .env
     ```
@@ -167,14 +167,14 @@ Inorder to connect to the streamlit you must change the **port to 3389**. This i
         ```sh
         streamlit run Demo_Suite.py --server.port 3389
         ```
-        ***Note: Access the Streamlit site from the provided `External URL` in the terminal.***
+    - Access the Streamlit app from the provided `External URL` in the terminal (Copy the URL and open it in your browser).***
         
-        ![Image](https://github.com/user-attachments/assets/663053ed-957f-4ec3-b8b1-340b820852cc)
+        ![nih_azurevm](../../../docs/images/streamlit_NIH_azurevm.png)
 
 
 
-### Executing via VsCode <a name="executing_via_vscode"></a>
-To excute this demo, be sure to complete the following steps:
+### Executing via VS Code <a name="executing_via_vscode"></a>
+To execute this demo, be sure to complete the following steps:
 
 1. Create a virtual environment in the /GenAI directory.
 
@@ -202,7 +202,7 @@ To excute this demo, be sure to complete the following steps:
     pip install -r requirements.txt  
     ```
 
-3.  Create a .env file in the /GenAI directory and set the following variables:
+3.  Create an .env file in the /GenAI directory and set the following variables:
 
     **Note:** If you have followed the steps in the [ARM Deployment tutorial](../azure_infra_setup/README.md) you have already created this file with its variables and can skip to the next step.
 
@@ -230,11 +230,7 @@ To excute this demo, be sure to complete the following steps:
     ```
 
 ## Conclusion <a name="conclusion"></a>
-By completing the "Azure OpenAI Demo w/ Streamlit Frontend" tutorial, you have gained valuable hands-on experience in integrating Azure OpenAI services with a Streamlit frontend. You have learned how to set up and configure essential components, including Azure OpenAI, Azure AI Search, and Azure Blob Storage. Additionally, you have explored the functionalities of key scripts and understood how to generate and query embeddings for interactive applications. This tutorial also guided you through executing the demo both on Azure VM and locally using VSCode, ensuring you are equipped to handle different deployment scenarios. We hope this tutorial has been informative and empowers you to leverage Azure OpenAI and Streamlit for your future projects.
+By completing the "Azure OpenAI Demo w/ Streamlit Frontend" tutorial, you have gained valuable hands-on experience in integrating Azure OpenAI services with a Streamlit frontend. You have learned how to set up and configure essential components, including Azure OpenAI, Azure AI Search, and Azure Blob Storage. Additionally, you have explored the functionalities of key scripts and understood how to generate and query embeddings for interactive applications. This tutorial also guided you through executing the demo both on Azure VM and locally using VS Code, ensuring you are equipped to handle different deployment scenarios. We hope this tutorial has been informative and empowers you to leverage Azure OpenAI and Streamlit for your future projects.
 
 ## Clean Up <a name="clean_up"></a>
-Make sure to shut down your Azure ML compute and if desired you can delete your Azure AI Search service, Azure Blob Storage Account, and Azure OpenAI service. ***Note these services can be used in other tutorials in this notebook.***
-
-```python
-
-```
+Make sure to shut down your Azure ML compute and if desired you can delete your Azure AI Search service, Azure Blob Storage Account, and Azure OpenAI service. ***Note: These services can be used in other tutorials in this notebook.***
