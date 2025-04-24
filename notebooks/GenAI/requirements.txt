@@ -1,12 +1,11 @@
 python-dotenv
 openai 
-openai[embeddings]
 pandas 
 numpy 
 streamlit
-langchain
-langchain-openai
-langchain-community
-azure-search-documents==11.4.0b6
+azure-search-documents
+azure-identity
+azure-storage-blob
+pdfplumber
 tiktoken
-faiss-cpu
+pyngrok
