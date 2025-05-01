@@ -30,57 +30,45 @@ Navigate to Azure OpenAI. The easiest way is to search at the top of the page.
 
 At the time of writing, Azure OpenAI is in Beta and only available to customers via an application form, if you click **Create** that is the message you will see. If you click **Create** and do not get this message, then feel free to create a new OpenAI Service. Otherwise, please email us at CloudLab@nih.gov and ask us to set this part up for you. Once you have an OpenAI Service provisioned, click to open it. 
 
-  ![click to open azure open ai](/docs/images/2_select_openai_project.png)
+  ![click to open azure open ai](/docs/images/RM_create-open-ai-1.jpeg)
 
-Now click **Go to Azure OpenAI Studio** or **Explore** to be connected to the Azure OpenAI studio user interface. 
+Now click **Go to Azure OpenAI Studio** or **Explore** to be connected to the Azure OpenAI studio user interface. Click **Chat**. 
 
-  ![connect to OpenAI UI](/docs/images/3_connet_open_ai.png)
+  ![connect to OpenAI UI](/docs/images/RM_chat-button.jpeg)
 
-Click **Chat**
-
-  ![click chat image](/docs/images/4_click_chat.png)
 
 Next, you need to deploy an OpenAI model.
 
 ## Deploy an OpenAI model
 
-On the left navigation panel, click **Models**
+Select **Create new deployment** and **from base models**. Select the model `gpt-4o-mini`. In the **Deployment type** select **Standard**. You can learn more about the available models by clicking (C) **Learn more about the different types of base models**, or [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
 
-  ![Click Models](/docs/images/10_click_models.png)
 
-Select the (A) `gpt-35-turbo model`, click (B) **Deploy**. You can learn more about the available models by clicking (C) **Learn more about the different types of base models**, or [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
+  ![Click Models](/docs/images/RM_gpt-4o-selection.jpeg)
 
-  ![Deploy the model](/docs/images/11_deploy_model.png)
+Click **Create**. Now if you select `Deployments` on the left panel, you should see your deployed model listed. 
 
-Name your deployment and then click **Create**.
-
-  ![Name your Deployment](/docs/images/12_name_your_deployment.png)
-
-Now if you select `Deployments` on the left panel, you should see your deployed model listed. 
-
-  ![Check Deployments](/docs/images/13_check_deployments.png)
+  ![Name your Deployment](/docs/images/RM_chat-playground.jpeg)
 
 Run a quick test to ensure our deployment is acting as expected. Navigate to `Chat`, add an optional system message (we will cover this more later), and then type `Hello World` in the chat box. If you get a response, things are working well!
 
-  ![test model](/docs/images/14_test_your_model.png)
+  ![test model](/docs/images/RM-hello.jpeg)
 
 Now we will look at [adding and querying over your own data](#Upload-your-own-data-and-query-over-it) and then review [prompt engineering best practices](#prompt-engineering-best-practices) using a general GPT model.
 
 ## Chat Playground Navigation
 
-If you have not already (A) Navigate to the Chat Playground. Here we will walk through the various options available to you. First, you can specify a `System Message` which tells the model what context with which to respond to inquiries. To modify this, (B) select `System message`, then (B) input a [System Message](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/system-message#define-the-models-profile-capabilities-and-limitations-for-your-scenario) in the prompt box, then (D) click **Save**. 
+If you have not already navigate to the Chat Playground. In the middle of the page is where you actually interact with the model (A) through the chat prompts. First, you can specify a message which tells the model what context with which to respond to inquiries. To modify this, enter a prompt in the dialogue box(B). 
 
-On the next tab over, you can (A) add your own data, which we dive into in the [next section](#Upload-your-own-data-and-query-over-it). In the middle of the page is where you actually interact with the model (B) through the chat prompts. Always (C) clear the chat after each session. 
+Always (C) clear the chat after each session. On the next tab over, you can (D) add your own data, which we dive into in the [next section](#Upload-your-own-data-and-query-over-it). 
 
-  ![add your own data](/docs/images/18_add_custom_data.png)
+  ![add your own data](/docs/images/RM-chat-playground-spaces.jpeg)
 
 On the far right, you can modify which model you are deploying, which allows you to switch between different model deployments depending on the context. 
 
-  ![modify deployment](/docs/images/19_deployment.png)
-
 Finally, you can select the `parameters` tab to modify the model parameters. Review [this presentation](/notebooks/GenAI/search_documents/aoai_workshop_content.pdf) to learn more about the parameters.
 
-  ![modify parameters](/docs/images/20_parameters.png)
+  ![modify parameters](/docs/images/RM-parameters.jpeg)
 
 ## Upload your own data and query over it
 
