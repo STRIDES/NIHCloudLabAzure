@@ -52,7 +52,7 @@ Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azu
 
 <img alt="image" src="/docs/images/manage-resource-groups-add-group-go-to-resource-group.png">
 
-Direct Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups).
+check out the Microsoft documentation link [here](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) scroll down to 'Create resource groups' to see how to create a resource group.
 
 
 ###  List Resource Groups<a name="lrg"></a>
