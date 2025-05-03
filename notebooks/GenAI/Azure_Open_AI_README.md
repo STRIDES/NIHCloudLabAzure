@@ -343,7 +343,7 @@ QUERY:
 Creating embeddings of search documents allows you to use vector search, which is much more powerful than the keyword search we used above. First, review this page on [how to create embeddings](https://learn.microsoft.com/en-us/azure/search/vector-search-how-to-generate-embeddings), and then review [how vector search works](https://learn.microsoft.com/en-us/azure/search/vector-search-overview).
 
 ### Environment Setup
-Navigate to your [Azure Machine Learning Studio environment](https://github.com/STRIDES/NIHCloudLabAzure#launch-a-machine-learning-workspace-jupyter-environment-). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
+Navigate to your [Azure Machine Learning Studio environment](https://azure.microsoft.com/en-us/products/machine-learning). If you have not created your environment, [create one now](https://learn.microsoft.com/en-us/azure/machine-learning/tutorial-cloud-workstation?view=azureml-api-2). 
 
 Navigate to `Notebooks`, then clone this Git repo into your environment and navigate to the notebook called [AzureOpenAI_embeddings.ipynb](/notebooks/GenAI/notebooks/AzureOpenAI_embeddings.ipynb). 
 
