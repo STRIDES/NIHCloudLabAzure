@@ -1,4 +1,6 @@
-# Accessing Azure OpenAI Models
+# [ARCHIVE] Accessing Azure OpenAI Models
+**IMPORTANT: The steps in this document are no longer required. Instead, please see [Azure Open AI READ](https://github.com/STRIDES/NIHCloudLabAzure/blob/main/notebooks/GenAI/Azure_Open_AI_README.md) to deploy OpenAI models (e.g., gpt4o, dall-e-3) or [Azure AI Studio README](https://github.com/STRIDES/NIHCloudLabAzure/blob/main/notebooks/GenAI/Azure_AI_Studio_README.md) if you would like to deploy third party models.**
+
 To access OpenAI models such as GPT series (4, 3.5, 3, etc.), DALL-E, Whisper, and embedding models, users must submit a request form by choosing one of the options below.
 
 ## Option 1 – Access the Request Form via Direct Link
