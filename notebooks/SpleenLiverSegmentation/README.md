@@ -24,7 +24,7 @@ Installing MONAI in a notebook environment can be completed with the commands:
 - !python -c "import matplotlib" || pip install -q matplotlib
 
 ## Dependencies
-_It is recommended to use an NVIDIA GPU for training. If the user does not have access to a NVIDIA GPU then it is recommended to skip the training cells._
+_It is recommended to use an NVIDIA GPU for training. If the user does not have access to a NVIDIA GPU then it is recommended to skip the training cells. You may need to search several regions to find available GPUs_
 
 The following packages and versions were installed during the testing of this notebook:
 - MONAI version: 1.3.0
