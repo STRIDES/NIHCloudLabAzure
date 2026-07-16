@@ -30,48 +30,73 @@ Provided is a list of resources that will be deployed along with the estimated c
 Please refer to the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/) for a more detailed and personalized estimate based on your specific usage patterns and region.
 #### Get Started
 ****
-### Azure OpenAI
+### Azure OpenAI Setup Steps
 ****
-Navigate to Azure OpenAI. The easiest way is to search at the top of the page.  
+1. Navigate to Azure OpenAI by searching at the top of the page. 
 ![AZ_OpenAI_setup_1.jpg](/docs/images/AZ_OpenAI_setup_1.jpg)  
 
-Click **Create** and then select **Azure OpenAI**  
+2. Click **Create** and then select **Azure OpenAI**  
 
 ![AZ_OpenAI_setup_2.jpg](/docs/images/AZ_OpenAI_setup_2.jpg)  
 
-In a **Create Azure OpenAI window**, you should be able to see your Azure Subscription and click **Create new** for resource group  
+3. In the **Create Azure OpenAI window:**
+   - Select your Azure subscription
+   - Click **Create new** for resource group  
 
 ![AZ_OpenAI_setup_3.jpg](/docs/images/AZ_OpenAI_setup_3.jpg)  
 
-Select Region **East US 2**, create Name for your Azure OpenAI, select Pricing tier **Standard S0** and click **Next**
-In Network window select **All networks, including the internet, can access this resource.** and click Next. In **Reviwe+submit** window click **create**  
+ - Select Region **East US 2**
+ - Enter Name for your Azure OpenAI
+ - Select Pricing tier **Standard S0**
+ - Click **Next**
+4. In the Network window:
+  - Select **All networks, including the internet, can access this resource.**
+  - Click Next.
+5. In **Reviwe+submit** window:
+  - Click **create**  
 
 ![AZ_OpenAI_setup_4.jpg](/docs/images/AZ_OpenAI_setup_4.jpg)  
 
-There should be a messsage that **Your deployment is complete** then select **Go to resource**  
+6. When you see **Your deployment is complete** message:
+   - Select **Go to resource**  
 
 ![AZ_OpenAI_setup_5.jpg](/docs/images/AZ_OpenAI_setup_5.jpg)  
 
-In your resource window, select **Go to Foundry portal** then click **Create a project**  
+7. In your resource window:
+   - Select **Go to Foundry portal**
+   - Click **Create a project**
 
 ![AZ_OpenAI_setup_6.jpg](/docs/images/AZ_OpenAI_setup_6.jpg)  
 
-Give a **Project name**, select **Region**, you should be able to see your **Subscription**, select **Resource group** and click **Create**  
+8.In the Create project window:
+  - Give a **Project name**
+  - Select **Region**
+  - Select your **Subscription**
+  - Select **Resource group**
+  - Click **Create**  
 
 ![AZ_OpenAI_setup_7.jpg](/docs/images/AZ_OpenAI_setup_7.jpg)  
 
-Select **View Deployments** or **Manage Deployments**. Select **Deploy a base model**  
+9. In the Deployments section:
+    - Select **View Deployments** or **Manage Deployments**
+    - Select **Deploy a base model**
 
 ![AZ_OpenAI_setup_8.jpg](/docs/images/AZ_OpenAI_setup_8.jpg)  
 
 ![AZ_OpenAI_setup_9.jpg](/docs/images/AZ_OpenAI_setup_9.jpg)  
 
-In search bar type a gpt model that you would like to deploy. Click on selected model and then select **Deploy**  
+10. Search for and deploy a GPT model:
+    - Type a GPT model name in the search bar
+    - Click on the selected model
+    - Select **Deploy**
 
 ![AZ_OpenAI_setup_10.jpg](/docs/images/AZ_OpenAI_setup_10.jpg)  
 
 ![AZ_OpenAI_setup_11.jpg](/docs/images/AZ_OpenAI_setup_11.jpg)  
 
-Similar way, in search bar type a embedding model that you would like to deply. Click on selected model and then select **Deploy**  
+11. Deploy an embedding model:
+    - Type an embedding model name in the search bar
+    - Click on the selected model
+    - Select **Deploy**
 
-Azure infrastructre setup is done
+Azure infrastructre setup is complete.
