@@ -32,30 +32,46 @@ Please refer to the [Azure Pricing Calculator](https://azure.microsoft.com/en-us
 ****
 ### Azure OpenAI
 ****
-Navigate to Azure OpenAI. The easiest way is to search at the top of the page.
-![AZ_OpenAI_setup_1.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_1.jpg)
-Click **Create** and then select **Azure OpenAI**
-![AZ_OpenAI_setup_2.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_2.jpg)
-In a **Create Azure OpenAI window**, you should be able to see your Azure Subscription and click **Create new** for resource group
-![AZ_OpenAI_setup_3.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_3.jpg)
+Navigate to Azure OpenAI. The easiest way is to search at the top of the page.  
+![AZ_OpenAI_setup_1.jpg](/docs/images/AZ_OpenAI_setup_1.jpg)  
+
+Click **Create** and then select **Azure OpenAI**  
+
+![AZ_OpenAI_setup_2.jpg](/docs/images/AZ_OpenAI_setup_2.jpg)  
+
+In a **Create Azure OpenAI window**, you should be able to see your Azure Subscription and click **Create new** for resource group  
+
+![AZ_OpenAI_setup_3.jpg](/docs/images/AZ_OpenAI_setup_3.jpg)  
 
 Select Region **East US 2**, create Name for your Azure OpenAI, select Pricing tier **Standard S0** and click **Next**
-In Network window select **All networks, including the internet, can access this resource.** and click Next. In **Reviwe+submit** window click **create**
+In Network window select **All networks, including the internet, can access this resource.** and click Next. In **Reviwe+submit** window click **create**  
 
-![AZ_OpenAI_setup_4.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_4.jpg)
-There should be a messsage that **Your deployment is complete** then select **Go to resource**
-![AZ_OpenAI_setup_5.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_5.jpg)
-In your resource window, select **Go to Foundry portal** then click **Create a project**
-![AZ_OpenAI_setup_6.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_6.jpg)
-Give a **Project name**, select **Region**, you should be able to see your **Subscription**, select **Resource group** and click **Create**
+![AZ_OpenAI_setup_4.jpg](/docs/images/AZ_OpenAI_setup_4.jpg)  
 
-![AZ_OpenAI_setup_7.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_7.jpg)
-Select **View Deployments** or **Manage Deployments**. Select **Deploy a base model**
-![AZ_OpenAI_setup_8.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_8.jpg)
-![AZ_OpenAI_setup_9.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_9.jpg)
-In search bar type a gpt model that you would like to deploy. Click on selected model and then select **Deploy**
+There should be a messsage that **Your deployment is complete** then select **Go to resource**  
 
-![AZ_OpenAI_setup_10.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_10.jpg)
-![AZ_OpenAI_setup_11.jpg](https://github.com/STRIDES/NIHCloudLabAzure/tree/upadhyayk2NIH-CIT-patch-2/docs/images/AZ_OpenAI_setup_11.jpg)
-Similar way, in search bar type a embedding model that you would like to deply. Click on selected model and then select **Deploy**
+![AZ_OpenAI_setup_5.jpg](/docs/images/AZ_OpenAI_setup_5.jpg)  
+
+In your resource window, select **Go to Foundry portal** then click **Create a project**  
+
+![AZ_OpenAI_setup_6.jpg](/docs/images/AZ_OpenAI_setup_6.jpg)  
+
+Give a **Project name**, select **Region**, you should be able to see your **Subscription**, select **Resource group** and click **Create**  
+
+![AZ_OpenAI_setup_7.jpg](/docs/images/AZ_OpenAI_setup_7.jpg)  
+
+Select **View Deployments** or **Manage Deployments**. Select **Deploy a base model**  
+
+![AZ_OpenAI_setup_8.jpg](/docs/images/AZ_OpenAI_setup_8.jpg)  
+
+![AZ_OpenAI_setup_9.jpg](/docs/images/AZ_OpenAI_setup_9.jpg)  
+
+In search bar type a gpt model that you would like to deploy. Click on selected model and then select **Deploy**  
+
+![AZ_OpenAI_setup_10.jpg](/docs/images/AZ_OpenAI_setup_10.jpg)  
+
+![AZ_OpenAI_setup_11.jpg](/docs/images/AZ_OpenAI_setup_11.jpg)  
+
+Similar way, in search bar type a embedding model that you would like to deply. Click on selected model and then select **Deploy**  
+
 Azure infrastructre setup is done
