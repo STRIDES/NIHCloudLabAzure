@@ -55,71 +55,64 @@ Please refer to the [Azure Pricing Calculator](https://azure.microsoft.com/en-us
 Navigate to Azure OpenAI. The easiest way is to search at the top of the page.
 
 
-![AZ_OpenAI_setup_1.jpg](/images/AZ_OpenAI_setup_1.jpg)
+![AZ_OpenAI_setup_1.jpg](/docs/images/AZ_OpenAI_setup_1.jpg)
 
 
 Click **Create** and then select **Foundry (Recommended)**
 
 
-![AZ_OpenAI_setup_2.jpg](/images/AZ_OpenAI_setup_2.jpg)
+![AZ_OpenAI_setup_2.jpg](/docs/images/AZ_OpenAI_setup_2.jpg)
 
 
 In a **Create a Foundry resource window**, you should be able to see your Azure Subscription and click **Create new** for resource group
 
 
-![AZ_OpenAI_setup_3.jpg](/images/AZ_OpenAI_setup_3.jpg)
+![AZ_OpenAI_setup_3.jpg](/docs/images/AZ_OpenAI_setup_3.jpg)
 
 
 Select Region **East US 2**, create Name for your foundry resource, click **Review + create** and click **Create**
 
 
-![AZ_OpenAI_setup_4.jpg](/images/AZ_OpenAI_setup_4.jpg)
+![AZ_OpenAI_setup_4.jpg](/docs/images/AZ_OpenAI_setup_4.jpg)
 
+![AZ_OpenAI_setup_5.jpg](/docs/images/AZ_OpenAI_setup_5.jpg)  
 
 You would see a message that **Deployment is in progress**
 
+![AZ_OpenAI_setup_6.jpg](/docs/images/AZ_OpenAI_setup_6.jpg)  
 
-There should be a messsage that **Your deployment is complete** then select **Go to resource**
 
+There should be a messsage that **Your deployment is complete**. Select **Go to resource**
 
-![AZ_OpenAI_setup_5.jpg](/images/AZ_OpenAI_setup_5.jpg)
+![AZ_OpenAI_setup_7.jpg](/docs/images/AZ_OpenAI_setup_7.jpg)  
 
 
 In your resource window, select **Go to Foundry portal** 
 
-
-![AZ_OpenAI_setup_6.jpg](/images/AZ_OpenAI_setup_6.jpg)
-
-
-![AZ_OpenAI_setup_7.jpg](/images/AZ_OpenAI_setup_7.jpg)
+![AZ_OpenAI_setup_8.jpg](/docs/images/AZ_OpenAI_setup_8.jpg)
 
 
 Select **View Deployments**. 
 
+![AZ_OpenAI_setup_9.jpg](/docs/images/AZ_OpenAI_setup_9.jpg)
 
 Select **Deploy a base model**
 
-
-![AZ_OpenAI_setup_8.jpg](/images/AZ_OpenAI_setup_8.jpg)
-
-
-![AZ_OpenAI_setup_9.jpg](/images/AZ_OpenAI_setup_9.jpg)
+![AZ_OpenAI_setup_10.jpg](/docs/images/AZ_OpenAI_setup_10.jpg)
 
 
 In search bar type a gpt model that you would like to deploy. Click on selected model, select **Deploy** and then select **Default settings**
 
 
-![AZ_OpenAI_setup_10.jpg](/images/AZ_OpenAI_setup_10.jpg)
+![AZ_OpenAI_setup_11.jpg](/docs/images/AZ_OpenAI_setup_11.jpg)  
 
 
-![AZ_OpenAI_setup_11.jpg](/images/AZ_OpenAI_setup_11.jpg)
-
+![AZ_OpenAI_setup_12.jpg](/docs/images/AZ_OpenAI_setup_12.jpg)  
 
 Similar way, in search bar type a embedding model that you would like to deply. Click on selected model, select **Deploy** and then select **Default settings**
 
+![AZ_OpenAI_setup_13.jpg](/docs/images/AZ_OpenAI_setup_13.jpg)  
 
 Azure infrastructre setup is done
 
-```{code-cell} ipython3
 
-```
