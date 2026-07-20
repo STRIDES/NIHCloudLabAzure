@@ -1,15 +1,51 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.19.3
+kernelspec:
+  name: python3
+  display_name: Python 3 (ipykernel)
+  language: python
+---
+
 # **Setting Up Azure Environment for Azure GenAI Cloud Lab**
 ****
+
++++
+
 ##### **Skill Level: Beginner**
+
++++
+
 This guide will help you set up your Azure environment to complete the activities in the [GenAI](https://github.com/STRIDES/NIHCloudLabAzure/tree/main/notebooks/GenAI) directory of the NIH Cloud Lab. The purpose of this guide is to walk you through a deployment of the resources needed to carry out these activities.
+
++++
+
 ### Prerequisites
 *****
+
++++
+
 - An active Azure subscription
-- ### Resources and Pricing
+
++++
+
+### Resources and Pricing
 *****
 
++++
+
 Provided is a list of resources that will be deployed along with the estimated cost breakdown for each resource. Please find the resources that will be deployed below.
+
++++
+
 #### Resources deployed
+
++++
 
 1. ##### **Azure Storage Account**
    -  **Resource Type:** Storage Account (Standard_LRS)
@@ -28,75 +64,107 @@ Provided is a list of resources that will be deployed along with the estimated c
    - **Estimated Cost:** Varies based on model usage and API calls. Please refer to [Azure OpenAI Service Pricing](https://azure.microsoft.com/en-us/pricing/details/azure-openai/?msockid=3df6a53ac4916aa73e41b1e3c5c36bd4) for more details.
 
 Please refer to the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/) for a more detailed and personalized estimate based on your specific usage patterns and region.
+
++++
+
 #### Get Started
 ****
-### Azure OpenAI Setup Steps
+
++++
+
+### Azure OpenAI
 ****
-1. Navigate to Azure OpenAI by searching at the top of the page. 
-![AZ_OpenAI_setup_1.jpg](/docs/images/AZ_OpenAI_setup_1.jpg)  
 
-2. Click **Create** and then select **Azure OpenAI**  
++++
 
-![AZ_OpenAI_setup_2.jpg](/docs/images/AZ_OpenAI_setup_2.jpg)  
+Navigate to Azure OpenAI. The easiest way is to search at the top of the page.
 
-3. In the **Create Azure OpenAI window:**
-   - Select your Azure subscription
-   - Click **Create new** for resource group  
++++
 
-![AZ_OpenAI_setup_3.jpg](/docs/images/AZ_OpenAI_setup_3.jpg)  
+![Step1.jpg](/images/Step1.jpg)
 
- - Select Region **East US 2**
- - Enter Name for your Azure OpenAI
- - Select Pricing tier **Standard S0**
- - Click **Next**
-4. In the Network window:
-  - Select **All networks, including the internet, can access this resource.**
-  - Click Next.
-5. In **Reviwe+submit** window:
-  - Click **create**  
++++
 
-![AZ_OpenAI_setup_4.jpg](/docs/images/AZ_OpenAI_setup_4.jpg)  
+Click **Create** and then select **Foundry (Recommended)**
 
-6. When you see **Your deployment is complete** message:
-   - Select **Go to resource**  
++++
 
-![AZ_OpenAI_setup_5.jpg](/docs/images/AZ_OpenAI_setup_5.jpg)  
+![Step2.jpg](/images/Step2.jpg)
 
-7. In your resource window:
-   - Select **Go to Foundry portal**
-   - Click **Create a project**
++++
 
-![AZ_OpenAI_setup_6.jpg](/docs/images/AZ_OpenAI_setup_6.jpg)  
+In a **Create a Foundry resource window**, you should be able to see your Azure Subscription and click **Create new** for resource group
 
-8.In the Create project window:
-  - Give a **Project name**
-  - Select **Region**
-  - Select your **Subscription**
-  - Select **Resource group**
-  - Click **Create**  
++++
 
-![AZ_OpenAI_setup_7.jpg](/docs/images/AZ_OpenAI_setup_7.jpg)  
+![Step3.jpg](/images/Step3.jpg)
 
-9. In the Deployments section:
-    - Select **View Deployments** or **Manage Deployments**
-    - Select **Deploy a base model**
++++
 
-![AZ_OpenAI_setup_8.jpg](/docs/images/AZ_OpenAI_setup_8.jpg)  
+Select Region **East US 2**, create Name for your foundry resource, click **Review + create** and click **Create**
 
-![AZ_OpenAI_setup_9.jpg](/docs/images/AZ_OpenAI_setup_9.jpg)  
++++
 
-10. Search for and deploy a GPT model:
-    - Type a GPT model name in the search bar
-    - Click on the selected model
-    - Select **Deploy**
+![Step4.jpg](/images/Step4.jpg)
 
-![AZ_OpenAI_setup_10.jpg](/docs/images/AZ_OpenAI_setup_10.jpg)  
++++
 
-![AZ_OpenAI_setup_11.jpg](/docs/images/AZ_OpenAI_setup_11.jpg)  
+You would see a message that **Deployment is in progress**
 
-11. Deploy an embedding model:
-    - Type an embedding model name in the search bar
-    - Click on the selected model
-    - Select **Deploy**
++++
 
-Azure infrastructre setup is complete.
+There should be a messsage that **Your deployment is complete** then select **Go to resource**
+
++++
+
+![Step5.jpg](/images/Step5.jpg)
+
++++
+
+In your resource window, select **Go to Foundry portal** 
+
++++
+
+![Step6.jpg](/images/Step6.jpg)
+
++++
+
+![Step7.jpg](/images/Step7.jpg)
+
++++
+
+Select **View Deployments**. 
+
+```{code-cell} ipython3
+Select **Deploy a base model**
+```
+
+![Step8.jpg](/images/Step8.jpg)
+
++++
+
+![Step9.jpg](/images/Step9.jpg)
+
++++
+
+In search bar type a gpt model that you would like to deploy. Click on selected model, select **Deploy** and then select **Default settings**
+
++++
+
+![Step10.jpg](/images/Step10.jpg)
+
++++
+
+![Step11.jpg](/images/Step11.jpg)
+
++++
+
+Similar way, in search bar type a embedding model that you would like to deply. Click on selected model, select **Deploy** and then select **Default settings**
+
++++
+
+Azure infrastructre setup is done
+
+```{code-cell} ipython3
+
+```
