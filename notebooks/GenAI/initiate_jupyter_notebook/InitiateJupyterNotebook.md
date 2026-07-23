@@ -38,7 +38,7 @@ In your create workspace window, select **+New** and then select **Compute insta
  
 ![JN_7.jpg](/docs/images/JN_7.jpg)  
  
-In a compute instance window, select **Review+create**, In next windoe select **Create**  
+In a compute instance window, select **Review+create**, In next window select **Create**  
  
 ![JN_8.jpg](/docs/images/JN_8.jpg)  
 
