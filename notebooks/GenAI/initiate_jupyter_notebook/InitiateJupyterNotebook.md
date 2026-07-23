@@ -26,7 +26,7 @@ Create **Name** for workspace, select  Region **East US 2**, create **Storage ac
  
 ![JN_4.jpg](/docs/images/JN_4.jpg)  
  
-In workspace window, you should see a message thar **Validation passes** and click **Create**  
+In workspace window, you should see a message that **Validation passed** and click **Create**  
  
 ![JN_5.jpg](/docs/images/JN_5.jpg)  
  
