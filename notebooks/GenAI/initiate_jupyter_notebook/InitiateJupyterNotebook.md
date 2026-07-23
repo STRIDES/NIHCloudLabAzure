@@ -56,4 +56,4 @@ Upload your downloaded python script into **JupyterLab** window and now you are 
  
 ![JN_12.jpg](/docs/images/JN_12.jpg)  
 
-Now you are in Jupyter Notebbok
+Now you are in Jupyter Notebook
